@@ -1,15 +1,24 @@
 import React from 'react'
+import MyPageSection from './MyPageSection';
+import LiveSection from './LiveSection';
+import QuizSection from './QuizSection';
 import Section from '../../components/Section';
+import AdSection from './AdSection';
+import ArtistSection from './ArtistSection';
+import VoteSection from './VoteSection';
+import ChartSection from './ChartSection';
 
-const Home = () => {
+
+const Home = ({ selectedArtists }) => {
   return (
     <div>
-      <Section title="마이페이지" to="/mypage" />
-      <Section title="아티스트 페이지" to="/artist" />
-      <Section title="아티스트 페이지" to="/artist" />
-      <Section title="퀴즈 풀기" to="/quiz" />
-      <Section title="투표 참여하기" to="/vote" />
-      <Section title="인기차트" to="/fashion" />
+      <MyPageSection selectedArtists={selectedArtists} />
+      <LiveSection />
+      <ArtistSection />
+      <QuizSection />
+      <VoteSection/>
+      <ChartSection/>
+      <AdSection/>
     </div>
   );
 };

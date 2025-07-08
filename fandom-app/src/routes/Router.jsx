@@ -1,14 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import Nav from '../components/Nav'; 
 
 // 각 페이지 import
-import Home from '../pages/Home/Home';
 import DM from '../pages/DM/DM';
-import Artist from '../pages/Artist/Artist';
 import Fashion from '../pages/Fashion/Fashion';
-import MyPage from '../pages/MyPage/MyPage';
 import Login from '../pages/Auth/Login';
 import Signup from '../pages/Auth/Signup';
+
+// home
+import ArtistSectionBox from '../pages/Home/ArtistSectionBox';
+import ArtistSelectBox from '../pages/Home/ArtistSelectBox';
+import MyPage from '../pages/MyPage/MyPage';
+import Vote from '../pages/MyPage/Vote';
+import Quiz from '../pages/Quiz/Quiz';
+import Live from '../pages/Live/Live';
+import Artist from '../pages/Artist/Artist';
+import Home from '../pages/Home/Home';
+import Chart from '../pages/Chart/Chart';
+import ArtistSelect from '../pages/Home/ArtistSelect';
 
 // mypage
 import Mission from '../pages/MyPage/Mission';
@@ -17,21 +27,34 @@ import Collection from '../pages/MyPage/Collection';
 import Payment from '../pages/MyPage/Payment';
 import History from '../pages/MyPage/History';
 import Settings from '../pages/MyPage/Settings';
-import Vote from '../pages/MyPage/Vote';
 
 function AppRouter() {
+  // 🟢 상태 선언
+  const [selectedArtists, setSelectedArtists] = useState([]);
+
   return (
     <Router>
       <Nav />
       <Routes>
         {/* home */}
-        <Route path="/" element={<Home />} />
-        <Route path="/dm" element={<DM />} />
-        <Route path="/artist" element={<Artist />} />
-        <Route path="/fashion" element={<Fashion />} />
+        <Route
+          path="/"
+          element={<Home selectedArtists={selectedArtists} />}
+        />
+        <Route
+          path="/select-artist"
+          element={
+            <ArtistSelect
+              setSelectedArtists={setSelectedArtists}
+              selectedArtists={selectedArtists}
+            />
+          }
+        />
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/live" element={<Live />} />
+        <Route path="/artist" element={<Artist />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/chart" element={<Chart />} />
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
@@ -40,7 +63,7 @@ function AppRouter() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/vote" element={<Vote />} /> {/* 이미 있다면 생략 */}
+        <Route path="/vote" element={<Vote />} />
       </Routes>
     </Router>
   );

@@ -1,14 +1,13 @@
 import React from 'react'
 import BackButton from '../../components/Backbutton'
 
-const Artist = () => {
+const Quiz = () => {
   return (
-    <>
+    <div>
     <BackButton/>
-    <h2>아티스트 페이지</h2>
-    </>
-    
+    <h2>퀴즈 페이지</h2>
+    </div>
   )
 }
 
-export default Artist
+export default Quiz

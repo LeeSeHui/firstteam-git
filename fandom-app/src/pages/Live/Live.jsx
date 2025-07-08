@@ -1,14 +1,13 @@
 import React from 'react'
 import BackButton from '../../components/Backbutton'
 
-const Artist = () => {
+const Live = () => {
   return (
-    <>
+    <div>
     <BackButton/>
-    <h2>아티스트 페이지</h2>
-    </>
-    
+    <h2>라이브 페이지</h2>
+    </div>
   )
 }
 
-export default Artist
+export default Live
