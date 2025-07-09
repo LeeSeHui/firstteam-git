@@ -19,6 +19,7 @@ const Home = ({ selectedArtists }) => {
       <VoteSection/>
       <ChartSection/>
       <AdSection/>
+      <p>박종민</p>
     </div>
   );
 };
