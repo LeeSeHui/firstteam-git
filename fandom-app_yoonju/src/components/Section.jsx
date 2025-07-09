@@ -17,6 +17,7 @@ const Section = ({ title, to, children, className }) => {
     >
       <h2>{title}</h2>
       <div className="section-sub-buttons">{children}</div>
+      <h2>나윤준데 노랑으로해</h2>
     </section>
   );
 };
