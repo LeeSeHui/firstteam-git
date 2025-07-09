@@ -27,6 +27,7 @@ import Collection from '../pages/MyPage/Collection';
 import Payment from '../pages/MyPage/Payment';
 import History from '../pages/MyPage/History';
 import Settings from '../pages/MyPage/Settings';
+import Alarm from '../pages/Alarm/Alarm';
 
 function AppRouter() {
   // 🟢 상태 선언
@@ -37,6 +38,7 @@ function AppRouter() {
       <Nav />
       <Routes>
         {/* home */}
+        <Route path="/alarm" element={<Alarm />}/>
         <Route
           path="/"
           element={<Home selectedArtists={selectedArtists} />}
