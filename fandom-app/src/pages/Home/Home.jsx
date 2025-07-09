@@ -1,5 +1,4 @@
 import React from 'react'
-import './Home.css'
 import MyPageSection from './MyPageSection';
 import LiveSection from './LiveSection';
 import QuizSection from './QuizSection';
