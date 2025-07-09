@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import DM from '../pages/DM/DM';
 import Fashion from '../pages/Fashion/Fashion';
 import Login from '../pages/Auth/Login';
-import Signup from '../pages/Auth/Signup';
+import Manual from '../pages/Auth/Manual';
 
 // home
 import ArtistSectionBox from '../pages/Home/ArtistSectionBox';
@@ -66,8 +66,12 @@ function AppRouter() {
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
+
+        
         {/* login */}
         <Route path="/login" element={<Login />} />
+        <Route path="/manual" element={<Manual />} />
+
 
       </Routes>
     </Router>
