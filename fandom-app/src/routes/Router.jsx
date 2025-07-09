@@ -64,6 +64,9 @@ function AppRouter() {
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
+
+                {/* 로그인 경로 추가 */}
+                <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
