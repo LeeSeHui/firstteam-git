@@ -5,6 +5,9 @@ import Nav from '../components/Nav';
 import Alart from '../pages/Alart/Alart';
 import MyPage from '../pages/MyPage/MyPage';
 import ArtistSelect from '../pages/ArtistSelect';
+import DM from '../pages/DM/DM';
+import Login from '../pages/Auth/Login';
+import Fashion from '../pages/Fashion/Fashion';
 
 // home
 import Vote from '../pages/MyPage/Vote';
@@ -51,6 +54,7 @@ function AppRouter() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
         <Route path="/dm" element={<DM />} />
+        <Route path="/fashion" element={<Fashion />} />
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
