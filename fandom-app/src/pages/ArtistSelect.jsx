@@ -17,7 +17,7 @@ const ArtistSelect = ({ setSelectedArtists, selectedArtists }) => {
         <button
           key={artist}
           onClick={() => handleSelect(artist)}
-          style={{ display: 'block', margin: '10px' }}
+          style={{ display: 'flex', margin: '10px' }}
         >
           {artist}
         </button>
