@@ -55,10 +55,12 @@ const DM = () => {
           />
           <div className="dm-tags">
             <button>전체</button>
-            <button>추천 아티스트</button>
+            <button>아티스트 추천</button>
             <button>KATSEYE</button>
+            <button>추천 아티스트</button>
             <button>BLACKPINK</button>
             <button>추천 아티스트</button>
+            
           </div>
         </div>
 
