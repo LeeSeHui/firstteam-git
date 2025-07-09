@@ -7,7 +7,7 @@ import MyPage from '../pages/MyPage/MyPage';
 import ArtistSelect from '../pages/ArtistSelect';
 import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
-
+import Manual from '../pages/Auth/Manual';
 import Fashion from '../pages/Fashion/Fashion';
 
 // home
@@ -65,8 +65,12 @@ function AppRouter() {
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
+
+        
         {/* login */}
         <Route path="/login" element={<Login />} />
+        <Route path="/manual" element={<Manual />} />
+
 
       </Routes>
     </Router>
