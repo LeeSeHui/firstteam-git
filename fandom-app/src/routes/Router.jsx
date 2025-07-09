@@ -55,6 +55,7 @@ function AppRouter() {
         <Route path="/artist" element={<Artist />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
+        <Route path="/Fashion" element={<Fashion />} />
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
@@ -64,7 +65,12 @@ function AppRouter() {
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
+
+
       </Routes>
+
+
+
     </Router>
   );
 }
