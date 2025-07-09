@@ -21,7 +21,7 @@ const Home = ({ selectedArtists }) => {
       <div className="home-top">
         <p><img src={logo} alt="로고" /></p>
         <p onClick={handleAlarmClick} style={{ cursor: 'pointer' }}>
-        <img src={alarm} alt="알람" />
+        {/* <img src={alarm} alt="알람" /> */}
         </p>
       </div>
       <MyPageSection selectedArtists={selectedArtists} />
