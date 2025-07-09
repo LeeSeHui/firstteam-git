@@ -5,6 +5,8 @@ import Nav from '../components/Nav';
 import Alart from '../pages/Alart/Alart';
 import MyPage from '../pages/MyPage/MyPage';
 import ArtistSelect from '../pages/ArtistSelect';
+import DM from '../pages/DM/DM';
+import Login from '../pages/Auth/Login';
 
 // home
 import Vote from '../pages/MyPage/Vote';
