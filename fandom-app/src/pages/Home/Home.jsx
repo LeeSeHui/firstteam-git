@@ -7,7 +7,6 @@ import ArtistSection from './ArtistSection';
 import VoteSection from './VoteSection';
 import ChartSection from './ChartSection';
 import logo from '../../assets/logo.png'
-import alarm from '../../assets/alarm.png'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -22,7 +21,7 @@ const Home = ({ selectedArtists }) => {
       <div className="home-top">
         <p><img src={logo} alt="로고" /></p>
         <p onClick={handleAlarmClick} style={{ cursor: 'pointer' }}>
-        <img src={alarm} alt="알람" />
+        {/* <img src={alarm} alt="알람" /> */}
         </p>
       </div>
       <MyPageSection selectedArtists={selectedArtists} />

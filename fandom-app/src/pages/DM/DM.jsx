@@ -7,6 +7,7 @@ import profile1 from '../../assets/DMartist.png';
 import profile2 from '../../assets/DMartist.png';
 import profile3 from '../../assets/DMartist.png';
 
+
 const storyProfiles = [
   { name: 'KARINA', time: '2시간전', img: profile1 },
   { name: 'JENNIE', time: '3시간전', img: profile2 },
@@ -55,12 +56,11 @@ const DM = () => {
           />
           <div className="dm-tags">
             <button>전체</button>
-            <button>아티스트 추천</button>
-            <button>KATSEYE</button>
             <button>추천 아티스트</button>
+            <button>KATSEYE</button>
             <button>BLACKPINK</button>
             <button>추천 아티스트</button>
-            
+
           </div>
         </div>
 
@@ -82,3 +82,4 @@ const DM = () => {
 };
 
 export default DM;
+
