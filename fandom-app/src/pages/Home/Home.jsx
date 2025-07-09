@@ -1,9 +1,7 @@
 import React from 'react'
-import './Home.css'
 import MyPageSection from './MyPageSection';
 import LiveSection from './LiveSection';
 import QuizSection from './QuizSection';
-import Section from '../../components/Section';
 import AdSection from './AdSection';
 import ArtistSection from './ArtistSection';
 import VoteSection from './VoteSection';
