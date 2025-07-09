@@ -2,7 +2,9 @@ import React from 'react'
 
 const Fashion = () => {
   return (
-    <div>Fashion</div>
+    <div>Fashion
+      <h2>김효주</h2>
+    </div>
   )
 }
 
