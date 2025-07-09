@@ -1,24 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import Nav from '../components/Nav'; 
+import Nav from '../components/Nav';
 
-// 각 페이지 import
-import DM from '../pages/DM/DM';
-import Fashion from '../pages/Fashion/Fashion';
-import Login from '../pages/Auth/Login';
-import Signup from '../pages/Auth/Signup';
+import Alart from '../pages/Alart/Alart';
+import MyPage from '../pages/MyPage/MyPage';
+import ArtistSelect from '../pages/ArtistSelect';
 
 // home
-import ArtistSectionBox from '../pages/Home/ArtistSectionBox';
-import ArtistSelectBox from '../pages/Home/ArtistSelectBox';
-import MyPage from '../pages/MyPage/MyPage';
 import Vote from '../pages/MyPage/Vote';
 import Quiz from '../pages/Quiz/Quiz';
 import Live from '../pages/Live/Live';
 import Artist from '../pages/Artist/Artist';
 import Home from '../pages/Home/Home';
 import Chart from '../pages/Chart/Chart';
-import ArtistSelect from '../pages/Home/ArtistSelect';
 
 
 // mypage
@@ -30,7 +24,6 @@ import History from '../pages/MyPage/History';
 import Settings from '../pages/MyPage/Settings';
 
 function AppRouter() {
-  // 🟢 상태 선언
   const [selectedArtists, setSelectedArtists] = useState([]);
 
   return (
@@ -38,6 +31,8 @@ function AppRouter() {
       <Nav />
       <Routes>
         {/* home */}
+        <Route path="/alart" element={<Alart />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route
           path="/"
           element={<Home selectedArtists={selectedArtists} />}
@@ -51,7 +46,6 @@ function AppRouter() {
             />
           }
         />
-        <Route path="/mypage" element={<MyPage />} />
         <Route path="/live" element={<Live />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/quiz" element={<Quiz />} />
