@@ -6,6 +6,7 @@ const Quiz = () => {
     <div>
     <BackButton/>
     <h2>퀴즈 페이지</h2>
+    <h2>서영이입니다</h2>
     </div>
   )
 }
