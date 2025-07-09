@@ -7,6 +7,7 @@ import MyPage from '../pages/MyPage/MyPage';
 import ArtistSelect from '../pages/ArtistSelect';
 import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
+
 import Fashion from '../pages/Fashion/Fashion';
 
 // home
