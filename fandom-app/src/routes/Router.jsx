@@ -20,6 +20,7 @@ import Home from '../pages/Home/Home';
 import Chart from '../pages/Chart/Chart';
 import ArtistSelect from '../pages/Home/ArtistSelect';
 
+
 // mypage
 import Mission from '../pages/MyPage/Mission';
 import Invite from '../pages/MyPage/Invite';
@@ -55,7 +56,7 @@ function AppRouter() {
         <Route path="/artist" element={<Artist />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
-        <Route path="/Fashion" element={<Fashion />} />
+        <Route path="/dm" element={<DM />} />
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
@@ -65,12 +66,7 @@ function AppRouter() {
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
-
-
       </Routes>
-
-
-
     </Router>
   );
 }
