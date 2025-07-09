@@ -1,7 +1,6 @@
 import React from 'react';
 import Section from '../../components/Section';
 import ArtistSelectBox from './ArtistSelectBox';
-import ArtistSectionBox from './ArtistSectionBox';
 import './MyPageSection.css';
 
 const MyPageSection = ({ selectedArtists }) => {
