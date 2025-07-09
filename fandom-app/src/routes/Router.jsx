@@ -8,6 +8,7 @@ import ArtistSelect from '../pages/ArtistSelect';
 import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
 
+
 // home
 import Vote from '../pages/MyPage/Vote';
 import Quiz from '../pages/Quiz/Quiz';
@@ -53,6 +54,7 @@ function AppRouter() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
         <Route path="/dm" element={<DM />} />
+        <Route path="/fashion" element={<Fashion />} />
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
