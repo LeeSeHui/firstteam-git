@@ -1,0 +1,141 @@
+/* DMPage.css */
+
+.dm-container {
+    padding: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9f7f4;
+  }
+  
+  .dm-banner {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .dm-story-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .dm-story-list {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+  }
+  
+  .dm-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 60px;
+  }
+  
+  .dm-story-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #f5a623;
+    object-fit: cover;
+  }
+  
+  .dm-time {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #f5a623;
+    color: white;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  
+  .dm-story p {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  .dm-search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  
+  .dm-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .dm-tags button {
+    padding: 6px 12px;
+    font-size: 13px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .dm-tags button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .dm-artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .dm-artist-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  
+  .dm-artist-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  .dm-artist-info {
+    flex: 1;
+  }
+  
+  .dm-name {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .dm-name-eng {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+  
+  .dm-go-button {
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .dm-go-button:hover {
+    background-color: #e0961f;
+  }
+  

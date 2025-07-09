@@ -2,10 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DM.css';
 import BackButton from '../../components/Backbutton';
-import bannerImg from '../../assets/DMartist.PNG'; 
-import profile1 from '../../assets/DMartist.PNG'; 
-import profile2 from '../../assets/DMartist.PNG';
-import profile3 from '../../assets/DMartist.PNG';
+import bannerImg from '../../assets/DMartist.png'; 
+import profile1 from '../../assets/DMartist.png'; 
+import profile2 from '../../assets/DMartist.png';
+import profile3 from '../../assets/DMartist.png';
+
 
 const storyProfiles = [
   { name: 'KARINA', time: '2시간전', img: profile1 },
@@ -59,6 +60,7 @@ const DM = () => {
             <button>KATSEYE</button>
             <button>BLACKPINK</button>
             <button>추천 아티스트</button>
+
           </div>
         </div>
 
@@ -80,3 +82,4 @@ const DM = () => {
 };
 
 export default DM;
+
