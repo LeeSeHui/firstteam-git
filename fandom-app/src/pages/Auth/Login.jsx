@@ -38,7 +38,7 @@ const Login = () => {
         </>
       ) : (
         <div className="login-container">
-          <h2 className="login-title">{loginType}로 시작하기</h2>
+          <h2 className="login-title">{loginType}로 시작하기git</h2>
         </div>
       )}
     </>
