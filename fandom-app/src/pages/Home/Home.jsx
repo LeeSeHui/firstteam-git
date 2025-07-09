@@ -1,15 +1,12 @@
 import React from 'react'
-import './Home.css'
 import MyPageSection from './MyPageSection';
 import LiveSection from './LiveSection';
 import QuizSection from './QuizSection';
-import Section from '../../components/Section';
 import AdSection from './AdSection';
 import ArtistSection from './ArtistSection';
 import VoteSection from './VoteSection';
 import ChartSection from './ChartSection';
 import logo from '../../assets/logo.png'
-import alarm from '../../assets/alarm.png'
 import { useNavigate } from 'react-router-dom'
 
 
