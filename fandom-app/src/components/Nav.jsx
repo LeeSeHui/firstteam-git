@@ -9,6 +9,7 @@ function Nav() {
       <Link to="/fashion" style={{ marginRight: '10px' }}>Fashion</Link>
       <Link to="/mypage" style={{ marginRight: '10px' }}>MyPage</Link>
       <Link to="/login" style={{ marginRight: '10px' }}>Login</Link>
+      
     </nav>
   );
 }
