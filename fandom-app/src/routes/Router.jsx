@@ -13,11 +13,22 @@ import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
 import Manual from '../pages/Auth/Manual';
 import Fashion from '../pages/Fashion/Fashion';
+
 import Vote from '../pages/MyPage/Vote';
+import MembershipInfo from '../pages/Artist/MembershipInfo';
+
+
+// home
 import Quiz from '../pages/Quiz/Quiz';
 import Live from '../pages/Live/Live';
 import Artist from '../pages/Artist/Artist';
 import Chart from '../pages/Chart/Chart';
+
+
+
+
+// mypage
+
 import Mission from '../pages/MyPage/Mission';
 import Invite from '../pages/MyPage/Invite';
 import Collection from '../pages/MyPage/Collection';
@@ -47,12 +58,19 @@ function AppRouter() {
         <Route path="/chart" element={<Chart />} />
         <Route path="/dm" element={<DM />} />
         <Route path="/fashion" element={<Fashion />} />
+
         <Route
           path="/select-artist"
           element={<ArtistSelect setSelectedArtists={setSelectedArtists} selectedArtists={selectedArtists} />}
         />
 
         {/* 마이페이지 세부 */}
+
+        <Route path="/membership" element={<MembershipInfo />} />
+    
+        
+        {/* mypage */}
+
         <Route path="/mission" element={<Mission />} />
         <Route path="/invite" element={<Invite />} />
         <Route path="/collection" element={<Collection />} />

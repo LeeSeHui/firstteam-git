@@ -169,3 +169,25 @@
     font-size: 13px;
     color: #888;
   }
+
+  .vote-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #ffecec, #e6f1ff);
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .vote-title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .vote-banner-btn {
+    background: #cecece;
+    font-size: 16px;
+    cursor: pointer;
+    color: #222;
+  }

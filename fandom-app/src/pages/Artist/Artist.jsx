@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import profileImg from '../../assets/artist_actor.png';
+import goyunjung from '../../assets/airtist-goyunjung.png'
+import goyunjunglive from '../../assets/goyunjung_live.png'
+
 import './Artist.css';
 import BackButton from '../../components/Backbutton';
 
@@ -15,7 +18,12 @@ const Artist = () => {
       <section className="artist-header">
         <img src={profileImg} alt="artist" className="artist-profile-img" />
         <h1 className="artist-name">GO YOUNJUNG</h1>
-        <button className="membership-btn">+ Membership</button>
+        <button
+  className="membership-btn"
+  onClick={() => Nav('/membership')}
+>
+  + Membership
+</button>
       </section>
 
       {/* 탭 메뉴 */}
@@ -44,7 +52,10 @@ const Artist = () => {
 
       {/* 투표 배너 */}
       <section className="vote-banner">
-        <p className="vote-title">이번 여름, 뉴진스를 응원해주세요! 👉</p>
+        <p className="vote-title">이번 여름, 뉴진스를 응원해주세요!</p>
+        <button className="vote-banner-btn" onClick={() => Nav('/vote')}>
+        👉 투표하러가기
+        </button>
       </section>
 
       {/* 아티스트 피드 */}
@@ -56,14 +67,14 @@ const Artist = () => {
           </div>
           <p className="feed-text">멤버톤 도착~ 푹 쉬고 내일 공연 잘하고 올게요 💜</p>
           <div className="feed-images">
-            <img src={profileImg} alt="피드 이미지1" />
-            <img src={profileImg} alt="피드 이미지2" />
+            <img src={goyunjung} alt="피드 이미지1" />
+            <img src={goyunjung} alt="피드 이미지2" />
           </div>
         </div>
 
         {/* 라이브 리플레이 */}
         <div className="live-replay">
-          <img src={profileImg} alt="라이브 리플레이" />
+          <img src={goyunjunglive} alt="라이브 리플레이" />
           <p>53:34</p>
         </div>
 

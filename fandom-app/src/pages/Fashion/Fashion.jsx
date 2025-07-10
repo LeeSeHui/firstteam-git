@@ -1,6 +1,7 @@
 import React from 'react';
 import './Fashion.css';
-import fashionImg from '../../assets/fashion.png';
+import fashionImg from '../../assets/fashionimg.png';
+import fashionPro from '../../assets/fashionproduct.png';
 import BackButton from '../../components/Backbutton';
 
 
@@ -53,7 +54,7 @@ const Fashion = () => {
       <div className="product-tag">
         <p>상품 태그 1개</p>
         <div className="product-item">
-          <img src={fashionImg} alt="모자" />
+          <img src={fashionPro} alt="모자" />
           <div className="product-info">
             <h4>G-DRAGON Power Ball Cap White</h4>
             <p className="product-desc">지드래곤 파워 볼캡 화이트</p>

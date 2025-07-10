@@ -1,3 +1,4 @@
+
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import './Nav.css';
@@ -45,8 +46,5 @@ function Nav() {
           <button onClick={() => handleNavigate('/trot')}>Trot</button>
         </div>
       )}
-    </nav>
-  );
-}
 
 export default Nav;
