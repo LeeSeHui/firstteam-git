@@ -49,7 +49,10 @@ const Artist = () => {
 
       {/* 투표 배너 */}
       <section className="vote-banner">
-        <p className="vote-title">이번 여름, 뉴진스를 응원해주세요! 👉</p>
+        <p className="vote-title">이번 여름, 뉴진스를 응원해주세요!</p>
+        <button className="vote-banner-btn" onClick={() => Nav('/vote')}>
+        👉 투표하러가기
+        </button>
       </section>
 
       {/* 아티스트 피드 */}
