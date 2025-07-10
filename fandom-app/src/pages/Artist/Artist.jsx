@@ -15,7 +15,12 @@ const Artist = () => {
       <section className="artist-header">
         <img src={profileImg} alt="artist" className="artist-profile-img" />
         <h1 className="artist-name">GO YOUNJUNG</h1>
-        <button className="membership-btn">+ Membership</button>
+        <button
+  className="membership-btn"
+  onClick={() => Nav('/membership')}
+>
+  + Membership
+</button>
       </section>
 
       {/* 탭 메뉴 */}
