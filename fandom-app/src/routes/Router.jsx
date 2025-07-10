@@ -4,10 +4,9 @@ import Nav from '../components/Nav';
 
 import Alart from '../pages/Alart/Alart';
 import MyPage from '../pages/MyPage/MyPage';
-import ArtistSelect from '../pages/ArtistSelect';
 import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
-
+import Manual from '../pages/Auth/Manual';
 import Fashion from '../pages/Fashion/Fashion';
 
 // home
@@ -15,6 +14,7 @@ import Vote from '../pages/MyPage/Vote';
 import Quiz from '../pages/Quiz/Quiz';
 import Live from '../pages/Live/Live';
 import Artist from '../pages/Artist/Artist';
+import ArtistSelectBox from '../pages/Home/ArtistSelectBox';
 import Home from '../pages/Home/Home';
 import Chart from '../pages/Chart/Chart';
 
@@ -28,7 +28,7 @@ import History from '../pages/MyPage/History';
 import Settings from '../pages/MyPage/Settings';
 
 function AppRouter() {
-  const [selectedArtists, setSelectedArtists] = useState([]);
+  const [selectedArtists] = useState([]);
 
   return (
     <Router>
@@ -41,21 +41,14 @@ function AppRouter() {
           path="/"
           element={<Home selectedArtists={selectedArtists} />}
         />
-        <Route
-          path="/select-artist"
-          element={
-            <ArtistSelect
-              setSelectedArtists={setSelectedArtists}
-              selectedArtists={selectedArtists}
-            />
-          }
-        />
+      
         <Route path="/live" element={<Live />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
         <Route path="/dm" element={<DM />} />
         <Route path="/fashion" element={<Fashion />} />
+        <Route path="/select-artist" element={<ArtistSelectBox />}/>
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
@@ -65,8 +58,10 @@ function AppRouter() {
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
+
         {/* login */}
         <Route path="/login" element={<Login />} />
+        <Route path="/manual" element={<Manual />} />
 
       </Routes>
     </Router>
