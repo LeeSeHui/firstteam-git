@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import profileImg from '../../assets/artist_actor.png';
+import goyunjung from '../../assets/airtist-goyunjung.png'
+import goyunjunglive from '../../assets/goyunjung_live.png'
+
 import './Artist.css';
 import BackButton from '../../components/Backbutton';
 
@@ -64,14 +67,14 @@ const Artist = () => {
           </div>
           <p className="feed-text">멤버톤 도착~ 푹 쉬고 내일 공연 잘하고 올게요 💜</p>
           <div className="feed-images">
-            <img src={profileImg} alt="피드 이미지1" />
-            <img src={profileImg} alt="피드 이미지2" />
+            <img src={goyunjung} alt="피드 이미지1" />
+            <img src={goyunjung} alt="피드 이미지2" />
           </div>
         </div>
 
         {/* 라이브 리플레이 */}
         <div className="live-replay">
-          <img src={profileImg} alt="라이브 리플레이" />
+          <img src={goyunjunglive} alt="라이브 리플레이" />
           <p>53:34</p>
         </div>
 
