@@ -8,7 +8,16 @@ import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
 import Manual from '../pages/Auth/Manual';
 import Fashion from '../pages/Fashion/Fashion';
+
+// artist 
 import MembershipInfo from '../pages/Artist/MembershipInfo';
+import ArtistHighlight from '../pages/Artist/ArtistHighlight';
+import ArtistDetail from '../pages/Artist/ArtistDetail';
+import ArtistGallery from '../pages/Artist/ArtistGallery';
+import ArtistMembership from '../pages/Artist/ArtistMembership';
+import ArtistNotice from '../pages/Artist/ArtistNotice';
+
+
 
 
 // home
@@ -37,22 +46,28 @@ function AppRouter() {
       <Nav />
       <Routes>
         {/* home */}
+        <Route path="/" element={<Home selectedArtists={selectedArtists} />} />
         <Route path="/alart" element={<Alart />} />
         <Route path="/mypage" element={<MyPage />} />
-        <Route
-          path="/"
-          element={<Home selectedArtists={selectedArtists} />}
-        />
-      
         <Route path="/live" element={<Live />} />
-        <Route path="/artist" element={<Artist />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
         <Route path="/dm" element={<DM />} />
         <Route path="/fashion" element={<Fashion />} />
         <Route path="/membership" element={<MembershipInfo />} />
-        <Route path="/select-artist" element={<ArtistSelectBox />}/>
-        
+        <Route path="/select-artist" element={<ArtistSelectBox />} />
+        <Route path="/vote" element={<Vote />} />
+
+        {/* Artist 중첩 라우터 */}
+        <Route path="/artist" element={<Artist />}>
+          <Route index element={<ArtistHighlight />} />
+          <Route path="highlight" element={<ArtistHighlight />} />
+          <Route path="detail" element={<ArtistDetail />} />
+          <Route path="gallery" element={<ArtistGallery />} />
+          <Route path="membership" element={<ArtistMembership />} />
+          <Route path="notice" element={<ArtistNotice />} />
+        </Route>
+
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
         <Route path="/invite" element={<Invite />} />
@@ -60,12 +75,10 @@ function AppRouter() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/history" element={<History />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/vote" element={<Vote />} />
 
         {/* login */}
         <Route path="/login" element={<Login />} />
         <Route path="/manual" element={<Manual />} />
-
       </Routes>
     </Router>
   );
