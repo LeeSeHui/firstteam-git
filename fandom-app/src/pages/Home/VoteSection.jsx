@@ -1,18 +1,15 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import './Vote.css'; // 필요 시 스타일 유지
+import Section from '../../components/Section';
+
 
 const VoteSection = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="vote-section" style={{ background: '#ccc', padding: '40px', marginBottom: '20px' }}>
-      <h2 
-      style={{ cursor: 'pointer' }} onClick={() => navigate('/vote')}>
-        투표 페이지
-      </h2>
+    <div>
+        <div className="vote">
+        <Section title="투표페이지" to="/vote"></Section>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default VoteSection;
+export default VoteSection
