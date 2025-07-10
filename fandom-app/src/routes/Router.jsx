@@ -27,6 +27,7 @@ import Collection from '../pages/MyPage/Collection';
 import Payment from '../pages/MyPage/Payment';
 import History from '../pages/MyPage/History';
 import Settings from '../pages/MyPage/Settings';
+// my page vote 일단 삭제함
 
 function AppRouter() {
   const [selectedArtists] = useState([]);
