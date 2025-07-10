@@ -4,6 +4,7 @@ import profileImg from '../../assets/artist_actor.png';
 import './Artist.css';
 import BackButton from '../../components/Backbutton';
 
+
 const Artist = () => {
   const Nav = useNavigate();
 
@@ -13,10 +14,16 @@ const Artist = () => {
 
       {/* 아티스트 헤더 */}
       <section className="artist-header">
-        <img src={profileImg} alt="artist" className="artist-profile-img" />
-        <h1 className="artist-name">GO YOUNJUNG</h1>
-        <button className="membership-btn">+ Membership</button>
-      </section>
+  <img src={profileImg} alt="artist" className="artist-profile-img" />
+  <h1 className="artist-name">GO YOUNJUNG</h1>
+
+  <button
+    className="membership-btn"
+    onClick={() => Nav("/membership")}
+  >
+    + Membership
+  </button>
+</section>
 
       {/* 탭 메뉴 */}
       <nav className="artist-tabs">

@@ -7,6 +7,8 @@ import DM from '../pages/DM/DM';
 import Fashion from '../pages/Fashion/Fashion';
 import Login from '../pages/Auth/Login';
 import Signup from '../pages/Auth/Signup';
+import MembershipInfo from '../pages/Artist/MembershipInfo';
+
 
 // home
 import ArtistSectionBox from '../pages/Home/ArtistSectionBox';
@@ -55,6 +57,10 @@ function AppRouter() {
         <Route path="/artist" element={<Artist />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/chart" element={<Chart />} />
+        <Route path="/dm" element={<DM />} />
+        <Route path="/fashion" element={<Fashion />} />
+        <Route path="/membership" element={<MembershipInfo />} />
+        <Route path="/select-artist" element={<ArtistSelectBox />}/>
         
         {/* mypage */}
         <Route path="/mission" element={<Mission />} />
