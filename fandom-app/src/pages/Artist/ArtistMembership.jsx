@@ -1,17 +1,20 @@
 import React from 'react';
 import './ArtistMembership.css';
-import lockIcon from '../../assets/lock.png';
+import membershipcontents from '../../assets/membership-contents.png';
+import membershipletter from '../../assets/membership-letter.png';
+import membershipletter2 from '../../assets/membership-letter2.png';
+import membershipletter3 from '../../assets/membership-letter3.png';
 
 const ArtistMembership = () => {
   const lockedPosts = [
-    { id: 1, img: '/img/gallery1.jpg', text: '멤버십 전용 콘텐츠입니다.' },
-    { id: 2, img: '/img/gallery2.jpg', text: '멤버십 전용 콘텐츠입니다.' },
+    { id: 1, src: membershipcontents, alt: 'membershipcontents' },
+    { id: 2, src: membershipcontents, alt: 'membershipcontents' },
   ];
 
   const artistLetters = [
-    { id: 1, img: '/img/gallery3.jpg', text: '멤버십 전용 콘텐츠입니다.' },
-    { id: 2, img: '/img/gallery4.jpg', text: '멤버십 전용 콘텐츠입니다.' },
-    { id: 3, img: '/img/gallery5.jpg', text: '멤버십 전용 콘텐츠입니다.' },
+    { id: 1, img: membershipletter },
+    { id: 2, img: membershipletter2 },
+    { id: 3, img: membershipletter3 },
   ];
 
   return (
@@ -20,11 +23,7 @@ const ArtistMembership = () => {
       <div className="locked-posts">
         {lockedPosts.map((post) => (
           <div key={post.id} className="locked-card">
-            <img src={post.img} alt={`locked-${post.id}`} />
-            <div className="lock-overlay">
-              <img src={lockIcon} alt="lock" className="lock-icon" />
-              <p>{post.text}</p>
-            </div>
+            <img src={post.src} alt={post.alt} />
           </div>
         ))}
       </div>
@@ -37,7 +36,6 @@ const ArtistMembership = () => {
             <div key={letter.id} className="letter-card">
               <img src={letter.img} alt={`letter-${letter.id}`} />
               <div className="lock-overlay">
-                <img src={lockIcon} alt="lock" className="lock-icon" />
                 <p>{letter.text}</p>
               </div>
             </div>
