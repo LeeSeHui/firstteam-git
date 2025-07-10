@@ -7,7 +7,8 @@ const VoteSection = () => {
 
   return (
     <div className="vote-section" style={{ background: '#ccc', padding: '40px', marginBottom: '20px' }}>
-      <h2 style={{ cursor: 'pointer' }} onClick={() => navigate('/vote')}>
+      <h2 
+      style={{ cursor: 'pointer' }} onClick={() => navigate('/vote')}>
         투표 페이지
       </h2>
     </div>
