@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Nav from '../components/Nav';
 import ArtistSelect from '../pages/ArtistSelect';
+import IdolHome from '../pages/Home/IdolHome';
+import ActorHome from '../pages/Home/ActorHome';
+import TrotHome from '../pages/Home/TrotHome';
 
-// home
-import Home from '../pages/Home/Home';
-import ArtistSelectBox from '../pages/Home/ArtistSelectBox';
+// 기타 페이지 import
 import Alart from '../pages/Alart/Alart';
 import MyPage from '../pages/MyPage/MyPage';
 import DM from '../pages/DM/DM';
@@ -31,8 +32,13 @@ function AppRouter() {
     <Router>
       <Nav />
       <Routes>
-        {/* home */}
-        <Route path="/" element={<Home selectedArtists={selectedArtists} />} />
+        {/* 기본 홈을 IdolHome으로 설정 */}
+        <Route path="/" element={<IdolHome selectedArtists={selectedArtists} />} />
+        <Route path="/idol" element={<IdolHome selectedArtists={selectedArtists} />} />
+        <Route path="/actor" element={<ActorHome selectedArtists={selectedArtists} />} />
+        <Route path="/trot" element={<TrotHome selectedArtists={selectedArtists} />} />
+
+        {/* 기타 페이지 */}
         <Route path="/alart" element={<Alart />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/live" element={<Live />} />
@@ -46,7 +52,7 @@ function AppRouter() {
           element={<ArtistSelect setSelectedArtists={setSelectedArtists} selectedArtists={selectedArtists} />}
         />
 
-        {/* mypage */}
+        {/* 마이페이지 세부 */}
         <Route path="/mission" element={<Mission />} />
         <Route path="/invite" element={<Invite />} />
         <Route path="/collection" element={<Collection />} />
@@ -55,7 +61,7 @@ function AppRouter() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/vote" element={<Vote />} />
 
-        {/* login */}
+        {/* 로그인 관련 */}
         <Route path="/login" element={<Login />} />
         <Route path="/manual" element={<Manual />} />
       </Routes>

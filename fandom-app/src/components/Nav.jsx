@@ -1,17 +1,50 @@
-import { Link } from 'react-router-dom';
-import './Nav.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import './Nav.css';
 
 function Nav() {
+  const [showSubButtons, setShowSubButtons] = useState(false);
+  const navigate = useNavigate();
+  const navRef = useRef();
+
+  const toggleSubButtons = () => {
+    setShowSubButtons(!showSubButtons);
+  };
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setShowSubButtons(false);
+  };
+
+  // 화면 아무 데나 클릭하면 버튼 숨김
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setShowSubButtons(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
+    <nav className="nav-container" ref={navRef}>
+      <Link to="/">Home</Link>
+      <Link to="/dm">Chat</Link>
+      <button className="idol-button" onClick={toggleSubButtons}>i-dol</button>
+      <Link to="/fashion">Fashion</Link>
+      <Link to="/mypage">MyPage</Link>
+      <Link to="/login">Login</Link>
 
-    <nav style={{ padding: '10px', borderBottom: '1px solid #ddd' }}>
-      <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
-      <Link to="/dm" style={{ marginRight: '10px' }}>Chat</Link>
-      <Link to="/artist" style={{ marginRight: '10px' }}>Artist</Link>
-      <Link to="/fashion" style={{ marginRight: '10px' }}>Fashion</Link>
-      <Link to="/mypage" style={{ marginRight: '10px' }}>MyPage</Link>
-      <Link to="/login" style={{ marginRight: '10px' }}>Login</Link>
-
+      {showSubButtons && (
+        <div className="sub-buttons">
+          <button onClick={() => handleNavigate('/actor')}>Actor</button>
+          <button onClick={() => handleNavigate('/trot')}>Trot</button>
+        </div>
+      )}
     </nav>
   );
 }
