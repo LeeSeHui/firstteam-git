@@ -19,7 +19,7 @@ const Artist = () => {
       </section>
 
       {/* 탭 메뉴 */}
-      <nav className="artist-tabs">
+      <div className="artist-tabs">
         <ul>
           <li className="active">Highlight</li>
           <li>Artist</li>
@@ -27,7 +27,7 @@ const Artist = () => {
           <li>Membership</li>
           <li>Notice</li>
         </ul>
-      </nav>
+      </div>
 
       {/* 방송 카드 */}
       <section className="broadcast-card">

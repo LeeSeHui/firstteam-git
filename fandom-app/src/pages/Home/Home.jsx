@@ -20,7 +20,7 @@ const Home = ({ selectedArtists }) => {
     navigate('/alart'); // ✅ 클릭 시 '/alarm' 페이지로 이동
   };
   return (
-    <div>
+    <div className='home-page'>
       <div className="home-top">
         <p><img src={logo} alt="로고" /></p>
         <p onClick={handleAlarmClick} style={{ cursor: 'pointer' }}>
