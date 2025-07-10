@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import './Nav.css';
@@ -17,7 +16,6 @@ function Nav() {
     setShowSubButtons(false);
   };
 
-  // 화면 아무 데나 클릭하면 버튼 숨김
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -46,5 +44,8 @@ function Nav() {
           <button onClick={() => handleNavigate('/trot')}>Trot</button>
         </div>
       )}
+    </nav>
+  );
+}
 
 export default Nav;
