@@ -19,8 +19,26 @@ import ArtistMembership from '../pages/Artist/ArtistMembership';
 import ArtistNotice from '../pages/Artist/ArtistNotice';
 import Artist from '../pages/Artist/Artist';
 
-// MyPage
+// 기타 페이지 import
+import Alart from '../pages/Alart/Alart';
+import DM from '../pages/DM/DM';
+import Login from '../pages/Auth/Login';
+import Manual from '../pages/Auth/Manual';
+import Fashion from '../pages/Fashion/Fashion';
 import MyPage from '../pages/MyPage/MyPage';
+
+
+// home
+import Quiz from '../pages/Quiz/Quiz';
+import Live from '../pages/Live/Live';
+import Chart from '../pages/Chart/Chart';
+import Vote from '../pages/Home/Vote';
+
+
+
+// mypage
+
+// MyPage
 import Mission from '../pages/MyPage/Mission';
 import Invite from '../pages/MyPage/Invite';
 import Collection from '../pages/MyPage/Collection';
@@ -28,16 +46,9 @@ import Payment from '../pages/MyPage/Payment';
 import History from '../pages/MyPage/History';
 import Settings from '../pages/MyPage/Settings';
 
-// 기타
-import Alart from '../pages/Alart/Alart';
-import DM from '../pages/DM/DM';
-import Login from '../pages/Auth/Login';
-import Manual from '../pages/Auth/Manual';
-import Fashion from '../pages/Fashion/Fashion';
-import Quiz from '../pages/Quiz/Quiz';
-import Live from '../pages/Live/Live';
-import Chart from '../pages/Chart/Chart';
-import Vote from '../pages/Vote/Vote';
+
+
+
 
 
 function AppRouter() {

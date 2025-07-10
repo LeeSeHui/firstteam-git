@@ -12,10 +12,27 @@ function Nav({ setMainHome }) {
 
   useEffect(() => {
     // Idol, Actor, Trot 페이지에 들어오면 currentMain 갱신
-    if (location.pathname === '/idol' || location.pathname === '/actor' || location.pathname === '/trot') {
+    if (
+      location.pathname === '/idol' ||
+      location.pathname === '/actor' ||
+      location.pathname === '/trot'
+    ) {
       setCurrentMain(location.pathname);
     }
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setShowSubButtons(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   const toggleSubButtons = () => {
     setShowSubButtons(!showSubButtons);
@@ -38,7 +55,9 @@ function Nav({ setMainHome }) {
     <nav className="nav-container" ref={navRef}>
       <Link to="/">Home</Link>
       <Link to="/dm">Chat</Link>
-      <button className="idol-button" onClick={toggleSubButtons}>{buttonText}</button>
+      <button className="idol-button" onClick={toggleSubButtons}>
+        {buttonText}
+      </button>
       <Link to="/fashion">Fashion</Link>
       <Link to="/mypage">MyPage</Link>
       <Link to="/login">Login</Link>
