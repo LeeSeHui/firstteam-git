@@ -8,6 +8,15 @@ function Nav({ setMainHome }) {
   const location = useLocation();
   const navRef = useRef();
 
+  const [currentMain, setCurrentMain] = useState('/idol'); // 기본 메인 값
+
+  useEffect(() => {
+    // Idol, Actor, Trot 페이지에 들어오면 currentMain 갱신
+    if (location.pathname === '/idol' || location.pathname === '/actor' || location.pathname === '/trot') {
+      setCurrentMain(location.pathname);
+    }
+  }, [location.pathname]);
+
   const toggleSubButtons = () => {
     setShowSubButtons(!showSubButtons);
   };
@@ -16,28 +25,14 @@ function Nav({ setMainHome }) {
     setMainHome(path);
     navigate(path);
     setShowSubButtons(false);
+    setCurrentMain(path); // 버튼 클릭 시에도 currentMain 갱신
   };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setShowSubButtons(false);
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
-  const currentPath = location.pathname;
 
   // ✅ 버튼에 표시할 텍스트 결정
   let buttonText = 'i-dol';
-  if (currentPath === '/idol') buttonText = 'Idol';
-  else if (currentPath === '/actor') buttonText = 'Actor';
-  else if (currentPath === '/trot') buttonText = 'Trot';
+  if (currentMain === '/idol') buttonText = 'Idol';
+  else if (currentMain === '/actor') buttonText = 'Actor';
+  else if (currentMain === '/trot') buttonText = 'Trot';
 
   return (
     <nav className="nav-container" ref={navRef}>
@@ -50,27 +45,27 @@ function Nav({ setMainHome }) {
 
       {showSubButtons && (
         <div className="sub-buttons">
-          {currentPath === '/' && (
-            <>
-              <button onClick={() => handleNavigate('/trot')}>Trot</button>
-              <button onClick={() => handleNavigate('/actor')}>Actor</button>
-            </>
-          )}
-          {currentPath === '/idol' && (
+          {currentMain === '/idol' && (
             <>
               <button onClick={() => handleNavigate('/actor')}>Actor</button>
               <button onClick={() => handleNavigate('/trot')}>Trot</button>
             </>
           )}
-          {currentPath === '/actor' && (
+          {currentMain === '/actor' && (
             <>
               <button onClick={() => handleNavigate('/idol')}>Idol</button>
               <button onClick={() => handleNavigate('/trot')}>Trot</button>
             </>
           )}
-          {currentPath === '/trot' && (
+          {currentMain === '/trot' && (
             <>
               <button onClick={() => handleNavigate('/idol')}>Idol</button>
+              <button onClick={() => handleNavigate('/actor')}>Actor</button>
+            </>
+          )}
+          {currentMain === '/' && (
+            <>
+              <button onClick={() => handleNavigate('/trot')}>Trot</button>
               <button onClick={() => handleNavigate('/actor')}>Actor</button>
             </>
           )}
