@@ -21,7 +21,6 @@ import Artist from '../pages/Artist/Artist';
 
 // MyPage
 import MyPage from '../pages/MyPage/MyPage';
-import Vote from '../pages/MyPage/Vote';
 import Mission from '../pages/MyPage/Mission';
 import Invite from '../pages/MyPage/Invite';
 import Collection from '../pages/MyPage/Collection';
@@ -38,6 +37,8 @@ import Fashion from '../pages/Fashion/Fashion';
 import Quiz from '../pages/Quiz/Quiz';
 import Live from '../pages/Live/Live';
 import Chart from '../pages/Chart/Chart';
+import Vote from '../pages/Vote/Vote';
+
 
 function AppRouter() {
   const [selectedArtists, setSelectedArtists] = useState([]);
@@ -52,6 +53,7 @@ function AppRouter() {
         <Route path="/idol" element={<IdolHome selectedArtists={selectedArtists} />} />
         <Route path="/actor" element={<ActorHome selectedArtists={selectedArtists} />} />
         <Route path="/trot" element={<TrotHome selectedArtists={selectedArtists} />} />
+        
 
         {/* Artist Select */}
         <Route
@@ -79,6 +81,7 @@ function AppRouter() {
         <Route path="/dm" element={<DM />} />
         <Route path="/fashion" element={<Fashion />} />
         <Route path="/vote" element={<Vote />} />
+
 
         {/* MyPage 기능 */}
         <Route path="/mission" element={<Mission />} />
