@@ -10,14 +10,15 @@ import Manual from '../pages/Auth/Manual';
 import Fashion from '../pages/Fashion/Fashion';
 import MembershipInfo from '../pages/Artist/MembershipInfo';
 
+
 // home
-import Vote from '../pages/MyPage/Vote';
 import Quiz from '../pages/Quiz/Quiz';
 import Live from '../pages/Live/Live';
 import Artist from '../pages/Artist/Artist';
 import ArtistSelectBox from '../pages/Home/ArtistSelectBox';
 import Home from '../pages/Home/Home';
 import Chart from '../pages/Chart/Chart';
+import Vote from '../pages/Home/Vote';
 
 
 // mypage
