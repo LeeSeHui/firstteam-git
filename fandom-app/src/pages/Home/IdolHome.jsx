@@ -9,6 +9,7 @@ import ChartSection from './ChartSection';
 import YoutubeSection from './YoutubeSection';
 import logo from '../../assets/logo.png';
 import alarm from '../../assets/alarm.png';
+import mainidol from '../../assets/main-idol-final.png';
 import './HomeLayout.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ const IdolHome = ({ selectedArtists }) => {
 
   return (
     <div className="home-page">
+      <img src={mainidol} alt="main_idol" className="main-idol-final" />
       <div className="home-top">
         <p><img src={logo} alt="로고" /></p>
         <p onClick={handleAlarmClick} style={{ cursor: 'pointer' }}>
