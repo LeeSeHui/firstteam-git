@@ -6,11 +6,11 @@ import BackButton from '../../components/Backbutton';
 
 const menuItems = [
   { title: '미션 하기', to: '/mission' },
-  { title: '친구 초대', to: '/invite' },
+  // { title: '친구 초대', to: '/invite' },
   { title: '컬렉션', to: '/collection' },
   { title: '결제 내역', to: '/payment' },
   { title: '최근 본 미디어', to: '/history' },
-  { title: '어플 설정', to: '/settings' },
+  // { title: '어플 설정', to: '/settings' },
   { title: '투표 페이지', to: '/vote' },
 ];
 

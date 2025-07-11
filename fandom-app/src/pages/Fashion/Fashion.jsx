@@ -46,7 +46,7 @@ const Fashion = () => {
           <p className="card-date">2025.07.04</p>
           <h3 className="card-title">지드래곤 공항패션 모자 정보</h3>
           <span className="card-count">1/13</span>
-          <div className="product-price">G-DRAGON Power...<br />215,000원</div>
+          {/* <div className="product-price">G-DRAGON Power...<br />215,000원</div> */}
         </div>
       </div>
 
@@ -65,14 +65,14 @@ const Fashion = () => {
         </div>
       </div>
 
-      {/* 하단 내비게이션 */}
+      {/* 하단 내비게이션
       <nav className="bottom-nav">
         <button className="nav-item active">home</button>
         <button className="nav-item">chat</button>
         <button className="nav-item center">i-dol</button>
         <button className="nav-item">Star Lens</button>
         <button className="nav-item">me</button>
-      </nav>
+      </nav> */}
     </div>
   );
 };

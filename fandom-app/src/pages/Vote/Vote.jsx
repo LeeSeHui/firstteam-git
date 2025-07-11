@@ -4,6 +4,7 @@ import bannerImg from '../../assets/votemain.png'; // 상단 배너 이미지
 import profile1 from '../../assets/vote.png';
 import profile2 from '../../assets/vote.png';
 import profile3 from '../../assets/vote.png';
+import BackButton from '../../components/Backbutton';
 
 const voteList = [
   {
@@ -28,7 +29,9 @@ const voteList = [
 
 const Vote = () => {
   return (
+    
     <div className="vote-container">
+      <BackButton />
       <img src={bannerImg} alt="K-Chart Vote Banner" className="vote-banner" />
       <div className="vote-info">
         <p className="vote-title">[798회] KBS 뮤직뱅크 K-Chart 1위 후보 주간 투표</p>

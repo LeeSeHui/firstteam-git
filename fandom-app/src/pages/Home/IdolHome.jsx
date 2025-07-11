@@ -37,7 +37,7 @@ const IdolHome = ({ selectedArtists }) => {
       <YoutubeSection />
       <QuizSection />
       <VoteSection />
-      <ChartSection />
+      {/* <ChartSection /> */}
       <AdSection />
     </div>
   );
