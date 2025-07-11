@@ -1,102 +1,112 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// 공통 컴포넌트
-import Nav from '../components/Nav';
+// Onboarding
+import Splash from '../pages/Onboarding/Splash';
+import Login from '../pages/Onboarding/Login';
+import Manual from '../pages/Onboarding/Manual';
+import SelectCharacter from '../pages/Onboarding/SelectCharacter';
+import SelectArtist from '../pages/Onboarding/SelectArtist';
+import Welcome from '../pages/Onboarding/Welcome';
+import CharacterDone from '../pages/Onboarding/CharactorDone';
+import WelcomePopup from '../pages/Onboarding/WelcomePopup';
 
-// 홈
-import IdolHome from '../pages/Home/IdolHome';
-import ActorHome from '../pages/Home/ActorHome';
-import TrotHome from '../pages/Home/TrotHome';
+// Home
+import Home from '../pages/Home/Home';
+import Live from '../pages/Home/Live';
+import PostDetail from '../pages/Home/PostDetail';
+import Quiz from '../pages/Home/Quiz';
+import Vote from '../pages/Home/Vote';
 
-// Artist
-import ArtistSelect from '../pages/ArtistSelect';
-import MembershipInfo from '../pages/Artist/MembershipInfo';
-import ArtistHighlight from '../pages/Artist/ArtistHighlight';
-import ArtistDetail from '../pages/Artist/ArtistDetail';
-import ArtistGallery from '../pages/Artist/ArtistGallery';
-import ArtistMembership from '../pages/Artist/ArtistMembership';
-import ArtistNotice from '../pages/Artist/ArtistNotice';
-import Artist from '../pages/Artist/Artist';
+// Artist > Actor/Idol/Trot 구조 동일
+import ArtistBoard from '../pages/Actor/Artist/ArtistBoard';
+import ArtistPostDetail from '../pages/Actor/Artist/PostDetail';
+import Gallery from '../pages/Actor/Artist/Gallery';
+import Highlight from '../pages/Actor/Artist/Highlight';
+import ArtistLive from '../pages/Actor/Artist/Live';
+import ArtistVote from '../pages/Actor/Artist/Vote';
+import ArtistInfoBoard from '../pages/Actor/Artist/InfoBoard';
+import ArtistLetter from '../pages/Actor/Artist/Membership/ArtistLetter';
+import Membership from '../pages/Actor/Artist/Membership/Membership';
+import MembershipPost from '../pages/Actor/Artist/Membership/PostDetail';
+import NoticeBoard from '../pages/Actor/Artist/Notice/InfoBoard';
+import Notice from '../pages/Actor/Artist/Notice/Notice';
+
+// Chat
+import Chat from '../pages/Chat/Chat';
+import ChatList from '../pages/Chat/ChatList';
+import ChatRoom from '../pages/Chat/ChatRoom';
+
+// Fashion
+import Fashion from '../pages/Fashion/Fashion';
 
 // MyPage
 import MyPage from '../pages/MyPage/MyPage';
-import Mission from '../pages/MyPage/Mission';
-import Invite from '../pages/MyPage/Invite';
+import Challenge from '../pages/MyPage/Challenge';
 import Collection from '../pages/MyPage/Collection';
-import Payment from '../pages/MyPage/Payment';
-import History from '../pages/MyPage/History';
-import Settings from '../pages/MyPage/Settings';
+import Media from '../pages/MyPage/Media';
+import Mission from '../pages/MyPage/Mission';
+import Payment from '../pages/Payment'; // 아마도 MyPage 하위?
 
-// 기타
-import Alart from '../pages/Alart/Alart';
-import DM from '../pages/DM/DM';
-import Login from '../pages/Auth/Login';
-import Manual from '../pages/Auth/Manual';
-import Fashion from '../pages/Fashion/Fashion';
-import Quiz from '../pages/Quiz/Quiz';
-import Live from '../pages/Live/Live';
-import Chart from '../pages/Chart/Chart';
-import Vote from '../pages/Vote/Vote';
-
-
-function AppRouter() {
-  const [selectedArtists, setSelectedArtists] = useState([]);
-  const [mainHome, setMainHome] = useState('/idol'); // 기본 홈 경로
-
+const AppRouter = () => {
   return (
     <Router>
-      <Nav setMainHome={setMainHome} />
       <Routes>
-        {/* "/" 접근 시 현재 설정된 mainHome으로 리다이렉트 */}
-        <Route path="/" element={<Navigate to={mainHome} />} />
-        <Route path="/idol" element={<IdolHome selectedArtists={selectedArtists} />} />
-        <Route path="/actor" element={<ActorHome selectedArtists={selectedArtists} />} />
-        <Route path="/trot" element={<TrotHome selectedArtists={selectedArtists} />} />
-        
 
-        {/* Artist Select */}
-        <Route
-          path="/select-artist"
-          element={<ArtistSelect setSelectedArtists={setSelectedArtists} selectedArtists={selectedArtists} />}
-        />
-        <Route path="/membership" element={<MembershipInfo />} />
-
-        {/* Artist 중첩 라우트 */}
-        <Route path="/artist" element={<Artist />}>
-          <Route index element={<ArtistHighlight />} />
-          <Route path="highlight" element={<ArtistHighlight />} />
-          <Route path="detail" element={<ArtistDetail />} />
-          <Route path="gallery" element={<ArtistGallery />} />
-          <Route path="membership" element={<ArtistMembership />} />
-          <Route path="notice" element={<ArtistNotice />} />
-        </Route>
-
-        {/* 기타 페이지 */}
-        <Route path="/alart" element={<Alart />} />
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/live" element={<Live />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/chart" element={<Chart />} />
-        <Route path="/dm" element={<DM />} />
-        <Route path="/fashion" element={<Fashion />} />
-        <Route path="/vote" element={<Vote />} />
-
-
-        {/* MyPage 기능 */}
-        <Route path="/mission" element={<Mission />} />
-        <Route path="/invite" element={<Invite />} />
-        <Route path="/collection" element={<Collection />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/settings" element={<Settings />} />
-
-        {/* 로그인 관련 */}
+        {/* Onboarding */}
+        <Route path="/" element={<Splash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/manual" element={<Manual />} />
+        <Route path="/select-character" element={<SelectCharacter />} />
+        <Route path="/select-artist" element={<SelectArtist />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/character-done" element={<CharacterDone />} />
+        <Route path="/welcome-popup" element={<WelcomePopup />} />
+
+        {/* Home */}
+        <Route path="/home" element={<Home />} />
+        <Route path="/home/live" element={<Live />} />
+        <Route path="/home/post" element={<PostDetail />} />
+        <Route path="/home/quiz" element={<Quiz />} />
+        <Route path="/home/vote" element={<Vote />} />
+
+        {/* Artist (Actor 기준, Idol/Trot도 동일하게 설정) */}
+        <Route path="/artist/board" element={<ArtistBoard />} />
+        <Route path="/artist/post" element={<ArtistPostDetail />} />
+        <Route path="/artist/gallery" element={<Gallery />} />
+        <Route path="/artist/highlight" element={<Highlight />} />
+        <Route path="/artist/highlight/live" element={<ArtistLive />} />
+        <Route path="/artist/highlight/vote" element={<ArtistVote />} />
+        <Route path="/artist/highlight/info" element={<ArtistInfoBoard />} />
+
+        {/* Membership */}
+        <Route path="/artist/membership/letter" element={<ArtistLetter />} />
+        <Route path="/artist/membership" element={<Membership />} />
+        <Route path="/artist/membership/post" element={<MembershipPost />} />
+
+        {/* Notice */}
+        <Route path="/artist/notice" element={<Notice />} />
+        <Route path="/artist/notice/info" element={<NoticeBoard />} />
+
+        {/* Chat */}
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/chat/list" element={<ChatList />} />
+        <Route path="/chat/room" element={<ChatRoom />} />
+
+        {/* Fashion */}
+        <Route path="/fashion" element={<Fashion />} />
+
+        {/* MyPage */}
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mypage/challenge" element={<Challenge />} />
+        <Route path="/mypage/collection" element={<Collection />} />
+        <Route path="/mypage/media" element={<Media />} />
+        <Route path="/mypage/mission" element={<Mission />} />
+        <Route path="/mypage/payment" element={<Payment />} />
+
       </Routes>
     </Router>
   );
-}
+};
 
 export default AppRouter;
