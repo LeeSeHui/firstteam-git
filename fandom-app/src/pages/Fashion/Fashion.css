@@ -261,3 +261,16 @@
   margin: 0 auto;
   position: relative;
 }
+
+.category-filter {
+  display: flex;
+  gap: 8px;
+  margin: 10px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* IE/Edge */
+}
+
+.category-filter::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

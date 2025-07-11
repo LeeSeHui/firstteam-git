@@ -8,7 +8,9 @@ import DM from '../pages/DM/DM';
 import Login from '../pages/Auth/Login';
 import Manual from '../pages/Auth/Manual';
 import Fashion from '../pages/Fashion/Fashion';
+import FashionDetail from '../pages/Fashion/FashionDetail';
 import MembershipInfo from '../pages/Artist/MembershipInfo';
+
 
 
 // home
@@ -50,6 +52,7 @@ function AppRouter() {
         <Route path="/chart" element={<Chart />} />
         <Route path="/dm" element={<DM />} />
         <Route path="/fashion" element={<Fashion />} />
+        <Route path="/fashion/:id" element={<FashionDetail />} />
         <Route path="/membership" element={<MembershipInfo />} />
         <Route path="/select-artist" element={<ArtistSelectBox />}/>
         
