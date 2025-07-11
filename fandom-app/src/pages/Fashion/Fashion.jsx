@@ -73,6 +73,7 @@ const Fashion = () => {
         <button className="nav-item">Star Lens</button>
         <button className="nav-item">me</button>
       </nav> */}
+      {/* 아무거나수정 */}
     </div>
   );
 };
