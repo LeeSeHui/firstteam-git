@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 
@@ -15,7 +15,9 @@ import live03 from '../../../assets/Home/live3.png';
 import artist01 from '../../../assets/Home/artist01.png';
 import check from '../../../assets/Home/check.png';
 import save from '../../../assets/Home/save.png';
-import photo1 from '../../../assets/Home/photo01.png';
+import photo01 from '../../../assets/Home/photo01.png';
+import photo02 from '../../../assets/Home/photo02.png';
+import photo03 from '../../../assets/Home/photo03.png';
 import thumb1 from '../../../assets/Home/youtube01.png';
 import thumb2 from '../../../assets/Home/youtube02.png';
 import thumb3 from '../../../assets/Home/youtube03.png';
@@ -36,15 +38,41 @@ import "slick-carousel/slick/slick-theme.css";
 const Home = () => {
   const navigate = useNavigate();
 
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [comments, setComments] = useState([
+  { username: "너누구야", message: "❤️ 너무 예뻐요!" },
+  { username: "너뭐이야", message: "휴가 잘 다녀오세요! 🌴" },
+  { username: "뾰루지소녀", message: "귀척ㅋ 우웩" },
+  { username: "말티즈이", message: "GD 오빠보면 눈 깔아라;" },
+  { username: "꽥괙이", message: "나보다 못생긴듯ㅋ" },
+  { username: "먺짱이", message: "언니 뭐 먹을거야??????????" },
+  { username: "종민", message: "세희 금요일 소주 ㄱ??" },
+]);
+  const [newComment, setNewComment] = useState("");
+
+  const MAX_COMMENTS = 4;
+
   const AlarmClick = () => navigate('/idol/home/alarm');
   const handleMypageClick = () => navigate('/idol/mypage');
   const handleArtistClick = () => navigate('/idol/artist/highlight');
-  const ArtistSectionClick = () => navigate('/idol/artist/artist-board');
   const handlePlusClick = () => navigate('/onboarding/select-artist');
   const handleLiveClick = () => navigate('/idol/home/live');
   const handleVoteCardClick = () => navigate("/idol/home/vote");
   const handleMembershipClick = () => navigate("/idol/home/membership");
   const handleQuizClick = () => navigate('/idol/home/quiz');
+
+  const handleAddComment = () => {
+    if (newComment.trim() === "") return;
+    const newObj = { username: "me", message: newComment };
+
+    let updatedComments = [...comments, newObj];
+    if (updatedComments.length > MAX_COMMENTS) {
+      updatedComments = updatedComments.slice(1);
+    }
+
+    setComments(updatedComments);
+    setNewComment("");
+  };
 
   const quizData = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
@@ -52,9 +80,7 @@ const Home = () => {
     desc: `맞추신분들께는 포인트를 적립해드려요.`,
   }));
 
-  const membershipData = Array.from(
-  { length: 12 },
-  (_, i) => ({
+  const membershipData = Array.from({ length: 12 }, (_, i) => ({
     id: i + 1,
     group: "BTS",
     title: "ARMY\nMEMBERSHIP",
@@ -62,8 +88,7 @@ const Home = () => {
     img: membershipCardImg,
     current: `${i + 1}`,
     total: "12",
-  })
-);
+  }));
 
   const sliderSettings = {
     dots: false,
@@ -107,7 +132,6 @@ const Home = () => {
         </div>
       </div>
 
-
       {/* 라이브 */}
       <div className="liveSection">
         <p>LIVE NOW!</p>
@@ -119,10 +143,13 @@ const Home = () => {
       </div>
 
       {/* 아티스트 게시글 */}
-      <div className="artistSection" onClick={ArtistSectionClick}>
+      <div
+        className={`artistSection ${isExpanded ? 'expanded' : ''}`}
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
         <div className="top">
-          <div className="profile"  onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
-            <img src={artist01} alt="profile"/>
+          <div className="profile" onClick={(e) => e.stopPropagation()}>
+            <img src={artist01} alt="profile" />
             <div className="name">
               <span>JENNIE <img src={check} alt="check" /></span>
               <span>06.28. 03:06</span>
@@ -134,13 +161,59 @@ const Home = () => {
           여러분~~ 저 휴가왔어요!<br />
           다들 여름 휴가 조심히 다녀오세요!!💜
         </p>
+
         <div className="photoWrap">
-          <img src={photo1} alt="photo1" />
+          {!isExpanded ? (
+            <>
+              <img src={photo01} alt="photo1" />
+              <div className="iconWrap">
+                <span>🤍 10K+</span>
+                <span>💬 10K+</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <img src={photo02} alt="photo2" />
+              <img src={photo03} alt="photo3" />
+            </>
+          )}
         </div>
-        <div className="iconWrap">
-          <span>🤍 10K+</span>
-          <span>💬 10K+</span>
-        </div>
+
+        {isExpanded && (
+          <div
+            className="commentSection"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className="commentCount">전체 댓글 {comments.length}</p>
+            <div className="comments">
+              {comments.map((comment, idx) => (
+                <div className="commentRow" key={idx}>
+                  <div className="commentText">
+                    <span className="username">{comment.username}</span>
+                    <span className="message">{comment.message}</span>
+                  </div>
+                  <span className="heart">🤍</span>
+                </div>
+              ))}
+            </div>
+            <div className="commentInputWrap" onClick={(e) => e.stopPropagation()}>
+              <input
+                type="text"
+                placeholder="예쁜 댓글을 입력하세요..."
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+              />
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleAddComment();
+                }}
+              >
+                등록
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 유튜브 */}
@@ -231,7 +304,6 @@ const Home = () => {
           ))}
         </Slider>
       </div>
-
     </div>
   );
 };

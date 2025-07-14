@@ -25,9 +25,26 @@ main {flex: 1;}
 .artistSection .name span:last-child {font-size: 14px; color: #888;}
 .artistSection .save img {width: 17px; height: 24px;}
 .artistSection .text {font-size: 18px; margin: 10px 0;}
-.artistSection .photoWrap {display: flex; overflow: hidden;}
-.artistSection .photoWrap img {width: 100%; border-radius: 10px;}
+.artistSection .photoWrap {display: flex; flex-direction: column; gap: 10px;}
+.artistSection .photoWrap img {width: 100%; display: block; border-radius: 10px;}
 .artistSection .iconWrap {display: flex; gap: 15px; font-size: 18px; margin-top: 8px;}
+
+/* 댓글 */
+.commentSection { margin-top: 10px; border-top: 1px solid #ddd; padding-top: 10px; }
+.commentCount { font-weight: bold; margin-bottom: 20px; }
+.comments .commentRow { display: flex; justify-content: space-between; align-items: center; margin: 6px 0; }
+.comments .commentText { display: flex; flex-direction: column; }
+.comments .username { font-weight: bold; font-size: 14px; }
+.comments .message { font-size: 14px; margin-bottom: 20px;}
+.heart { cursor: pointer; color: #ccc; }
+.commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px;  background: #ffcc00; padding: 8px 10px; border-radius: 25px; }
+.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; }
+.commentInputWrap button { padding: 6px 16px; background: #222; color: #fff; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; }
+
+
+
+
+
 
 
 .videoSection {margin: 20px 0;}
