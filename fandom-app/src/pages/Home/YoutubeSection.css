@@ -1,0 +1,3 @@
+.youtube-link {display: block;text-decoration: none;color: inherit;cursor: pointer;}
+
+.youtube-link:hover {color: #333;}
