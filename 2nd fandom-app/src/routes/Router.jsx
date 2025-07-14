@@ -78,6 +78,7 @@ const AppRouterContent = () => {
       {!shouldHideNav && <Chatbot />}
 
       <Routes>
+
         {/* Components */}
         <Route path="/splash" element={<Splash />} />
         <Route path="/attendance" element={<Attendance />} />
