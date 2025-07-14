@@ -1,0 +1,224 @@
+.artist-header {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px 20px;
+    background: #f2f2f2;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+  }
+  
+  .artist-profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .artist-name {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .membership-btn {
+    margin-top: 10px;
+    background: #e3f2fd;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* 탭 메뉴 */
+  .artist-tabs {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .artist-tabs ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 0;
+  }
+  
+  .artist-tabs li {
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .artist-tabs li.active {
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #888;
+  }
+  
+  /* 방송 카드 */
+  .broadcast-card {
+    margin: 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 16px;
+  }
+  
+  .broadcast-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .broadcast-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .message-btn {
+    background: #e3f2fd;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  /* 공지사항 */
+  .notice-list {
+    margin: 20px;
+  }
+  
+  .notice-item {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+  }
+  
+  /* 투표 배너 */
+  .vote-banner {
+    margin: 20px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* 아티스트 피드 */
+  .artist-feed {
+    margin: 20px;
+  }
+  
+  .feed-post {
+    background: #fff;
+    padding: 14px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  
+  .feed-header {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  
+  .feed-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .feed-images img {
+    width: 48%;
+    border-radius: 8px;
+    margin-right: 4%;
+  }
+  
+  .feed-images img:last-child {
+    margin-right: 0;
+  }
+  
+  /* 라이브 리플레이 */
+  .live-replay {
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  
+  .live-replay img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .live-replay p {
+    font-size: 13px;
+    color: #888;
+  }
+
+  .vote-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .vote-title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .vote-banner-btn {
+    background: #bbbbbb;
+    font-size: 16px;
+    cursor: pointer;
+    color: #222;
+  }
+
+  .artist-tabs ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .artist-tabs a {
+    color: #888;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+
+  .artist-tabs ul li a {
+    color: #888;
+    text-decoration: none;
+  }
+  
+  .artist-tabs ul li a.active {
+    color: #000;
+    font-weight: 700;
+    border-bottom: 2px solid #FFA500;
+  }
+
+  .artist-tabs ul li .active {
+    font-weight: bold;
+    color: orange;
+    border-bottom: 2px solid orange;
+  }
