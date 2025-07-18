@@ -1,17 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Router, Routes, Route, Navigate, useLocation, Outlet } from 'react-router-dom';
 
 // components
 import Nav from '../components/Nav';
 import Chatbot from '../components/Chatbot';
-import Attendance from '../components/Attendance';
+import Attendance from '../pages/Attendance';
 
 
 // Onboarding
 import Splash from '../pages/Onboarding/Splash';
 import Login from '../pages/Onboarding/Login';
 import Manual from '../pages/Onboarding/Manual';
-import SelectCharacter from '../pages/Onboarding/SelectCharacter';
+import Nickname from '../pages/Onboarding/Nickname';
 import SelectArtist from '../pages/Onboarding/SelectArtist';
 import Welcome from '../pages/Onboarding/Welcome';
 
@@ -26,7 +26,6 @@ import IdolMyPage from '../pages/Idol/MyPage/MyPage';
 import IdolMembership from '../pages/Idol/Home/Membership';
 
 // idol-mypage
-import IdolMission from '../pages/Idol/MyPage/Mission';
 import IdolCollection from '../pages/Idol/MyPage/Collection';
 import IdolChallenge from '../pages/Idol/MyPage/Challenge';
 import IdolMedia from '../pages/Idol/MyPage/Media';
@@ -40,6 +39,16 @@ import IdolGallery from '../pages/Idol/Artist/Gallery/Gallery';
 import IdolMembership2 from '../pages/Idol/Artist/Membership/Membership';
 import IdolNotice from '../pages/Idol/Artist/Notice/Notice';
 
+// idol-chat
+import IdolChat from '../pages/Idol/Chat/Chat';
+
+// fashion
+import Fashion from '../pages/Idol/Fashion/Fashion';
+import FashionAll from '../pages/Idol/Fashion/FashionAll';
+import Makeup from '../pages/Idol/Fashion/Makeup';
+import Airport from '../pages/Idol/Fashion/Airport';
+import Daily from '../pages/Idol/Fashion/Daily';
+import Sports from '../pages/Idol/Fashion/Sports';
 
 
 
@@ -57,6 +66,7 @@ import TrotPostDetail from '../pages/Trot/Home/PostDetail';
 import TrotQuiz from '../pages/Trot/Home/Quiz';
 import TrotVote from '../pages/Trot/Home/Vote';
 
+
 const AppRouterContent = () => {
   const location = useLocation();
 
@@ -65,9 +75,10 @@ const AppRouterContent = () => {
     '/splash',
     '/onboarding/login',
     '/manual',
-    '/select-character',
-    '/select-artist',
+    '/nickname',
+    '/onboarding/select-artist',
     '/welcome',
+    '/idol/home/quiz'
   ];
 
   const shouldHideNav = hideNavPaths.includes(location.pathname);
@@ -86,9 +97,10 @@ const AppRouterContent = () => {
         {/* Onboarding */}
         <Route path="/onboarding/login" element={<Login />} />
         <Route path="/manual" element={<Manual />} />
-        <Route path="/select-character" element={<SelectCharacter />} />
+        <Route path="/nickname" element={<Nickname />} />
         <Route path="/onboarding/select-artist" element={<SelectArtist />} />
         <Route path="/welcome" element={<Welcome />} />
+
 
         {/* Idol */}
         <Route path="/idol/home" element={<IdolHome />} />
@@ -100,7 +112,6 @@ const AppRouterContent = () => {
         <Route path="/idol/mypage" element={<IdolMyPage />} />
         <Route path="/idol/home/membership" element={<IdolMembership />} />
 
-        <Route path="/idol/mypage/mission" element={<IdolMission />} />
         <Route path="/idol/mypage/collection" element={<IdolCollection />} />
         <Route path="/idol/mypage/challenge" element={<IdolChallenge />} />
         <Route path="/idol/mypage/media" element={<IdolMedia />} />
@@ -113,8 +124,21 @@ const AppRouterContent = () => {
           <Route path="/idol/artist/artist-membership" element={<IdolMembership2 />} />
           <Route path="/idol/artist/artist-notice" element={<IdolNotice />} />
         </Route>
-        
 
+        {/* idol-패션 */}
+        
+          <Route path="/idol/fashion" element={<Fashion />}>
+            <Route path="/idol/fashion/all" element={<FashionAll />} />
+            <Route path="/idol/fashion/makeup" element={<Makeup />} />
+            <Route path="/idol/fashion/airport" element={<Airport />} />
+            <Route path="/idol/fashion/daily" element={<Daily />} />
+            <Route path="/idol/fashion/sports" element={<Sports />} />
+          </Route>
+
+
+        {/* idol-nav */}
+        <Route path="/idol/chat" element={<IdolChat />} />
+        
         {/* Actor */}
         <Route path="/actor/home" element={<ActorHome />} />
         <Route path="/actor/home/live" element={<ActorLive />} />
@@ -137,11 +161,7 @@ const AppRouterContent = () => {
 };
 
 const AppRouter = () => {
-  return (
-    <Router>
-      <AppRouterContent />
-    </Router>
-  );
+  return <AppRouterContent />;
 };
 
 export default AppRouter;

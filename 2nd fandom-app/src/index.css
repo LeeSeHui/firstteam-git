@@ -2,5 +2,27 @@
   font-family: "Pretendard";
   src: url('/font/variable/PretendardVariable.ttf');
 }
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
 
-  body * {font-family: "Pretendard", sans-serif;}
+body * {font-family: "Pretendard", sans-serif;}
+#root {flex: 1; display: flex; flex-direction:column;}
+
+.container {padding: 94px 16px; box-sizing: border-box;}
+.dark .Section {background: #212121;}
+body.light {background-color: white; color: #121212;}
+
+body.dark {background-color: #121212;color: #fff;}
+
+/* 섹션, 박스 같은 요소에 테마별 스타일 추가 */
+.box {background-color: white;}
+body.dark .box {background-color: #222;}

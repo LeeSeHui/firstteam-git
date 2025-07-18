@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import  useNickname  from '../../../contexts/useNickname';
 import Slider from 'react-slick';
+
+// 컴포
+import ArtistSection from '../../../components/ArtistSection';
 
 import logo from '../../../assets/Home/logo.png';
 import alarm from '../../../assets/Home/alarm.png';
@@ -21,15 +25,13 @@ import photo03 from '../../../assets/Home/photo03.png';
 import thumb1 from '../../../assets/Home/youtube01.png';
 import thumb2 from '../../../assets/Home/youtube02.png';
 import thumb3 from '../../../assets/Home/youtube03.png';
-
-// vote
 import vote01 from '../../../assets/Home/vote1.png';
 import vote02 from '../../../assets/Home/vote2.png';
 import vote03 from '../../../assets/Home/vote3.png';
 import vote04 from '../../../assets/Home/vote4.png';
-
-// membership
 import membershipCardImg from '../../../assets/Home/membership.png';
+import membershipCardImg2 from '../../../assets/Home/membership2.png';
+import membershipCardImg3 from '../../../assets/Home/membership3.png';
 
 import './Home.css';
 import "slick-carousel/slick/slick.css";
@@ -38,41 +40,52 @@ import "slick-carousel/slick/slick-theme.css";
 const Home = () => {
   const navigate = useNavigate();
 
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [comments, setComments] = useState([
-  { username: "너누구야", message: "❤️ 너무 예뻐요!" },
-  { username: "너뭐이야", message: "휴가 잘 다녀오세요! 🌴" },
-  { username: "뾰루지소녀", message: "귀척ㅋ 우웩" },
-  { username: "말티즈이", message: "GD 오빠보면 눈 깔아라;" },
-  { username: "꽥괙이", message: "나보다 못생긴듯ㅋ" },
-  { username: "먺짱이", message: "언니 뭐 먹을거야??????????" },
-  { username: "종민", message: "세희 금요일 소주 ㄱ??" },
-]);
-  const [newComment, setNewComment] = useState("");
+  
 
-  const MAX_COMMENTS = 4;
+  // 닉네임 저장
+  const { nickname } = useNickname();
+  const [newComment, setNewComment] = useState('');
+
+  const [comments, setComments] = useState([
+    { username: { nickname: "너누구야" }, message: "❤️ 너무 예뻐요!" },
+    { username: { nickname: "너뭐이야" }, message: "휴가 잘 다녀오세요! 🌴" },
+    { username: { nickname: "뾰루지걸" }, message: "귀척ㅋ 우웩" },
+    { username: { nickname: "말티즈이" }, message: "GD 오빠보면 눈 깔아라;" },
+    { username: { nickname: "꽥괙이" }, message: "나보다 못생긴듯ㅋ" },
+    { username: { nickname: "먺짱이" }, message: "언니 뭐 먹을거야??????????" },
+    { username: { nickname: "종민" }, message: "세희 금요일 소주 ㄱ??" },
+  ]);
+  const [totalCommentCount, setTotalCommentCount] = useState(comments.length);
+  const MAX_COMMENTS = '7';
+
+  const handleAddComment = () => {
+    if (newComment.trim() === "") return;
+    const newObj = { username: { nickname }, message: newComment };
+
+    let updatedComments = [...comments, newObj];
+    if (updatedComments.length > MAX_COMMENTS) {
+      updatedComments =  updatedComments.slice(updatedComments.length - MAX_COMMENTS);
+    }
+
+    setComments(updatedComments);
+    setNewComment("");
+    setTotalCommentCount((prev) => prev + 1);
+  };
+
+
 
   const AlarmClick = () => navigate('/idol/home/alarm');
   const handleMypageClick = () => navigate('/idol/mypage');
   const handleArtistClick = () => navigate('/idol/artist/highlight');
-  const handlePlusClick = () => navigate('/onboarding/select-artist');
+  const handlePlusClick = () => {
+    navigate('/onboarding/select-artist', { state: { fromHome: true } });
+  };
   const handleLiveClick = () => navigate('/idol/home/live');
   const handleVoteCardClick = () => navigate("/idol/home/vote");
   const handleMembershipClick = () => navigate("/idol/home/membership");
   const handleQuizClick = () => navigate('/idol/home/quiz');
 
-  const handleAddComment = () => {
-    if (newComment.trim() === "") return;
-    const newObj = { username: "me", message: newComment };
-
-    let updatedComments = [...comments, newObj];
-    if (updatedComments.length > MAX_COMMENTS) {
-      updatedComments = updatedComments.slice(1);
-    }
-
-    setComments(updatedComments);
-    setNewComment("");
-  };
+  
 
   const quizData = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
@@ -80,15 +93,35 @@ const Home = () => {
     desc: `맞추신분들께는 포인트를 적립해드려요.`,
   }));
 
-  const membershipData = Array.from({ length: 12 }, (_, i) => ({
-    id: i + 1,
-    group: "BTS",
-    title: "ARMY\nMEMBERSHIP",
-    desc: "RENEWAL!\n지금바로 확인하세요",
-    img: membershipCardImg,
-    current: `${i + 1}`,
-    total: "12",
-  }));
+
+  // 광고배너
+  const membershipData = [
+    {
+      id: 1,
+      title: "블랙핑크 제니 첫 솔로앨범\nYoutube Live",
+      desc: "7월 1일 4:30PM (KST)\n라이브 한정 특전 제공!",
+      img: membershipCardImg,
+      current: "1",
+      total: "3",
+    },
+    {
+      id: 2,
+      title: "G-Dragon 88명 한정\n티셔츠 OPEN!",
+      desc: "7월 2일 18:00PM (KST)\n오직 Coupang에서 구매 가능",
+      img: membershipCardImg2,
+      current: "2",
+      total: "3",
+    },
+    {
+      id: 2,
+      title: "뉴진스의 ‘자컨 필살기'\n소개서 지금 바로 확인!",
+      desc: "뉴진스의 자체 콘텐츠\n보러가기",
+      img: membershipCardImg3,
+      current: "3",
+      total: "3",
+    },
+  ];
+  
 
   const sliderSettings = {
     dots: false,
@@ -102,16 +135,15 @@ const Home = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='homeContainer'>
       <header>
         <p className="img"><img src={logo} alt="logo" /></p>
         <p className="img" onClick={AlarmClick}><img src={alarm} alt="alarm" /></p>
       </header>
 
-      {/* 마이페이지 */}
-      <div className="mypageSection" onClick={handleMypageClick}>
+      <div className="mypageSection Section" onClick={handleMypageClick}>
         <div className="left">
-          <p>말티즈님, 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
+          <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
           <div className="artistButtons">
             <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist1} alt="artist1" />
@@ -132,8 +164,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 라이브 */}
-      <div className="liveSection">
+      <div className="liveSection Section">
         <p>LIVE NOW!</p>
         <div className="swipe">
           <p className="liveImg" onClick={handleLiveClick}><img src={live01} alt="" /></p>
@@ -142,83 +173,25 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 아티스트 게시글 */}
-      <div
-        className={`artistSection ${isExpanded ? 'expanded' : ''}`}
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        <div className="top">
-          <div className="profile" onClick={(e) => e.stopPropagation()}>
-            <img src={artist01} alt="profile" />
-            <div className="name">
-              <span>JENNIE <img src={check} alt="check" /></span>
-              <span>06.28. 03:06</span>
-            </div>
-          </div>
-          <div className="save"><img src={save} alt="save" /></div>
-        </div>
-        <p className="text">
-          여러분~~ 저 휴가왔어요!<br />
-          다들 여름 휴가 조심히 다녀오세요!!💜
-        </p>
+      <ArtistSection
+        artistImg={artist01}
+        artistName="JENNIE"
+        time="06.28. 03:06"
+        saveIcon={save}
+        mainText={`여러분~~ 저 휴가왔어요!\n다들 여름 휴가 조심히 다녀오세요!!💜`}
+        photo01={photo01}
+        photo02={photo02}
+        photo03={photo03}
+        checkIcon={check}
+        comments={comments}
+        newComment={newComment}
+        setNewComment={setNewComment}
+        handleAddComment={handleAddComment}
+        totalCommentCount={totalCommentCount}
+      />
 
-        <div className="photoWrap">
-          {!isExpanded ? (
-            <>
-              <img src={photo01} alt="photo1" />
-              <div className="iconWrap">
-                <span>🤍 10K+</span>
-                <span>💬 10K+</span>
-              </div>
-            </>
-          ) : (
-            <>
-              <img src={photo02} alt="photo2" />
-              <img src={photo03} alt="photo3" />
-            </>
-          )}
-        </div>
-
-        {isExpanded && (
-          <div
-            className="commentSection"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <p className="commentCount">전체 댓글 {comments.length}</p>
-            <div className="comments">
-              {comments.map((comment, idx) => (
-                <div className="commentRow" key={idx}>
-                  <div className="commentText">
-                    <span className="username">{comment.username}</span>
-                    <span className="message">{comment.message}</span>
-                  </div>
-                  <span className="heart">🤍</span>
-                </div>
-              ))}
-            </div>
-            <div className="commentInputWrap" onClick={(e) => e.stopPropagation()}>
-              <input
-                type="text"
-                placeholder="예쁜 댓글을 입력하세요..."
-                value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
-              />
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleAddComment();
-                }}
-              >
-                등록
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* 유튜브 */}
-      <div className="videoSection">
-        <p>JUST FOR 먹짱 <span>더보기 &gt;</span></p>
+      <div className="videoSection Section">
+        <p>JUST FOR 먹짱</p>
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
@@ -235,8 +208,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 퀴즈 */}
-      <div className="quizSection">
+      <div className="quizSection Section">
         <Slider {...sliderSettings}>
           {quizData.map((quiz) => (
             <div key={quiz.id} className="quizCard" onClick={handleQuizClick}>
@@ -249,8 +221,7 @@ const Home = () => {
         </Slider>
       </div>
 
-      {/* 투표 */}
-      <div className="voteSection">
+      <div className="voteSection Section">
         <div className="swipe vote">
           <div className="voteRow">
             <div className="voteCard" onClick={handleVoteCardClick}>
@@ -275,15 +246,15 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 멤버십 */}
-      <div className="membershipSection">
+      <div className="membershipSection Section">
         <Slider {...sliderSettings}>
           {membershipData.map((item) => (
             <div key={item.id} className="membershipCard" onClick={handleMembershipClick}>
-              <div className="membershipInfo">
-                <p className="group">{item.group}</p>
+              <img src={item.img} alt="membership card" className="membershipBg" />
+              <div className="membershipOverlay">
+                <p className="group">Event</p>
                 <h2>
-                  {item.title.split(" ").map((word, idx) => (
+                  {item.title.split("\n").map((word, idx) => (
                     <React.Fragment key={idx}>{word}<br /></React.Fragment>
                   ))}
                 </h2>
@@ -293,12 +264,9 @@ const Home = () => {
                   ))}
                 </p>
               </div>
-              <div className="membershipImg">
-                <img src={item.img} alt="membership card" />
-                <div className="indicator">
-                  <span className="current">{item.current}</span>
-                  <span className="total"> | {item.total}</span>
-                </div>
+              <div className="indicator">
+                <span className="current">{item.current}</span>
+                <span className="total"> | {item.total}</span>
               </div>
             </div>
           ))}
