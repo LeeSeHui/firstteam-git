@@ -13,7 +13,6 @@ const Highlight = () => {
         <button onClick={() => navigate('/idol/home/vote')}>투표</button>
         <button onClick={() => navigate('/idol/artist/artist-board')}>아티스트 보드</button>
       </div>
-
       <p>여기에 Highlight 페이지 콘텐츠...</p>
     </div>
   );
