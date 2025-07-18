@@ -1,23 +1,159 @@
+.video-box {text-align: center;margin: 20px 0;}
+.challenge-section {margin: 20px 0;}
+.challenge-section span {display: block; margin: 4px 0; font-weight: 600; color: #494949; font-size: 20px;}
+.challenge-section > span:last-of-type {color: #797979; font-size: 15px;margin-top: 4px;font-weight: 600; text-align: right; margin-bottom: px;}
+.ButtonContainer button{left: 0;}
+.star-logo{width: 20px;  height: auto; vertical-align: middle; margin-right: 6px;}
+.challenge-section .day {display: inline-block;background-color: #FFD700; color: #494949; font-weight: 600; padding: 8px 14px; border-radius: 20px; font-size: 16px; margin-bottom: 10px;}
+.challenge-section p{margin-bottom: 15px; font-size: 22px; color: #494949; font-weight: 500;}
+.challenge-section img {width: 100%; margin-bottom: 3px;}
 
-  .video-box {
-    text-align: center;
-    margin: 20px 0;
-  }
+
+
+
+
+
+
+
+
+
+
+
+/* 다크모드 토글 */
+.toggle-switch {display: flex;background: #eee;border-radius: 20px;padding: 5px 10px;
+ width: 95px;}
+ .toggle-switch {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 100px;
+  padding: 6px;
+  width: fit-content;
+  height: 40px;
+  gap: 4px;
+}
+
+.toggle-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   padding: 6px 12px;
   
-  .challenge-section {
-    background-color: var(--box-color);
-    border-radius: 12px;
-    padding: 16px;
-    margin: 20px 0;
-    font-size: 14px;
-    text-align: center;
-  }
-  .challenge-section span {
-    display: block;
-    margin: 8px 0;
-    font-weight: 600;
-  }
-  
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  color: #797979;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-option.active {
+  background: #FFD700;
+  color: #494949;
+}
+
+
+
+/* 카데고리 */
+.category-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.category-list li:last-child {
+  border-bottom: none;
+}
+
+.category-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.category-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 토글 스위치 */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  background: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.toggle-option {
+  flex: 1;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.toggle-option.active {
+  background: #FFD700;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
   .category-section,
@@ -60,4 +196,5 @@
     --button-text: #ffffff;
     --button-hover: #444444;
   }
+  
   
