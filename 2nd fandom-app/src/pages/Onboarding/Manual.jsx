@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
 import './Manual.css';
 import { useNavigate } from 'react-router-dom';
-import manual1 from '../../assets/Manual/idol-mypage-char.png';
+import BackButton from '../../components/BackButton';
+import manual1 from '../../assets/Manual/manual1.png';
+import manual2 from '../../assets/Manual/manual2.png';
+import manual3 from '../../assets/Manual/manual3.png';
+import manual4 from '../../assets/Manual/idol-mypage-char.png';
 
 const manualData = [
   {
     img: manual1,
-    title: '레벨을 달성해서 스타를 만나보세요!',
-    desc: '전설의 서영이 되기까지, 여러분의 진행을 지켜봐주세요.',
+    title: '내가 서포트 하는 아티스트에게\n투표해 보세요',
+    desc: '아티스트와 대화하며 서로의 일상을 공유해보세요. ',
   },
   {
-    img: manual1,
-    title: '스와이프로 팬미팅 정보 확인!',
-    desc: '최신 팬미팅과 이벤트 소식을 받아보세요.',
+    img: manual2,
+    title: '아티스트와 실시간으로 소통해보세요!',
+    desc: '라이브로 아티스트와 실시간으로 소통해요.',
   },
   {
-    img: manual1,
-    title: '미션을 완료하고 보상을 받으세요!',
-    desc: '다양한 미션으로 재미와 보상을 동시에!',
+    img: manual3,
+    title: '아티스트 사진을 보관해 보아요',
+    desc: '아티스트 사진을 나만의 컬렉션에서 보관해보세요.',
   },
   {
-    img: manual1,
-    title: '나만의 굿즈를 만들어보세요!',
-    desc: '특별한 팬 경험을 위한 굿즈 제작 기회.',
+    img: manual4,
+    title: '레벨을 달성해서\n나만의 뉴비를 만나보세요!',
+    desc: '전설의 뉴비가 되기까지, 여러번의 진화를\n지켜봐주세요.',
   },
 ];
 
@@ -34,7 +38,7 @@ const Manual = () => {
     if (current < manualData.length - 1) {
       setCurrent(current + 1);
     } else {
-      navigate('/idol/home');
+      navigate('/onboarding/select-artist');
     }
   };
 
@@ -48,10 +52,17 @@ const Manual = () => {
 
   return (
     <div className="manual-container">
-      <button className="back-btn" onClick={handleBack}>←</button>
+      <header>
+      <BackButton onClick={handleBack} />
+        <button className="skip-btn" onClick={() => navigate('/onboarding/select-artist')}>건너뛰기</button>
+      </header>
       <div className="manual-content">
-        <img src={manualData[current].img} alt={`manual${current + 1}`} className="manual-img" />
-        <h2>{manualData[current].title}</h2>
+        <img src={manualData[current].img} alt={`manual${current + 1}`} className={`manual-img ${current === 3 ? 'manual-last-img' : ''}`}  />
+        <h2>
+          {manualData[current].title.split("\n").map((line, idx) => (
+            <React.Fragment key={idx}>{line}<br /></React.Fragment>
+          ))}
+        </h2>
         <p>{manualData[current].desc}</p>
         <div className="dot-container">
           {manualData.map((_, index) => (

@@ -1,0 +1,63 @@
+
+  .video-box {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .challenge-section {
+    background-color: var(--box-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  .challenge-section span {
+    display: block;
+    margin: 8px 0;
+    font-weight: 600;
+  }
+  
+
+  
+  .category-section,
+  .challenge-button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .category-section button,
+.challenge-button-section button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 텍스트 중앙 정렬 */
+  gap: 6px; /* 아이콘과 텍스트 간격 */
+}
+  
+  .category-section button:hover,
+  .challenge-button-section button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  /* 라이트 모드 기본 */
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --box-color: #f9f9f9;
+    --button-bg: #f0f0f0;
+    --button-text: #000000;
+    --button-hover: #e0e0e0;
+  }
+  
+  /* 다크 모드 */
+  body.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --box-color: #2a2a2a;
+    --button-bg: #333333;
+    --button-text: #ffffff;
+    --button-hover: #444444;
+  }
+  

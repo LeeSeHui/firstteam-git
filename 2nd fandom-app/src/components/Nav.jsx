@@ -42,27 +42,27 @@ function Nav() {
   return (
     <nav className="nav-container">
       <div className="nav-content">
-        <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+        <Link to="/idol/home" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
           <HomeIcon size={28} strokeWidth={1.5} />
           <span>home</span>
         </Link>
-        <Link to="/dm" className={`nav-link ${location.pathname === '/dm' ? 'active' : ''}`}>
+        <Link to="/idol/chat" className={`nav-link ${location.pathname === '/idol/chat' ? 'active' : ''}`}>
           <MessageCircle size={28} strokeWidth={1.5} />
           <span>chat</span>
         </Link>
 
         <button className="idol-button" onClick={toggleSubButtons}>{buttonText}</button>
 
-        <Link to="/fashion" className={`nav-link star-lens-link ${location.pathname === '/fashion' ? 'active' : ''}`}>
+        <Link to="/idol/fashion/all" className={`nav-link star-lens-link ${location.pathname === '/idol/fashion' ? 'active' : ''}`}>
           <Video size={28} strokeWidth={1.5} />
-          <span>Star Lens</span>
+          <span>Fashion</span>
         </Link>
-        <Link to="/mypage" className={`nav-link ${location.pathname === '/mypage' ? 'active' : ''}`}>
+        <Link to="/idol/mypage" className={`nav-link ${location.pathname === '/idol/mypage' ? 'active' : ''}`}>
           <Star size={28} strokeWidth={1.5} />
           <span>me</span>
         </Link>
       </div>
-
+      
       {/* ✅ sub 버튼 */}
       {showSubButtons && (
         <div className="sub-buttons">

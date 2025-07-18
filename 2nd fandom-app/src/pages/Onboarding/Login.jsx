@@ -32,12 +32,12 @@ const Login = () => {
         </button>
       </div>
 
-      <button className="login-btn google">
+      <button className="login-btn google" onClick={handleStart}>
         <span className="img google"><img src={googleIcon} alt="google" className="btn-icon" /></span>
         구글로 시작하기
       </button>
 
-      <button className="login-btn apple">
+      <button className="login-btn apple" onClick={handleStart}>
         <span className="img apple"><img src={appleIcon} alt="apple" className="btn-icon" /></span>
         애플로 시작하기
       </button>
