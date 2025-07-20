@@ -5,6 +5,7 @@ import { Router, Routes, Route, Navigate, useLocation, Outlet } from 'react-rout
 import Nav from '../components/Nav';
 import Chatbot from '../components/Chatbot';
 import Attendance from '../pages/Attendance';
+import Layout from '../components/Layout';
 
 
 // Onboarding
@@ -89,72 +90,75 @@ const AppRouterContent = () => {
       {!shouldHideNav && <Chatbot />}
 
       <Routes>
+        <Route path="/" element={<Layout />}>
+         {/* 기본 리디렉트 */}
+        <Route index element={<Navigate to="/splash" replace />} />
+          {/* Components */}
+          <Route path="/splash" element={<Splash />} />
+          <Route path="/attendance" element={<Attendance />} />
 
-        {/* Components */}
-        <Route path="/splash" element={<Splash />} />
-        <Route path="/attendance" element={<Attendance />} />
-
-        {/* Onboarding */}
-        <Route path="/onboarding/login" element={<Login />} />
-        <Route path="/manual" element={<Manual />} />
-        <Route path="/nickname" element={<Nickname />} />
-        <Route path="/onboarding/select-artist" element={<SelectArtist />} />
-        <Route path="/welcome" element={<Welcome />} />
+          {/* Onboarding */}
+          <Route path="/onboarding/login" element={<Login />} />
+          <Route path="/manual" element={<Manual />} />
+          <Route path="/nickname" element={<Nickname />} />
+          <Route path="/onboarding/select-artist" element={<SelectArtist />} />
+          <Route path="/welcome" element={<Welcome />} />
 
 
-        {/* Idol */}
-        <Route path="/idol/home" element={<IdolHome />} />
-        <Route path="/idol/home/alarm" element={<IdolAlarm />} />
-        <Route path="/idol/home/live" element={<IdolLive />} />
-        <Route path="/idol/home/post" element={<IdolPostDetail />} />
-        <Route path="/idol/home/quiz" element={<IdolQuiz />} />
-        <Route path="/idol/home/vote" element={<IdolVote />} />
-        <Route path="/idol/mypage" element={<IdolMyPage />} />
-        <Route path="/idol/home/membership" element={<IdolMembership />} />
+          {/* Idol */}
+          <Route path="/idol/home" element={<IdolHome />} />
+          <Route path="/idol/home/alarm" element={<IdolAlarm />} />
+          <Route path="/idol/home/live" element={<IdolLive />} />
+          <Route path="/idol/home/post" element={<IdolPostDetail />} />
+          <Route path="/idol/home/quiz" element={<IdolQuiz />} />
+          <Route path="/idol/home/vote" element={<IdolVote />} />
+          <Route path="/idol/mypage" element={<IdolMyPage />} />
+          <Route path="/idol/home/membership" element={<IdolMembership />} />
 
-        <Route path="/idol/mypage/collection" element={<IdolCollection />} />
-        <Route path="/idol/mypage/challenge" element={<IdolChallenge />} />
-        <Route path="/idol/mypage/media" element={<IdolMedia />} />
-        <Route path="/idol/mypage/payment" element={<IdolPayment />} />
+          <Route path="/idol/mypage/collection" element={<IdolCollection />} />
+          <Route path="/idol/mypage/challenge" element={<IdolChallenge />} />
+          <Route path="/idol/mypage/media" element={<IdolMedia />} />
+          <Route path="/idol/mypage/payment" element={<IdolPayment />} />
 
-        <Route path="/idol/artist" element={<IdolArtistLayout />}>
-          <Route path="/idol/artist/highlight" element={<IdolHighlight />} />
-          <Route path="/idol/artist/artist-board" element={<IdolBoard />} />
-          <Route path="/idol/artist/artist-gallery" element={<IdolGallery />} />
-          <Route path="/idol/artist/artist-membership" element={<IdolMembership2 />} />
-          <Route path="/idol/artist/artist-notice" element={<IdolNotice />} />
-        </Route>
-
-        {/* idol-패션 */}
-        
-          <Route path="/idol/fashion" element={<Fashion />}>
-            <Route path="/idol/fashion/all" element={<FashionAll />} />
-            <Route path="/idol/fashion/makeup" element={<Makeup />} />
-            <Route path="/idol/fashion/airport" element={<Airport />} />
-            <Route path="/idol/fashion/daily" element={<Daily />} />
-            <Route path="/idol/fashion/sports" element={<Sports />} />
+          <Route path="/idol/artist" element={<IdolArtistLayout />}>
+            <Route path="/idol/artist/highlight" element={<IdolHighlight />} />
+            <Route path="/idol/artist/artist-board" element={<IdolBoard />} />
+            <Route path="/idol/artist/artist-gallery" element={<IdolGallery />} />
+            <Route path="/idol/artist/artist-membership" element={<IdolMembership2 />} />
+            <Route path="/idol/artist/artist-notice" element={<IdolNotice />} />
           </Route>
 
+          {/* idol-패션 */}
+          
+            <Route path="/idol/fashion" element={<Fashion />}>
+              <Route path="/idol/fashion/all" element={<FashionAll />} />
+              <Route path="/idol/fashion/makeup" element={<Makeup />} />
+              <Route path="/idol/fashion/airport" element={<Airport />} />
+              <Route path="/idol/fashion/daily" element={<Daily />} />
+              <Route path="/idol/fashion/sports" element={<Sports />} />
+            </Route>
 
-        {/* idol-nav */}
-        <Route path="/idol/chat" element={<IdolChat />} />
-        
-        {/* Actor */}
-        <Route path="/actor/home" element={<ActorHome />} />
-        <Route path="/actor/home/live" element={<ActorLive />} />
-        <Route path="/actor/home/post" element={<ActorPostDetail />} />
-        <Route path="/actor/home/quiz" element={<ActorQuiz />} />
-        <Route path="/actor/home/vote" element={<ActorVote />} />
 
-        {/* Trot */}
-        <Route path="/trot/home" element={<TrotHome />} />
-        <Route path="/trot/home/live" element={<TrotLive />} />
-        <Route path="/trot/home/post" element={<TrotPostDetail />} />
-        <Route path="/trot/home/quiz" element={<TrotQuiz />} />
-        <Route path="/trot/home/vote" element={<TrotVote />} />
+          {/* idol-nav */}
+          <Route path="/idol/chat" element={<IdolChat />} />
+          
+          {/* Actor */}
+          <Route path="/actor/home" element={<ActorHome />} />
+          <Route path="/actor/home/live" element={<ActorLive />} />
+          <Route path="/actor/home/post" element={<ActorPostDetail />} />
+          <Route path="/actor/home/quiz" element={<ActorQuiz />} />
+          <Route path="/actor/home/vote" element={<ActorVote />} />
 
-        {/* 기본 리디렉트 */}
-        <Route path="/" element={<Navigate to="/splash" replace />} />
+          {/* Trot */}
+          <Route path="/trot/home" element={<TrotHome />} />
+          <Route path="/trot/home/live" element={<TrotLive />} />
+          <Route path="/trot/home/post" element={<TrotPostDetail />} />
+          <Route path="/trot/home/quiz" element={<TrotQuiz />} />
+          <Route path="/trot/home/vote" element={<TrotVote />} />
+        </Route>
+
+       
+
       </Routes>
     </>
   );

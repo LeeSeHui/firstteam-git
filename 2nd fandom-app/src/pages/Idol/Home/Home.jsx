@@ -5,12 +5,13 @@ import Slider from 'react-slick';
 
 // 컴포
 import ArtistSection from '../../../components/ArtistSection';
+import QuizSection from '../../../components/QuizSection';
+
 
 import logo from '../../../assets/Home/logo.png';
 import alarm from '../../../assets/Home/alarm.png';
 import idol_char from '../../../assets/Home/idol-mypage-char.png';
 import artist1 from '../../../assets/Home/artist1.png';
-import artist2 from '../../../assets/Home/artist2.png';
 import artist3 from '../../../assets/Home/artist3.png';
 import plusIcon from '../../../assets/Home/plus.png';
 import live01 from '../../../assets/Home/live1.png';
@@ -32,6 +33,8 @@ import vote04 from '../../../assets/Home/vote4.png';
 import membershipCardImg from '../../../assets/Home/membership.png';
 import membershipCardImg2 from '../../../assets/Home/membership2.png';
 import membershipCardImg3 from '../../../assets/Home/membership3.png';
+
+
 
 import './Home.css';
 import "slick-carousel/slick/slick.css";
@@ -82,16 +85,11 @@ const Home = () => {
   };
   const handleLiveClick = () => navigate('/idol/home/live');
   const handleVoteCardClick = () => navigate("/idol/home/vote");
-  const handleMembershipClick = () => navigate("/idol/home/membership");
+  const handleMembershipClick = () => navigate("/idol/home/membership");3
   const handleQuizClick = () => navigate('/idol/home/quiz');
 
-  
 
-  const quizData = Array.from({ length: 10 }, (_, i) => ({
-    id: i + 1,
-    title: `오늘의 QUIZ! 지금 바로 도전하세요`,
-    desc: `맞추신분들께는 포인트를 적립해드려요.`,
-  }));
+
 
 
   // 광고배너
@@ -136,10 +134,10 @@ const Home = () => {
 
   return (
     <div className='homeContainer'>
-      <header>
+      <div className='main-logo'>
         <p className="img"><img src={logo} alt="logo" /></p>
         <p className="img" onClick={AlarmClick}><img src={alarm} alt="alarm" /></p>
-      </header>
+      </div>
 
       <div className="mypageSection Section" onClick={handleMypageClick}>
         <div className="left">
@@ -147,9 +145,6 @@ const Home = () => {
           <div className="artistButtons">
             <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist1} alt="artist1" />
-            </button>
-            <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
-              <img src={artist2} alt="artist2" />
             </button>
             <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist3} alt="artist3" />
@@ -164,7 +159,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="liveSection Section">
+      <div className="liveSection">
         <p>LIVE NOW!</p>
         <div className="swipe">
           <p className="liveImg" onClick={handleLiveClick}><img src={live01} alt="" /></p>
@@ -174,11 +169,12 @@ const Home = () => {
       </div>
 
       <ArtistSection
+        className="artistSection Section"
         artistImg={artist01}
-        artistName="JENNIE"
+        artistName="혜린"
         time="06.28. 03:06"
         saveIcon={save}
-        mainText={`여러분~~ 저 휴가왔어요!\n다들 여름 휴가 조심히 다녀오세요!!💜`}
+        mainText={`멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요오!!💜`}
         photo01={photo01}
         photo02={photo02}
         photo03={photo03}
@@ -190,8 +186,8 @@ const Home = () => {
         totalCommentCount={totalCommentCount}
       />
 
-      <div className="videoSection Section">
-        <p>JUST FOR 먹짱</p>
+      <div className="videoSection">
+        <p>JUST FOR {nickname}</p>
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
@@ -207,21 +203,13 @@ const Home = () => {
           </a>
         </div>
       </div>
+      
+      <QuizSection handleQuizClick={handleQuizClick} />
+  
+          
+        
 
-      <div className="quizSection Section">
-        <Slider {...sliderSettings}>
-          {quizData.map((quiz) => (
-            <div key={quiz.id} className="quizCard" onClick={handleQuizClick}>
-              <h3>{quiz.title}</h3>
-              <p>{quiz.desc}</p>
-              <img src={idol_char} alt="quiz" />
-              <div className="progress">{quiz.id} / {quizData.length}</div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-
-      <div className="voteSection Section">
+      <div className="voteSection">
         <div className="swipe vote">
           <div className="voteRow">
             <div className="voteCard" onClick={handleVoteCardClick}>
