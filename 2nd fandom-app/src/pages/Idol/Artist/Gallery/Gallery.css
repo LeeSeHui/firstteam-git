@@ -1,0 +1,43 @@
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.gallery-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.gallery-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.gallery-name {
+  font-weight: 600;
+}
+
+.gallery-date {
+  font-size: 12px;
+  opacity: 0.8;
+}
