@@ -1,9 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import './Collection.css';
+import BackButton from '../../../components/BackButton'
 
-const Collection = () => {
+  const Collection = () => {
+   const navigate = useNavigate();
+
   return (
+   
     <div>
-      <h2>컬렉션 페이지</h2>
+       <BackButton label="마이 컬렉션" />
+    
     </div>
   )
 }
