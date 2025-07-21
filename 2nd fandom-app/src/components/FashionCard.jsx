@@ -9,11 +9,18 @@ const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', i
       <div className="image-container">
       {tag?.text && tag?.link && (
         <a
-          href={tag.link}
-          className="product-tag"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+            href={tag.link}
+            className="product-tag"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              position: 'absolute',
+              top: tag.position?.top || '12px',
+              left: tag.position?.left || 'auto',
+              right: tag.position?.right || '12px',
+              bottom: tag.position?.bottom || 'auto',
+            }}
+          >
           {tag.text.split('\n').map((line, i) => (
             <React.Fragment key={i}>
               {line}
