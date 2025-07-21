@@ -1,82 +1,97 @@
 import React, { useState } from 'react';
+import ArtistSection from '../../../../components/ArtistSection';
 import './Membership.css';
 
 import minji from '../../../../assets/artist-select/minji.png';
 import feedimg1 from '../../../../assets/artist/membership1.png';
 import feedimg2 from '../../../../assets/artist/membership2.png';
+import check from '../../../../assets/home/check.png';
+import photo05_1 from '../../../../assets/artist/photo05_1.png';
+import photo05_2 from '../../../../assets/artist/photo05_2.png';
+import photo06_1 from '../../../../assets/artist/photo06_1.png';
+import photo06_2 from '../../../../assets/artist/photo06_2.png';
 
 const feedData = [
   {
     id: 1,
-    name: '민지',
-    time: '07.01. 05:06',
-    text: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜',
-    img: feedimg1,
+    profileImage: minji,
+    artistName: '민지',
+    isVerified: true,
+    verifiedIcon: check,
+    postTime: '07.01. 05:06',
+    postText: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜',
+    feedImage: feedimg1,
+    photo02: photo05_1,
+    photo03: photo05_2
   },
   {
     id: 2,
-    name: '민지',
-    time: '07.01. 05:06',
-    text: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜',
-    img: feedimg2,
+    profileImage: minji,
+    artistName: '민지',
+    isVerified: true,
+    verifiedIcon: check,
+    postTime: '07.01. 05:06',
+    postText: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜',
+    feedImage: feedimg2,
+    photo02: photo06_1,
+    photo03: photo06_2
   },
 ];
 
-const MembershipFeed = () => {
+const Membership = () => {
   const [unlockedFeedIds, setUnlockedFeedIds] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const totalCommentCount = comments.length;
+
+  const handleAddComment = () => {
+    if (!newComment.trim()) return;
+    const updated = [...comments, { username: { nickname: '익명' }, message: newComment }];
+    setComments(updated);
+    setNewComment('');
+  };
 
   const handleUnlock = (id) => {
     if (!unlockedFeedIds.includes(id)) {
       setUnlockedFeedIds([...unlockedFeedIds, id]);
     }
   };
-  
-return (
-  <div className="membership-feed-wrapper">
-  {feedData.map((item) => {
-    const isUnlocked = unlockedFeedIds.includes(item.id);
 
-return (
-      <div className="feed-card" key={item.id} onClick={() => handleUnlock(item.id)}>
-        {!isUnlocked && (
-          <div className="locked-overlay">🔒 멤버십 전용 콘텐츠입니다.</div>
-        )}
+  return (
+    <div className="membership-feed-wrapper">
+      {feedData.map((item) => {
+        const isUnlocked = unlockedFeedIds.includes(item.id);
 
-        <div className="feed-header">
-          <div className="profile-info">
-            <img src={minji} alt="프로필" className="profile-img" />
-            <div>
-              <p className="nickname">{item.name} <span className="badge">✔️</span></p>
-              <p className="time">{item.time}</p>
-            </div>
+        return (
+          <div key={item.id} onClick={() => !isUnlocked && handleUnlock(item.id)}>
+            {isUnlocked ? (
+              <ArtistSection
+                profileImage={item.profileImage}
+                artistName={item.artistName}
+                isVerified={item.isVerified}
+                verifiedIcon={item.verifiedIcon}
+                postTime={item.postTime}
+                postText={item.postText}
+                feedImage={item.feedImage}
+                photo02={item.photo02}
+                photo03={item.photo03}
+                comments={comments}
+                newComment={newComment}
+                setNewComment={setNewComment}
+                handleAddComment={handleAddComment}
+                totalCommentCount={totalCommentCount}
+                onProfileClickPath="/idol/artist/highlight"
+              />
+            ) : (
+              <div className="locked-overlay">
+                🔒 <strong>멤버십 전용 콘텐츠입니다.</strong>
+              </div>
+            )}
           </div>
-          <button className="bookmark-btn">🔖</button>
-        </div>
-
-        <p className="feed-text">
-          {item.text.split('\n').map((line, idx) => (
-            <span key={idx}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </p>
-
-        <div className="post-footer">
-          <div className="like-counts">
-            <span>💛10K+</span>
-            <span>💬10K+</span>
-          </div>
-        </div>
-
-        <div className="feed-images">
-          <img src={item.img} alt="피드 이미지" className="feed-img" />
-        </div>
-      </div>
-    );
-  })}
-</div>
-);
+        );
+      })}
+    </div>
+  );
 };
 
-export default MembershipFeed;
+export default Membership;

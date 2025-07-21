@@ -1,11 +1,11 @@
 import React from 'react';
+
 import { Router, Routes, Route, Navigate, useLocation, Outlet } from 'react-router-dom';
 
 // components
 import Nav from '../components/Nav';
 import Chatbot from '../components/Chatbot';
 import Attendance from '../pages/Attendance';
-import Layout from '../components/Layout';
 
 
 // Onboarding
@@ -90,7 +90,6 @@ const AppRouterContent = () => {
       {!shouldHideNav && <Chatbot />}
 
       <Routes>
-        <Route path="/" element={<Layout />}>
          {/* 기본 리디렉트 */}
         <Route index element={<Navigate to="/splash" replace />} />
           {/* Components */}
@@ -155,10 +154,6 @@ const AppRouterContent = () => {
           <Route path="/trot/home/post" element={<TrotPostDetail />} />
           <Route path="/trot/home/quiz" element={<TrotQuiz />} />
           <Route path="/trot/home/vote" element={<TrotVote />} />
-        </Route>
-
-       
-
       </Routes>
     </>
   );

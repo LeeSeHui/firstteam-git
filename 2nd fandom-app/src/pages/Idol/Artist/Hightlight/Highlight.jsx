@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import  useNickname  from '../../../../contexts/useNickname';
+import ArtistSection from '../../../../components/ArtistSection';
 
 import minji from '../../../../assets/artist-select/minji.png';
 import haein from '../../../../assets/artist-select/haein.png';
@@ -7,18 +9,37 @@ import hani from '../../../../assets/artist-select/hani.png';
 import daniel from '../../../../assets/artist-select/daniel.png';
 import herin from '../../../../assets/artist-select/herin.png';
 
-import card from '../../../../assets/artist-select/cardsend.png'; // 배경 이미지 (단체샷)
-import letter from '../../../../assets/artist/heartletter.png'; // 하트 편지
+import artist01 from '../../../../assets/home/artist01.png';
+import check from '../../../../assets/home/check.png';
+import card from '../../../../assets/artist-select/cardsend.png';
+import letter from '../../../../assets/artist/heartletter.png';
 import vote from '../../../../assets/artist/votebanner.png';
 import feedimg1 from '../../../../assets/artist/artistfeed1.png';
+import photo02 from '../../../../assets/home/photo02.png';
+import photo03 from '../../../../assets/home/photo03.png';
 import live from '../../../../assets/artist/livereplay.png';
-
-
 
 import './Highlight.css';
 
 const Highlight = () => {
   const navigate = useNavigate();
+  const { nickname } = useNickname();
+
+  // ✅ 댓글 상태
+  const [comments, setComments] = useState([
+    { username: { nickname: '팬1' }, message: '언니 너무 예뻐요!' },
+    { username: { nickname: '팬2' }, message: '공연 화이팅!' },
+  ]);
+  const [newComment, setNewComment] = useState('');
+
+  const handleAddComment = () => {
+    if (!newComment.trim()) return;
+    const updated = [...comments, { username: { nickname }, message: newComment }];
+    setComments(updated);
+    setNewComment('');
+  };
+
+  const totalCommentCount = comments.length;
 
   return (
     <div className="highlight-wrapper">
@@ -52,17 +73,43 @@ const Highlight = () => {
       {/* 투표 배너 */}
       <div className="vote-banner" onClick={() => navigate('/idol/home/vote')}>
         <img src={vote} alt="투표 배너" />
-      <div className="vote-content">
-        <span className="vote-badge">마감 D-3</span>
-        <p className="vote-message">이번 여름,<br />뉴진스를 응원해주세요!</p>
-        <span className="vote-go">투표 바로가기 &gt;</span>
-      </div>
+        <div className="vote-content">
+          <span className="vote-badge">마감 D-3</span>
+          <p className="vote-message">
+            이번 여름,<br />뉴진스를 응원해주세요!
+          </p>
+          <span className="vote-go">투표 바로가기 &gt;</span>
+        </div>
       </div>
 
       {/* 아티스트 피드 카드 */}
-      <div className="feed-card">
-        {/* 상단 프로필 영역 */}
-        <div className="feed-header">
+      <ArtistSection
+        profileImage={artist01}
+        artistName="해린"
+        isVerified={true}
+        verifiedIcon={check}
+        postTime="07.01. 05:06"
+        postText={`멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜`}
+        feedImage={feedimg1}
+        photo02={photo02}
+        photo03={photo03}
+        comments={comments}
+        newComment={newComment}
+        setNewComment={setNewComment}
+        handleAddComment={handleAddComment}
+        totalCommentCount={totalCommentCount}
+        onProfileClickPath="/idol/artist/highlight"
+      />
+
+      {/* 라이브 리플레이 */}
+      <div className="live-replay">
+        <p className="live-title">
+          <span className="live-red">Live</span> Replay
+        </p>
+
+        <img src={live} alt="Live Replay" className="live-thumbnail" />
+
+        <div className="live-header">
           <div className="profile-info">
             <img src={herin} alt="해린 프로필" className="profile-img" />
             <div>
@@ -70,56 +117,18 @@ const Highlight = () => {
               <p className="time">07.01. 05:06</p>
             </div>
           </div>
-          <button className="bookmark-btn">🔖</button>
-        </div>
 
-        {/* 텍스트 콘텐츠 */}
-        <p className="feed-text">
-          멜버른 도착! 내일 공연 잘하고 올게요<br />
-          모두 내일 봐요~💜
-        </p>
+          <p className="live-desc">1주년 기념 라이브 방송 보러오세요~</p>
 
-        {/* 좋아요 수 */}
-        <div className="post-footer">
-          <div className="like-counts">
-            <span>💛10K+</span>
-            <span>💬10K+</span>
+          <div className="post-footer">
+            <div className="like-counts">
+              <span>💛10K+</span>
+              <span>💬10K+</span>
+            </div>
           </div>
         </div>
-
-        {/* 하단 이미지 2개 */}
-        <div className="feed-images">
-          <img src={feedimg1} alt="피드1" />
-        </div>
-      </div>
-
-{/* 라이브 리플레이 */}
-<div className="live-replay">
-  <p className="live-title"><span className="live-red">Live</span> Replay</p>
-  
-  <img src={live} alt="Live Replay" className="live-thumbnail" />
-
-  <div className="live-header">
-    <div className="profile-info">
-      <img src={herin} alt="해린 프로필" className="profile-img" />
-      <div>
-        <p className="nickname">해린 <span className="badge">✔️</span></p>
-        <p className="time">07.01. 05:06</p>
       </div>
     </div>
-
-    <p className="live-desc">1주년 기념 라이브 방송 보러오세요~</p>
-
-    <div className="post-footer">
-      <div className="like-counts">
-          <span>💛10K+</span>
-          <span>💬10K+</span>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-    
   );
 };
 

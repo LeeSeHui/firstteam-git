@@ -18,9 +18,8 @@ import live01 from '../../../assets/Home/live1.png';
 import live02 from '../../../assets/Home/live2.png';
 import live03 from '../../../assets/Home/live3.png';
 import artist01 from '../../../assets/Home/artist01.png';
+import feedimg1 from '../../../assets/artist/artistfeed1.png'
 import check from '../../../assets/Home/check.png';
-import save from '../../../assets/Home/save.png';
-import photo01 from '../../../assets/Home/photo01.png';
 import photo02 from '../../../assets/Home/photo02.png';
 import photo03 from '../../../assets/Home/photo03.png';
 import thumb1 from '../../../assets/Home/youtube01.png';
@@ -169,21 +168,21 @@ const Home = () => {
       </div>
 
       <ArtistSection
-        className="artistSection Section"
-        artistImg={artist01}
-        artistName="혜린"
-        time="06.28. 03:06"
-        saveIcon={save}
-        mainText={`멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요오!!💜`}
-        photo01={photo01}
+        profileImage={artist01}
+        artistName="해린"
+        isVerified={true}
+        verifiedIcon={check}
+        postTime="07.01. 05:06"
+        postText={`멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜`}
+        feedImage={feedimg1}
         photo02={photo02}
         photo03={photo03}
-        checkIcon={check}
         comments={comments}
         newComment={newComment}
         setNewComment={setNewComment}
         handleAddComment={handleAddComment}
         totalCommentCount={totalCommentCount}
+        onProfileClickPath="/idol/artist/highlight"
       />
 
       <div className="videoSection">
