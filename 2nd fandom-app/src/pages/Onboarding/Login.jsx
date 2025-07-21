@@ -17,10 +17,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <h2 className="login-title">Nuvie에서<br />최애를 더 깊이</h2>
+      <p className="login-subtitle">뉴비에 오신걸 환영해요!</p>
       <img src={loginImg} alt="Login" className="login-image" />
-
-      <h2 className="login-title">뉴비와 함께<br />행복한 덕질해요!</h2>
-      <p className="login-subtitle">지금 바로 최애와 함께하세요!</p>
 
       <div className="btn-wrap">
         <div className="badge">
@@ -30,9 +29,7 @@ const Login = () => {
           <span className="img kakao"><img src={kakaoIcon} alt="kakao" className="btn-icon" /></span>
           카카오로 시작하기
         </button>
-      </div>
-
-      <button className="login-btn google" onClick={handleStart}>
+        <button className="login-btn google" onClick={handleStart}>
         <span className="img google"><img src={googleIcon} alt="google" className="btn-icon" /></span>
         구글로 시작하기
       </button>
@@ -41,6 +38,9 @@ const Login = () => {
         <span className="img apple"><img src={appleIcon} alt="apple" className="btn-icon" /></span>
         애플로 시작하기
       </button>
+      </div>
+
+      
     </div>
   );
 };
