@@ -1,0 +1,97 @@
+/* 알림 전체 페이지 */
+.alarm-page {
+    padding: 20px 16px;
+    background-color: #fff;
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+  /* 상단 제목 */
+  .page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* 탭 버튼 영역 */
+  .tab-list {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    padding: 6px 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .tab-btn.active {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* 날짜 구간 타이틀 */
+  .alarm-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin: 20px 0 8px;
+  }
+  
+  /* 개별 알림 카드 */
+  .alarm-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F9F9F9;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  
+  /* 프로필 이미지 */
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  /* 텍스트 영역 */
+  .alarm-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .alarm-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 4px;
+  }
+  
+  .alarm-time {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  /* 썸네일 */
+  .thumb-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: 12px;
+  }
+  

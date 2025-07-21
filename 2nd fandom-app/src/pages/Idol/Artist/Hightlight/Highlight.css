@@ -1,3 +1,4 @@
+
 .highlight-wrapper { padding: 0 16px; font-family: sans-serif; padding-bottom: 120px; }
 .artist-row { display: flex; gap: 5px; margin-bottom: 20px; }
 .card-section { position: relative; width: 100%; max-width: 500px; margin: 0 auto 40px; }
@@ -33,3 +34,5 @@
 .live-thumbnail { width: 100%; border-radius: 12px; margin-bottom: 16px; }
 .live-header { display: flex; flex-direction: column; }
 .live-desc { font-size: 17px; font-weight: 500; line-height: 1.2; margin-left: 60px; }
+
+
