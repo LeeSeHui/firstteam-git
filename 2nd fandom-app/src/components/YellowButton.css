@@ -1,11 +1,11 @@
 .yellow-btn {
-  background-color: #ffd600;
+  background-color: #FFD700;
   color: #333;
   font-size: 16px;
   font-weight: 600;
   padding: 14px 24px;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   width: 100%;
   max-width: 280px;

@@ -1,79 +1,88 @@
 import React, { useState } from 'react';
-import heart from '../assets/home/heart.png'
-import text from '../assets/home/text.png'
-import './ArtistSection.css'
+import './ArtistSection.css';
+import { useNavigate } from 'react-router-dom';
 
 const ArtistSection = ({
-  artistImg,
+  profileImage,
   artistName,
-  time,
-  saveIcon,
-  mainText,
-  photo01,
+  isVerified,
+  verifiedIcon,
+  postTime,
+  postText,
+  feedImage,
   photo02,
   photo03,
-  checkIcon,
   comments,
   newComment,
   setNewComment,
   handleAddComment,
   totalCommentCount,
+  onProfileClickPath = '/', // 기본값 설정
+  isLocked = false,
+  onUnlock = () => {},
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
+
+    // 🔒 잠금 처리
+    if (isLocked) {
+      return (
+        <div className="artistSection locked" onClick={onUnlock}>
+          <div className="locked-overlay">🔒 멤버십 전용 콘텐츠입니다.</div>
+        </div>
+      );
+    }
 
   return (
-    <div
-      className={`artistSection Section ${isExpanded ? 'expanded' : ''}`}
-      onClick={() => setIsExpanded(!isExpanded)}
-    >
-      <div className="top">
-        <div className="profile" onClick={(e) => e.stopPropagation()}>
-          <img src={artistImg} alt="profile" />
-          <div className="name">
-            <span>
-              {artistName} <img src={checkIcon} alt="check" />
-            </span>
-            <span>{time}</span>
+    <div className={`artistSection Section ${isExpanded ? 'expanded' : ''}`}>
+      {/* ✅ 피드 카드 */}
+      <div className="feed-card" onClick={() => setIsExpanded(!isExpanded)}>
+        <div className="feed-header">
+          <div className="profile-info">
+            <img
+              src={profileImage}
+              alt={`${artistName} 프로필`}
+              className="profile-img"
+              onClick={(e) => {
+                e.stopPropagation(); // 확장 방지
+                navigate(onProfileClickPath);
+              }}
+            />
+            <div>
+              <p className="nickname">
+                {artistName}
+                {isVerified && verifiedIcon && (
+                  <img src={verifiedIcon} alt="verified" />
+                )}
+              </p>
+              <p className="time">{postTime}</p>
+            </div>
+          </div>
+          <button className="bookmark-btn">🔖</button>
+        </div>
+
+        <p className="feed-text">{postText}</p>
+
+        <div className="post-footer">
+          <div className="like-counts">
+            <span>💛10K+</span>
+            <span>💬10K+</span>
           </div>
         </div>
-        <div className="save">
-          <img src={saveIcon} alt="save" />
-        </div>
-      </div>
 
-      <p className="text">
-        {mainText.split('\n').map((line, i) => (
-          <React.Fragment key={i}>
-            {line}
-            <br />
-          </React.Fragment>
-        ))}
-      </p>
-
-      <div className="photoWrap">
         {!isExpanded ? (
-          <>
-            <img src={photo01} alt="photo1" />
-            <div className="iconWrap">
-              <div className="icon-text">
-                <img src={heart} alt="heart" />
-                <span>10K+</span>
-              </div>
-
-              <div className="icon-text">
-                <img src={text} alt="text" />
-                <span>10K+</span>
-              </div>
-            </div>
-          </>
+          <div className="feed-images">
+            <img src={feedImage} alt="피드" />
+          </div>
         ) : (
-          <>
-            <img src={photo02} alt="photo2" />
-            <img src={photo03} alt="photo3" />
-          </>
+          <div className="expanded-images">
+            <img src={photo02} alt="추가 이미지 1" />
+            <img src={photo03} alt="추가 이미지 2" />
+          </div>
         )}
       </div>
 
+      {/* ✅ 댓글 영역 */}
       {isExpanded && (
         <div className="commentSection" onClick={(e) => e.stopPropagation()}>
           <p className="commentCount">전체 댓글 {totalCommentCount}</p>
@@ -88,21 +97,15 @@ const ArtistSection = ({
               </div>
             ))}
           </div>
-          <div className="commentInputWrap" onClick={(e) => e.stopPropagation()}>
+
+          <div className="commentInputWrap">
             <input
               type="text"
               placeholder="예쁜 댓글을 입력하세요."
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
             />
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleAddComment();
-              }}
-            >
-              등록
-            </button>
+            <button onClick={handleAddComment}>등록</button>
           </div>
         </div>
       )}

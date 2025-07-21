@@ -1,275 +1,38 @@
-/* Highlight.css */
+
+.highlight-wrapper { padding: 0 16px; font-family: sans-serif; padding-bottom: 120px; }
+.artist-row { display: flex; gap: 5px; margin-bottom: 20px; }
+.card-section { position: relative; width: 100%; max-width: 500px; margin: 0 auto 40px; }
+.card-bg { width: 100%; border-radius: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); }
+.heart-letter { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; z-index: 2; }
+.send-btn { width: 130px; height: 37px; position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%); background-color: #FFD700; color: #000; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; z-index: 2; }
+.notice-box { margin: 24px 0; background: #f8f8f8; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; font-size: 14px; line-height: 1.6; color: #333; }
 
 
-.highlight-wrapper {
-  padding: 0 16px;
-  font-family: sans-serif;
-  padding-bottom: 120px;
-}
+.vote-banner { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; margin-bottom: 24px; }
+.vote-banner img { width: 100%; display: block; }
+.vote-content { position: absolute; top: 0; left: 0; padding: 16px; width: 100%; height: 100%; color: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; justify-content: space-between; }
+.vote-badge { display: inline-block; position: absolute; top: 45px; left: 33px; background-color: #6b5800; padding: 5px 8px; border-radius: 15px; font-size: 14px; font-weight: bold; width: 70px; height: 27px; overflow: hidden; white-space: nowrap; appearance: none; -moz-appearance: none; -webkit-appearance: none; }
+.vote-message { position: absolute; top: 78px; left: 37px; font-size: 16px; font-weight: bold; line-height: 1.4; }
+.vote-go { align-self: flex-end; font-size: 14px; font-weight: 500; position: absolute; bottom: 45px; right: 33px; }
 
 
-.artist-row {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 20px;
-    width: 94px;
-    height: 94px;
-  }
-  
-  .card-section {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 40px;
-  }
-  
-  .card-bg {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  }
-  
-  .heart-letter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 220px;
-    z-index: 2;
-  }
-  
-  .send-btn {
-    width: 130px;
-    height: 37px;
-    position: absolute;
-    bottom: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #FFD700;
-    color: #000;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-/* 공지박스 */
-  .notice-box {
-  margin: 24px 0;
-  background: #f8f8f8;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 16px;
-  font-size: 17px;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* 투표 배너 */
-.vote-banner {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  margin-bottom: 24px;
-}
-
-.vote-banner img {
-  width: 100%;
-  display: block;
-}
-
-.vote-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 16px;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.vote-badge {
-  display: inline-block;
-  position: absolute;
-  top: 45px;
-  left: 33px;
-  background-color: #6b5800;
-  color: #FFD700;
-  padding: 5px 8px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  width: 70px;
-  height: 27px;
-
-    /* 추가 */
-  overflow: hidden;
-  white-space: nowrap;
-  appearance: none; /* 크로스브라우저용 */
-  -moz-appearance: none;
-  -webkit-appearance: none;
-
-}
-
-.vote-message {
-  position: absolute;
-  top: 78px;
-  left: 37px;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.4;
-}
-
-.vote-go {
-  align-self: flex-end;
-  font-size: 14px;
-  font-weight: 500;
-  position: absolute;
-  bottom: 45px;
-  right: 33px;
-}
-
-/* 아티스트게시물 */
-.feed-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #333;
-}
-
-.feed-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.profile-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.profile-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.nickname {
-  font-weight: 600;
-  font-size: 18px;
-  color: #595959;
-  
-}
-
-.badge {
-  font-size: 12px;
-  color: gold;
-}
-
-.time {
-  font-size: 16px;
-  color: #848484;
-}
-
-.bookmark-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.feed-text {
-  font-size: 17px;
-  margin: 8px 0 10px;
-  line-height: 1.2;
-  color: #595959;
-  font-weight: 500;
-}
-
-.post-footer {
-  display: flex;
-  justify-content: flex-end; /* 오른쪽으로 정렬 */
-}
-
-.like-counts {
-  display: flex;
-  gap: 11px;
-  font-size: 18px;
-  color: #595959;
-  font-weight: 500;
-}
-
-.feed-images {
-  display: flex;
-  gap: 8px;
-}
-
-.feed-images img {
-  flex: 1;
-  width: calc(50% - 4px);
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* 라이브 리플레이 */
-.live-replay {
-  background: #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 16px;
-  margin-top: 24px;
-}
-
-.live-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.live-red {
-  color: red;
-  font-weight: bold;
-}
-
-.live-thumbnail {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 16px;
-}
-
-.live-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.profile-info { display: flex; align-items: center; gap: 10px; }
+.profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.nickname { font-weight: 600; font-size: 18px; }
+.badge { font-size: 12px; color: gold; }
+.time { font-size: 16px; color: #848484; }
+.bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
+.feed-text { font-size: 17px; margin: 8px 0 10px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
+.post-footer { display: flex; justify-content: flex-end; }
+.like-counts { display: flex; gap: 11px; font-size: 18px; font-weight: 500; }
+.feed-images { display: flex; gap: 8px; }
+.feed-images img { flex: 1; width: calc(50% - 4px); border-radius: 12px; object-fit: cover; }
+.live-replay { background: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; margin-top: 24px; }
+.live-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+.live-red { color: red; font-weight: bold; }
+.live-thumbnail { width: 100%; border-radius: 12px; margin-bottom: 16px; }
+.live-header { display: flex; flex-direction: column; }
+.live-desc { font-size: 17px; font-weight: 500; line-height: 1.2; margin-left: 60px; }
 
 
-
-.live-desc {
-  font-size: 17px;
-  font-weight: 500;
-  color: #595959;
-  line-height: 1.2;
-  margin-left: 60px;
-}
-
-
-  
-  
