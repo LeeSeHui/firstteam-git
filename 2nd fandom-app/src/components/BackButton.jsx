@@ -1,31 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Backbutton.css'
+import './Backbutton.css';
 
-const BackButton = ({ to, label = '뒤로가기' }) => {
+const BackButton = ({ to, label = '뒤로가기', onPlusClick }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
     if (to) {
-      navigate(to); // 명시된 경로로 이동
+      navigate(to);
     } else {
-      navigate(-1); // 아니면 뒤로가기
+      navigate(-1);
     }
   };
 
   return (
-    <div>
-      <div className='header'>
-        <div className='ButtonContainer'>
-          <button onClick={handleBack}>←</button>
-          <span>{label}</span>
-        </div>
-      </div>
+    <div className="ButtonContainer">
+      <button className="back-arrow" onClick={handleBack}>←</button>
+      <span className="header-title">{label}</span>
+      {onPlusClick && (
+        <span className="plus-icon" onClick={onPlusClick}>+</span>
+      )}
     </div>
-    
-    
   );
 };
-
 
 export default BackButton;
