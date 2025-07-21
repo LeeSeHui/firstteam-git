@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Backbutton.css';
+import backbutton from '../assets/BackButton.png'
 
-const BackButton = ({ to, label = '뒤로가기', onPlusClick }) => {
+const BackButton = ({ to, label = '', onPlusClick }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -15,7 +16,7 @@ const BackButton = ({ to, label = '뒤로가기', onPlusClick }) => {
 
   return (
     <div className="ButtonContainer">
-      <button className="back-arrow" onClick={handleBack}>←</button>
+      <button className="back-arrow" onClick={handleBack}><img src={backbutton} alt="" /></button>
       <span className="header-title">{label}</span>
       {onPlusClick && (
         <span className="plus-icon" onClick={onPlusClick}>+</span>

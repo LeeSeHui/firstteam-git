@@ -1,0 +1,26 @@
+.chatroom-container { padding: 16px; background: #fff; height: 100vh; display: flex; flex-direction: column; }
+
+
+.chatroom-body { flex: 1; overflow-y: auto; }
+
+.chat-bubble { display: flex; gap: 10px; margin-bottom: 16px; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+.chat-sender { font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 4px; }
+
+.check-icon { width: 14px; height: 14px; }
+
+.chat-text { background: #f5f5f5; padding: 10px 14px; border-radius: 16px; font-size: 15px; margin-top: 4px; }
+
+.chat-image img { width: 200px; border-radius: 16px; }
+
+.emoji-bar { font-size: 18px; margin-top: 4px; }
+
+.chat-time { font-size: 12px; color: #888; margin-top: 4px; }
+
+.chatroom-input { display: flex; align-items: center; border-top: 1px solid #eee; padding: 12px 16px; gap: 8px; }
+
+.chatroom-input input { flex: 1; border: none; font-size: 15px; outline: none; }
+
+.plus-btn, .emoji-btn { background: none; border: none; font-size: 20px; }
