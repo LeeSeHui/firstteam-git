@@ -1,5 +1,5 @@
-.ButtonContainer { position: relative; display: flex; align-items: center; justify-content: center;  margin: 90px 0 31px 0; height: 70px;}
-.ButtonContainer button { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); border: none; background: none; font-size: 24px; cursor: pointer; }
+.ButtonContainer {display: flex;  align-items: center; margin: 90px 0 31px 0; height: 70px; background: red;}
+.ButtonContainer button { border: none; background: none; font-size: 24px; cursor: pointer; }
 .ButtonContainer span { font-size: 18px; font-weight: 600; color: var(--text-color); }
 
 /* 마이컬렉션 + */
