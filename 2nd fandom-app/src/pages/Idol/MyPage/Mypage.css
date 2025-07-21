@@ -1,5 +1,9 @@
+
+.container h2{font-size: 28px; margin-bottom: 3px; color: #494949;}
+.container p.text{font-size: 26px; font-weight: 500; color: #494949; margin-bottom: 10px;}
+.intro span{font-size: 18px; color: #494949; font-weight: 500;}
 .video-box {text-align: center;margin: 20px 0;}
-.challenge-section {margin: 20px 0;}
+.challenge-section {margin-bottom: 80px;}
 .challenge-section span {display: block; margin: 4px 0; font-weight: 600; color: #494949; font-size: 20px;}
 .challenge-section > span:last-of-type {color: #797979; font-size: 15px;margin-top: 4px;font-weight: 600; text-align: right; margin-bottom: px;}
 .ButtonContainer button{left: 0;}
@@ -8,174 +12,19 @@
 .challenge-section p{margin-bottom: 15px; font-size: 22px; color: #494949; font-weight: 500;}
 .challenge-section img {width: 100%; margin-bottom: 3px;}
 
-
-
-
-
-
-
-
-
-
-
-
 /* 다크모드 토글 */
-.toggle-switch {display: flex;background: #eee;border-radius: 20px;padding: 5px 10px;
- width: 95px;}
- .toggle-switch {
-  display: flex;
-  align-items: center;
-  background-color: #eee;
-  border-radius: 100px;
-  padding: 6px;
-  width: fit-content;
-  height: 40px;
-  gap: 4px;
-}
-
-.toggle-option {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-   padding: 6px 12px;
-  
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 20px;
-  color: #797979;
-  background-color: transparent;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.toggle-option.active {
-  background: #FFD700;
-  color: #494949;
-}
-
-
-
-/* 카데고리 */
-.category-section {
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 30px;
-}
-
-.category-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.category-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 10px;
-  font-size: 16px;
-  color: #333;
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
-}
-
-.category-list li:last-child {
-  border-bottom: none;
-}
-
-.category-icon {
-  margin-right: 10px;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-.category-text {
-  flex: 1;
-  font-weight: 500;
-}
-
-.setting-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.toggle-switch {display: flex;background: #eee; border-radius: 20px; padding: 5px 10px; width: 95px;}
+.toggle-switch {display: flex; align-items: center;
+background-color: #eee; border-radius: 100px; padding: 6px;width: fit-content;
+height: 40px;gap: 4px;}
+.toggle-option.active { background: #FFD700; color: #494949;}
 
 /* 토글 스위치 */
-.toggle-switch {
-  display: flex;
-  align-items: center;
-  background: #eee;
-  border-radius: 999px;
-  overflow: hidden;
-  width: 100px;
-  justify-content: space-between;
-}
-
-.toggle-option {
-  flex: 1;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #555;
-  transition: all 0.3s ease;
-}
-
-.toggle-option.active {
-  background: #FFD700;
-  color: #333;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  .category-section,
-  .challenge-button-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  
-  .category-section button,
-.challenge-button-section button {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* 텍스트 중앙 정렬 */
-  gap: 6px; /* 아이콘과 텍스트 간격 */
-}
-  
-  .category-section button:hover,
-  .challenge-button-section button:hover {
-    background-color: var(--button-hover);
-  }
+.toggle-switch {display: flex;align-items: center;background: #eee;border-radius: 999px; width: 90px;justify-content: space-between;}
+.toggle-option {flex: 1; text-align: center; padding: 6px 0; font-size: 14px; font-weight: 600; cursor: pointer; color: #494949; transition: all 0.3s ease;  border-radius: 20px;}
+.category-section button, .challenge-button-section button {display: flex; align-items: center; justify-content: center; gap: 6px; }
+.category-section button:hover,
+.challenge-button-section button:hover {background-color: var(--button-hover);}
   
   /* 라이트 모드 기본 */
   :root {
@@ -189,12 +38,47 @@
   
   /* 다크 모드 */
   body.dark {
-    --bg-color: #1a1a1a;
+    --bg-color: #151515;
     --text-color: #ffffff;
-    --box-color: #2a2a2a;
+    --box-color: #212121;
     --button-bg: #333333;
     --button-text: #ffffff;
     --button-hover: #444444;
   }
   
-  
+/* 카테고리 */
+.category-section {background: #fff; border-radius: 15px; padding: 18px 16px 0 16px;
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 35px;}
+.category-section button {all: unset; display: flex; justify-content: space-between;align-items: center;width: 100%;  padding: 9px 0;  font-size: 18px;font-weight: 500;color: #494949;border-bottom: 1px solid #E3E3E3;cursor: pointer;}
+.category-section button:last-of-type, .challenge-button:last-of-type{
+border-bottom: none;}
+.category-text {flex: 1;font-weight: 500;}
+.category-section .category-title{font-size: 22px; color: #494949;}
+.category-icon {width: 23px;height: 23px;margin: 10px;}
+.category-section .arrow {font-size: 25px;color: #494949;}
+.category-section button:hover, .challenge-button-section button:hover {background-color: transparent;}
+
+/* 챌린지 */
+.challenge-button-section {background: #fff;border-radius: 15px;
+  padding: 18px 16px 0 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);}
+.challenge-button-section h3 {font-size: 22px;color: #494949;}
+.challenge-button {all: unset; padding: 16px 0;width: 100%;
+border-bottom: 1px solid #E3E3E3;cursor: pointer;}
+.challenge-vote {width: 70px;height: 70px; border-radius: 50%;object-fit: cover;}
+.challenge-Quiz {width: 70px;height: 70px;border-radius: 50%; object-fit: cover; }
+.voteBox, .QuizBox {flex: 1; margin-left: 6px; display: flex;flex-direction: column;justify-content: center;}
+.voteBox .top, .QuizBox .top {font-size: 14px;color: #797979;margin-bottom: 2px;
+text-align: left;font-weight: 500;}
+.voteBox .bottom, .QuizBox .bottom {font-size: 18px;color: #797979;font-weight: 600;text-align: left;}
+.botton {background-color: #FFD700;padding: 7px 16px;border-radius: 7px;font-weight: 600;font-size: 15px;color: #494949;}
+
+
+/* 푸터 */
+.footer {margin-top: 80px;padding: 30px 16px;background-color: transparent;
+color: #797979;}
+.footer-links{display: flex; flex-wrap: wrap; font-size: 16px; gap: 7px 14px;margin-bottom: 35px; color: #848484;font-weight: 500;}
+.footer-info p {line-height: 1.6; color: #BEBEBE; font-size: 15px;}
+.footer-info .divider {margin-left: 20px;}
+.footer-sns {margin-top: 50px;display: flex;justify-content: right;gap: 20px;}
+.footer-sns img {width: 30px;height: 30px; opacity: 0.6; }
+
