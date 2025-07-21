@@ -1,0 +1,7 @@
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 아이콘과 숫자 사이 간격 */
+  font-size: 14px;
+  color: #333;
+}

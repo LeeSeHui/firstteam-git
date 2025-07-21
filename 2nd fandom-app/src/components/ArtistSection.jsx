@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import heart from '../assets/home/heart.png'
+import text from '../assets/home/text.png'
+import './ArtistSection.css'
 
 const ArtistSection = ({
   artistImg,
@@ -52,8 +55,15 @@ const ArtistSection = ({
           <>
             <img src={photo01} alt="photo1" />
             <div className="iconWrap">
-              <span>🤍 10K+</span>
-              <span>💬 10K+</span>
+              <div className="icon-text">
+                <img src={heart} alt="heart" />
+                <span>10K+</span>
+              </div>
+
+              <div className="icon-text">
+                <img src={text} alt="text" />
+                <span>10K+</span>
+              </div>
             </div>
           </>
         ) : (

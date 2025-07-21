@@ -2,9 +2,6 @@
 .image-container { position: relative; overflow: hidden; border-radius: 25px;}
 .card-image { filter: brightness(80%);}
 .product-tag {
-    position: absolute;
-    top: 154px;
-    right: 12px;
     background: rgba(243, 182, 67, 0.5);
     color: #fff;
     width: fit-content;
