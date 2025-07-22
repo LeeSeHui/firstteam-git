@@ -2,6 +2,5 @@
 .level-text { font-size: 14px; color: #FFD900; margin-bottom: 10px; }
 .image-box {width: 267px; padding: 4px; border-radius: 8px; margin-bottom: 20px; }
 .image-box img {width: 100%; height: auto;  object-fit: cover; }
-h2 { font-size: 20px; color: #FFC400; margin: 10px 0 6px; }
 .sub { font-size: 14px; color: #666; margin-bottom: 40px; text-align: center; }
 .start-btn { background-color: #FFD900; border: none; border-radius: 8px; padding: 14px 0; width: 100%; max-width: 300px; font-size: 16px; font-weight: bold; cursor: pointer; }

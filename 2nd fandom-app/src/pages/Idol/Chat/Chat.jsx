@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import BackButton from '../../../components/BackButton';
 import './Chat.css';
+import '../../../index.css'
 
 import slide1 from '../../../assets/dm/slide1.png';
 import slide2 from '../../../assets/dm/slide2.png';
@@ -118,9 +119,9 @@ const Chat = () => {
         <p className="section-title">추천 아티스트</p>
         {recommendArtists.map((a) => (
           <div className="artist-item" key={a.id}>
-            <img src={a.img} alt={a.name} className="artist-img" />
+            <img src={a.img} alt={a.name} className="artist-img2" />
             <div className="artist-info">
-              <p className="artist-name">
+              <p className="artist-name2">
                 {a.name} <img src={check_icon} alt="v" className="check-icon" />
               </p>
               <p className="artist-en">{a.en}</p>
