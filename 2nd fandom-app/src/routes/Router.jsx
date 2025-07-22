@@ -42,6 +42,7 @@ import IdolNotice from '../pages/Idol/Artist/Notice/Notice';
 
 // idol-chat
 import IdolChat from '../pages/Idol/Chat/Chat';
+import IdolChatRoom from '../pages/Idol/Chat/ChatRoom';
 
 // fashion
 import Fashion from '../pages/Idol/Fashion/Fashion';
@@ -79,10 +80,16 @@ const AppRouterContent = () => {
     '/nickname',
     '/onboarding/select-artist',
     '/welcome',
-    '/idol/home/quiz'
-  ];
+    '/idol/home/quiz',
+    '/idol/chat',
+    '/chatroom'
 
-  const shouldHideNav = hideNavPaths.includes(location.pathname);
+  ];
+  
+
+  const shouldHideNav = hideNavPaths.some(path =>
+  location.pathname.startsWith(path)
+);
 
   return (
     <>
@@ -140,6 +147,8 @@ const AppRouterContent = () => {
 
           {/* idol-nav */}
           <Route path="/idol/chat" element={<IdolChat />} />
+          <Route path="/chatroom/:name" element={<IdolChatRoom />} />
+
           
           {/* Actor */}
           <Route path="/actor/home" element={<ActorHome />} />

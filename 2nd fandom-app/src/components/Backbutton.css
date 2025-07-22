@@ -1,7 +1,8 @@
-.ButtonContainer {display: flex;  align-items: center; margin: 90px 0 31px 0; height: 70px; background: red;}
+.ButtonContainer {display: flex; padding: 16px; position: relative; align-items: center; margin: 90px 0 31px 0; height: 70px;}
+.header-title {position: absolute; left: 50%; transform: translateX(-50%); font-size: 22px;}
 .ButtonContainer button { border: none; background: none; font-size: 24px; cursor: pointer; }
-.ButtonContainer span { font-size: 18px; font-weight: 600; color: var(--text-color); }
+.ButtonContainer span { font-size: 22px; font-weight: 600; color: #5B5B5B;}
 
 /* 마이컬렉션 + */
 .ButtonContainer .plus-icon {position: absolute;right: 16px;top: 50%;transform: translateY(-50%);font-size: 40px;font-weight: 400;
-cursor: pointer;}
+cursor: pointer;} 

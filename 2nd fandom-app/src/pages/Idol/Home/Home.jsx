@@ -204,10 +204,7 @@ const Home = () => {
       </div>
       
       <QuizSection handleQuizClick={handleQuizClick} />
-  
-          
-        
-
+      
       <div className="voteSection">
         <div className="swipe vote">
           <div className="voteRow">
