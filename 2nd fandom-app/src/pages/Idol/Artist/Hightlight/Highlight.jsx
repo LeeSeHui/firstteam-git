@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import  useNickname  from '../../../../contexts/useNickname';
+import useNickname from '../../../../contexts/useNickname';
 import ArtistSection from '../../../../components/ArtistSection';
 
 import minji from '../../../../assets/artist-select/minji.png';
@@ -18,14 +18,17 @@ import feedimg1 from '../../../../assets/artist/artistfeed1.png';
 import photo02 from '../../../../assets/home/photo02.png';
 import photo03 from '../../../../assets/home/photo03.png';
 import live from '../../../../assets/artist/livereplay.png';
+import noticeicon from '../../../../assets/artist/noticeicon.png';
+import likeIcon from '../../../../assets/artist/like.png';
+import commentIcon from '../../../../assets/artist/comment.png';
 
 import './Highlight.css';
+import '../../../../index.css';
 
 const Highlight = () => {
   const navigate = useNavigate();
   const { nickname } = useNickname();
 
-  // ✅ 댓글 상태
   const [comments, setComments] = useState([
     { username: { nickname: '팬1' }, message: '언니 너무 예뻐요!' },
     { username: { nickname: '팬2' }, message: '공연 화이팅!' },
@@ -66,8 +69,14 @@ const Highlight = () => {
 
       {/* 공지 */}
       <div className="notice-box">
-        <p>📢 [안내] NewJeans Global Fansign... 공지</p>
-        <p>📢 NewJeans 일정을 확인해보세요.</p>
+        <p className="body.light">
+          <img src={noticeicon} alt="공지 아이콘" className="notice-icon" />
+          [안내] NewJeans Global Fansign... 공지
+        </p>
+        <p>
+          <img src={noticeicon} alt="공지 아이콘" className="notice-icon" />
+          NewJeans 일정을 확인해보세요.
+        </p>
       </div>
 
       {/* 투표 배너 */}
@@ -122,8 +131,8 @@ const Highlight = () => {
 
           <div className="post-footer">
             <div className="like-counts">
-              <span>💛10K+</span>
-              <span>💬10K+</span>
+              <span><img src={likeIcon} alt="좋아요" className="icon-small" />10K+</span>
+              <span><img src={commentIcon} alt="댓글" className="icon-small" />10K+</span>
             </div>
           </div>
         </div>

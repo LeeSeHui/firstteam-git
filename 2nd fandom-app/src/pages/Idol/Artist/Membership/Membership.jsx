@@ -11,6 +11,8 @@ import photo05_2 from '../../../../assets/artist/photo05_2.png';
 import photo06_1 from '../../../../assets/artist/photo06_1.png';
 import photo06_2 from '../../../../assets/artist/photo06_2.png';
 
+import lockIcon from "../../../../assets/artist/lock.png";
+
 const feedData = [
   {
     id: 1,
@@ -84,7 +86,12 @@ const Membership = () => {
               />
             ) : (
               <div className="locked-overlay">
-                🔒 <strong>멤버십 전용 콘텐츠입니다.</strong>
+                <div className="lock-image-wrap">
+                  <img src={lockIcon} alt="자물쇠" className="lock-icon" />
+                </div>
+                <div className="lock-text">
+                  <strong>멤버십 전용 콘텐츠입니다.</strong>
+                </div>
               </div>
             )}
           </div>
