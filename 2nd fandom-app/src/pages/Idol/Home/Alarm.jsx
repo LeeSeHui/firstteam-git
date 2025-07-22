@@ -7,6 +7,7 @@ import thumbnail1 from '../../../assets/Alarm/thumbnail1.png';
 import thumbnail2 from '../../../assets/Alarm/thumbnail2.png';
 import thumbnail3 from '../../../assets/Alarm/thumbnail3.png';
 import thumbnail4 from '../../../assets/Alarm/thumbnail4.png';
+import BackButton from '../../../components/BackButton'
 
 const tabs = ['전체', 'NewJeans', 'BLACKPINK', 'G-DRAGON'];
 
@@ -116,8 +117,7 @@ const Alarm = () => {
 
   return (
     <div className="alarm-page">
-      <h2 className="page-title">알림</h2>
-
+      <BackButton label={'알림'}/>
       <div className="tab-list">
         {tabs.map((tab) => (
           <button
