@@ -4,14 +4,10 @@
 .ButtonContainer span { font-size: 22px; font-weight: 600; color: #5B5B5B;}
 
 /* 마이컬렉션 + */
-<<<<<<< HEAD
+
 .ButtonContainer .plus-icon {position: absolute;right: 16px;top: 50%; transform: translateY(-50%);font-size: 40px;font-weight: 400;
 cursor: pointer;}
 
 /* 최근 본 미디어 '편집 */
 .right-action {position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
 font-size: 16px; font-weight: 500; cursor: pointer; background: none; border: none;}
-=======
-.ButtonContainer .plus-icon {position: absolute;right: 16px;top: 50%;transform: translateY(-50%);font-size: 40px;font-weight: 400;
-cursor: pointer;} 
->>>>>>> 90f6c6815ef9ebe6d1d1ecebef51d3d42f5c833a
