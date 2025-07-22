@@ -3,6 +3,7 @@ import './ArtistSection.css';
 import { useNavigate } from 'react-router-dom';
 
 import likeIcon from '../assets/artist/like.png';
+import noLikeIcon from '../assets/artist/nolike.png';
 import commentIcon from '../assets/artist/comment.png';
 import tagIcon from '../assets/artist/tag.png';
 import tagActiveIcon from '../assets/artist/tag-yellow.png';
@@ -29,6 +30,7 @@ const ArtistSection = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
+  const [liked, setLiked] = useState(false);
   const navigate = useNavigate();
 
   // 🔒 잠금 처리
@@ -87,8 +89,18 @@ const ArtistSection = ({
 
         <div className="post-footer">
           <div className="like-counts">
-            <span>
-              <img src={likeIcon} alt="좋아요" className="icon-small" />10K+
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                setLiked(!liked);
+              }}
+            >
+              <img
+                src={liked ? likeIcon : noLikeIcon}
+                alt="좋아요"
+                className="icon-small"
+              />
+              10K+
             </span>
             <span>
               <img src={commentIcon} alt="댓글" className="icon-small" />10K+
