@@ -51,11 +51,12 @@ const Manual = () => {
   };
 
   return (
-    <div className="manual-container">
+    <div>
       <header>
       <BackButton onClick={handleBack} />
         <button className="skip-btn" onClick={() => navigate('/onboarding/select-artist')}>건너뛰기</button>
       </header>
+      <div className="manual-container">
       <div className="manual-content">
         <img src={manualData[current].img} alt={`manual${current + 1}`} className={`manual-img ${current === 3 ? 'manual-last-img' : ''}`}  />
         <h2>
@@ -74,6 +75,8 @@ const Manual = () => {
         {current < manualData.length - 1 ? '다음' : '다음'}
       </button>
     </div>
+    </div>
+    
   );
 };
 
