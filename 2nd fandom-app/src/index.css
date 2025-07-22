@@ -20,7 +20,8 @@ body * {font-family: "Pretendard", sans-serif;}
 
 .container {padding: 94px 16px; box-sizing: border-box;}
 .dark .Section {background: #212121;}
-body.light {background-color: white; color: #595959;}
+
+body.light {background-color: white; color: #494949;}
 
 .sub-color {color: #797979;}
 
