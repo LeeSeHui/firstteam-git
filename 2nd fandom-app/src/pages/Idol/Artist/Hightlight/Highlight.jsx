@@ -73,11 +73,11 @@ const Highlight = () => {
       <div className="notice-box">
         <p className="body.light">
           <img src={noticeicon} alt="공지 아이콘" className="notice-icon" />
-          [안내] NewJeans Global Fansign... 공지
+          [안내] NewJeans Global Concert Fansign...
         </p>
         <p>
           <img src={noticeicon} alt="공지 아이콘" className="notice-icon" />
-          NewJeans 일정을 확인해보세요.
+          NewJeans 8월 음악방송 일정을 확인해보세...
         </p>
       </div>
 
