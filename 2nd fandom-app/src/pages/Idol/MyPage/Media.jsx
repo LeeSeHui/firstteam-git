@@ -22,21 +22,21 @@ const Media = () => {
 
   // ✅ 각 섹션별 이미지 데이터 3개씩
   const liveVideos = [
-    { img: live1, title: '뉴진스 올해 첫 라방! 🥰', artist: 'NewJeans' },
-    { img: live2, title: '제니 도쿄 라이브', artist: 'BLACKPINK' },
-    { img: live2, title: '제니 서울 라방', artist: 'BLACKPINK' },
+    { img: live1, title: '뉴진스 올해 첫 라방! 🥰', artist: 'NewJeans', date: '2025.01.01' },
+    { img: live2, title: '제니 도쿄 라이브', artist: 'BLACKPINK', date: '2025.07.18' },
+    { img: live2, title: '제니 서울 라방', artist:'BLACKPINK', date: '2025.07.18'},
   ];
 
   const videos = [
-    { img: video1, title: "BLΛƆKPIИK 'JUMP' M/V" },
-    { img: video2, title: "JENNIE 1st Album 'Ruby'" },
-    { img: video3, title: '[Jeans] 지니랜드 EP.1' },
+    { img: video1, title: "BLACKPIИK 'JUMP' ComBack M/V" },
+    { img: video2, title: "JENNIE 1st  Studio Album 'Ruby -Teaser'" },
+    { img: video3, title: '[Jeans] 지니랜드 EP.1 축 개업 ♨ ' },
   ];
 
   const posts = [
-    { img: post1, title: '뉴진스 하니 룩북 메이크업' },
-    { img: post2, title: '조이 인스타 스타일 모음' },
-    { img: post3, title: '도레미 패션 정보 모음' },
+    { img: post1},
+    { img: post2},
+    { img: post3},
   ];
 
   return (
@@ -62,9 +62,12 @@ const Media = () => {
         <div className="scroll-wrapper">
           {liveVideos.map((item, idx) => (
             <div className="media-card" key={idx}>
-              <img src={item.img} alt={item.title} />
+              <img src={item.img} alt={item.title}className='media-img' />
               <p className="media-title">{item.title}</p>
-              <p className="media-sub">{item.artist}</p>
+              <p className="media-sub">
+                <span className="artist">{item.artist}</span>
+                <span className="date">{item.date}</span>
+              </p>
             </div>
           ))}
         </div>
@@ -76,7 +79,7 @@ const Media = () => {
         <div className="scroll-wrapper">
           {videos.map((item, idx) => (
             <div className="media-card" key={idx}>
-              <img src={item.img} alt={item.title} />
+              <img src={item.img} alt={item.title}className='media-img' />
               <p className="media-title">{item.title}</p>
             </div>
           ))}
@@ -86,10 +89,10 @@ const Media = () => {
       {/* 게시물 */}
       <div className="mypage-media-section">
         <h3 className="media-section-title">게시물</h3>
-        <div className="scroll-wrapper">
+        <div className="scroll-wrapper post-wrapper">
           {posts.map((item, idx) => (
-            <div className="media-card" key={idx}>
-              <img src={item.img} alt={item.title} />
+            <div className="media-card post-card" key={idx}>
+              <img src={item.img} alt={item.title}className='post-img' />
               <p className="media-title">{item.title}</p>
             </div>
           ))}
