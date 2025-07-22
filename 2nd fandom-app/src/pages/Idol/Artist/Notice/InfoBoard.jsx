@@ -51,9 +51,14 @@ const InfoBoard = () => {
           </button>
           {openIndex === index && (
             <div className="notice-content">
-              {item.content.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
+              {item.content.split('\n').map((line, i) => {
+                const isEnglish = /[a-zA-Z]/.test(line);
+                return (
+                  <p key={i} className={isEnglish ? 'en' : 'ko'}>
+                    {line}
+                  </p>
+                );
+              })}
             </div>
           )}
         </div>

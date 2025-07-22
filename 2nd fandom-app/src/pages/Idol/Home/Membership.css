@@ -1,0 +1,101 @@
+.membership-wrap {
+    padding: 20px;
+    font-family: 'Pretendard', sans-serif;
+    background-color: #fff;
+    padding-bottom: 200px;
+  }
+  
+  .membership-title {
+    margin-bottom: 24px;
+    text-align: left;
+    padding-left: 45px;
+  }
+  
+  .membership-title .text .membership-membership-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .membership-title .text {
+    display: flex;
+    flex-direction:inherit;
+  }
+  
+  .membership-title .text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  .membership-title .img {
+    margin-top: 12px;
+    text-align: center;
+  }
+  
+  .membership-title .img img {
+    width: auto;
+    max-width: 200px;
+    height: auto;
+  }
+  
+  .note {
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .note h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding-left: 16px;
+  }
+  
+  .note ul {
+    padding-left: 16px;
+    list-style: disc;
+    margin-bottom: 20px;
+  }
+  
+  .note li {
+    margin-bottom: 10px;
+  }
+  
+  .note .confirm {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fffbe5;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .note .confirm img {
+    width: 18px;
+    margin-right: 10px;
+    margin-top: 2px;
+  }
+  
+  .btn-box {
+    text-align: center;
+  }
+  
+  .subscribe-btn {
+    background-color: #ffc900;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    color: #000;
+    cursor: pointer;
+  }
+  

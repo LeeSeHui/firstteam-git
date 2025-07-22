@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import './ArtistSection.css';
 import { useNavigate } from 'react-router-dom';
 
+import likeIcon from '../assets/artist/like.png';
+import commentIcon from '../assets/artist/comment.png';
+import tagIcon from '../assets/artist/tag.png';
+import tagActiveIcon from '../assets/artist/tag-yellow.png';
+import lockIcon from '../assets/artist/lock.png';
+
 const ArtistSection = ({
   profileImage,
   artistName,
@@ -17,21 +23,25 @@ const ArtistSection = ({
   setNewComment,
   handleAddComment,
   totalCommentCount,
-  onProfileClickPath = '/', // 기본값 설정
+  onProfileClickPath = '/',
   isLocked = false,
   onUnlock = () => {},
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [bookmarked, setBookmarked] = useState(false);
   const navigate = useNavigate();
 
-    // 🔒 잠금 처리
-    if (isLocked) {
-      return (
-        <div className="artistSection locked" onClick={onUnlock}>
-          <div className="locked-overlay">🔒 멤버십 전용 콘텐츠입니다.</div>
+  // 🔒 잠금 처리
+  if (isLocked) {
+    return (
+      <div className="artistSection locked" onClick={onUnlock}>
+        <div className="locked-overlay">
+          <img src={lockIcon} alt="잠금 아이콘" className="lock-icon" />
+          멤버십 전용 콘텐츠입니다.
         </div>
-      );
-    }
+      </div>
+    );
+  }
 
   return (
     <div className={`artistSection Section ${isExpanded ? 'expanded' : ''}`}>
@@ -44,7 +54,7 @@ const ArtistSection = ({
               alt={`${artistName} 프로필`}
               className="profile-img"
               onClick={(e) => {
-                e.stopPropagation(); // 확장 방지
+                e.stopPropagation();
                 navigate(onProfileClickPath);
               }}
             />
@@ -58,15 +68,31 @@ const ArtistSection = ({
               <p className="time">{postTime}</p>
             </div>
           </div>
-          <button className="bookmark-btn">🔖</button>
+          <button
+            className="bookmark-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              setBookmarked(!bookmarked);
+            }}
+          >
+            <img
+              src={bookmarked ? tagActiveIcon : tagIcon}
+              alt="북마크 아이콘"
+              className="bookmark-icon"
+            />
+          </button>
         </div>
 
         <p className="feed-text">{postText}</p>
 
         <div className="post-footer">
           <div className="like-counts">
-            <span>💛10K+</span>
-            <span>💬10K+</span>
+            <span>
+              <img src={likeIcon} alt="좋아요" className="icon-small" />10K+
+            </span>
+            <span>
+              <img src={commentIcon} alt="댓글" className="icon-small" />10K+
+            </span>
           </div>
         </div>
 
