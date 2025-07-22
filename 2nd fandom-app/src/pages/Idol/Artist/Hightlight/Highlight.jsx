@@ -20,6 +20,7 @@ import photo03 from '../../../../assets/home/photo03.png';
 import live from '../../../../assets/artist/livereplay.png';
 import noticeicon from '../../../../assets/artist/noticeicon.png';
 import likeIcon from '../../../../assets/artist/like.png';
+import noLikeIcon from '../../../../assets/artist/nolike.png'; // ✅ 추가
 import commentIcon from '../../../../assets/artist/comment.png';
 
 import './Highlight.css';
@@ -34,6 +35,7 @@ const Highlight = () => {
     { username: { nickname: '팬2' }, message: '공연 화이팅!' },
   ]);
   const [newComment, setNewComment] = useState('');
+  const [liked, setLiked] = useState(false); // ✅ 추가
 
   const handleAddComment = () => {
     if (!newComment.trim()) return;
@@ -131,8 +133,19 @@ const Highlight = () => {
 
           <div className="post-footer">
             <div className="like-counts">
-              <span><img src={likeIcon} alt="좋아요" className="icon-small" />10K+</span>
-              <span><img src={commentIcon} alt="댓글" className="icon-small" />10K+</span>
+              <span
+                onClick={() => setLiked(!liked)}
+              >
+                <img
+                  src={liked ? likeIcon : noLikeIcon}
+                  alt="좋아요"
+                  className="icon-small"
+                />
+                10K+
+              </span>
+              <span>
+                <img src={commentIcon} alt="댓글" className="icon-small" />10K+
+              </span>
             </div>
           </div>
         </div>
