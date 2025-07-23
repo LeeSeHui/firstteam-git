@@ -11,7 +11,6 @@ import logo from '../../../assets/Home/logo.png';
 import alarm from '../../../assets/Home/alarm.png';
 import idol_char from '../../../assets/Home/idol-mypage-char.png';
 import artist1 from '../../../assets/Home/artist1.png';
-import artist3 from '../../../assets/Home/artist3.png';
 import plusIcon from '../../../assets/Home/plus.png';
 import live01 from '../../../assets/Home/live1.png';
 import live02 from '../../../assets/Home/live2.png';
@@ -137,9 +136,6 @@ const Home = () => {
           <div className="artistButtons">
             <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist1} alt="artist1" />
-            </button>
-            <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
-              <img src={artist3} alt="artist3" />
             </button>
             <button onClick={(e) => { e.stopPropagation(); handlePlusClick(); }}>
               <img src={plusIcon} alt="plus" />
