@@ -31,4 +31,3 @@ background-color: #fff;}
 .sort-button {all: unset; background-color: #EEEEEE; border-radius: 5px; padding: 5px 4px 5px 9px; font-size: 17px; font-weight: 600; display: inline-flex; align-items: center;
 gap: 2px;cursor: pointer;}
 .sort-button .material-symbols-outlined {font-size: 18px;}
-
