@@ -9,6 +9,7 @@
     margin-bottom: 24px;
     text-align: left;
     padding-left: 45px;
+    position: relative;
   }
   
   .membership-title .text .membership-membership-title {
@@ -27,6 +28,8 @@
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 8px;
+    font-weight: 600;
+    margin-top: 16px;
   }
   
   .membership-title .img {
@@ -36,22 +39,25 @@
   
   .membership-title .img img {
     width: auto;
-    max-width: 200px;
+    max-width: 190px;
     height: auto;
+    position: absolute;
+    top: -46px;
   }
   
   .note {
-    background-color: #f8f8f8;
-    border-radius: 12px;
-    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 24px;
     margin-bottom: 24px;
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
+    font-weight: 500;
   }
   
   .note h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
     padding-left: 16px;
@@ -67,20 +73,44 @@
     margin-bottom: 10px;
   }
   
-  .note .confirm {
+  .confirm {
     display: flex;
     align-items: flex-start;
-    background-color: #fffbe5;
     border-radius: 8px;
-    padding: 12px;
-    font-size: 13px;
-    color: #555;
+    padding: 7px;
+    font-size: 16px;
+    margin: 47px 100px;
+    font-weight: 500;
   }
+
+.confirm.active {
+  border-radius: 12px;
+}
+
+.subscribe-btn {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  cursor: not-allowed;
+  transition: background-color 0.3s;
+}
+
+.subscribe-btn.active {
+  background-color: #FFD700;
+  cursor: pointer;
+  color: #494949;
+}
+
   
-  .note .confirm img {
-    width: 18px;
+  .confirm img {
+    width: 25px;
     margin-right: 10px;
-    margin-top: 2px;
+    margin-top: 7px;
+    cursor: pointer;
   }
   
   .btn-box {
@@ -88,14 +118,14 @@
   }
   
   .subscribe-btn {
-    background-color: #ffc900;
+    background-color: #cccccc;
     border: none;
     border-radius: 12px;
-    padding: 14px 0;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
-    width: 100%;
-    color: #000;
+    width: 438px;
+    height: 64px;
     cursor: pointer;
+    color: #ffffff;
   }
   
