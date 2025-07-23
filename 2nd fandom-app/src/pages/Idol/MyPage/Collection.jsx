@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Collection.css';
+import '/src/index.css';
 import BackButton from '../../../components/BackButton';
 import fashionImg from '../../../assets/mypage/collection/fashion.png';
 import jennieImg from '../../../assets/mypage/collection/jenny.png';
@@ -29,22 +30,22 @@ const Collection = () => {
         <div className="collection-item">
           <img src={fashionImg} alt="fashion" />
           <div className="title">FASHION</div>
-          <div className="count">핀 10개</div>
+          <div className="collection-count sub-color">핀 10개</div>
         </div>
         <div className="collection-item">
           <img src={jennieImg} alt="jennie" />
           <div className="title">JENNIE</div>
-          <div className="count">핀 28개</div>
+          <div className="collection-count sub-color">핀 28개</div>
         </div>
         <div className="collection-item">
           <img src={selfieImg} alt="selfie" />
           <div className="title">셀피</div>
-          <div className="count">핀 528개</div>
+          <div className="collection-count sub-color">핀 528개</div>
         </div>
         <div className="collection-item">
           <img src={goodsImg} alt="goods" />
           <div className="title">GOODS</div>
-          <div className="count">핀 5개</div>
+          <div className="collection-count sub-color">핀 5개</div>
         </div>
       </div>
 

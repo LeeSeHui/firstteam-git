@@ -6,7 +6,7 @@
 /* 컨텐츠 */
 .mypage-media-section {margin-bottom: 25px;}
 .media-section-title {font-size: 20px; font-weight: 650; margin-bottom: 5px;}
-.media-title {font-size: 17px;font-weight: 550;line-height: 1.3;}
+.media-title {font-size: 17px;font-weight: 500;line-height: 1.3;}
 .media-sub {display: flex; justify-content: flex-start; gap: 12px; font-size: 15px;
 margin-top: 3px;}
 .media-sub .date {white-space: nowrap;}
