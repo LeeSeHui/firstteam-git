@@ -143,7 +143,7 @@ const MyPage = () => {
           <span className="arrow">›</span>
         </button>
 
-         <button onClick={() => navigate('/idol/mypage/media')}>
+         <button onClick={() => navigate('/attendance')}>
           <img src={iconcheck} alt="미디어 아이콘" className="category-icon" />
           <span className="category-text">출석체크 이벤트</span>
           <span className="arrow">›</span>
