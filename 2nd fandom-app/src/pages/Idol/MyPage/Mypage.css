@@ -1,5 +1,5 @@
 
-.container h2{font-size: 28px; margin-bottom: 3px; color: #494949;}
+.container .mypage-nickname{font-size: 28px; margin-bottom: 3px; color: #494949; font-weight: 600;}
 .container p.text{font-size: 26px; font-weight: 500; color: #494949; margin-bottom: 10px;}
 .intro span{font-size: 18px; color: #494949; font-weight: 500;}
 .video-box {text-align: center;margin: 20px 0;}
@@ -27,7 +27,6 @@ height: 40px;gap: 4px;}
 .challenge-button-section button:hover {background-color: var(--button-hover);}
   
 
-  
 /* 카테고리 */
 .category-section {background: #fff; border-radius: 15px; padding: 20px 16px 4px 16px;
 box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 35px;}
@@ -63,3 +62,10 @@ color: #797979;}
 .footer-info .divider {margin-left: 20px;}
 .footer-sns {margin-top: 50px;display: flex;justify-content: right;gap: 20px;}
 .footer-sns img {width: 30px;height: 30px; opacity: 0.6; }
+
+
+
+/* 닉네임변경 */
+.nickname-input {font-size: 24px; font-weight: bold; border: none; border-bottom: 1px solid #ccc; background: transparent; outline: none;width: 120px;}
+.edit-btn {background: none;border: none;margin-left: 6px;cursor: pointer;}
+.edit-icon {width: 16px;height: 16px;object-fit: contain;}
