@@ -1,4 +1,7 @@
+// src/components/Chatbot.jsx
+
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { getChatReply } from '../api/openai';
 import './Chatbot.css';
 
@@ -10,6 +13,7 @@ const Chatbot = () => {
   const [suggestions, setSuggestions] = useState([]);
 
   const messagesEndRef = useRef(null);
+  const location = useLocation();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -43,17 +47,12 @@ const Chatbot = () => {
     setLoading(true);
     setSuggestions([]);
 
-    // Typing... 메시지 추가
     const typingMessage = { sender: 'bot', text: '....' };
     setMessages([...newMessages, typingMessage]);
 
     try {
-      // 봇 딜레이 시뮬레이션 (약간 기다리는 느낌)
       await new Promise((res) => setTimeout(res, 1000));
-
       const botReply = await getChatReply(text, isButton);
-
-      // Typing... 메시지를 실제 답변으로 교체
       const updatedMessages = [...newMessages, { sender: 'bot', text: botReply }];
       setMessages(updatedMessages);
     } catch (error) {
@@ -67,7 +66,8 @@ const Chatbot = () => {
     setInput('');
   };
 
-  return (
+  // 👇 조건부 렌더링으로 수정한 부분
+  return location.pathname === '/idol/home/live' ? null : (
     <div className="chatbot-container">
       {!isOpen ? (
         <button className="chatbot-button" onClick={handleOpen}>

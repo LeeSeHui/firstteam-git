@@ -1,22 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Backbutton.css';
-import backbutton from '../assets/BackButton.png'
-
+import backbutton from '../assets/BackButton.png';
 
 const BackButton = ({
   to,
-  label = '뒤로가기',
+  label = '',
   onPlusClick,
   editText,
   onEditClick,
-  onClick, // ✅ 추가
+  onClick,
+  className = '', // ✅ className 받기
 }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
     if (onClick) {
-      onClick(); // ✅ 커스텀 핸들러 우선
+      onClick();
       return;
     }
 
@@ -28,7 +28,7 @@ const BackButton = ({
   };
 
   return (
-    <div className="ButtonContainer">
+    <div className={`ButtonContainer ${className}`}> {/* ✅ className 적용 */}
       <button className="back-arrow" onClick={handleBack}>
         <img src={backbutton} alt="" />
       </button>
@@ -47,6 +47,5 @@ const BackButton = ({
     </div>
   );
 };
-
 
 export default BackButton;
