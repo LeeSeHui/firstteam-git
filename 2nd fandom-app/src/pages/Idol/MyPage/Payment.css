@@ -19,7 +19,6 @@ background-color: #fff;}
 .info span {font-size: 16px;font-weight: 450;}
 .recommend-section .recommend-title{font-size: 23px; margin-bottom: 10px; font-weight: 600;}
 
-
 /* 해지/가입 버튼 */
 .cancel-button, .subscribe-button {margin-left: auto; padding: 7px 16px; border: 1px solid #ffce00; background: #fff; border-radius: 20px; font-weight: 450; font-size: 18px;}
 .subscribe-button {background: #ffce00; border: none;}
