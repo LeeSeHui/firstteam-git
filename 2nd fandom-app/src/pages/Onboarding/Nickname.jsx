@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import  useNickname  from '../../contexts/useNickname';
 
 import BackButton from '../../components/BackButton';
+import YellowButton from '../../components/YellowButton';
 import './Nickname.css';
-import manual4 from '../../assets/Manual/idol-mypage-char.png';
+import nickname_img from '../../assets/onboarding/nickname_img.png';
+import X_button from '../../assets/onboarding/X_button.png'
 
 const NicknamePage = () => {
   const [input, setInput] = useState('');
@@ -12,19 +14,25 @@ const NicknamePage = () => {
   const navigate = useNavigate();
 
   const handleComplete = () => {
-    if (input.trim() === '') return;
-    updateNickname (input); // 전역 닉네임 저장
-    navigate('/welcome'); // 홈으로 이동
+    try {
+      updateNickname(input);
+      navigate('/welcome');
+    } catch (err) {
+      console.error('Error:', err);
+    }
   };
 
   return (
-    <div className="nickname-container">
+    <div>
+      <header>
       <BackButton />
+      </header>
+      <div className="nickname-container">
+        <h2><span>NUVIE</span>에 온걸 환영해요</h2>
+      <p className="sub2">닉네임을 만들어 주세요!</p>
+      <img src={nickname_img} alt="welcome character" className="nickname-img" />
 
-      <img src={manual4} alt="welcome character" className="welcome-img" />
-
-      <h2>NUVIE에 온걸 환영해요</h2>
-      <p className="sub">닉네임을 만들어 주세요!!</p>
+      
 
       <div className="input-box">
         <input
@@ -37,21 +45,25 @@ const NicknamePage = () => {
         {input && (
           <button
             className="clear-btn"
-            onClick={() => setInput('')} // ✅ input 초기화
+            onClick={() => setInput('')}
             type="button"
           >
-            X
+            <img src={X_button} alt="" />
           </button>
         )}
       </div>
 
-      <p className="notice">※ 추후 수정이 가능합니다.</p>
-      <p className="count">{input.length}/10</p> {/* ✅ 글자 수는 input 기준 */}
+      {/* ✅ 아래 info 묶어서 한 줄 정렬 */}
+      <div className="input-info">
+        <p className="notice">※ 추후 수정이 가능합니다.</p>
+        <p className="nickname-count">{input.length}/10</p>
+      </div>
 
-      <button onClick={handleComplete} className="complete-btn">
-        완료
-      </button>
+
+      <YellowButton label={'완료'} onClick={handleComplete}/>
     </div>
+    </div>
+    
   );
 };
 

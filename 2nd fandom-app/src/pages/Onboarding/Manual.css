@@ -11,6 +11,7 @@ header {padding: 50px 16px; display: flex; justify-content: space-between; align
     width: 100%;
     padding: 0 20px;
     text-align: center;
+    overflow: visible;
   }
   
   .manual-text-wrapper.top {
@@ -60,3 +61,16 @@ header {padding: 50px 16px; display: flex; justify-content: space-between; align
 .dot-container { margin-top: 16px; }
 .dot { display: inline-block; width: 8px; height: 8px; background: #ccc; border-radius: 50%; margin: 0 4px; }
 .dot.active { background: #facc15; }
+.marquee-content img {width: 200px; height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px;
+  }
+  .manual-visual-wrapper {
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

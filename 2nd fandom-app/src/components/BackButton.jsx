@@ -6,7 +6,7 @@ import backbutton from '../assets/BackButton.png'
 
 const BackButton = ({
   to,
-  label = '뒤로가기',
+  label = '',
   onPlusClick,
   editText,
   onEditClick,
