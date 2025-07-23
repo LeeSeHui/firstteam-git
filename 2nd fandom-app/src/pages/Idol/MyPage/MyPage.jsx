@@ -3,13 +3,19 @@ import { useState } from 'react';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './MyPage.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import BackButton from '../../../components/BackButton';
 import starlogo from '../../../assets/mypage/starlogo.png';
 import video1 from '../../../assets/mypage/video1.png';
+import video2 from '../../../assets/mypage/video2.png';
+import video3 from '../../../assets/mypage/video3.png';
+import video4 from '../../../assets/mypage/video4.png';
+import video5 from '../../../assets/mypage/video5.png';
 import levelbar from '../../../assets/mypage/levelbar.png';
 import iconCollection from '../../../assets/mypage/collection.png';
 import iconPayment from '../../../assets/mypage/payment.png';
 import iconMedia from '../../../assets/mypage/media.png';
+import iconcheck from '../../../assets/mypage/attendance.png';
 import iconSetting from '../../../assets/mypage/setting.png';
 import challengeImg1 from '../../../assets/mypage/challengeimg1.png';
 import challengeImg2 from '../../../assets/mypage/challengeimg2.png';
@@ -25,6 +31,35 @@ const MyPage = () => {
   const { darkMode, toggleTheme } = useTheme();
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(nickname);
+
+ const characterLevels = [
+    {
+      level: 'Lv.1',
+      image: video1,
+      goal: '조금만 더 가면 Lv.2에 달성해요',
+    },
+    {
+      level: 'Lv.2',
+      image: video2,
+      goal: '조금만 더 가면 Lv.3에 달성해요',
+    },
+    {
+      level: 'Lv.3',
+      image: video3,
+      goal: '조금만 더 가면 Lv.4에 달성해요',
+    },
+    {
+      level: 'Lv.4',
+      image: video4,
+      goal: '조금만 더 가면 Lv.5에 달성해요',
+    },
+    {
+      level: 'Lv.5',
+      image: video5,
+      goal: '최고 레벨 달성!',
+    },
+  ];
+
 
   const handleSave = () => {
   updateNickname(tempName);
@@ -61,23 +96,31 @@ const MyPage = () => {
         <p className="text">오늘도 같이 덕질 해볼까요?</p>
         <p className='point'>
           <img className='star-logo' src={starlogo} alt="star" />
-          <span>보유 포인트 : 180</span>
+          <span>보유 포인트 : 200</span>
         </p>
       </div>
 
-      <div className="video-box">
-        <img src={video1} alt="video" />
-      </div>
+    <div className="video-box">
+  <Swiper spaceBetween={30} slidesPerView={1}>
+    {characterLevels.map((char, index) => (
+      <SwiperSlide key={index}>
+        <div className="challenge-section">
+          <img src={char.image} alt={`레벨 ${char.level}`} className="character-img" />
 
-      <div className="challenge-section">
-        <div className="day">D+160</div>
-        <p>
-          {nickname}님, 오늘의 챌린지를 통해<br />목표에 달성해보아요!
-        </p>
-        <span>별별이 L.1</span>
-        <img src={levelbar} alt="level bar" />
-        <span>조금만 더 가면 Lv.2에 달성해요</span>
-      </div>
+          <div className="day">D+1</div>
+
+          <p>
+            {nickname}님, 오늘의 챌린지를 통해<br />목표에 달성해보아요!
+          </p>
+
+          <span>별별이 {char.level}</span>
+          <img src={levelbar} alt="level bar" className="level-bar" />
+          <span>{char.goal}</span>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
 
       <div className="category-section">
         <h3 className="category-title">Category</h3>
@@ -100,9 +143,16 @@ const MyPage = () => {
           <span className="arrow">›</span>
         </button>
 
+         <button onClick={() => navigate('/idol/mypage/media')}>
+          <img src={iconcheck} alt="미디어 아이콘" className="category-icon" />
+          <span className="category-text">출석체크 이벤트</span>
+          <span className="arrow">›</span>
+        </button>
+
+
         <button className="setting-button">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />
-          <span className="category-text">어플설정(다크모드 알림 설정)</span>
+          <span className="category-text">다크모드</span>
           <div className="toggle-switch">
             <span
               className={`toggle-option ${darkMode ? 'active' : ''}`}
