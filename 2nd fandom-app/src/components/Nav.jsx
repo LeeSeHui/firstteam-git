@@ -21,6 +21,9 @@ function Nav() {
     else if (location.pathname.startsWith('/trot')) setCurrentMain('/trot');
   }, [location.pathname]);
 
+  // ✅ Live 페이지에서는 Nav 숨김
+  if (location.pathname === '/idol/home/live') return null;
+
   // ✅ 메인 버튼 토글
   const toggleSubButtons = () => {
     setShowSubButtons(!showSubButtons);
@@ -62,7 +65,7 @@ function Nav() {
           <span>me</span>
         </Link>
       </div>
-      
+
       {/* ✅ sub 버튼 */}
       {showSubButtons && (
         <div className="sub-buttons">
