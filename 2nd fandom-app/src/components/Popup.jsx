@@ -2,18 +2,19 @@ import React from 'react';
 import './Popup.css';
 
 const Popup = ({
-  type, // 'quiz', 'vote', 'unsubscribe'
+  type, // 'quiz', 'vote', 'unsubscribe', 'attendance'
   isCorrect,
   correctImg,
   wrongImg,
   voteImg,
   unsubscribeImg,
+  attendanceImg,
   onConfirm,
 }) => {
   return (
     <div className="modalOverlay">
       <div className="popUp">
-        {/* 이미지 */}
+        {/* 이미지 영역 */}
         {type === 'quiz' && (
           <img
             src={isCorrect ? correctImg : wrongImg}
@@ -35,8 +36,15 @@ const Popup = ({
             className="modalImage"
           />
         )}
+        {type === 'attendance' && (
+          <img
+            src={attendanceImg}
+            alt="attendance-result"
+            className="modalImage"
+          />
+        )}
 
-        {/* 텍스트 */}
+        {/* 텍스트 영역 */}
         <div className="modalTextWrap">
           {type === 'quiz' && (
             <>
@@ -48,12 +56,14 @@ const Popup = ({
               </p>
             </>
           )}
+
           {type === 'vote' && (
             <>
               <h3><span style={{ color: '#FFC800' }}>투표 완료!</span></h3>
               <p className="sub-color">마이페이지에서 포인트를 확인할 수 있습니다.</p>
             </>
           )}
+
           {type === 'unsubscribe' && (
             <>
               <h3><span style={{ color: '#FFC800' }}>해지되었습니다.</span></h3>
@@ -61,7 +71,14 @@ const Popup = ({
             </>
           )}
 
-          {/* 버튼 */}
+          {type === 'attendance' && (
+            <>
+              <h3><span style={{ color: '#FFC800' }}>출석 완료!</span></h3>
+              <p className="sub-color">마이페이지에서 포인트 확인 가능합니다.</p>
+            </>
+          )}
+
+          {/* 공통 버튼 */}
           <button onClick={onConfirm}>
             {type === 'vote' ? '포인트 받기' : '확인'}
           </button>
