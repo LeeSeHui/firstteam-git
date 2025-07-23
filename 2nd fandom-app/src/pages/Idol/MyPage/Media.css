@@ -1,30 +1,23 @@
-.media-search-box {display: flex; align-items: center; padding: 14px 16px; border: 1px solid #797979; border-radius: 40px; background-color: #fff; margin: 20px 0;}
+.media-search-box {display: flex; align-items: center; padding: 14px 16px; border: 1px solid #797979; border-radius: 40px; background-color: #fff; margin-bottom: 30px;}
 
 .media-search-box img {width: 18px;height: 18px;margin-right: 8px;}
 .media-search-box input {flex: 1; border: none; font-size: 18px; outline: none;background: transparent;}
 
 
 /* 컨텐츠 */
-/* Media.css */
+
 
 .mypage-media-section {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .media-section-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: 650;
+  margin-bottom: 5px;
 }
 
-.scroll-wrapper {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  -webkit-overflow-scrolling: touch; /* 스와이프 부드럽게 */
-  scroll-snap-type: x mandatory;
-}
+
 
 .media-card {
   flex: 0 0 auto;
@@ -34,48 +27,80 @@
   overflow: hidden;
 }
 
-.media-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
 
 .media-title {
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 8px;
-  color: #333;
+  font-size: 17px;
+  font-weight: 550;
   line-height: 1.3;
 }
 
 .media-sub {
-  font-size: 12px;
-  color: #999;
-  margin-top: 2px;
+ display: flex;
+  justify-content: flex-start;
+  gap: 12px;       
+  font-size: 15px;
+  margin-top: 3px;
 }
 
-.scroll-wrapper {
+.media-sub .date {
+  white-space: nowrap;   
+}
+
+
+
+
+/* 모든 카드 공통 */
+.media-card {
   display: flex;
-  flex-direction: row; /* 기본값이긴 한데 명시해도 좋아 */
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 190px;
+  height: auto;
+    overflow: visible; 
+}
+.media-img {
+  width: 100%;
+  height: 140px;  /* ✅ 이미지 크기 고정 */
+  object-fit: contain;  /* or cover */
+  display: block;
+}
+
+
+
+
+/* 게시물 카드 */
+.post-card {
+  flex: 0 0 auto;
+  width: 160px;            
+  height: 185px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 게시물 이미지 */
+.post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  }
+
+
+
+  .scroll-wrapper {
+  display: flex;
+  flex-direction: row;
   gap: 12px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   padding-bottom: 10px;
-
-  /* 💡 스크롤바 제거 (선택) */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+    padding: 0 16px 10px 16px;
+   
+     
 }
 .scroll-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-.media-card img {
-  width: 100%;
-  height: 100px;           /* 원하는 높이 고정 */
-  object-fit: contain;     /* 잘리지 않게 비율 유지 */
-  display: block;
-  border-radius: 12px;
-  background-color: #000;  /* 위아래 여백 배경을 어둡게 */
+  display: none;
 }

@@ -13,6 +13,11 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   font-size: 14px;
+
+  /* ✅ 추가된 부분 */
+  width: 100%;
+  max-width: 448px;
+  margin: 0 auto 20px;
 }
 
 /* 카드 상단 - 프로필 + 북마크 버튼 */
