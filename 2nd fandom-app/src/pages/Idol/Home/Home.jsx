@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import  useNickname  from '../../../contexts/useNickname';
+import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 
-// 컴포
+
 import ArtistSection from '../../../components/ArtistSection';
 import QuizSection from '../../../components/QuizSection';
-
 
 import logo from '../../../assets/Home/logo.png';
 import alarm from '../../../assets/Home/alarm.png';
@@ -18,7 +17,7 @@ import live01 from '../../../assets/Home/live1.png';
 import live02 from '../../../assets/Home/live2.png';
 import live03 from '../../../assets/Home/live3.png';
 import artist01 from '../../../assets/Home/artist01.png';
-import feedimg1 from '../../../assets/artist/artistfeed1.png'
+import feedimg1 from '../../../assets/artist/artistfeed1.png';
 import check from '../../../assets/Home/check.png';
 import photo02 from '../../../assets/Home/photo02.png';
 import photo03 from '../../../assets/Home/photo03.png';
@@ -33,92 +32,86 @@ import membershipCardImg from '../../../assets/Home/membership.png';
 import membershipCardImg2 from '../../../assets/Home/membership2.png';
 import membershipCardImg3 from '../../../assets/Home/membership3.png';
 
-
-
 import './Home.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Home = () => {
   const navigate = useNavigate();
-
-  
-
-  // 닉네임 저장
   const { nickname } = useNickname();
   const [newComment, setNewComment] = useState('');
 
+  const getTimeAgo = (timestamp) => {
+    const now = new Date();
+    const diff = Math.floor((now - new Date(timestamp)) / 1000);
+    if (diff < 60) return '방금 전';
+    if (diff < 3600) return `${Math.floor(diff / 60)}분 전`;
+    if (diff < 86400) return `${Math.floor(diff / 3600)}시간 전`;
+    return `${Math.floor(diff / 86400)}일 전`;
+  };
+
   const [comments, setComments] = useState([
-    { username: { nickname: "너누구야" }, message: "❤️ 너무 예뻐요!" },
-    { username: { nickname: "너뭐이야" }, message: "휴가 잘 다녀오세요! 🌴" },
-    { username: { nickname: "뾰루지걸" }, message: "귀척ㅋ 우웩" },
-    { username: { nickname: "말티즈이" }, message: "GD 오빠보면 눈 깔아라;" },
-    { username: { nickname: "꽥괙이" }, message: "나보다 못생긴듯ㅋ" },
-    { username: { nickname: "먺짱이" }, message: "언니 뭐 먹을거야??????????" },
-    { username: { nickname: "종민" }, message: "세희 금요일 소주 ㄱ??" },
+    { username: { nickname: '너누구야' }, message: '❤️ 너무 예뻐요!', createdAt: new Date().toISOString() },
+    { username: { nickname: '너뭐이야' }, message: '휴가 잘 다녀오세요! 🌴', createdAt: new Date().toISOString() },
+    { username: { nickname: '뾰루지걸' }, message: '귀척ㅋ 우웩', createdAt: new Date().toISOString() },
+    { username: { nickname: '말티즈이' }, message: 'GD 오빠보면 눈 깔아라;', createdAt: new Date().toISOString() },
+    { username: { nickname: '꽥괙이' }, message: '나보다 못생긴듯ㅋ', createdAt: new Date().toISOString() },
+    { username: { nickname: '먺짱이' }, message: '언니 뭐 먹을거야??????????', createdAt: new Date().toISOString() },
+    { username: { nickname: '종민' }, message: '세희 금요일 소주 ㄱ??', createdAt: new Date().toISOString() },
   ]);
+
   const [totalCommentCount, setTotalCommentCount] = useState(comments.length);
-  const MAX_COMMENTS = '7';
+  const MAX_COMMENTS = 7;
 
   const handleAddComment = () => {
-    if (newComment.trim() === "") return;
-    const newObj = { username: { nickname }, message: newComment };
+    if (newComment.trim() === '') return;
+    const newObj = { username: { nickname }, message: newComment, createdAt: new Date().toISOString() };
 
     let updatedComments = [...comments, newObj];
     if (updatedComments.length > MAX_COMMENTS) {
-      updatedComments =  updatedComments.slice(updatedComments.length - MAX_COMMENTS);
+      updatedComments = updatedComments.slice(updatedComments.length - MAX_COMMENTS);
     }
 
     setComments(updatedComments);
-    setNewComment("");
+    setNewComment('');
     setTotalCommentCount((prev) => prev + 1);
   };
-
-
 
   const AlarmClick = () => navigate('/idol/home/alarm');
   const handleMypageClick = () => navigate('/idol/mypage');
   const handleArtistClick = () => navigate('/idol/artist/highlight');
-  const handlePlusClick = () => {
-    navigate('/onboarding/select-artist', { state: { fromHome: true } });
-  };
+  const handlePlusClick = () => navigate('/onboarding/select-artist', { state: { fromHome: true } });
   const handleLiveClick = () => navigate('/idol/home/live');
-  const handleVoteCardClick = () => navigate("/idol/home/vote");
-  const handleMembershipClick = () => navigate("/idol/home/membership");3
+  const handleVoteCardClick = () => navigate('/idol/home/vote');
+  const handleMembershipClick = () => navigate('/idol/home/membership');
   const handleQuizClick = () => navigate('/idol/home/quiz');
 
-
-
-
-
-  // 광고배너
   const membershipData = [
     {
       id: 1,
-      title: "블랙핑크 제니 첫 솔로앨범\nYoutube Live",
-      desc: "7월 1일 4:30PM (KST)\n라이브 한정 특전 제공!",
+      title: '블랙핑크 제니 첫 솔로앨범\nYoutube Live',
+      desc: '7월 1일 4:30PM (KST)\n라이브 한정 특전 제공!',
       img: membershipCardImg,
-      current: "1",
-      total: "3",
+      current: '1',
+      total: '3',
     },
     {
       id: 2,
-      title: "G-Dragon 88명 한정\n티셔츠 OPEN!",
-      desc: "7월 2일 18:00PM (KST)\n오직 Coupang에서 구매 가능",
+      title: 'G-Dragon 88명 한정\n티셔츠 OPEN!',
+      desc: '7월 2일 18:00PM (KST)\n오직 Coupang에서 구매 가능',
       img: membershipCardImg2,
-      current: "2",
-      total: "3",
+      current: '2',
+      total: '3',
     },
     {
-      id: 2,
+      id: 3,
       title: "뉴진스의 ‘자컨 필살기'\n소개서 지금 바로 확인!",
-      desc: "뉴진스의 자체 콘텐츠\n보러가기",
+      desc: '뉴진스의 자체 콘텐츠\n보러가기',
       img: membershipCardImg3,
-      current: "3",
-      total: "3",
+      current: '3',
+      total: '3',
     },
   ];
-  
 
   const sliderSettings = {
     dots: false,
@@ -132,8 +125,8 @@ const Home = () => {
   };
 
   return (
-    <div className='homeContainer'>
-      <div className='main-logo'>
+    <div className="homeContainer">
+      <div className="main-logo">
         <p className="img"><img src={logo} alt="logo" /></p>
         <p className="img" onClick={AlarmClick}><img src={alarm} alt="alarm" /></p>
       </div>
@@ -183,6 +176,7 @@ const Home = () => {
         handleAddComment={handleAddComment}
         totalCommentCount={totalCommentCount}
         onProfileClickPath="/idol/artist/highlight"
+        getTimeAgo={getTimeAgo}
       />
 
       <div className="videoSection">
@@ -202,9 +196,9 @@ const Home = () => {
           </a>
         </div>
       </div>
-      
+
       <QuizSection handleQuizClick={handleQuizClick} />
-      
+
       <div className="voteSection">
         <div className="swipe vote">
           <div className="voteRow">

@@ -60,6 +60,7 @@ const Membership = () => {
   };
 
   return (
+  <div className="membership-container">
     <div className="membership-feed-wrapper">
       {feedData.map((item) => {
         const isUnlocked = unlockedFeedIds.includes(item.id);
@@ -98,6 +99,7 @@ const Membership = () => {
         );
       })}
     </div>
+  </div>
   );
 };
 

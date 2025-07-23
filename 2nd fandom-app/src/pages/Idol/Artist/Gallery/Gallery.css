@@ -1,6 +1,10 @@
+.gallery-container{padding: 0 16px;}
+
 .gallery-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px; /* 가운데 간격만 적용 */
+  row-gap: 16px;     /* 필요 시 위아래 간격도 추가 */
 }
 
 .gallery-card {
@@ -20,10 +24,10 @@
   align-items: center;
   gap: 8px;
   position: absolute;
-  bottom: 35px;
-  left: 35px;
+  bottom: 16px;
+  left: 16px;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .gallery-profile {
@@ -38,6 +42,10 @@
 }
 
 .gallery-date {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.8;
+}
+
+.gallery-card:nth-child(even) {
+  transform: translateY(47px); /* 아래로 살짝 이동 */
 }

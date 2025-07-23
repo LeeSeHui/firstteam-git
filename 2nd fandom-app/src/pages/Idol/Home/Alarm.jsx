@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Alarm.css'; // 스타일은 이 파일에 정의한다고 가정
+import '../../../index.css';
 import newjeans from '../../../assets/Alarm/newjeans.png'
 import blackpink from '../../../assets/Alarm/blackpink.png';
 import gd from '../../../assets/Alarm/gd.png';
@@ -17,7 +18,7 @@ const mockData = {
       id: 1,
       group: 'NewJeans',
       type: 'media',
-      title: '새 미디어 : [Jean’s ZINE+] 뉴진스파랜드',
+      title: '📺 새 미디어 : [Jean’s ZINE+] 뉴진스파랜드',
       time: '2025.07.15 12:54',
       profile: newjeans,
       thumbnail: thumbnail1,
@@ -26,7 +27,7 @@ const mockData = {
       id: 2,
       group: 'BLACKPINK',
       type: 'notice',
-      title: '공지 : BLACKPINK WORLD TOUR 운영 상세 안내',
+      title: '📣 BLACKPINK WORLD TOUR 운영 상세 안내',
       time: '2025.07.15 12:30',
       profile: blackpink,
       thumbnail: null,
@@ -35,7 +36,7 @@ const mockData = {
       id: 3,
       group: 'BLACKPINK',
       type: 'media',
-      title: '새 미디어 : BLACKPINK ‘뚜이 MV’',
+      title: '📺 새 미디어 : BLACKPINK ‘뚜이 MV’',
       time: '2025.07.15 12:25',
       profile: blackpink,
       thumbnail: thumbnail2,
@@ -44,7 +45,7 @@ const mockData = {
       id: 4,
       group: 'NewJeans',
       type: 'post',
-      title: '새 글이 도착했어요 : 해인 포스팅 새 글',
+      title: '💌 새 글이 도착했어요 : 해인 포스팅 새 글',
       time: '2025.07.15 12:15',
       profile: newjeans,
       thumbnail: null,
@@ -55,7 +56,7 @@ const mockData = {
       id: 5,
       group: 'G-DRAGON',
       type: 'media',
-      title: '새 미디어 : G-DRAGON - ‘TOO BAD’ MV Behind the Scenes',
+      title: '📺 새 미디어 : G-DRAGON - ‘TOO BAD’ MV Behind the Scenes',
       time: '2025.07.14 12:54',
       profile: gd,
       thumbnail: thumbnail3,
@@ -64,7 +65,7 @@ const mockData = {
       id: 6,
       group: 'BLACKPINK',
       type: 'notice',
-      title: '공지 : BLACKPINK WORLD TOUR 이벤트 당첨자 기프트 안내',
+      title: '📣 공지 : BLACKPINK WORLD TOUR 이벤트 당첨자 기프트 안내',
       time: '2025.07.14 12:30',
       profile: blackpink,
       thumbnail: null,
@@ -75,7 +76,7 @@ const mockData = {
       id: 7,
       group: 'NewJeans',
       type: 'media',
-      title: '새 미디어 : [Jean’s ZINE+] 붐피크닉 Zip',
+      title: '📺 새 미디어 : [Jean’s ZINE+] 붐피크닉 Zip',
       time: '2025.07.10 12:54',
       profile: newjeans,
       thumbnail: thumbnail4,
@@ -84,7 +85,7 @@ const mockData = {
       id: 8,
       group: 'BLACKPINK',
       type: 'post',
-      title: '새 글이 도착했어요 : 제니 포스팅 새 글',
+      title: '💌 새 글이 도착했어요 : 제니 포스팅 새 글',
       time: '2025.07.10 12:30',
       profile: blackpink,
       thumbnail: null,
@@ -93,7 +94,7 @@ const mockData = {
       id: 9,
       group: 'G-DRAGON',
       type: 'post',
-      title: '새 글이 도착했어요 : 지드래곤 포스팅 새 글',
+      title: '💌 새 글이 도착했어요 : 지드래곤 포스팅 새 글',
       time: '2025.07.10 12:30',
       profile: gd,
       thumbnail: null,
@@ -132,10 +133,10 @@ const Alarm = () => {
 
       {Object.entries(filteredData).map(([date, items]) => (
         <div key={date} className="alarm-group">
-          <h4 className="alarm-date">{date}</h4>
+          <h4 className="alarm-date sub-color">{date}</h4>
           {items.map((item) => (
             <div key={item.id} className="alarm-card">
-              <img src={item.profile} alt="profile" className="profile-img" />
+              <img src={item.profile} alt="profile" className="alarm-profile-img" />
               <div className="alarm-info">
                 <p className="alarm-title">{item.title}</p>
                 <p className="alarm-time">{item.time}</p>

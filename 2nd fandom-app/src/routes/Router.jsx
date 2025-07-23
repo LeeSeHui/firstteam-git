@@ -6,6 +6,7 @@ import { Router, Routes, Route, Navigate, useLocation, Outlet } from 'react-rout
 import Nav from '../components/Nav';
 import Chatbot from '../components/Chatbot';
 import Attendance from '../pages/Attendance';
+import ScrollToTop from '../components/ScrollToTop'; // 경로 맞게 수정
 
 
 // Onboarding
@@ -93,6 +94,7 @@ const AppRouterContent = () => {
   location.pathname.startsWith(path)
 );
 
+
   return (
     <>
       {!shouldHideNav && <Nav />}
@@ -123,6 +125,7 @@ const AppRouterContent = () => {
           <Route path="/idol/home/vote" element={<IdolVote />} />
           <Route path="/idol/mypage" element={<IdolMyPage />} />
           <Route path="/idol/home/membership" element={<IdolMembership />} />
+          <Route path="/idol/home/notice" element={<IdolNotice />} />
 
           <Route path="/idol/mypage/collection" element={<IdolCollection />} />
           <Route path="/idol/mypage/challenge" element={<IdolChallenge />} />
@@ -172,7 +175,12 @@ const AppRouterContent = () => {
 };
 
 const AppRouter = () => {
-  return <AppRouterContent />;
+  return (
+    <>
+      <ScrollToTop /> {/* ✅ 여기에만 있으면 됨 */}
+      <AppRouterContent />
+    </>
+  );
 };
 
 export default AppRouter;
