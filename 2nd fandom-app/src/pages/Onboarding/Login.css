@@ -3,7 +3,7 @@
 .login-image {height: auto; margin-bottom: 20px;}
 .login-title {font-size: 30px; font-weight: 500; color: #fff; text-align: center; margin-bottom: 0;}
 .login-subtitle {font-size: 18px; color: #fff; text-align: center; margin: 10px 0 35px 0;}
-.btn-wrap {position: relative; width: 100%; left: 55%; top: 10%; transform: translate(-50%, -20%);}
+.btn-wrap {position: relative; width: 100%; left: 55%; top: 12%; transform: translate(-50%, -20%);}
 .badge {position: absolute; top: -50px; right: 10%;}
 
 /* 버튼 스타일 */
