@@ -1,13 +1,25 @@
-header {display: flex; justify-content: space-between; align-items: center; padding: 0 16px;}
-.back-btn { background: none; border: none; font-size: 24px; cursor: pointer; }
-.skip-btn { background: none; border: none; color: #333; font-size: 14px; cursor: pointer;}
-.manual-container {height: auto; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
-.manual-content {display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 100px;}
-.manual-content h2 {margin: 50px 0 10px 0;}
-.manual-content p {margin: 0; color: #797979; margin-bottom: 50px;}
-.manual-img { margin: 0 auto; }
-.manual-last-img {width: 400px; height: auto;}
-.manual-btn { background-color: #dcd7ff; color: #fff; padding: 14px 0; width: 70%;  border: none; border-radius: 10px; font-size: 18px; cursor: pointer; transition: all 0.2s; margin-top: 80px;}
-.manual-btn:hover {background: #929EF9; transition: all 0.2s;}
-.dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #dcdcdc; margin: 0 4px; }
-.dot.active { background-color: #F3B643; }
+header {padding: 90px 16px 0; display: flex; justify-content: space-between; align-items: center;}
+.manual-wrapper { overflow: hidden; width: 100vw; height: 100vh; position: relative; }
+.manual-track { display: flex; transition: transform 0.4s ease; }
+.manual-page { flex-shrink: 0; width: 100vw; height: 100vh; box-sizing: border-box; text-align: center; }
+.manual-page h2 {margin-bottom: 20px; font-size: 27px;}
+.manual-page p {font-size: 18px;}
+.skip-btn { background: none; border: none; color: #999; font-size: 18px; z-index: 10; cursor: pointer; }
+
+.marquee { width: 100%; display: flex; align-items: center; margin-bottom: 30px; overflow: hidden;}
+.marquee-content { display: flex; animation: scroll-left 50s linear infinite; }
+.marquee-right .marquee-content { animation: scroll-right 50s linear infinite; }
+.marquee-content img { margin: 0 10px; object-fit: cover; }
+
+@keyframes scroll-left { 
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } 
+}
+@keyframes scroll-right { 
+    0% { transform: translateX(-50%); } 
+    100% { transform: translateX(0%); } 
+}
+
+.dot-container { margin-top: 16px; }
+.dot { display: inline-block; width: 8px; height: 8px; background: #ccc; border-radius: 50%; margin: 0 4px; }
+.dot.active { background: #facc15; }

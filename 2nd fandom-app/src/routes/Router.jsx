@@ -10,6 +10,7 @@ import Attendance from '../pages/Attendance';
 
 // Onboarding
 import Splash from '../pages/Onboarding/Splash';
+import Story from '../pages/Onboarding/Story';
 import Login from '../pages/Onboarding/Login';
 import Manual from '../pages/Onboarding/Manual';
 import Nickname from '../pages/Onboarding/Nickname';
@@ -82,7 +83,8 @@ const AppRouterContent = () => {
     '/welcome',
     '/idol/home/quiz',
     '/idol/chat',
-    '/chatroom'
+    '/chatroom',
+    '/story'
 
   ];
   
@@ -101,6 +103,7 @@ const AppRouterContent = () => {
         <Route index element={<Navigate to="/splash" replace />} />
           {/* Components */}
           <Route path="/splash" element={<Splash />} />
+          <Route path="/story" element={<Story />} />
           <Route path="/attendance" element={<Attendance />} />
 
           {/* Onboarding */}
