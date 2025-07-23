@@ -26,25 +26,7 @@ height: 40px;gap: 4px;}
 .category-section button:hover,
 .challenge-button-section button:hover {background-color: var(--button-hover);}
   
-  /* 라이트 모드 기본 */
-  :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --box-color: #f9f9f9;
-    --button-bg: #f0f0f0;
-    --button-text: #000000;
-    --button-hover: #e0e0e0;
-  }
-  
-  /* 다크 모드 */
-  body.dark {
-    --bg-color: #151515;
-    --text-color: #ffffff;
-    --box-color: #212121;
-    --button-bg: #333333;
-    --button-text: #ffffff;
-    --button-hover: #444444;
-  }
+
   
 /* 카테고리 */
 .category-section {background: #fff; border-radius: 15px; padding: 20px 16px 4px 16px;

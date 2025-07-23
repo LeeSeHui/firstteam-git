@@ -130,3 +130,15 @@
   height: 24px;
   width: 18px;
 }
+
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.created-at {
+  font-size: 14px;
+  font-weight: 500;
+}

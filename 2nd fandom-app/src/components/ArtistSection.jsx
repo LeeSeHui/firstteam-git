@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ArtistSection.css';
+import '../index.css';
 import { useNavigate } from 'react-router-dom';
 
 import likeIcon from '../assets/artist/like.png';
@@ -8,6 +9,17 @@ import commentIcon from '../assets/artist/comment.png';
 import tagIcon from '../assets/artist/tag.png';
 import tagActiveIcon from '../assets/artist/tag-yellow.png';
 import lockIcon from '../assets/artist/lock.png';
+
+// ✅ 시간 표시 함수
+const getTimeAgo = (timestamp) => {
+  const now = new Date();
+  const diff = Math.floor((now - new Date(timestamp)) / 1000);
+
+  if (diff < 60) return '방금 전';
+  if (diff < 3600) return `${Math.floor(diff / 60)}분 전`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)}시간 전`;
+  return `${Math.floor(diff / 86400)}일 전`;
+};
 
 const ArtistSection = ({
   profileImage,
@@ -31,6 +43,8 @@ const ArtistSection = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
   const [liked, setLiked] = useState(false);
+  const [commentHearts, setCommentHearts] = useState({}); // ✅ 댓글 하트 상태
+
   const navigate = useNavigate();
 
   // 🔒 잠금 처리
@@ -122,31 +136,47 @@ const ArtistSection = ({
 
       {/* ✅ 댓글 영역 */}
       {isExpanded && (
-        <div className="commentSection" onClick={(e) => e.stopPropagation()}>
-          <p className="commentCount">전체 댓글 {totalCommentCount}</p>
-          <div className="comments">
-            {comments.map((comment, idx) => (
-              <div className="commentRow" key={idx}>
-                <div className="commentText">
-                  <span className="username">{comment.username.nickname}</span>
-                  <span className="message">{comment.message}</span>
-                </div>
-                <span className="heart">🤍</span>
-              </div>
-            ))}
+  <div className="commentSection" onClick={(e) => e.stopPropagation()}>
+    <p className="commentCount sub-color">전체 댓글 {totalCommentCount}</p>
+    <div className="comments sub-color">
+      {comments.map((comment, idx) => (
+        <div className="commentRow" key={idx}>
+          <div className="commentText">
+            <div className="comment-meta">
+              <span className="username">{comment.username.nickname}</span>
+              {comment.createdAt && (
+                <span className="created-at sub-color">{getTimeAgo(comment.createdAt)}</span>
+              )}
+            </div>
+            <span className="message">{comment.message}</span>
           </div>
-
-          <div className="commentInputWrap">
-            <input
-              type="text"
-              placeholder="예쁜 댓글을 입력하세요."
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-            />
-            <button onClick={handleAddComment}>등록</button>
-          </div>
+          <span
+            className="heart"
+            onClick={() =>
+              setCommentHearts((prev) => ({
+                ...prev,
+                [idx]: !prev[idx],
+              }))
+            }
+          >
+            {commentHearts[idx] ? '❤️' : '🤍'}
+          </span>
         </div>
-      )}
+      ))}
+    </div>
+
+    <div className="commentInputWrap">
+      <input
+        type="text"
+        placeholder="비속어 자동 필터링 중..."
+        value={newComment}
+        onChange={(e) => setNewComment(e.target.value)}
+      />
+      <button onClick={handleAddComment}>등록</button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

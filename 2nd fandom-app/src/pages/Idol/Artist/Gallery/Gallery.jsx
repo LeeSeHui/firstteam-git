@@ -30,6 +30,7 @@ const galleryData = [
 
 const Gallery = () => {
   return (
+  <div className="gallery-container">
     <div className="gallery-wrapper">
       {galleryData.map((item) => (
         <div className="gallery-card" key={item.id}>
@@ -44,6 +45,7 @@ const Gallery = () => {
         </div>
       ))}
     </div>
+  </div>
   );
 };
 

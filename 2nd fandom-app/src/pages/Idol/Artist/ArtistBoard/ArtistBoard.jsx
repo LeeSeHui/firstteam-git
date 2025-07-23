@@ -19,9 +19,24 @@ import photo03_2 from '../../../../assets/artist/photo03_2.png';
 import photo04_1 from '../../../../assets/artist/photo04_1.png';
 import photo04_2 from '../../../../assets/artist/photo04_2.png';
 
+import useNickname from '../../../../contexts/useNickname'; // ✅ 수정한 부분
+
+// ✅ 시간 계산 함수
+const getTimeAgo = (timestamp) => {
+  const now = new Date();
+  const created = new Date(timestamp);
+  const diff = Math.floor((now - created) / 1000);
+
+  if (diff < 60) return '방금 전';
+  if (diff < 3600) return `${Math.floor(diff / 60)}분 전`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)}시간 전`;
+  return `${Math.floor(diff / 86400)}일 전`;
+};
+
+// ✅ 기본 댓글에 createdAt 추가
 const initialComments = [
-  { username: { nickname: '팬1' }, message: '언니 너무 예뻐요!' },
-  { username: { nickname: '팬2' }, message: '공연 화이팅!' },
+  { username: { nickname: 'jeansgood_bb' }, message: '언니 너무 예뻐요!', createdAt: new Date().toISOString() },
+  { username: { nickname: 'minjilover' }, message: '공연 화이팅!', createdAt: new Date().toISOString() },
 ];
 
 const feedData = [
@@ -47,7 +62,7 @@ const feedData = [
     postText: '안녕하세요 해린입니다\n모두 내일 봐요~💜',
     feedImage: feedimg2,
     photo02: photo02_1,
-    photo03: photo02_2
+    photo03: photo02_2,
   },
   {
     id: 3,
@@ -59,7 +74,7 @@ const feedData = [
     postText: '오늘은 멤버들이랑 아이스크림을 먹었습니다\n기분이가 조쿤요😆',
     feedImage: feedimg3,
     photo02: photo03_1,
-    photo03: photo03_2
+    photo03: photo03_2,
   },
   {
     id: 4,
@@ -71,18 +86,26 @@ const feedData = [
     postText: '오늘은 까부는 멤버들 참교육하겠습니다\n사랑의 멤메~💜',
     feedImage: feedimg4,
     photo02: photo04_1,
-    photo03: photo04_2
+    photo03: photo04_2,
   },
 ];
 
 const ArtistBoard = () => {
+  const { nickname } = useNickname(); // ✅ 닉네임 사용
   const [comments, setComments] = useState(initialComments);
   const [newComment, setNewComment] = useState('');
   const totalCommentCount = comments.length;
 
   const handleAddComment = () => {
     if (!newComment.trim()) return;
-    const updated = [...comments, { username: { nickname: '익명' }, message: newComment }];
+    const updated = [
+      ...comments,
+      {
+        username: { nickname },
+        message: newComment,
+        createdAt: new Date().toISOString(), // ✅ 시간 추가
+      },
+    ];
     setComments(updated);
     setNewComment('');
   };
@@ -107,6 +130,7 @@ const ArtistBoard = () => {
           handleAddComment={handleAddComment}
           totalCommentCount={totalCommentCount}
           onProfileClickPath="/idol/artist/highlight"
+          getTimeAgo={getTimeAgo} // ✅ 시간 함수 넘김
         />
       ))}
     </div>
