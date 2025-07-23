@@ -9,6 +9,8 @@ import quiz5 from '../../../assets/quiz/quiz2-4.png';
 import correctImg from '../../../assets/quiz/correct.png';
 import wrongImg from '../../../assets/quiz/wrong.png';
 import Popup from '../../../components/Popup';
+import YellowButton from '../../../components/YellowButton';
+import BackButton from '../../../components/BackButton';
 
 const quizData = [
   {
@@ -19,8 +21,7 @@ const quizData = [
     options: [
       { text: "인기가요 2025.05.27", isCorrect: false },
       { text: "뮤직뱅크 2024.08.26", isCorrect: false },
-      { text: "MAMA 2024.11.23", isCorrect: true },
-      { text: "MCountdown 2023.08.24", isCorrect: false },
+      { text: "MAMA 2024.11.23", isCorrect: true }
     ],
   },
   {
@@ -70,6 +71,7 @@ const Quiz = () => {
 
   return (
     <div className="quizContainer">
+      <BackButton label='퀴즈'/>
       <div className="quizBadge">마감 D-3</div>
       <h2>{quiz.question}</h2>
       {quiz.subtitle && <p className="quizSubtitle">{quiz.subtitle}</p>}
@@ -103,7 +105,7 @@ const Quiz = () => {
         </div>
       )}
 
-      <button className="submitButton" onClick={handleSubmit}>확인</button>
+      <YellowButton label='제출' onClick={handleSubmit}/>
 
       {showModal && (
         <Popup

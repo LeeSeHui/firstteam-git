@@ -1,18 +1,74 @@
+.header {padding: 50px 16px 0;}
 .artist-select-container {min-height: 100vh; text-align: center;}
-.artist-select-container h2 {font-size: 20px; margin-bottom: 5px;}
-.artist-select-container p {color: #777; margin-bottom: 20px;}
-.artist-select-container input {width: 80%; padding: 10px; border-radius: 20px; border: 1px solid #ddd; margin-bottom: 20px;}
-.scroll-wrapper {display: flex;  flex-direction: column;  overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none;}
+.artist-select-container h2 {font-size: 32px; margin-bottom: 10px; font-weight: 600;}
+.artist-select-container > p {font-size: 16px; color: #797979; margin-bottom: 25px;}
+.gradient-border-wrapper2 {
+  width: 90%; margin-bottom: 52px;
+  background: linear-gradient(90deg, #6C53FF 0%, #66DEC2 50%, #FFCC00 100%);
+  padding: 1px; /* border처럼 보이게 하는 부분 */
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.gradient-input {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+}
+
+.scroll-wrapper2 {display: flex;  flex-direction: column;  overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; margin-bottom: 40px;}
 
 .scroll-wrapper::-webkit-scrollbar:horizontal {
   display: none;
 }
-.artist-row {display: flex; gap: 10px;}
+.artist-row2 {display: flex; gap: 10px;}
+
 .middle-row {margin-left: -100px;}
-.artist-card {position: relative; width: 187px; height: 187px; border-radius: 50%; overflow: hidden; cursor: pointer; border: 2px solid transparent; flex-shrink: 0;}
-.artist-card.selected {border: 2px solid #facc15;}
-.artist-img {width: 100%; height: 100%; object-fit: cover; border-radius: 50%;}
-.overlay {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-.artist-name {font-size: 12px; margin-top: 5px;}
-.check {position: absolute; top: 5px; right: 5px; font-size: 14px;}
-.done-btn {background: #FFD400; border: none; padding: 14px 0; width: 80%; border-radius: 10px; font-size: 18px; cursor: pointer; margin-top: 20px;}
+.artist-card {
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer; 
+  border: 2px solid #ffffff;
+}
+
+.artist-card.selected {
+  border: 2px solid #facc15; box-sizing: border-box;
+}
+
+.artist-img {
+  border-radius: 50%; box-sizing: border-box;
+}
+
+/* ✅ 오버레이 (검은 반투명 배경 + 텍스트) */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ 아티스트 이름 */
+.artist-name {
+  font-size: 22px;
+  color: white;
+  font-weight: 300;
+  z-index: 1;
+}
+
+/* ✅ 체크 아이콘 우상단 고정 */
+.check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}

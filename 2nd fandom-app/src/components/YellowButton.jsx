@@ -1,7 +1,7 @@
 import React from 'react';
 import './YellowButton.css';
 
-const YellowButton = ({ label = '버튼', onClick }) => {
+const YellowButton = ({ label, onClick }) => {
   return (
     <button className="yellow-btn" onClick={onClick}>
       {label}

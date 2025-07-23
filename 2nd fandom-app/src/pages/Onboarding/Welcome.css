@@ -1,6 +1,10 @@
-.welcome-container { display: flex; flex-direction: column; align-items: center; padding: 130px 20px; }
-.level-text { font-size: 14px; color: #FFD900; margin-bottom: 10px; }
+.welcome-container { display: flex; flex-direction: column; align-items: center;}
+.welcome-container h2 {font-size: 32px; font-weight: 600; margin-bottom: 8px;}
+.welcome-container .sub {font-size: 20px; margin-bottom: 101px;}
+.level-text { font-size: 20px; color: #F3B643; font-weight: 500; margin-bottom: 101px; }
 .image-box {width: 267px; padding: 4px; border-radius: 8px; margin-bottom: 20px; }
 .image-box img {width: 100%; height: auto;  object-fit: cover; }
-.sub { font-size: 14px; color: #666; margin-bottom: 40px; text-align: center; }
-.start-btn { background-color: #FFD900; border: none; border-radius: 8px; padding: 14px 0; width: 100%; max-width: 300px; font-size: 16px; font-weight: bold; cursor: pointer; }
+.sub { font-size: 14px; color: #797979; font-weight: 500; margin-bottom: 40px; text-align: center; }
+
+.welcome-icon {display: inline-block; width: 30px; height: auto;}
+.welcome-icon img {width: 100%; height: 100%; margin-bottom: 10px;}
