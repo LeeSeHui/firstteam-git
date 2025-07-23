@@ -1,5 +1,6 @@
 import React from 'react';
 import './Media.css';
+import '/src/index.css';
 import BackButton from '../../../components/BackButton';
 import search from '../../../assets/dm/search.png';
 
@@ -74,8 +75,8 @@ const Media = () => {
               <img src={item.img} alt={item.title}className='media-img' />
               <p className="media-title">{item.title}</p>
               <p className="media-sub">
-                <span className="artist">{item.artist}</span>
-                <span className="date">{item.date}</span>
+                <span className="artist sub-color">{item.artist}</span>
+                <span className="date sub-color">{item.date}</span>
               </p>
             </div>
           ))}
@@ -120,8 +121,8 @@ const Media = () => {
             <div className="recent-info">
               <p className="recent-title">{item.title}</p>
               <p className="recent-sub">
-                <span className="artist">{item.artist}</span>
-                <span className="date">{item.date}</span>
+                <span className="artist sub-color">{item.artist}</span>
+                <span className="date sub-color">{item.date}</span>
               </p>
             </div>
           </div>

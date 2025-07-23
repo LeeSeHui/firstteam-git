@@ -2,8 +2,8 @@
 margin-bottom: 35px;}
 .collection-item {position: relative;}
 .collection-item img {width: 100%;border-radius: 13px;object-fit: cover;}
-.title {font-weight: 500; margin-top: 5px; color: #494949; font-size: 18px;}
-.count{color: #797979; font-size: 15px; margin: 0;}
-.subtitle {font-size: 20px;font-weight: 600; margin-bottom: 13px;color: #494949;}
+.title {font-weight: 500; margin-top: 5px; font-size: 18px;}
+.collection-count{ font-size: 15px; margin: 0;}
+.subtitle {font-size: 20px;font-weight: 600; margin-bottom: 13px;}
 .overlay-text {position: absolute;top: 50%; left: 50%; transform: translate(-50%,-50%);
 color: white; font-weight: 500; font-size: 18px;}
