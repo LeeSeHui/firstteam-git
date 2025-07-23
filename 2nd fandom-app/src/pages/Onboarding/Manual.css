@@ -1,10 +1,47 @@
-header {padding: 90px 16px 0; display: flex; justify-content: space-between; align-items: center;}
+header {padding: 50px 16px; display: flex; justify-content: space-between; align-items: center;}
 .manual-wrapper { overflow: hidden; width: 100vw; height: 100vh; position: relative; }
 .manual-track { display: flex; transition: transform 0.4s ease; }
-.manual-page { flex-shrink: 0; width: 100vw; height: 100vh; box-sizing: border-box; text-align: center; }
-.manual-page h2 {margin-bottom: 20px; font-size: 27px;}
-.manual-page p {font-size: 18px;}
-.skip-btn { background: none; border: none; color: #999; font-size: 18px; z-index: 10; cursor: pointer; }
+.manual-page {position: relative; flex-shrink: 0; width: 100vw; height: 100vh; box-sizing: border-box; text-align: center; }
+.skip-btn { background: none; border: none; color: #494949; font-size: 18px; z-index: 10; cursor: pointer; }
+
+.manual-text-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .manual-text-wrapper.top {
+    top: 40%;
+  }
+  
+  .manual-text-wrapper.center {
+    top: 67%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .manual-text-wrapper.bottom {
+    bottom: 30%;
+  }
+  
+  
+  .manual-text-wrapper h2 {
+    font-size: 27px; font-weight: 600;
+    margin-bottom: 27px;
+    line-height: 30px;
+  }
+  
+  .manual-text-wrapper p {
+    font-size: 18px;
+    margin-bottom: 77px; color: #797979;
+  }
+  
+  .dot-container {
+    display: flex;
+    justify-content: center;
+  }
 
 .marquee { width: 100%; display: flex; align-items: center; margin-bottom: 30px; overflow: hidden;}
 .marquee-content { display: flex; animation: scroll-left 50s linear infinite; }
