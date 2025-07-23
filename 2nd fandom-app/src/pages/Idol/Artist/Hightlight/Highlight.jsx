@@ -49,7 +49,7 @@ const Highlight = () => {
   return (
     <div className="highlight-wrapper">
       {/* 아티스트 이미지 가로 정렬 */}
-      <div className="artist-row">
+      <div className="artist-profile">
         <img src={minji} alt="minji" />
         <img src={haein} alt="haein" />
         <img src={hani} alt="hani" />
