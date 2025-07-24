@@ -9,7 +9,7 @@ import QuizSection from '../../../components/QuizSection';
 
 import logo from '../../../assets/Home/logo.png';
 import alarm from '../../../assets/Home/alarm.png';
-import idol_char from '../../../assets/Home/idol-mypage-char.png';
+import idol_char from '../../../assets/Home/home-char.png';
 import artist1 from '../../../assets/Home/artist1.png';
 import plusIcon from '../../../assets/Home/plus.png';
 import live01 from '../../../assets/Home/live1.png';
@@ -178,17 +178,17 @@ const Home = () => {
       <div className="videoSection">
         <p>JUST FOR {nickname}</p>
         <div className="videoSwipe">
-          <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
+          <a href="https://www.youtube.com/watch?v=yFTAYXDTjqI" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
             <p>'최초 공개' <br /> NewJeans의 HOT 컴백 무대</p>
           </a>
-          <a href="https://www.youtube.com/watch?v=o9DhvbqYzns" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb2} alt="video2" />
-            <p>'최초 공개/4K' <br /> G-DRAGON - TOO BAD (feat. Anderson .Paak)</p>
-          </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb3} alt="video3" />
+            <img src={thumb2} alt="video2" />
             <p>[입덕직캠] <br />뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
+          </a>
+          <a href="https://www.youtube.com/watch?v=7FbDF0wWe_8" target="_blank" rel="noopener noreferrer" className="videoCard">
+            <img src={thumb3} alt="video3" />
+            <p>뉴진스 'Right Now' <br />Bonus Ver @뮤직뱅크</p>
           </a>
         </div>
       </div>

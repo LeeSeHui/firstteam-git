@@ -1,4 +1,4 @@
-.quiz-section { padding: 16px; background: #fff; border-radius: 12px; text-align: center; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); }
+.quiz-section {background: #fff; border-radius: 12px; text-align: center; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); }
 
 .quiz-content { display: flex; align-items: center; justify-content: space-between; }
 

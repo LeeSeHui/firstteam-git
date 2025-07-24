@@ -1,0 +1,6 @@
+.challenge-section .actor-day {display: inline-block;background-color: #37CEBF; color: #ffffff; font-weight: 600; padding: 8px 14px; border-radius: 20px; font-size: 16px; margin-bottom: 10px;}
+
+.actor-toggle-option.active { background: #37CEBF; color: #ffffff;}
+.actor-toggle-option {flex: 1; text-align: center; padding: 6px 0; font-size: 14px; font-weight: 400; cursor: pointer; color: #494949; transition: all 0.3s ease;  border-radius: 20px;}
+
+.actor-botton {background-color: #37CEBF; padding: 7px 16px; border-radius: 7px; font-weight: 400; font-size: 18px;color: #ffffff;}

@@ -58,17 +58,12 @@ import Sports from '../pages/Idol/Fashion/Sports';
 
 // Actor
 import ActorHome from '../pages/Actor/Home/Home';
-import ActorLive from '../pages/Actor/Home/Live';
-import ActorPostDetail from '../pages/Actor/Home/PostDetail';
-import ActorQuiz from '../pages/Actor/Home/Quiz';
-import ActorVote from '../pages/Actor/Home/Vote';
+import ActorMypage from '../pages/Actor/MyPage/MyPage'
 
 // Trot
 import TrotHome from '../pages/Trot/Home/Home';
-import TrotLive from '../pages/Trot/Home/Live';
-import TrotPostDetail from '../pages/Trot/Home/PostDetail';
-import TrotQuiz from '../pages/Trot/Home/Quiz';
-import TrotVote from '../pages/Trot/Home/Vote';
+import TrotMypage from '../pages/Trot/MyPage/MyPage';
+
 
 
 const AppRouterContent = () => {
@@ -158,17 +153,12 @@ const AppRouterContent = () => {
           
           {/* Actor */}
           <Route path="/actor/home" element={<ActorHome />} />
-          <Route path="/actor/home/live" element={<ActorLive />} />
-          <Route path="/actor/home/post" element={<ActorPostDetail />} />
-          <Route path="/actor/home/quiz" element={<ActorQuiz />} />
-          <Route path="/actor/home/vote" element={<ActorVote />} />
+          <Route path="/actor/mypage" element={<ActorMypage />} />
+
 
           {/* Trot */}
           <Route path="/trot/home" element={<TrotHome />} />
-          <Route path="/trot/home/live" element={<TrotLive />} />
-          <Route path="/trot/home/post" element={<TrotPostDetail />} />
-          <Route path="/trot/home/quiz" element={<TrotQuiz />} />
-          <Route path="/trot/home/vote" element={<TrotVote />} />
+          <Route path="/trot/mypage" element={<TrotMypage />} />
       </Routes>
     </>
   );

@@ -4,7 +4,7 @@ import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 
 
-import ArtistSection from '../../../components/ArtistSection';
+import ActorArtistSection from '../../../components/ActorArtistSection';
 import ActorQuizSection from '../../../components/ActorQuizSection';
 
 import logo from '../../../assets/Home/logo.png';
@@ -28,9 +28,10 @@ import vote01 from '../../../assets/actor/home/vote1.png';
 import vote02 from '../../../assets/actor/home/vote2.png';
 import vote03 from '../../../assets/actor/home/vote3.png';
 import vote04 from '../../../assets/actor/home/vote4.png';
-import membershipCardImg from '../../../assets/Home/membership.png';
-import membershipCardImg2 from '../../../assets/Home/membership2.png';
-import membershipCardImg3 from '../../../assets/Home/membership3.png';
+import membershipCardImg1 from '../../../assets/actor/home/membership1.png';
+import membershipCardImg2 from '../../../assets/actor/home/membership2.png';
+import membershipCardImg3 from '../../../assets/actor/home/membership3.png';
+import membershipCardImg4 from '../../../assets/actor/home/membership4.png';
 
 import './Home.css';
 import 'slick-carousel/slick/slick.css';
@@ -78,39 +79,46 @@ const Home = () => {
   };
 
   const AlarmClick = () => navigate('/idol/home/alarm');
-  const handleMypageClick = () => navigate('/idol/mypage');
+  const handleMypageClick = () => navigate('/actor/mypage');
   const handleArtistClick = () => navigate('/idol/artist/highlight');
   const handlePlusClick = () => navigate('/onboarding/select-artist', { state: { fromHome: true } });
   const handleLiveClick = () => navigate('/idol/home/live');
   const handleVoteCardClick = () => navigate('/idol/home/vote');
-  const handleMembershipClick = () => navigate('/idol/home/membership');
   const handleQuizClick = () => navigate('/idol/home/quiz');
 
   const membershipData = [
     {
       id: 1,
-      title: '블랙핑크 제니 첫 솔로앨범\nYoutube Live',
-      desc: '7월 1일 4:30PM (KST)\n라이브 한정 특전 제공!',
-      img: membershipCardImg,
+      title: '<악한영웅> 촬영장\n최현욱 커피차 인원 모집',
+      desc: '7월 1일 4:30PM (KST)\n신청서 제출 하러가기',
+      img: membershipCardImg1,
       current: '1',
-      total: '3',
+      total: '4',
     },
     {
       id: 2,
-      title: 'G-Dragon 88명 한정\n티셔츠 OPEN!',
-      desc: '7월 2일 18:00PM (KST)\n오직 Coupang에서 구매 가능',
+      title: '변우석 친필 폴라로이드\n이벤트 OPEN!',
+      desc: '변우석 친필 폴라 이벤트 참여하세요.',
       img: membershipCardImg2,
       current: '2',
-      total: '3',
+      total: '4',
     },
     {
       id: 3,
-      title: "뉴진스의 ‘자컨 필살기'\n소개서 지금 바로 확인!",
-      desc: '뉴진스의 자체 콘텐츠\n보러가기',
+      title: "지금 진행 중인\n다양한 이벤트를 만나보세요!",
+      desc: '드라마 <견우와 직녀>\n스트리밍 최초 공개 ',
       img: membershipCardImg3,
       current: '3',
-      total: '3',
+      total: '4',
     },
+    {
+      id: 4,
+      title: "지금 진행 중인\n다양한 이벤트를 만나보세요!",
+      desc: '배우 김지원 미공개 \n촬영 비하인드 최초공개',
+      img: membershipCardImg4,
+      current: '4',
+      total: '4',
+    }
   ];
 
   const sliderSettings = {
@@ -160,13 +168,13 @@ const Home = () => {
         </div>
       </div>
 
-      <ArtistSection
+      <ActorArtistSection
         profileImage={artist01}
-        artistName="해린"
+        artistName="윤정"
         isVerified={true}
         verifiedIcon={check}
         postTime="07.01. 05:06"
-        postText={`멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜`}
+        postText={`푹 쉬다가 촬영장 복귀!\n모두 월요팅 하시구 곧 만나용 `}
         feedImage={feedimg1}
         photo02={photo02}
         photo03={photo03}
@@ -184,15 +192,16 @@ const Home = () => {
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
-            <p>'최초 공개' <br /> NewJeans의 HOT 컴백 무대</p>
+            <p>박보검 뮤직뱅크 월드투어 <br />IN 벨기에 BEHIND FILM</p>
           </a>
           <a href="https://www.youtube.com/watch?v=o9DhvbqYzns" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb2} alt="video2" />
-            <p>'최초 공개/4K' <br /> G-DRAGON - TOO BAD (feat. Anderson .Paak)</p>
+            <p>고윤정의 소울푸드는?  <br /> ELLE KOREA</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb3} alt="video3" />
-            <p>[입덕직캠] <br />뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
+            <p>변우석의 브이로그<br />
+            WHAT HAPPENED IN MILAN</p>
           </a>
         </div>
       </div>
@@ -227,7 +236,7 @@ const Home = () => {
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>
           {membershipData.map((item) => (
-            <div key={item.id} className="membershipCard" onClick={handleMembershipClick}>
+            <div key={item.id} className="membershipCard">
               <img src={item.img} alt="membership card" className="membershipBg" />
               <div className="membershipOverlay">
                 <p className="group">Event</p>
