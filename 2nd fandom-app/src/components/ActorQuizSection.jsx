@@ -26,12 +26,12 @@ const ActorQuizSection = ({ handleQuizClick }) => {
       <div className="quiz-content">
         <div className="quiz-left">
           <h3>
-            오늘의 <span className="highlight">QUIZ</span><br />
+            오늘의 <span className="actor-highlight">QUIZ</span><br />
             지금 바로 도전
           </h3>
           <p className="timer">
             <img src={clockicon} alt="clock" />
-            <span className="time">{formatTime(timeLeft)}</span> 후 퀴즈 종료
+            <span className="actor-time">{formatTime(timeLeft)}</span> 후 퀴즈 종료
           </p>
         </div>
         <div className="quiz-right">

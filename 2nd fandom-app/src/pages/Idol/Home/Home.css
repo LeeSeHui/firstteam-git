@@ -47,7 +47,7 @@ body {background: #ffffff;}
 .videoCard img {width: 100%; height: 100%; border-radius: 12px; object-fit: cover;}
 .videoCard p {font-size: 18px; color: #121212; margin-top: 10px;}
 
-.quiz-section {padding: 30px;}
+.quiz-section {padding: 24px 30px;}
 .quizCard {box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; padding: 16px; box-sizing: border-box; text-align: center; position: relative;}
 .quizCard h3 {font-size: 18px; margin-bottom: 0; font-weight: bold; color: #333;}
 .quizCard p {font-size: 10px; margin: 10px 0; color: #888;}
@@ -71,7 +71,7 @@ body {background: #ffffff;}
 .membershipOverlay {position: absolute; top: 20px; left: 0; width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);}
 .membershipOverlay .group {color: #fff; font-size: 14px; margin-bottom: 5px;}
 .membershipOverlay h2 {color: #fff; font-size: 20px; font-weight: bold; margin: 0;}
-.membershipOverlay .desc {color: #fff; font-size: 14px; margin-top: 5px; line-height: 1.4;}
+.membershipOverlay .desc {color: #fff; font-size: 14px; margin-top: 5px; line-height: 1.2;}
 .indicator {position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 12px; font-size: 12px; padding: 2px 6px;}
 .indicator .current {font-weight: bold;}
 .indicator .total {opacity: 0.5; margin-left: 2px;}

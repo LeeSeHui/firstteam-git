@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import YellowButton from './YellowButton';
+import HomeYellowButton from './HomeYellowButton';
 import clockicon from '../assets/Home/clock.png';
 import quizstar from '../assets/Home/quizstar.png';
 import './QuizSection.css';
@@ -40,7 +40,7 @@ const QuizSection = ({ handleQuizClick }) => {
       </div>
 
       <div className="quiz-button">
-        <YellowButton label="퀴즈 바로가기" onClick={handleQuizClick} />
+        <HomeYellowButton label="퀴즈 바로가기" onClick={handleQuizClick} />
       </div>
     </div>
   );
