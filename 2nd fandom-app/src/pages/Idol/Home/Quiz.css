@@ -1,80 +1,134 @@
 .quizContainer {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .quizBadge {
-    display: inline-block;
-    background-color: #ffcc00;
-    color: #333;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-  
-  .quizSubtitle {
-    font-weight: bold;
-    margin: 4px 0;
-  }
-  
-  .quizMainImage {
-    width: 80%;
-    margin: 12px 0;
-    border-radius: 12px;
-  }
-  
-  .options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .optionButton {
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 20px;
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  .optionButton.selected {
-    border-color: #ffcc00;
-  }
-  
-  .quizImageGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .imageOption {
-    border: none;
-    padding: 0;
-    background: none;
-    cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  
-  .imageOption img {
-    width: 100%;
-    display: block;
-    border-radius: 12px;
-    transition: 0.3s;
-  }
-  
-  .imageOption.selected img {
-    border: 3px solid #ffcc00;
-  }
-  
-  .submitButton {
-    padding: 12px 24px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-  }
-  
+  text-align: center;
+  padding: 20px;
+}
+
+.quizContainer h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.quizBadge {
+  display: inline-block;
+  background-color: #ffcc00;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.quizExplain {
+  font-size: 16px;
+  color: #797979;
+  margin: 6px 0 18px;
+  font-weight: 600;
+}
+
+.quizSubtitle {
+  font-weight: 600;
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+.quizMainImage {
+  width: 98%;
+  border-radius: 12px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 35px;
+}
+
+.optionButton {
+  border: 2px solid #ddd;
+  border-radius: 9px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 18px;
+  color: #797979;
+  font-weight: 500;
+  width: 440px;
+  height: 60px;
+}
+
+.optionButton.selected {
+  border-color: #ffcc00;
+}
+
+.quizImageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 78px;
+  margin-top: 80px;
+}
+
+.imageOption {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imageOption img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.imageOption.selected img {
+  filter: none;
+}
+
+.imageOption.dimmed img {
+  filter: brightness(0.4);
+}
+
+/* ✅ 선택된 이미지에만 테두리(스트로크) 효과 */
+.imageOption::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid transparent;
+  border-radius: 12px;
+  pointer-events: none;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.imageOption.selected::after {
+  border-color: #ffcc00;
+}
+
+.submitButton {
+  padding: 12px 24px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.quiz-full-width {
+  width: 100%;
+}
+
+.quiz-section .yellow-btn {
+  height: 50px;
+  width: 277px;
+  font-size: 16px;
+  border-radius: 7px;
+  line-height: 50px;
+  padding: 0;
+  color: #595959;
+}

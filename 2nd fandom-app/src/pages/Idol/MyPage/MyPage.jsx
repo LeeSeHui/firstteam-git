@@ -195,7 +195,10 @@ const MyPage = () => {
           <span>이용약관</span>
           <span>서비스운영정책</span>
           <span>회사소개</span>
-          <span>로그아웃</span>
+          {/* 로그아웃 */}
+          <span onClick={() => navigate('/onboarding/login')} className="logout-btn">
+            로그아웃
+          </span>
           <span>아동 및 청소년 보호정책</span>
           <span>개인정보처리방침</span>
           <span>고객센터</span>

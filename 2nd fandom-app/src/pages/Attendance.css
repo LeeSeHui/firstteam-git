@@ -15,7 +15,7 @@
     flex: 1;
   }
   
-  .main-text {
+  .text-area {
     font-size: 30px;
     font-weight: 600;
     line-height: 1.2;
@@ -23,6 +23,10 @@
     letter-spacing: -0.8px;
   }
   
+  .text-area h2 {font-size: 30px;}
+  
+  .text-area h2 span {color: #F3B643;}
+
   .highlight {
     color: #f7b401;
   }
@@ -42,28 +46,32 @@
   }
   
   /* 출석 이미지 */
-  .attendance-image-area {
+  .attendance-character {
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
+    max-width: 223px;
   }
   
   .attendance-stamp {
     width: 100%;
-    max-width: 415px;
   }
   
   /* 출석 버튼 */
   .attendance-btn {
     width: 100%;
     background: #ffe600;
-    color: #222;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
-    padding: 14px 0;
+    color: #494949;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: background 0.2s ease;
+    margin-top: 100px;
+    width: 447px;
+    height: 78px;
+
   }
   
   .attendance-btn:disabled {
@@ -72,3 +80,8 @@
     cursor: default;
   }
   
+  .text-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
