@@ -8,7 +8,11 @@ import ArtistSection from '../../../components/ArtistSection';
 import QuizSection from '../../../components/QuizSection';
 
 import logo from '../../../assets/Home/logo.png';
+import dark_logo from '../../../assets/dark/dark_logo.png';
+
 import alarm from '../../../assets/Home/alarm.png';
+import dark_alarm from '../../../assets/dark/dark_alarm.png';
+
 import idol_char from '../../../assets/Home/home-char.png';
 import artist1 from '../../../assets/Home/artist1.png';
 import plusIcon from '../../../assets/Home/plus.png';
@@ -27,6 +31,8 @@ import vote01 from '../../../assets/Home/vote1.png';
 import vote02 from '../../../assets/Home/vote2.png';
 import vote03 from '../../../assets/Home/vote3.png';
 import vote04 from '../../../assets/Home/vote4.png';
+import vote05 from '../../../assets/Home/vote5.png';
+import vote06 from '../../../assets/Home/vote6.png';
 import membershipCardImg from '../../../assets/Home/membership.png';
 import membershipCardImg2 from '../../../assets/Home/membership2.png';
 import membershipCardImg3 from '../../../assets/Home/membership3.png';
@@ -39,6 +45,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { nickname } = useNickname();
   const [newComment, setNewComment] = useState('');
+  const isDarkMode = document.body.classList.contains('dark');
 
   const getTimeAgo = (timestamp) => {
     const now = new Date();
@@ -126,8 +133,11 @@ const Home = () => {
   return (
     <div className="homeContainer">
       <div className="main-logo">
-        <p className="img"><img src={logo} alt="logo" /></p>
-        <p className="img" onClick={AlarmClick}><img src={alarm} alt="alarm" /></p>
+        <p className="img"><img
+          src={isDarkMode ? dark_logo : logo}
+          alt="logo"
+        /></p>
+        <p className="img" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
       </div>
 
       <div className="mypageSection Section" onClick={handleMypageClick}>
@@ -206,6 +216,10 @@ const Home = () => {
               <img src={vote02} alt="vote2" />
               <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?</span></div>
             </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+              <img src={vote05} alt="vote5" />
+              <div className="voteText"><span>[600회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
+            </div>
           </div>
           <div className="voteRow offset">
             <div className="voteCard" onClick={handleVoteCardClick}>
@@ -215,6 +229,10 @@ const Home = () => {
             <div className="voteCard" onClick={handleVoteCardClick}>
               <img src={vote04} alt="vote4" />
               <div className="voteText"><span>[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
+            </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+              <img src={vote06} alt="vote6" />
+              <div className="voteText"><span>감성 가득 셀카장인 <br /> 여자 아이돌은?</span></div>
             </div>
           </div>
         </div>

@@ -1,8 +1,7 @@
 body {background: #ffffff;}
-.Section {width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box;}
 
-.main-logo {padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between;}
-.mypageSection {box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
+.main-logo {padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
+.mypageSection {width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
 .mypageSection .left p { font-size: 18px; font-weight: 600; margin-bottom: 12px;}
 .artistButtons button {background: none; border: none; padding: 0 3px; cursor: pointer;}
 .artistButtons button img {display: block; border-radius: 50%;}
@@ -47,7 +46,7 @@ body {background: #ffffff;}
 .videoCard img {width: 100%; height: 100%; border-radius: 12px; object-fit: cover;}
 .videoCard p {font-size: 18px; color: #121212; margin-top: 10px;}
 
-.quiz-section {padding: 24px 30px;}
+.quiz-section {padding: 24px 30px; width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box;}
 .quizCard {box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; padding: 16px; box-sizing: border-box; text-align: center; position: relative;}
 .quizCard h3 {font-size: 18px; margin-bottom: 0; font-weight: bold; color: #333;}
 .quizCard p {font-size: 10px; margin: 10px 0; color: #888;}
@@ -65,7 +64,7 @@ body {background: #ffffff;}
 .voteText {position: absolute; bottom: 10px; left: 10px; color: #fff;}
 .voteText span {display: block; font-size: 18px; font-weight: 600;}
 
-.membershipSection {margin-bottom: 150px;}
+.membershipSection { width: calc(100% - 32px); margin: 0 16px 150px; box-sizing: border-box;}
 .membershipCard {position: relative; border-radius: 16px; overflow: hidden; width: 100%; height: 220px; cursor: pointer;}
 .membershipBg {width: 100%; height: 100%; object-fit: cover;}
 .membershipOverlay {position: absolute; top: 20px; left: 0; width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);}

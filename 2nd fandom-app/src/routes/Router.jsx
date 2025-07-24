@@ -78,7 +78,6 @@ const AppRouterContent = () => {
     '/onboarding/select-artist',
     '/welcome',
     '/idol/home/quiz',
-    '/idol/chat',
     '/chatroom',
     '/story'
 

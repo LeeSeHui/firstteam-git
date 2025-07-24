@@ -72,7 +72,7 @@ const Highlight = () => {
   const totalCommentCount = comments.length;
 
   return (
-    <div className="highlight-container">
+    <div className="container-highlight">
       {/* 아티스트 이미지 가로 정렬 */}
       <div className="artist-profile">
         <img src={minji} alt="minji" />
@@ -143,7 +143,7 @@ const Highlight = () => {
       />
 
       {/* 라이브 리플레이 */}
-      <div className="live-replay">
+      <div className="live-replay" onClick={() => navigate('/idol/home/live')}>
         <p className="live-title">
           <span className="live-red">Live</span> Replay
         </p>

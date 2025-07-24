@@ -22,16 +22,11 @@ body * {font-family: "Pretendard", sans-serif;}
 .container {padding: 90px 16px; box-sizing: border-box;}
 
 
-.dark .Section {background: #212121;}
-
 body.light {background-color: white; color: #494949;}
-
 .sub-color {color: #797979;}
 
 
-body.dark {background-color: #121212;color: #fff;}
-
-
-/* 섹션, 박스 같은 요소에 테마별 스타일 추가 */
-.box {background-color: white;}
-body.dark .box {background-color: #222;}
+/* 다크모드 */
+body.dark {background-color: #121212; color: #fff;}
+body.dark p, body.dark span, body.dark h3 {color: #fff;}
+body .Section {background: #212121;}

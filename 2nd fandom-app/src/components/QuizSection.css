@@ -17,3 +17,9 @@
 .quiz-right img { width: 188px; height: 188px; }
 
 .quiz-button { margin-top: 20px; }
+
+
+.dark .highlight {color: #f5b000;}
+.dark .timer span {display: block;}
+.dark .timer img {display: block;}
+.dark .timer {width: 85%; color: #797979; align-items: center; display: flex; justify-content: space-between;}
