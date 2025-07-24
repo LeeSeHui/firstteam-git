@@ -7,6 +7,7 @@ import likeIcon from '../assets/artist/like.png';
 import noLikeIcon from '../assets/artist/nolike.png';
 import commentIcon from '../assets/artist/comment.png';
 import tagIcon from '../assets/artist/tag.png';
+import dark_tagIcon from '../assets/dark/dark_tagicon.png';
 import tagActiveIcon from '../assets/artist/tag-yellow.png';
 import lockIcon from '../assets/artist/lock.png';
 
@@ -44,7 +45,7 @@ const ArtistSection = ({
   const [bookmarked, setBookmarked] = useState(false);
   const [liked, setLiked] = useState(false);
   const [commentHearts, setCommentHearts] = useState({}); // ✅ 댓글 하트 상태
-
+  const isDarkMode = document.body.classList.contains('dark');
   const navigate = useNavigate();
 
   // 🔒 잠금 처리
@@ -92,7 +93,13 @@ const ArtistSection = ({
             }}
           >
             <img
-              src={bookmarked ? tagActiveIcon : tagIcon}
+              src={
+                bookmarked
+                  ? tagActiveIcon
+                  : isDarkMode
+                    ? dark_tagIcon
+                    : tagIcon
+              }
               alt="북마크 아이콘"
               className="bookmark-icon"
             />

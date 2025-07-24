@@ -11,6 +11,7 @@ import slide3 from '../../../assets/dm/slide3.png';
 
 import check_icon from '../../../assets/home/check.png'
 import search from '../../../assets/dm/search.png'
+import dark_search from '../../../assets/dark/dark_search.png'
 
 import roseImg from '../../../assets/dm/img1.png';
 import jennieImg from '../../../assets/dm/img2.png';
@@ -52,6 +53,7 @@ const recommendArtists = [
 const Chat = () => {
   const sliderRef = useRef(null);
   const navigate = useNavigate();
+  const isDarkMode = document.body.classList.contains('dark');
 
   const settings = {
     dots: false,
@@ -98,7 +100,7 @@ const Chat = () => {
             style={{ cursor: 'pointer' }}
           >
             <div className="profile-img-wrap">
-              <img src={artist.img} alt={artist.name} />
+              <img src={artist.img} />
               {artist.hasNew && <span className="red-dot" />}
             </div>
             <p className="profile-name">{artist.name}</p>
@@ -110,7 +112,9 @@ const Chat = () => {
 
       {/* 검색창 */}
       <div className="search-box">
-        <img src={search} alt="" />
+        <img
+        src={isDarkMode ? dark_search : search}
+        />
         <input type="text" placeholder="아티스트의 이름을 입력하세요." />
       </div>
 

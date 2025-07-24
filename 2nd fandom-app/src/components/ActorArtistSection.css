@@ -1,3 +1,4 @@
+.artistSection {width: calc(100% - 32px); margin: 0 auto; border-radius: 14px;}
 .icon-text { display: flex; align-items: center; gap: 6px; font-size: 14px; }
 .feed-card { border-radius: 16px; padding: 16px 16px 0 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 20px; font-size: 14px; width: 100%; max-width: 448px; margin: 0 auto 20px; }
 .feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
@@ -6,7 +7,6 @@
 .nickname { gap: 4px; display: flex; align-items: center; font-weight: 600; font-size: 16px; }
 .time { font-size: 13px; margin-top: 2px; }
 .bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: #aaa; transition: color 0.2s; }
-.feed-text { font-size: 16px; line-height: 1.4; color: #595959; font-weight: 500; margin: 10px 0 12px; }
 .post-footer { margin-top: 10px; }
 .like-counts { display: flex; gap: 12px; font-size: 14px; color: #888; font-weight: 500; }
 .feed-images { margin-top: 12px; }

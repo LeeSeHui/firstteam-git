@@ -7,9 +7,6 @@
 
 .actor-highlight { color: #37CEBF; }
 
-.timer { display: flex; align-items: center; font-size: 14px; color: #888; }
-
-.timer img { width: 16px; height: 16px; margin-right: 4px; }
 
 .timer .actor-time { color: #37CEBF; font-weight: bold; margin-right: 4px; font-size: 18px; }
 

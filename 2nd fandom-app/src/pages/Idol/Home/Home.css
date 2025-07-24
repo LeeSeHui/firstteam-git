@@ -2,7 +2,7 @@ body {background: #ffffff;}
 
 .main-logo {padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
 .mypageSection {width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
-.mypageSection .left p { font-size: 18px; font-weight: 600; margin-bottom: 12px;}
+.mypageSection .left p { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #121212;}
 .artistButtons button {background: none; border: none; padding: 0 3px; cursor: pointer;}
 .artistButtons button img {display: block; border-radius: 50%;}
 
@@ -76,3 +76,4 @@ body {background: #ffffff;}
 .indicator .total {opacity: 0.5; margin-left: 2px;}
 
 
+.dark .mypageSection .left p {color: #fff; font-weight: 400;}

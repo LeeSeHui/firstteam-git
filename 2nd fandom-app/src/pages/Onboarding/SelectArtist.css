@@ -3,11 +3,19 @@
 .artist-select-container h2 {font-size: 32px; margin-bottom: 10px; font-weight: 600;}
 .artist-select-container > p {font-size: 16px; color: #797979; margin-bottom: 25px;}
 .gradient-border-wrapper2 {
+  position: relative;
   width: 90%; margin-bottom: 52px;
   background: linear-gradient(90deg, #6C53FF 0%, #66DEC2 50%, #FFCC00 100%);
   padding: 1px; /* border처럼 보이게 하는 부분 */
   border-radius: 999px;
   display: inline-block;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* 클릭 방해 안 되게 */
 }
 
 .gradient-input {
@@ -72,3 +80,8 @@
   right: 10px;
   z-index: 2;
 }
+
+
+.dark .artist-card {border: 2px solid transparent;}
+.dark .artist-card.selected {border: 2px solid #facc15;}
+.dark .gradient-input {background: #151515;}

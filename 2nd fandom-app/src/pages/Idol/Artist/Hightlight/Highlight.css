@@ -1,12 +1,12 @@
 
-.container-highlight {padding: 0 16px 100px; box-sizing: border-box;}
+.container-highlight {padding: 0 0 100px; box-sizing: border-box;}
 .artist-profile { display: flex; justify-content: center; gap: 5px; margin-bottom: 20px;  }
 .artist-profile img {width: 86px; height: 86px;}
-.card-section { position: relative; width: 100%; max-width: 500px; margin: 0 auto 40px; }
+.card-section { position: relative; width: 100%; max-width: 500px; padding: 0 16px;}
 .card-bg { width: 100%; border-radius: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); }
 .heart-letter { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; z-index: 2; }
 .send-btn { width: 130px; height: 37px; position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%); background-color: #FFD700; color: #000; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; z-index: 2; }
-.notice-box { margin: 24px 0; background: #f8f8f8; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; font-size: 17px; line-height: 1.6; font-weight: 500; }
+.notice-box { margin: 24px 16px; background: #f8f8f8; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; font-size: 17px; line-height: 1.6; font-weight: 500; }
 .notice-box p:nth-child(1) {margin-bottom: 10px; border-bottom: 1px solid #797979; padding-bottom: 12px;}
 
 .notice-icon { width: 20px;  height: 20px; margin-right: 6px; vertical-align: middle;}
@@ -24,14 +24,13 @@
 .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
 .nickname { font-weight: 600; font-size: 18px; }
 .badge { font-size: 12px; color: gold; }
-.time { font-size: 16px; color: #848484; }
 .bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
-.feed-text { font-size: 17px; margin: 8px 0 10px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
+.feed-text { font-size: 18px; margin: 8px 0 10px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
 .post-footer { display: flex; justify-content: flex-end; }
 .like-counts { display: flex; gap: 11px; font-size: 18px; font-weight: 500; }
 .feed-images { display: flex; gap: 8px; }
 .feed-images img { flex: 1; width: calc(50% - 4px); border-radius: 12px; object-fit: cover; }
-.live-replay { background: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; margin-top: 24px; }
+.live-replay { background: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; margin: 24px 16px; }
 .live-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
 .live-red { color: red; font-weight: bold; }
 .live-thumbnail { width: 100%; border-radius: 12px; margin-bottom: 16px; }

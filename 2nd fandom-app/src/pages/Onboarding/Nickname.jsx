@@ -60,7 +60,7 @@ const NicknamePage = () => {
       </div>
 
 
-      <YellowButton label={'완료'} onClick={handleComplete}/>
+      <YellowButton label={'확인'} onClick={handleComplete}/>
     </div>
     </div>
     
