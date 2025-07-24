@@ -176,3 +176,10 @@
     font-weight: 600;
   }
   
+  /* 다크모드 */
+  .dark .check-icon {color: #464646}
+  .dark .vote-rank{color: #FFD700;}
+  .dark .vote-count.sub-color{color: #8f8f8f;}
+  .dark .vote-btn{color:#494949;}
+ .dark .modalContent{background-color: #212121;}
+ .dark .modal-btns .cancel-btn{ background: none;}

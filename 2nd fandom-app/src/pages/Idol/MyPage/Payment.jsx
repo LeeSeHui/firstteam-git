@@ -6,6 +6,7 @@ import './Payment.css';
 import '/src/index.css';
 
 import plusIcon from '../../../assets/mypage/payment/plus.png';
+import plusIconDark from '../../../assets/dark/plus-dark.png';
 import Group1 from '../../../assets/mypage/payment/Group1.png';
 import Group2 from '../../../assets/mypage/payment/Group2.png';
 import Group3 from '../../../assets/mypage/payment/Group3.png';
@@ -17,8 +18,10 @@ import logo5 from '../../../assets/mypage/payment/logo5.png';
 import mark from '../../../assets/mypage/payment/mark.png';
 import popup from '../../../assets/mypage/payment/popup.png'; // ✅ 팝업 이미지
 
+
 const Payment = () => {
   const navigate = useNavigate();
+  const isDarkMode = document.body.classList.contains('dark');
   const handleRecommendSubscribe = () => {
     navigate('/idol/home/membership'); // 원하는 경로로 이동
   };
@@ -44,7 +47,7 @@ const Payment = () => {
       {/* 채널 추가 버튼 */}
       <div className="add-artist-button">
         <button onClick={handlePlusClick}>
-          <img src={plusIcon} alt="아티스트 추가" />
+          <img src={isDarkMode ? plusIconDark : plusIcon} alt="아티스트 추가" />
           <span className='payment-add-button sub-color'>채널 추가하기</span>
         </button>
       </div>
@@ -68,7 +71,7 @@ const Payment = () => {
               <p>NewJeans <img src={mark} alt="badge" /></p>
               <span className='sub-color'>다음 결제일 : 2025년 7월 25일</span>
             </div>
-            <button className="cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
+            <button className="payment-cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
           </li>
           <li className="avatar-item">
             <div className="avatar-wrapper">
@@ -79,7 +82,7 @@ const Payment = () => {
               <p>G-Dragon <img src={mark} alt="badge" /></p>
               <span className='sub-color'>다음 결제일 : 2025년 8월 21일</span>
             </div>
-            <button className="cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
+            <button className="payment-cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
           </li>
           <li className="avatar-item">
             <div className="avatar-wrapper">
@@ -90,7 +93,7 @@ const Payment = () => {
               <p>TWS <img src={mark} alt="badge" /></p>
               <span className='sub-color'>다음 결제일 : 2025년 8월 3일</span>
             </div>
-            <button className="cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
+            <button className="payment-cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
           </li>
         </ul>
       </div>
