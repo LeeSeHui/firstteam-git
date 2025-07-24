@@ -122,13 +122,3 @@
 .quiz-full-width {
   width: 100%;
 }
-
-.quiz-section .yellow-btn {
-  height: 50px;
-  width: 277px;
-  font-size: 16px;
-  border-radius: 7px;
-  line-height: 50px;
-  padding: 0;
-  color: #595959;
-}
