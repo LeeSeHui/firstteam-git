@@ -20,3 +20,12 @@
     font-weight: 600; /* semibold */
   }
 
+/* 다크모드 */
+.dark .artistNav button{
+  color: #ffff;
+}
+
+.dark .navButton.active {
+    color: #FCD817;
+    font-weight: 600; /* semibold */
+  }

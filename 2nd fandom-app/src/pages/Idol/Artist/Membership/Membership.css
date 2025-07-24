@@ -4,14 +4,14 @@
 .feed-header { display: flex; justify-content: space-between; align-items: center; }
 .profile-info { display: flex; align-items: center; gap: 10px; }
 .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.nickname { font-weight: 500; font-size: 18px; color: #595959; }
+.nickname { font-weight: 600; font-size: 18px; color: #595959; }
 .time { font-size: 16px; font-weight: 500; color: #848484; }
 .badge { margin-left: 4px; }
 .bookmark-btn { background: none; border: none; font-size: 18px; padding: 0; line-height: 1; display: flex; align-items: center; justify-content: center; }
-.feed-text { font-size: 17px; line-height: 1.2; color: #595959; }
+.feed-text { font-size: 17px; line-height: 1.2; color: #595959; font-weight: 500}
 .feed-images { margin-left: -16px; margin-right: -16px; }
 .feed-images img { width: 100%; display: block; border-radius: 0 0 12px 12px; object-fit: cover; }
-.like-counts { display: flex; gap: 6px; font-size: 18px; color: #444; }
+.like-counts { display: flex; gap: 12px; font-size: 18px; }
 .locked-overlay {
     height: 330px;
     display: flex;

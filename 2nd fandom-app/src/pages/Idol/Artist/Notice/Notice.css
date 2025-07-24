@@ -1,6 +1,6 @@
 .notice-wrapper {
   padding: 0 16px 100px;
-  background-color: #f8f8f8;
+  background-color: #ffff;
 }
 
 .notice-search {
@@ -36,7 +36,7 @@
   padding: 16px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: #595959;
   cursor: pointer;
 }
 
@@ -75,3 +75,6 @@
 .notice-content p.en {
   margin-top: 12px;
 }
+
+.dark .notice-wrapper {background: none;}
+.dark .notice-title {color: #fff;}

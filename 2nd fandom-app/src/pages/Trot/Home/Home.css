@@ -1,2 +1,2 @@
-.commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #AE74FF; border-radius: 25px; }
-.commentInputWrap button { padding: 6px 16px; background: #AE74FF; color: #ffffff; font-weight: 500; border: none; border-radius: 20px; cursor: pointer; }
+.trot-commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #AE74FF; border-radius: 25px; }
+.trot-commentInputWrap button { padding: 6px 16px; background: #AE74FF; color: #ffffff; font-weight: 500; border: none; border-radius: 20px; cursor: pointer; }

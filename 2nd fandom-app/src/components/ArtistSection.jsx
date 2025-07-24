@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import likeIcon from '../assets/artist/like.png';
 import noLikeIcon from '../assets/artist/nolike.png';
 import commentIcon from '../assets/artist/comment.png';
-import tagIcon from '../assets/artist/tag.png';
-import tagActiveIcon from '../assets/artist/tag-yellow.png';
+import tagIcon from '../assets/artist/tag.png';               // 기본 회색 북마크
+import tagActiveIcon from '../assets/artist/tag-yellow.png';   // 활성화 북마크
+import darkTagIcon from '../assets/dark/dark-tag.png';         // 다크모드용 북마크 
 import lockIcon from '../assets/artist/lock.png';
 
 // ✅ 시간 표시 함수
@@ -46,6 +47,8 @@ const ArtistSection = ({
   const [commentHearts, setCommentHearts] = useState({}); // ✅ 댓글 하트 상태
 
   const navigate = useNavigate();
+
+  const isDarkMode = document.body.classList.contains('dark');
 
   // 🔒 잠금 처리
   if (isLocked) {
@@ -91,11 +94,17 @@ const ArtistSection = ({
               setBookmarked(!bookmarked);
             }}
           >
-            <img
-              src={bookmarked ? tagActiveIcon : tagIcon}
-              alt="북마크 아이콘"
-              className="bookmark-icon"
-            />
+          <img
+            src={
+              bookmarked
+                ? tagActiveIcon                             // 북마크 된 경우엔 무조건 노란색
+                : isDarkMode
+                ? darkTagIcon                               // 북마크 안 됐고 다크모드면 다크 이미지
+                : tagIcon                                   // 북마크 안 됐고 라이트모드면 기본 이미지
+            }
+            alt="북마크 아이콘"
+            className="bookmark-icon"
+          />
           </button>
         </div>
 
