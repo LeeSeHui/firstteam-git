@@ -29,4 +29,4 @@ body.light {background-color: white; color: #494949;}
 /* 다크모드 */
 body.dark {background-color: #121212; color: #fff;}
 body.dark p, body.dark span, body.dark h3 {color: #fff;}
-body .Section {background: #212121;}
+body.dark .Section {background: #212121;}
