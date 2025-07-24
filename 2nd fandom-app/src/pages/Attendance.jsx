@@ -6,6 +6,7 @@ import Popup from '../components/Popup';
 import day0 from '../assets/mypage/attendance/0day.png';
 import day1 from '../assets/mypage/attendance/1day.png';
 import completeImg from '../assets/mypage/payment/popup.png';
+import starCharacter from '../assets/mypage/attendance/star-character.png'; // 캐릭터 이미지 경로 추가
 
 const Attendance = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -16,7 +17,7 @@ const Attendance = () => {
     setIsChecked(true);
     setTimeout(() => {
       setShowPopup(true);
-    }, 2000);
+    }, 1000);
   };
 
   const handleConfirm = () => {
@@ -28,11 +29,15 @@ const Attendance = () => {
     <div className="attendance-wrapper">
       <div className="container">
         <div className="attendance-header">
-          <div className="text-area">
-            <p className="main-text">
-              <strong style={{ color: '#FF7A00' }}>매일 출석하면<br />3일차에 2배 받아요</strong>
-              <span className="sub-text sub-color">뉴비랑 놀고 포인트 받아가세요!</span>
-            </p>
+          <div className="text-image-wrap">
+            <div className="text-area">
+              <h2>
+                매일 출석하면<br />
+                3일차에 <span>2배</span> 받아요
+              </h2>
+              <span className="sub-text">뉴비랑 놀고 포인트 받아가세요!</span>
+            </div>
+            <img src={starCharacter} alt="캐릭터" className="attendance-character" />
           </div>
         </div>
 
