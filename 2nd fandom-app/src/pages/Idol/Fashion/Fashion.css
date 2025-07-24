@@ -2,6 +2,7 @@
 .tab { padding: 9px 18px; border-radius: 20px; background: #fff; color: #121212; border: 1px solid #FFD700; text-decoration: none; font-size: 16px; white-space: nowrap; transition: background 0.2s; }
 .tab.active { background: #FFD700; color: #121212; }
 
+
 .gradient-border-wrapper {
   width: 100%; margin-bottom: 18px;
   background: linear-gradient(90deg, #6C53FF 0%, #66DEC2 50%, #FFCC00 100%);
@@ -17,9 +18,11 @@
   outline: none;
   width: 100%;
   font-size: 16px;
-  color: #333;
 }
 
 .gradient-input::placeholder {
   color: #aaa;
 }
+
+.dark .tab {background: #121212; color: #fff;}
+.dark .tab.active {background: #FFD700; color: #121212;}
