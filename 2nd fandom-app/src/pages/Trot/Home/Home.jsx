@@ -28,6 +28,8 @@ import vote01 from '../../../assets/trot/home/vote1.png';
 import vote02 from '../../../assets/trot/home/vote2.png';
 import vote03 from '../../../assets/trot/home/vote3.png';
 import vote04 from '../../../assets/trot/home/vote4.png';
+import vote05 from '../../../assets/trot/home/vote5.png';
+import vote06 from '../../../assets/trot/home/vote6.png';
 import membershipCardImg1 from '../../../assets/trot/home/membership1.png';
 import membershipCardImg2 from '../../../assets/trot/home/membership2.png';
 import membershipCardImg3 from '../../../assets/trot/home/membership3.png';
@@ -209,6 +211,10 @@ const Home = () => {
               <img src={vote02} alt="vote2" />
               <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 가수는?</span></div>
             </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+              <img src={vote05} alt="vote5" />
+              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 가수는?</span></div>
+            </div>
           </div>
           <div className="voteRow offset">
             <div className="voteCard" onClick={handleVoteCardClick}>
@@ -217,6 +223,10 @@ const Home = () => {
             </div>
             <div className="voteCard" onClick={handleVoteCardClick}>
               <img src={vote04} alt="vote4" />
+              <div className="voteText"><span>당신의 마음을 울린 가수는? <br /> K-TROT 1위 후보 투표</span></div>
+            </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+              <img src={vote06} alt="vote6" />
               <div className="voteText"><span>당신의 마음을 울린 가수는? <br /> K-TROT 1위 후보 투표</span></div>
             </div>
           </div>
