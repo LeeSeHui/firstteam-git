@@ -5,6 +5,8 @@ import Popup from '../components/Popup';
 
 import day0 from '../assets/mypage/attendance/0day.png';
 import day1 from '../assets/mypage/attendance/1day.png';
+import day0Dark from '../assets/dark/0day_dark.png';
+import day1Dark from '../assets/dark/1day_dark.png';
 import completeImg from '../assets/mypage/payment/popup.png';
 import starCharacter from '../assets/mypage/attendance/star-character.png'; // 캐릭터 이미지 경로 추가
 
@@ -43,11 +45,19 @@ const Attendance = () => {
         </div>
 
         <div className="character-area">
-          <img
-            className="attendance-stamp"
-            src={isChecked ? day1 : day0}
-            alt="출석 이미지"
-          />
+         <img
+    className="attendance-stamp"
+    src={
+      isDarkMode
+        ? isChecked
+          ? day1Dark
+          : day0Dark
+        : isChecked
+          ? day1
+          : day0
+    }
+    alt="출석 이미지"
+  />
         </div>
 
         <button
