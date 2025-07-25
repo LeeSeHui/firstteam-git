@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Quiz.css';
-import quiz1 from '../../../assets/quiz/quiz1.png';
+import quiz1 from '../../../assets/quiz/quiz.png';
 import quiz2 from '../../../assets/quiz/quiz2-1.png';
 import quiz3 from '../../../assets/quiz/quiz2-2.png';
 import quiz4 from '../../../assets/quiz/quiz2-3.png';
