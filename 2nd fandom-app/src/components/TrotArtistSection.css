@@ -6,20 +6,6 @@
     font-size: 14px;
   }
   
-  /* 아티스트 피드 카드 전체 */
-  .feed-card {
-    border-radius: 16px;
-    padding: 16px 16px 0 16px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    font-size: 14px;
-  
-    /* ✅ 추가된 부분 */
-    width: 100%;
-    max-width: 448px;
-    margin: 0 auto 20px;
-  }
-  
   /* 카드 상단 - 프로필 + 북마크 버튼 */
   .feed-header {
     display: flex;
@@ -52,12 +38,15 @@
   }
   
   
+
+
   /* 작성 시간 */
   .time {
     font-size: 16px;
     margin-top: 2px;
   }
   
+
   /* 북마크 버튼 */
   .bookmark-btn {
     background: none;
@@ -68,6 +57,7 @@
     transition: color 0.2s;
   }
   
+
   /* 피드 텍스트 */
   .feed-text {
     font-size: 17px;
@@ -76,6 +66,7 @@
     font-weight: 500;
     margin: 10px 0 12px;
   }
+
   
   /* 좋아요 및 댓글 수 */
   .post-footer {

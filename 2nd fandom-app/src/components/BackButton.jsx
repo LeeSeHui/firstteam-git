@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Backbutton.css';
 import backbutton from '../assets/BackButton.png';
+import dark_backbutton from '../assets/dark/dark_backButton.png';
 
 const BackButton = ({
   to,
@@ -13,6 +14,7 @@ const BackButton = ({
   className = '', // ✅ className 받기
 }) => {
   const navigate = useNavigate();
+  const isDarkMode = document.body.classList.contains('dark');
 
   const handleBack = () => {
     if (onClick) {
@@ -30,7 +32,9 @@ const BackButton = ({
   return (
     <div className={`ButtonContainer ${className}`}> {/* ✅ className 적용 */}
       <button className="back-arrow" onClick={handleBack}>
-        <img src={backbutton} alt="" />
+        <img
+        src={isDarkMode ? dark_backbutton : backbutton}
+        />
       </button>
 
       <span className="header-title">{label}</span>

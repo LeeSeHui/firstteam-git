@@ -25,7 +25,7 @@ background-color: #fff;}
 .avatar-wrapper img {width: 100%; height: 100%; object-fit: cover; display: block;border-radius: 50%;}
 
 /* 빨간 점 */
-.red-dot {position: absolute; bottom: 5px; right: 8px;width: 8px; height: 8px;background-color: red;border-radius: 50%; border: 1px solid white;z-index: 2;}
+.red-dot {position: absolute; bottom: 5px; right: 8px;width: 8px; height: 8px;background-color: red;border-radius: 50%; z-index: 2;}
 
 /* 최신순 버튼 */
 .sort-button {all: unset; background-color: #EEEEEE; border-radius: 5px; padding: 5px 4px 5px 9px; font-size: 17px; font-weight: 600; display: inline-flex; align-items: center;

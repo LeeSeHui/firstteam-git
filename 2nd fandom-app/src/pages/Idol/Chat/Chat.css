@@ -1,4 +1,4 @@
-.chat-page { padding: 16px; background: #fff; }
+.chat-page { padding: 16px;}
 .chat-slider-wrapper { margin-bottom: 16px; }
 .chat-slide { position: relative; height: 160px; border-radius: 16px; overflow: hidden; }
 .slide-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(70%); }
@@ -8,7 +8,9 @@
 
 .profile-slider-box { background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 20px; }
 
-.section-title { font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-left: 6px; color: #333; }
+
+
+.section-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; padding-left: 6px; color: #333; }
 
 .profile-slider { display: flex; gap: 50px; justify-content: center; }
 
@@ -30,7 +32,7 @@
 
 .search-box input { border: none; outline: none; font-size: 16px; color: #333; flex: 1; background: transparent; }
 
-.check-icon { width: 20px !important; height: 20px !important; object-fit: contain; margin-left: 4px; }
+.check-icon { width: 15px !important; height: 15px !important; object-fit: contain; margin-left: 8px; }
 
 .artist-item { display: flex; align-items: center; margin-bottom: 16px; }
 
@@ -40,8 +42,18 @@
 
 .artist-info { flex: 1; margin-left: 10px;}
 
-.artist-name2 { font-weight: 500; font-size: 20px; }
+.artist-name2 { font-weight: 500; font-size: 20px; display: flex; align-items: center;}
 
 .artist-en { font-size: 14px; }
 
 .artist-time { font-size: 12px; }
+
+
+/* 다크모드 */
+.dark .profile-slider-box {background: #212121;}
+.dark .profile-name {font-weight: 500;}
+.dark .search-box {background: #212121;}
+.dark .search-box input {color: #fff;}
+.dark .search-box input::placeholder {color: #fff;}
+.dark .artist-name2 {font-weight: 400;}
+.dark .artist-time {color: #8F8F8F;}
