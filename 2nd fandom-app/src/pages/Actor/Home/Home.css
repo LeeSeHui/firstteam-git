@@ -1,2 +1,2 @@
-.commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #37CEBF; border-radius: 25px; }
-.commentInputWrap button { padding: 6px 16px; background: #37CEBF; color: #ffffff; font-weight: 500; border: none; border-radius: 20px; cursor: pointer; }
+.actor-commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #37CEBF; border-radius: 25px; }
+.actor-commentInputWrap button { padding: 6px 16px; background: #37CEBF; color: #ffffff; font-weight: 500; border: none; border-radius: 20px; cursor: pointer; }

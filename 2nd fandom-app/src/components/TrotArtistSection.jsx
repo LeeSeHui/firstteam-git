@@ -165,7 +165,7 @@ const TrotArtistSection = ({
       ))}
     </div>
 
-    <div className="commentInputWrap">
+    <div className="trot-commentInputWrap">
       <input
         type="text"
         placeholder="비속어 자동 필터링 중..."

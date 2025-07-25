@@ -1,4 +1,4 @@
-.fashion-tabs { display: flex; justify-content: space-between; margin-bottom: 16px; overflow-x: auto; }
+.fashion-tabs { display: flex; justify-content: space-between; margin-bottom: 16px; overflow-x: auto; gap: 10px; }
 .tab { padding: 9px 18px; border-radius: 20px; background: #fff; color: #121212; border: 1px solid #FFD700; text-decoration: none; font-size: 16px; white-space: nowrap; transition: background 0.2s; }
 .tab.active { background: #FFD700; color: #121212; }
 
@@ -25,4 +25,4 @@
 }
 
 .dark .tab {background: #121212; color: #fff;}
-.dark .tab.active {background: #FFD700; color: #121212;}
+.dark .tab.active {background: #FFD700; color: #595959; font-weight: 500;}

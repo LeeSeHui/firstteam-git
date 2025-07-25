@@ -58,10 +58,11 @@
 }
 
 .feed-text {
-  font-size: 18px;
+  font-size: 17px;
   margin: 10px 0;
   color: #595959;
   line-height: 1.4;
+  font-weight: 500
 }
 
 .feed-image-wrapper {
@@ -82,7 +83,7 @@
 
 .like-counts {
   display: flex;
-  gap: 11px;
+  gap: 12px;
   margin-bottom: 10px;
   font-size: 18px;
   color: #595959;
