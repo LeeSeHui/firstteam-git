@@ -40,3 +40,6 @@ gap: 2px;cursor: pointer;}
 .dark .subscribed-section .subscribed-list .avatar-item .payment-cancel-button.sub-color {color: #ffffff;}
 .dark .recommend-section .payment-recommend-list li span{color: #797979;}
 .dark .subscribe-button{color: #494949;}
+.dark .add-artist-button button {background: #212121;}
+.dark .subscribed-section {background: #212121;}
+.dark .recommend-section {background: #212121;}

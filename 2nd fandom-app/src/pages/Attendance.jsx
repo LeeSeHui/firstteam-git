@@ -9,13 +9,12 @@ import day0Dark from '../assets/dark/0day_dark.png';
 import day1Dark from '../assets/dark/1day_dark.png';
 import completeImg from '../assets/mypage/payment/popup.png';
 import starCharacter from '../assets/mypage/attendance/star-character.png'; // 캐릭터 이미지 경로 추가
+import BackButton from '../components/BackButton';
 
 const Attendance = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
-  const isDarkMode = document.body.classList.contains('dark');
-
   const handleCheck = () => {
     setIsChecked(true);
     setTimeout(() => {
@@ -31,6 +30,7 @@ const Attendance = () => {
   return (
     <div className="attendance-wrapper">
       <div className="container">
+        <BackButton/>
         <div className="attendance-header">
           <div className="text-image-wrap">
             <div className="text-area">

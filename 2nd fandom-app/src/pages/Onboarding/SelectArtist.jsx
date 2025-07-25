@@ -87,10 +87,10 @@ const SelectArtist = () => {
       </div>
       <h2>당신의 아티스트를<br />선택해 주세요</h2>
       <p>복수 선택 가능해요</p>
-     <div class="gradient-border-wrapper2">
-      <img src={search} alt="search icon" class="input-icon" />
-      <input class="gradient-input" type="text" placeholder="원하는 아티스트를 검색해보세요." />
-    </div>
+      <div class="gradient-border-wrapper2">
+        <img src={search} alt="search icon" class="input-icon" />
+        <input class="gradient-input" type="text" placeholder="원하는 아티스트를 검색해보세요." />
+      </div>
       
 
       <div className="scroll-wrapper2">
