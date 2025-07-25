@@ -90,23 +90,25 @@ const Chat = () => {
 
       
       <div className="profile-slider-box">
-      <p className="section-title">Message</p>
-      <div className="profile-slider">
-        {profileData.map((artist, i) => (
-          <div
-            className="profile-item"
-            key={i}
-            onClick={() => navigate(`/chatroom/${artist.name.toLowerCase()}`)} // ⬅ 클릭 시 이동
-            style={{ cursor: 'pointer' }}
-          >
-            <div className="profile-img-wrap">
-              <img src={artist.img} />
-              {artist.hasNew && <span className="red-dot" />}
-            </div>
-            <p className="profile-name">{artist.name}</p>
+        <div className="slider-box">
+          <p className="section-title">Message</p>
+          <div className="profile-slider">
+            {profileData.map((artist, i) => (
+              <div
+                className="profile-item"
+                key={i}
+                onClick={() => navigate(`/chatroom/${artist.name.toLowerCase()}`)} // ⬅ 클릭 시 이동
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="profile-img-wrap">
+                  <img src={artist.img} />
+                  {artist.hasNew && <span className="red-dot" />}
+                </div>
+                <p className="profile-name">{artist.name}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
     </div>
 
 

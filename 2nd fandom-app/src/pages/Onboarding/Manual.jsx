@@ -84,7 +84,7 @@ const Manual = () => {
   });
 
   return (
-    <div className="manual-wrapper" {...handlers}>
+    <div className="manual-wrapper container" {...handlers}>
       <header>
         <BackButton
           onClick={() => {

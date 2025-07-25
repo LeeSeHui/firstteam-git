@@ -5,6 +5,7 @@ import './ChatRoom.css';
 import check from '../../../assets/Home/check.png';
 import dm_img from '../../../assets/dm/dm_img.png'
 import dm_icon from '../../../assets/dm/icon.png'
+import dm_plusIcon from '../../../assets/dm/dm-plusIcon.png'
 
 const ChatRoom = () => {
   const [visibleMessages, setVisibleMessages] = useState(0); // 몇 개 보여줄지
@@ -25,7 +26,8 @@ const ChatRoom = () => {
   }, []);
 
   return (
-    <div className="chatroom-container">
+    <div>
+      <div className="chatroom-container">
       <BackButton label="DM" />
 
       <div className="chatroom-body">
@@ -90,15 +92,16 @@ const ChatRoom = () => {
           </div>
         )}
       </div>
-
-      <div className="chatroom-input">
-        <button className="circle-btn">＋</button>
+    </div>
+    <div className="chatroom-input">
+        <button className="circle-btn"><img src={dm_plusIcon} alt="" /></button>
         <div className="input-bubble">
           <input type="text" placeholder="메시지를 입력하세요" />
           <button className="emoji-icon"><img src={dm_icon} alt="" /></button>
         </div>
       </div>
     </div>
+    
   );
 };
 
