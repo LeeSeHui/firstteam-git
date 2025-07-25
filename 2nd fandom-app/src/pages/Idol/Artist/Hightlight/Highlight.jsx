@@ -10,14 +10,14 @@ import hani from '../../../../assets/artist-select/hani.png';
 import daniel from '../../../../assets/artist-select/daniel.png';
 import herin from '../../../../assets/artist-select/herin.png';
 
-import artist01 from '../../../../assets/home/artist01.png';
-import check from '../../../../assets/home/check.png';
+import artist01 from '../../../../assets/Home/artist01.png';
+import check from '../../../../assets/Home/check.png';
 import card from '../../../../assets/artist-select/cardsend.png';
 import letter from '../../../../assets/artist/heartletter.png';
 import vote from '../../../../assets/artist/votebanner.png';
 import feedimg1 from '../../../../assets/artist/artistfeed1.png';
-import photo02 from '../../../../assets/home/photo02.png';
-import photo03 from '../../../../assets/home/photo03.png';
+import photo02 from '../../../../assets/Home/photo02.png';
+import photo03 from '../../../../assets/Home/photo03.png';
 import live from '../../../../assets/artist/livereplay.png';
 import noticeicon from '../../../../assets/artist/noticeicon.png';
 import likeIcon from '../../../../assets/artist/like.png';

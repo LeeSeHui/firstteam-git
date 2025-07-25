@@ -3,7 +3,7 @@ import './ArtistBoard.css';
 import ArtistSection from '../../../../components/ArtistSection';
 
 import herin from '../../../../assets/artist-select/herin.png';
-import check from '../../../../assets/home/check.png';
+import check from '../../../../assets/Home/check.png';
 
 import feedimg1 from '../../../../assets/artist/artistfeed1.png';
 import feedimg2 from '../../../../assets/artist/artistfeed2.png';

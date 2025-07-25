@@ -9,7 +9,7 @@ import slide1 from '../../../assets/dm/slide1.png';
 import slide2 from '../../../assets/dm/slide2.png';
 import slide3 from '../../../assets/dm/slide3.png';
 
-import check_icon from '../../../assets/home/check.png'
+import check_icon from '../../../assets/Home/check.png'
 import search from '../../../assets/dm/search.png'
 import dark_search from '../../../assets/dark/dark_search.png'
 

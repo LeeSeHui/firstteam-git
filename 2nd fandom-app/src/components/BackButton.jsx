@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Backbutton.css';
-import backbutton from '../assets/BackButton.png';
-import dark_backbutton from '../assets/dark/dark_backButton.png';
+import backbutton from '../assets/backbutton.png';
+import dark_backbutton from '../assets/dark/dark_backbutton.png';
 
 const BackButton = ({
   to,
