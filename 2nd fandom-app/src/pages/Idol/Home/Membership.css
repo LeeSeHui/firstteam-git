@@ -1,131 +1,35 @@
-.membership-wrap {
-    padding: 20px;
-    font-family: 'Pretendard', sans-serif;
-    background-color: #fff;
-    padding-bottom: 200px;
-  }
-  
-  .membership-title {
-    margin-bottom: 24px;
-    text-align: left;
-    padding-left: 45px;
-    position: relative;
-  }
-  
-  .membership-title .text .membership-membership-title {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
+.membership-wrap { padding: 20px; font-family: 'Pretendard', sans-serif;  padding-bottom: 200px; }
 
-  .membership-title .text {
-    display: flex;
-    flex-direction:inherit;
-  }
-  
-  .membership-title .text p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    font-weight: 600;
-    margin-top: 16px;
-  }
-  
-  .membership-title .img {
-    margin-top: 12px;
-    text-align: center;
-  }
-  
-  .membership-title .img img {
-    width: auto;
-    max-width: 190px;
-    height: auto;
-    position: absolute;
-    top: -46px;
-  }
-  
-  .note {
-    background-color: #ffffff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 24px;
-    margin-bottom: 24px;
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: 500;
-  }
-  
-  .note h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    padding-left: 16px;
-  }
-  
-  .note ul {
-    padding-left: 16px;
-    list-style: disc;
-    margin-bottom: 20px;
-  }
-  
-  .note li {
-    margin-bottom: 10px;
-  }
-  
-  .confirm {
-    display: flex;
-    align-items: flex-start;
-    border-radius: 8px;
-    padding: 6px;
-    font-size: 16px;
-    margin: 47px 100px;
-    font-weight: 500;
-  }
+.membership-title { margin-bottom: 24px; text-align: left; padding-left: 45px; position: relative; }
 
-.confirm.active {
-  border-radius: 12px;
-}
+.membership-title .text { display: flex; flex-direction: inherit; }
 
-.subscribe-btn {
-  background-color: #ccc;
-  color: #fff;
-  border: none;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 16px;
-  width: 100%;
-  cursor: not-allowed;
-  transition: background-color 0.3s;
-}
+.membership-title .text .membership-membership-title { font-size: 30px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
 
-.subscribe-btn.active {
-  background-color: #FFD700;
-  cursor: pointer;
-  color: #494949;
-}
+.membership-title .text p { font-size: 16px; line-height: 1.5; margin-bottom: 8px; font-weight: 600; margin-top: 16px; }
 
-  
-  .confirm img {
-    width: 25px;
-    margin-right: 10px;
-    margin-top: 7px;
-    cursor: pointer;
-  }
-  
-  .btn-box {
-    text-align: center;
-  }
-  
-  .subscribe-btn {
-    background-color: #cccccc;
-    border: none;
-    border-radius: 12px;
-    font-size: 20px;
-    font-weight: 600;
-    width: 438px;
-    height: 64px;
-    cursor: pointer;
-    color: #ffffff;
-  }
-  
+.membership-title .img { margin-top: 12px; text-align: center; }
+
+.membership-title .img img { width: auto; max-width: 190px; height: auto; position: absolute; top: -46px; }
+
+.note { background-color: #ffffff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 20px; padding: 24px; margin-bottom: 24px; font-size: 16px; line-height: 1.6; font-weight: 500; }
+
+.note h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; padding-left: 16px; }
+
+.note ul { padding-left: 16px; list-style: disc; margin-bottom: 20px; }
+
+.note li { margin-bottom: 10px; }
+
+.confirm { display: flex; align-items: flex-start; border-radius: 8px; padding: 6px; font-size: 16px; margin: 47px 100px; font-weight: 500; }
+
+.confirm.active { border-radius: 12px; }
+
+.confirm img { width: 25px; margin-right: 10px; margin-top: 7px; cursor: pointer; }
+
+.btn-box { text-align: center; }
+
+.subscribe-btn { background-color: #cccccc; border: none; border-radius: 12px; font-size: 20px; font-weight: 600; width: 438px; height: 64px; cursor: pointer; color: #ffffff; }
+
+.subscribe-btn.active { background-color: #FFD700; cursor: pointer; color: #494949; }
+
+.dark .note {background: #212121;} 

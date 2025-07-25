@@ -85,12 +85,14 @@ margin: 0 auto; overflow: hidden; position: relative;}
 /* 다크모드 */
 .dark .container .mypage-nickname{color: #ffff;}
 .dark .container p.text{color: #ffff;}
+.dark .category-section {background: #212121;}
 .dark .category-section .category-title{color: #ffff;}
 .dark .category-section .arrow{color: #ffff;}
 .dark .category-section button{border-bottom: 1px solid #797979;}
 .dark .category-section button:last-child { border-bottom: none;}
 .dark .voteBox .top, .dark .QuizBox .top{color: #ffffff;}
 .dark .voteBox .bottom, .dark .QuizBox .bottom{color: #ffffff;}
+.dark .challenge-button-section {background: #212121;}
 .dark .challenge-button-section .botton{color: #494949;}
 .dark .challenge-button{border-bottom: 1px solid #797979;}
 .dark .challenge-button:last-child {border-bottom: none;}
