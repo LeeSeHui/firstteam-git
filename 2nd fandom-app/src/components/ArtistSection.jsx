@@ -8,7 +8,7 @@ import noLikeIcon from '../assets/artist/nolike.png';
 import commentIcon from '../assets/artist/comment.png';
 
 import tagIcon from '../assets/artist/tag.png';
-import dark_tagIcon from '../assets/dark/dark_tagicon.png';
+import dark_tagIcon from '../assets/dark/dark_tagIcon.png';
 import tagActiveIcon from '../assets/artist/tag-yellow.png';
 
 

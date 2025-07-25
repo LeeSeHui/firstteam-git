@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import sampleImg from '../../../assets/dm/img2.png';
 import BackButton from '../../../components/BackButton';
 import './ChatRoom.css';
-import check from '../../../assets/home/check.png';
+import check from '../../../assets/Home/check.png';
 import dm_img from '../../../assets/dm/dm_img.png'
 import dm_icon from '../../../assets/dm/icon.png'
 

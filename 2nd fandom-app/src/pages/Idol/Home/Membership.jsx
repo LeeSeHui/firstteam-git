@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // ✅ 추가
 import BackButton from '../../../components/BackButton';
-import character from '../../../assets/home/service-ch.png';
-import check from '../../../assets/home/check-icon.png';
+import character from '../../../assets/Home/service-ch.png';
+import check from '../../../assets/Home/check-icon.png';
 import checkActive from '../../../assets/artist/check-active.png';
 
 import './Membership.css';

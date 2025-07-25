@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
-import './MyPage.css';
+import './Mypage.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import BackButton from '../../../components/BackButton';
 import starlogo from '../../../assets/actor/mypage/starlogo.png';

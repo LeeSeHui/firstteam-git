@@ -5,7 +5,7 @@ import './Membership.css';
 import minji from '../../../../assets/artist-select/minji.png';
 import feedimg1 from '../../../../assets/artist/membership1.png';
 import feedimg2 from '../../../../assets/artist/membership2.png';
-import check from '../../../../assets/home/check.png';
+import check from '../../../../assets/Home/check.png';
 import photo05_1 from '../../../../assets/artist/photo05_1.png';
 import photo05_2 from '../../../../assets/artist/photo05_2.png';
 import photo06_1 from '../../../../assets/artist/photo06_1.png';
