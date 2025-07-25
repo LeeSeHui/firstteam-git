@@ -63,8 +63,8 @@ const Vote = () => {
       <div className="vote-desc">
         <p className="vote-info ">[798회] KBS 뮤직뱅크 K-Chart 1위 후보 주간 투표</p>
         <ul>
-          <li className="sub-color">✔ 뮤직뱅크 798회 1위 선정에 Nuvie의 투표 결과 반영</li>
-          <li className="sub-color">✔ 1인 1투표 가능</li>
+          <li className="sub-color"><span className="check-icon">✔</span> 뮤직뱅크 798회 1위 선정에 Nuvie의 투표 결과 반영</li>
+          <li className="sub-color"><span className="check-icon">✔</span> 1인 1투표 가능</li>
         </ul>
         <p className="vote-date sub-color">2025.07.08 18:00 - 2025.07.10 00:00 KST</p>
       </div>

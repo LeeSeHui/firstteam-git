@@ -126,3 +126,8 @@
   font-weight: 500;
   letter-spacing: -0.5px;
 }
+
+/* 다크모드 */
+.dark .popUp {background-color: #212121;}
+
+

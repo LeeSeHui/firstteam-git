@@ -1,5 +1,5 @@
 /* 검색창 */
-.media-search-box {display: flex; align-items: center; padding: 14px 16px; border: 1px solid #797979; border-radius: 40px; background-color: #fff; margin-bottom: 30px;}
+.media-search-box {display: flex; align-items: center; padding: 14px 16px; border: 1px solid #797979; border-radius: 40px;  margin-bottom: 30px;}
 .media-search-box img {width: 18px;height: 18px;margin-right: 8px;}
 .media-search-box input {flex: 1; border: none; font-size: 18px; outline: none;background: transparent;}
 
@@ -38,3 +38,9 @@ gap: 4px;}
 .recent-sub {display: flex; flex-direction: column; gap: 5px;}
 .recent-sub .artist {font-size: 18px; font-weight: 500;}
 .recent-sub .date {font-size: 15px; font-weight: 400;}
+
+/* 다크모드 */
+.dark .media-search-box{border: 1px solid #ffffff;}
+.dark .media-search-box input::placeholder{color: #ffffff;}
+.dark .artist.sub-color{color: #8f8f8f;}
+.dark .date.sub-color{color: #8f8f8f;}

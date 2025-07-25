@@ -3,6 +3,7 @@ import './Media.css';
 import '/src/index.css';
 import BackButton from '../../../components/BackButton';
 import search from '../../../assets/dm/search.png';
+import searchDark from '../../../assets/dark/dark_search.png';
 
 // ✅ 이미지 import
 import live1 from '../../../assets/mypage/media/newjeansLive.png';
@@ -20,6 +21,9 @@ const Media = () => {
   const handleSearchChange = (e) => {
     console.log('검색어:', e.target.value);
   };
+
+  const isDarkMode = document.body.classList.contains('dark');
+
 
   // ✅ 각 섹션별 이미지 데이터 3개씩
   const liveVideos = [
@@ -58,7 +62,7 @@ const Media = () => {
       />
 
       <div className="media-search-box">
-        <img src={search} alt="search" />
+        <img src={isDarkMode ? searchDark : search} alt="search" />
         <input
           type="text"
           placeholder="시청 기록 검색"

@@ -12,6 +12,7 @@ const Attendance = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
+  const isDarkMode = document.body.classList.contains('dark');
 
   const handleCheck = () => {
     setIsChecked(true);

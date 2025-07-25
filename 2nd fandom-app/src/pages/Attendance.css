@@ -85,3 +85,8 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  /* 다크모드 */
+  .dark .text-area h2 span{color: #F3B643;}
+  .dark .sub-text{color: #797979;}
+  .dark .vote-desc ul li.sub-color{color: #ffff;}

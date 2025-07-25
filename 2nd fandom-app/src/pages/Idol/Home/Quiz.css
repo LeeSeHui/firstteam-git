@@ -122,3 +122,9 @@
 .quiz-full-width {
   width: 100%;
 }
+
+
+/* 다크모드 */
+.dark .quizBadge{color: #494949;}
+.dark .quizExplain{color: #8f8f8f;}
+.dark .optionButton{background-color: #151515; color: #fff;}
