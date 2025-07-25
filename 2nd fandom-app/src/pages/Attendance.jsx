@@ -14,6 +14,7 @@ import BackButton from '../components/BackButton';
 const Attendance = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const isDarkMode = document.body.classList.contains('dark');
   const navigate = useNavigate();
   const handleCheck = () => {
     setIsChecked(true);

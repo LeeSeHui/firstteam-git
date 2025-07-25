@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState} from 'react';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './Mypage.css';
@@ -28,9 +28,10 @@ import nicknameEditDark from '../../../assets/dark/nicknameedit-dark.png';
 
 const MyPage = () => {
 const navigate = useNavigate();
-const isDarkMode = document.body.classList.contains('dark');
- const { nickname, updateNickname } = useNickname();
-  const { darkMode, toggleTheme } = useTheme();
+const { nickname, updateNickname } = useNickname();
+const { darkMode, toggleTheme } = useTheme(); // ✅ 먼저 선언
+
+
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(nickname);
 
@@ -91,7 +92,7 @@ const isDarkMode = document.body.classList.contains('dark');
                 setIsEditing(true);
               }} className="edit-btn">
                <img
-                src={isDarkMode ? nicknameEditDark : nicknameEdit}
+                src={darkMode ? nicknameEditDark : nicknameEdit}
                 alt="닉네임 수정"
                 className="edit-icon"
               />
