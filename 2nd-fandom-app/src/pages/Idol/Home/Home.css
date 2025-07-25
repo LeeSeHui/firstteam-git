@@ -1,0 +1,85 @@
+body {background: #ffffff;}
+
+.main-logo {padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
+.mypageSection {width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
+.mypageSection .left p { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #121212;}
+.artistButtons button {background: none; border: none; padding: 0 3px; cursor: pointer;}
+.artistButtons button img {display: block; border-radius: 50%;}
+
+/* live */
+.liveSection {padding: 34px 0 34px 16px;}
+.liveSection p {font-size: 20px; margin-bottom: 16px; font-weight: 500;}
+.swipe {display: flex; overflow-x: auto; gap: 10px; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none;}
+.liveImg {flex: 0 0 auto; scroll-snap-align: start; overflow: hidden;}
+
+
+/* artist */
+.artistSection .top {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
+.artistSection .profile {display: flex; align-items: center;}
+.artistSection .profile img {width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 10px;}
+.artistSection .name {display: flex; flex-direction: column;}
+.artistSection .name span:first-child {font-weight: bold; font-size: 18px;}
+.artistSection .name span:first-child img {width: 15px; height: 15px;}
+.artistSection .name span:last-child {font-size: 14px; color: #888;}
+.artistSection .save img {width: 17px; height: 24px;}
+.artistSection .text {font-size: 18px; margin: 10px 0;}
+.artistSection .photoWrap {display: flex; flex-direction: column; gap: 10px;}
+
+
+/* 댓글 */
+.commentSection { margin-top: 10px;  padding: 10px 24px; }
+.commentCount { font-weight: bold; margin-bottom: 20px; }
+.comments .commentRow { display: flex; justify-content: space-between; align-items: center; margin: 6px 0; }
+.comments .commentText { display: flex; flex-direction: column; }
+.comments .username { font-weight: bold; font-size: 16px; }
+.comments .message { font-size: 18px; margin-bottom: 20px; font-weight: 500;}
+.heart { cursor: pointer; color: #ccc; }
+.commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #FCD817; border-radius: 25px; }
+.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 17px; }
+.commentInputWrap button { padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; }
+
+
+.videoSection {padding: 34px 0 34px 16px;}
+.videoSection > p {font-size: 20px; font-weight: 500; margin-bottom: 16px;}
+.videoSwipe {display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 10px; height: 215px;}
+.videoCard { flex: 0 0 auto; scroll-snap-align: start; display: flex; flex-direction: column;  color: #000; width: 246px; height: 142px;}
+.videoCard img {width: 100%; height: 100%; border-radius: 12px; object-fit: cover;}
+.videoCard p {font-size: 18px; color: #121212; margin-top: 10px;}
+
+.quiz-section {padding: 24px 30px; width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box;}
+.quizCard {box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; padding: 16px; box-sizing: border-box; text-align: center; position: relative;}
+.quizCard h3 {font-size: 18px; margin-bottom: 0; font-weight: bold; color: #333;}
+.quizCard p {font-size: 10px; margin: 10px 0; color: #888;}
+.quizCard img {width: 147px; height: 107px; display: block; margin: 0 auto;}
+.quizCard .progress {position: absolute; bottom: 0; right: 0; background: #fdb52c; color: #fff; padding: 4px 12px; font-size: 12px; border-radius: 8px 0 8px 0;}
+
+
+.voteSection {padding: 35px 0 35px 16px;}
+.swipe.vote {display: flex; flex-direction: column; overflow-x: auto; gap: 10px; -webkit-overflow-scrolling: touch; }
+.swipe::-webkit-scrollbar {display: none;}
+.voteRow {display: flex; gap: 10px;}
+.voteRow.offset {margin-left: 40px;}
+.voteCard {position: relative; width: 286px; height: 122px; border-radius: 12px; overflow: hidden; flex-shrink: 0;}
+.voteCard img {width: 100%; height: 100%; object-fit: cover; display: block;}
+.voteText {position: absolute; bottom: 10px; left: 10px; color: #fff;}
+.voteText span {display: block; font-size: 18px; font-weight: 600;}
+
+.membershipSection { width: calc(100% - 32px); margin: 0 16px 150px; box-sizing: border-box;}
+.membershipCard {position: relative; border-radius: 16px; overflow: hidden; width: 100%; height: 220px; cursor: pointer;}
+.membershipBg {width: 100%; height: 100%; object-fit: cover;}
+.membershipOverlay {position: absolute; top: 20px; left: 0; width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);}
+.membershipOverlay .group {color: #fff; font-size: 14px; margin-bottom: 5px;}
+.membershipOverlay h2 {color: #fff; font-size: 20px; font-weight: bold; margin: 0;}
+.membershipOverlay .desc {color: #fff; font-size: 14px; margin-top: 5px; line-height: 1.2;}
+.indicator {position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 12px; font-size: 12px; padding: 2px 6px;}
+.indicator .current {font-weight: bold;}
+.indicator .total {opacity: 0.5; margin-left: 2px;}
+
+
+
+.dark .mypageSection .left p {color: #fff; font-weight: 400;}
+
+/* 다크모드 */
+.dark .commentInputWrap input {background: #212121;}
+.dark .commentInputWrap {border-color: #fff;}
+.dark .commentInputWrap button {color: #595959;}

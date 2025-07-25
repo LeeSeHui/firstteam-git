@@ -1,0 +1,51 @@
+.gallery-container{padding: 0 16px 150px;}
+
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px; /* 가운데 간격만 적용 */
+  row-gap: 16px;     /* 필요 시 위아래 간격도 추가 */
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.gallery-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.gallery-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.gallery-name {
+  font-weight: 600;
+}
+
+.gallery-date {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.gallery-card:nth-child(even) {
+  transform: translateY(47px); /* 아래로 살짝 이동 */
+}

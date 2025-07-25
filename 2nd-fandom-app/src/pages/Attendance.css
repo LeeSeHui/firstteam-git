@@ -1,0 +1,92 @@
+.attendance-wrapper {
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* 상단 텍스트 + 캐릭터 영역 */
+  .attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+  
+  .text-area {
+    flex: 1;
+  }
+  
+  .text-area {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    letter-spacing: -0.8px;
+  }
+  
+  .text-area h2 {font-size: 30px;}
+  
+  .text-area h2 span {color: #F3B643;}
+
+  .highlight {
+    color: #f7b401;
+  }
+  
+  .sub-text {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  
+  .character-area p {
+    width: 206px;
+  }
+
+  .character-area img {
+    width: 100%;
+  }
+  
+  /* 출석 이미지 */
+  .attendance-character {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 223px;
+  }
+  
+  .attendance-stamp {
+    width: 100%;
+  }
+  
+  /* 출석 버튼 */
+  .attendance-btn {
+    width: 100%;
+    background: #ffe600;
+    font-size: 22px;
+    font-weight: bold;
+    color: #494949;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 100px;
+    width: 447px;
+    height: 78px;
+
+  }
+  
+  .attendance-btn:disabled {
+    background: #ddd;
+    color: #999;
+    cursor: default;
+  }
+  
+  .text-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* 다크모드 */
+  .dark .text-area h2 span{color: #F3B643;}
+  .dark .sub-text{color: #797979;}
+  .dark .vote-desc ul li.sub-color{color: #ffff;}

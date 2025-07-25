@@ -1,0 +1,14 @@
+
+.quiz-content { display: flex; align-items: center; justify-content: space-between; }
+
+.quiz-left { text-align: left; flex: 1; min-width: 200px; }
+
+.quiz-left h3 { font-size: 25px; font-weight: bold; color: #333; line-height: 1.4; margin-bottom: 8px; }
+
+.trot-highlight { color: #AE74FF; }
+
+
+.timer .trot-time { color: #AE74FF; font-weight: bold; margin-right: 4px; font-size: 18px; }
+
+
+.quiz-button { margin-top: 20px;}

@@ -1,0 +1,42 @@
+/* 채널 추가하기 */
+.add-artist-button {display: flex; justify-content: center;}
+.add-artist-button button {display: flex;align-items: center; width: 100%; background-color: white; border: none; padding: 25px 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);cursor: pointer;transition: all 0.2s ease; margin-bottom: 18px; border-radius: 15px;}
+.add-artist-button img {width: 42px;height: 42px; border-radius: 50%; background-color: #FFD400;}
+.add-artist-button .payment-add-button{font-size: 20px;font-weight: 500; margin-left: 13px;}
+
+/* 구독&추천 Box */
+.payment-title{font-size: 23px; margin-right: 10px;}
+.subscribed-section, .recommend-section {background: #fff; border-radius: 15px; padding: 25px 16px 2px 16px;box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);}
+.subscribed-section{ margin-bottom: 18px;}
+.section-header {display: flex; align-items: center; font-weight: 600; margin-bottom: 15px;}
+.section-header .section-title{font-size: 23px; margin-right: 12px;}
+.subscribed-list li, .payment-recommend-list li {display: flex;align-items: center; margin-bottom: 15px;}
+.subscribed-list img, .payment-recommend-list img {width: 59px; height: 59px;  margin-right: 12px; padding: 4px;box-sizing: border-box; object-fit: contain;}
+.info p {font-weight: 500;display: flex;align-items: center;gap: 2px; font-size: 20px;}
+.info p img {width: 23px;height: 23px;vertical-align: middle;}
+.info span {font-size: 16px;font-weight: 450;}
+.recommend-section .payment-recommend-title{font-size: 23px; margin-bottom: 10px; font-weight: 600;}
+
+/* 해지/가입 버튼 */
+.payment-cancel-button, .subscribe-button {margin-left: auto; padding: 7px 16px; border: 1px solid #ffce00; border-radius: 20px; font-weight: 450; font-size: 18px;}
+.payment-cancel-button {background: none;}
+.subscribe-button {background: #ffce00; border: none; color: inherit;}
+.avatar-wrapper {position: relative;width: 59px;height: 59px;border-radius: 50%; overflow: hidden; flex-shrink: 0; margin-right: 12px;}
+.avatar-wrapper img {width: 100%; height: 100%; object-fit: cover; display: block;border-radius: 50%;}
+
+/* 빨간 점 */
+.red-dot {position: absolute; bottom: 5px; right: 8px;width: 8px; height: 8px;background-color: red;border-radius: 50%; z-index: 2;}
+
+/* 최신순 버튼 */
+.sort-button {all: unset; background-color: #EEEEEE; border-radius: 5px; padding: 5px 4px 5px 9px; font-size: 17px; font-weight: 600; display: inline-flex; align-items: center;
+gap: 2px;cursor: pointer;}
+.sort-button .material-symbols-outlined {font-size: 18px;}
+
+/* 다크모드*/
+.dark .sort-button{background-color: #363636;}
+.dark .sort-label{color:#797979;}
+.dark .material-symbols-outlined{color:#797979;}
+.dark .subscribed-section .subscribed-list .avatar-item .info span{color:#797979;}
+.dark .subscribed-section .subscribed-list .avatar-item .payment-cancel-button.sub-color {color: #ffffff;}
+.dark .recommend-section .payment-recommend-list li span{color: #797979;}
+.dark .subscribe-button{color: #494949;}

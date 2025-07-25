@@ -1,0 +1,103 @@
+.chatroom-container { display: flex; flex-direction: column; height: 100vh; background: #fff; padding: 16px; box-sizing: border-box; }
+
+.chatroom-body { flex: 1;  margin-top: 12px; }
+
+.chat-bubble { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 17px; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+.chat-box { display: flex; flex-direction: column; }
+
+.chat-sender { font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 4px;}
+
+.chat-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 6px; }
+
+.chat-text { background: #fff; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); padding: 10px 14px; border-radius: 0px 20px 20px 20px; font-size: 16px; line-height: 1.5; max-width: 70vw; word-wrap: break-word; }
+
+.chat-image {position: relative; margin-top: 8px;  border-radius: 0 16px 16px 16px; padding: 16px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);}
+/* 이미지 메시지용 시간 */
+.image-time {position: absolute; right: -40px; bottom: 5px;}
+
+.chat-time { font-size: 12px;}
+
+.chatroom-input {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 10px;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+  
+  /* 노란 원 버튼 (＋) */
+  .circle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffd400;
+    border: none;
+    font-size: 30px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  /* 말풍선 형태의 input 감싸는 박스 */
+  .input-bubble {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 999px;
+    padding: 8px 12px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 입력창 */
+  .input-bubble input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+  }
+  
+  /* 이모지 버튼 */
+  .emoji-icon {
+    width: 30px;
+    height: 30px;
+    background: #ffd400;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ChatRoom.css에 추가 */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* 아래에 위치 */
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* 원래 위치로 */
+    }
+  }
+
+.dark .chatroom-container {background: #151515;}
+.dark .chat-text {background: #212121; font-weight: 300;}
+.dark .chat-time {color: #8F8F8F;}
+.dark .chat-sender {font-weight: 300;}
+.dark .chat-image {background: #212121;}
+.dark .chatroom-input {background: none; border-top: none;}
+.dark .input-bubble {background: #212121;}
+.dark .input-bubble input {color: #fff;}
+.dark .input-bubble input::placeholder {color: #fff; font-weight: 300;}

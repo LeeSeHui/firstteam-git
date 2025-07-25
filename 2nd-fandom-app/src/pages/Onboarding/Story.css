@@ -1,0 +1,43 @@
+.story-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.clickable-area {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.story-text {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+.start-button {
+  background: #ffd700;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+}

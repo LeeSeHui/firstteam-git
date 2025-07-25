@@ -1,0 +1,185 @@
+.vote-page {
+    padding: 20px 16px;
+    background-color: #fff;
+    font-family: 'Pretendard', sans-serif;
+    padding-bottom: 200px;
+  }
+  
+  .vote-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .vote-banner {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .vote-desc {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  
+  .vote-info {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 22px;
+  }
+  
+  .vote-desc ul {
+    margin: 0;
+  }
+
+  .vote-desc ul li.sub-color {
+    font-size: 17px;
+    font-weight: 500;
+  }
+  
+  .vote-date.sub-color {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .vote-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* 후보 카드 */
+  .vote-card {
+    display: flex;
+    align-items: center;
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    padding: 12px;
+    gap: 12px;
+    position: relative;
+  }
+  
+  .vote-profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .vote-content2 {
+    flex: 1;
+    
+  }
+  
+  .vote-rank {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFD700;
+  }
+  
+  .vote-name {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 4px 0;
+  }
+  
+  .vote-count.sub-color{
+    font-size: 14px;
+    font-weight: 500;
+
+  }
+  
+  .vote-bar {
+    height: 16px;
+    background: #FFD700;
+    border-radius: 10px;
+    width: var(--bar-width);
+    margin-top: 6px;
+  }
+  
+  /* 투표 버튼 */
+  .vote-btn {
+    background: #FFD700;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 62px;
+    height: 42px;
+  }
+  
+  /* 모달 공통 스타일 (팝업 컴포넌트 외 confirm 모달용) */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modalContent {
+    background: #fff;
+    border-radius: 16px;
+    padding: 39px;
+    width: 80%;
+    max-width: 380px;
+    height: 224px;
+    text-align: center;
+  }
+  
+  .modal-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #494949;
+  }
+  
+  .modal-sub {
+    font-size: 23px;
+    color: #494949;
+  }
+
+  .modal-btns {
+    display: flex;
+    justify-content: center;
+    gap: 11px; /* 버튼 간 간격 */
+    margin-top: 20px;
+  }
+  
+
+  .modal-btns .cancel-btn {
+    width: 134px;
+    height: 61px;
+    border: 1.5px solid #797979;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #494949;
+    font-weight: 600;
+    
+  }
+
+  .modal-btns .confirm-btn{
+    width: 134px;
+    height: 61px;
+    border-radius: 10px;
+    background: #FFD700;
+    border-style: none;
+    font-size: 20px;
+    color: #494949;
+    font-weight: 600;
+  }
+  
+  /* 다크모드 */
+  .dark .check-icon {color: #464646}
+  .dark .vote-rank{color: #FFD700;}
+  .dark .vote-count.sub-color{color: #8f8f8f;}
+  .dark .vote-btn{color:#494949;}
+ .dark .modalContent{background-color: #212121;}
+ .dark .modal-btns .cancel-btn{ background: none;}
