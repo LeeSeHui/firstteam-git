@@ -71,12 +71,12 @@ color: #797979;}
 
 /*캐릭터 진화 */
 .character-img {width: 80%; max-width: 280px; margin: 12px auto 0;display: block;}
-.video-box {width: 100%; max-width: 430px; /* 모바일 기준 레이아웃 너비 */
-margin: 0 auto; overflow: hidden; position: relative;}
+.video-box {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
 
 
 /* 스와이프 */
-.swiper-wrapper {display: flex !important;flex-direction: row !important;}
+.swiper-wrapper {display: flex !important;flex-direction: row !important; padding: 0;  margin-left: 0;
+  margin-right: 0;}
 .swiper-slide {flex-shrink: 0; width: 100% !important; height: auto;box-sizing: border-box;}
 
 /* 로그아웃 */
