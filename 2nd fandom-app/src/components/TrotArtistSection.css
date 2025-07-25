@@ -34,10 +34,19 @@
     display: flex;
     align-items: center;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   
+
+
+  /* 작성 시간 */
+  .time {
+    font-size: 16px;
+    margin-top: 2px;
+  }
+  
+
   /* 북마크 버튼 */
   .bookmark-btn {
     background: none;
@@ -48,6 +57,16 @@
     transition: color 0.2s;
   }
   
+
+  /* 피드 텍스트 */
+  .feed-text {
+    font-size: 17px;
+    line-height: 1.4;
+    color: #595959;
+    font-weight: 500;
+    margin: 10px 0 12px;
+  }
+
   
   /* 좋아요 및 댓글 수 */
   .post-footer {
@@ -57,8 +76,7 @@
   .like-counts {
     display: flex;
     gap: 12px;
-    font-size: 14px;
-    color: #888;
+    font-size: 18px;
     font-weight: 500;
   }
   
@@ -69,7 +87,7 @@
   
   .feed-images img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0 0 12px 12px;
     object-fit: cover;
   }
   

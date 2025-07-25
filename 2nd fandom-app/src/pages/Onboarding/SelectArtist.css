@@ -25,7 +25,6 @@
   outline: none;
   width: 100%;
   font-size: 16px;
-  color: #333;
 }
 
 .scroll-wrapper2 {display: flex;  flex-direction: column;  overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; margin-bottom: 40px;}

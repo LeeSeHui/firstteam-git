@@ -27,10 +27,12 @@
 .bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
 .feed-text { font-size: 18px; margin: 8px 0 10px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
 .post-footer { display: flex; justify-content: flex-end; }
-.like-counts { display: flex; gap: 11px; font-size: 18px; font-weight: 500; }
+.like-counts { display: flex; gap: 12px; font-size: 18px; font-weight: 500; }
 .feed-images { display: flex; gap: 8px; }
 .feed-images img { flex: 1; width: calc(50% - 4px); border-radius: 12px; object-fit: cover; }
 .live-replay { background: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; margin: 24px 16px; }
+
+
 .live-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
 .live-red { color: red; font-weight: bold; }
 .live-thumbnail { width: 100%; border-radius: 12px; margin-bottom: 16px; }
@@ -73,3 +75,5 @@
   }
   
 
+/* 다크모드 */
+.dark .vote-badge {color: #FFD700;}

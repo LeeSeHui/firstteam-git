@@ -35,8 +35,8 @@ body {background: #ffffff;}
 .comments .message { font-size: 18px; margin-bottom: 20px; font-weight: 500;}
 .heart { cursor: pointer; color: #ccc; }
 .commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #FCD817; border-radius: 25px; }
-.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; }
-.commentInputWrap button { padding: 6px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; }
+.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 17px; }
+.commentInputWrap button { padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; }
 
 
 .videoSection {padding: 34px 0 34px 16px;}
@@ -76,4 +76,10 @@ body {background: #ffffff;}
 .indicator .total {opacity: 0.5; margin-left: 2px;}
 
 
+
 .dark .mypageSection .left p {color: #fff; font-weight: 400;}
+
+/* 다크모드 */
+.dark .commentInputWrap input {background: #212121;}
+.dark .commentInputWrap {border-color: #fff;}
+.dark .commentInputWrap button {color: #595959;}
