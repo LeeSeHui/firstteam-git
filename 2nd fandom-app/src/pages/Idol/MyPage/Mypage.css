@@ -83,6 +83,7 @@ margin: 0 auto; overflow: hidden; position: relative;}
 .logout-btn {cursor: pointer;}
 
 /* 다크모드 */
+.dark .nickname-input {color: #fff;border-bottom: 1px solid #666;}
 .dark .container .mypage-nickname{color: #ffff;}
 .dark .container p.text{color: #ffff;}
 .dark .category-section {background: #212121;}

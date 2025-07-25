@@ -39,3 +39,20 @@ text-decoration: none;}
 .active-text.idol { color: orange; }
 .active-text.actor { color: #37CEBF; }
 .active-text.trot { color: #AE74FF; }
+
+/* 다크모드 */
+.dark .nav-link {
+  color: #fff;
+}
+
+/* ✅ 다크 모드에서도 활성화된 텍스트는 테마별 색상 유지 */
+.dark .active-text.idol {
+  color: orange;
+}
+.dark .active-text.actor {
+  color: #37CEBF;
+}
+.dark .active-text.trot {
+  color: #AE74FF;
+}
+.dark .idol-button{box-shadow: 0px -5px 4px rgba(245, 190, 108, 0.15);}

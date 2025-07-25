@@ -44,3 +44,10 @@ gap: 4px;}
 .dark .media-search-box input::placeholder{color: #ffffff;}
 .dark .artist.sub-color{color: #8f8f8f;}
 .dark .date.sub-color{color: #8f8f8f;}
+.dark .media-search-box {
+  border: 1px solid #fff;
+  background-color: #1e1e1e;   /* 어두운 배경 */
+  color: #fff;                 /* 글자 흰색 */
+}
+/* input 태그 안에서 텍스트 색상까지 제어하려면 */
+.dark .media-search-box input {color: #fff;}

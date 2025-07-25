@@ -24,9 +24,11 @@ import iconInsta from '../../../assets/mypage/instagram.png';
 import iconX from '../../../assets/mypage/x.png';
 import iconTiktok from '../../../assets/mypage/tiktok.png';
 import nicknameEdit from '../../../assets/mypage/nicknameedit.png';
+import nicknameEditDark from '../../../assets/dark/nicknameedit-dark.png';
 
 const MyPage = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
+const isDarkMode = document.body.classList.contains('dark');
  const { nickname, updateNickname } = useNickname();
   const { darkMode, toggleTheme } = useTheme();
   const [isEditing, setIsEditing] = useState(false);
@@ -88,7 +90,11 @@ const MyPage = () => {
                 setTempName(nickname);
                 setIsEditing(true);
               }} className="edit-btn">
-                <img src={nicknameEdit} alt="닉네임 수정" className="edit-icon" />
+               <img
+                src={isDarkMode ? nicknameEditDark : nicknameEdit}
+                alt="닉네임 수정"
+                className="edit-icon"
+              />
               </button>
             </>
           )}

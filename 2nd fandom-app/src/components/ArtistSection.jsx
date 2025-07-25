@@ -49,11 +49,10 @@ const ArtistSection = ({
   const [bookmarked, setBookmarked] = useState(false);
   const [liked, setLiked] = useState(false);
   const [commentHearts, setCommentHearts] = useState({}); // ✅ 댓글 하트 상태
-  const isDarkMode = document.body.classList.contains('dark');
   const navigate = useNavigate();
+  const isDarkMode = document.body.classList.contains('dark');
 
   
-  // 🔒 잠금 처리
   if (isLocked) {
     return (
       <div className="artistSection locked" onClick={onUnlock}>
