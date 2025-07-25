@@ -5,7 +5,7 @@
 .card-section { position: relative; width: 100%; max-width: 500px; padding: 0 16px;}
 .card-bg { width: 100%; border-radius: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); }
 .heart-letter { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; z-index: 2; }
-.send-btn { width: 130px; height: 37px; position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%); background-color: #FFD700; color: #000; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; z-index: 2; }
+.send-btn {font-size: 16px; width: 130px; height: 37px; position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%); background-color: #FFD700; color: #000; border: none; border-radius: 20px; font-weight: 500; cursor: pointer; z-index: 2; }
 .notice-box { margin: 24px 16px; background: #f8f8f8; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; font-size: 17px; line-height: 1.6; font-weight: 500; }
 .notice-box p:nth-child(1) {margin-bottom: 10px; border-bottom: 1px solid #797979; padding-bottom: 12px;}
 
@@ -77,3 +77,5 @@
 
 /* 다크모드 */
 .dark .vote-badge {color: #FFD700;}
+.dark .notice-box {background: #212121;}
+.dark .live-replay {background: #212121;}

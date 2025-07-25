@@ -12,7 +12,6 @@ import dark_tagIcon from '../assets/dark/dark_tagicon.png';
 import tagActiveIcon from '../assets/artist/tag-yellow.png';
 
 
-import darkTagIcon from '../assets/dark/dark-tag.png';         // 다크모드용 북마크 
 
 import lockIcon from '../assets/artist/lock.png';
 
@@ -53,8 +52,7 @@ const ArtistSection = ({
   const isDarkMode = document.body.classList.contains('dark');
   const navigate = useNavigate();
 
-  const isDarkMode = document.body.classList.contains('dark');
-
+  
   // 🔒 잠금 처리
   if (isLocked) {
     return (
