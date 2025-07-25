@@ -21,7 +21,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 8px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); transition: all 0.3s;
 }
 
 .notice-item {
@@ -37,11 +37,11 @@
   font-size: 16px;
   font-weight: 500;
   color: #595959;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .notice-content {
-  padding: 0 16px 16px;
+  padding: 0 16px 16px; transition: all 0.3s;
   font-size: 16px;
   color: #797979;
   white-space: pre-line;
@@ -77,4 +77,9 @@
 }
 
 .dark .notice-wrapper {background: none;}
-.dark .notice-title {color: #fff;}
+.dark .notice-search {background: none;}
+.dark .notice-box {background: #212121;}
+.dark .live-replay {background: #212121;}
+.dark .notice-list {background: #212121; }
+.dark .notice-title {color: #fff; font-weight: 300;}
+.dark .notice-content p {color: #797979;}
