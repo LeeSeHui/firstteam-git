@@ -5,5 +5,8 @@
 .card-scroll {
   display: flex;
   gap: 12px;
-  overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+   overflow-x: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE 10+ */
 }

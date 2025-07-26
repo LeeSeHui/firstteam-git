@@ -31,7 +31,10 @@ const QuizSection = ({ handleQuizClick }) => {
           </h3>
           <p className="timer">
             <img src={clockicon} alt="clock" />
-            <span className="time">{formatTime(timeLeft)}</span> 후 퀴즈 종료
+            <span className="time-box">
+              <span className="time">{formatTime(timeLeft)}</span>
+            </span>
+            후 퀴즈 종료
           </p>
         </div>
         <div className="quiz-right">

@@ -1,14 +1,19 @@
 body {background: #ffffff;}
 .homeContainer {width: 100%;}
-.main-logo {padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
+.main-logo { padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
+.main-logo .main {width: 130px; height: auto;}
+.main-logo .alarm {width: 30px; height: 100%;}
+.main-logo img {width: 100%; height: 100%;}
 .mypageSection {width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
-.mypageSection .left p { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #121212;}
-.artistButtons button {background: none; border: none; padding: 0 3px; cursor: pointer;}
-.artistButtons button img {display: block; border-radius: 50%;}
+.mypageSection .left p { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #121212;}
+.artistButtons button {width: 35%; background: none; border: none; padding: 0 3px; cursor: pointer;}
+.artistButtons button img {width: 100%; display: block; border-radius: 50%;}
+.mypageSection .right {width: 150px;}
+.mypageSection .right img {width: 100%; height: auto;}
 
 /* live */
 .liveSection {padding: 34px 0 34px 16px;}
-.liveSection p {font-size: 20px; margin-bottom: 16px; font-weight: 500;}
+.liveSection p {font-size: 16px; margin-bottom: 16px; font-weight: 500;}
 .swipe {display: flex; overflow-x: auto; gap: 10px; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none;}
 .liveImg {flex: 0 0 auto; scroll-snap-align: start; overflow: hidden;}
 
@@ -30,21 +35,21 @@ body {background: #ffffff;}
 .commentSection { margin-top: 10px;  padding: 10px 24px; }
 .commentCount { font-weight: bold; margin-bottom: 20px; }
 .comments .commentRow { display: flex; justify-content: space-between; align-items: center; margin: 6px 0; }
-.comments .commentText { display: flex; flex-direction: column; }
-.comments .username { font-weight: bold; font-size: 16px; }
-.comments .message { font-size: 18px; margin-bottom: 20px; font-weight: 500;}
+.comments .commentText { display: flex; flex-direction: column; color: #5b5b5b;}
+.comments .username { font-weight: 500; font-size: 16px; color: #121212;}
+.comments .message { font-size: 14px; margin-bottom: 20px; font-weight: 500;}
 .heart { cursor: pointer; color: #ccc; }
 .commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #FCD817; border-radius: 25px; }
-.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 17px; }
-.commentInputWrap button { padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; }
-
+.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 14px; }
+.commentInputWrap button { padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: 500; cursor: pointer; }
+input:focus {border: none; outline: none;}
 
 .videoSection {padding: 34px 0 34px 16px;}
-.videoSection > p {font-size: 20px; font-weight: 500; margin-bottom: 16px;}
+.videoSection > p {font-size: 16px; font-weight: 500; margin-bottom: 16px;}
 .videoSwipe {display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 10px; height: 215px;}
 .videoCard { flex: 0 0 auto; scroll-snap-align: start; display: flex; flex-direction: column;  color: #000; width: 246px; height: 142px;}
 .videoCard img {width: 100%; height: 100%; border-radius: 12px; object-fit: cover;}
-.videoCard p {font-size: 18px; color: #121212; margin-top: 10px;}
+.videoCard p {font-size: 14px; color: #121212; margin-top: 10px;}
 
 .quiz-section {padding: 24px 30px; width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box;}
 .quizCard {box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; padding: 16px; box-sizing: border-box; text-align: center; position: relative;}
@@ -62,19 +67,30 @@ body {background: #ffffff;}
 .voteCard {position: relative; width: 286px; height: 122px; border-radius: 12px; overflow: hidden; flex-shrink: 0;}
 .voteCard img {width: 100%; height: 100%; object-fit: cover; display: block;}
 .voteText {position: absolute; bottom: 10px; left: 10px; color: #fff;}
-.voteText span {display: block; font-size: 18px; font-weight: 600;}
+.voteText span {display: block; font-size: 14px; font-weight: 600; margin-top: -40px; margin-left: 8px;}
 
 .membershipSection { width: calc(100% - 32px); margin: 0 16px 150px; box-sizing: border-box;}
 .membershipCard {position: relative; border-radius: 16px; overflow: hidden; width: 100%; height: 220px; cursor: pointer;}
 .membershipBg {width: 100%; height: 100%; object-fit: cover;}
 .membershipOverlay {position: absolute; top: 20px; left: 0; width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);}
-.membershipOverlay .group {color: #fff; font-size: 14px; margin-bottom: 5px;}
-.membershipOverlay h2 {color: #fff; font-size: 20px; font-weight: bold; margin: 0;}
-.membershipOverlay .desc {color: #fff; font-size: 14px; margin-top: 5px; line-height: 1.2;}
+.membershipOverlay .group {color: #fff; font-size: 12px; margin-bottom: 5px;}
+.membershipOverlay h2 {color: #fff; font-size: 16px; font-weight: bold; margin: 0;}
+.membershipOverlay .desc {color: #fff; font-size: 12px; margin-top: 5px; line-height: 1.2;}
 .indicator {position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 12px; font-size: 12px; padding: 2px 6px;}
 .indicator .current {font-weight: bold;}
 .indicator .total {opacity: 0.5; margin-left: 2px;}
 
+@media (min-width: 500px) {
+    .mypageSection .left p { font-size: 20px;}
+    .artistButtons button {width: 40%;}
+    .mypageSection .right {width: 200px;}
+}
+@media (min-width: 768px) {
+    .mypageSection .right {width: 250px;}
+    .membershipOverlay .group {color: #fff; font-size: 16px; margin-bottom: 5px;}
+    .membershipOverlay h2 {color: #fff; font-size: 25px; font-weight: bold; margin: 0;}
+    .membershipOverlay .desc {color: #fff; font-size: 16px; margin-top: 5px; line-height: 1.2;}
+}
 
 
 .dark .mypageSection .left p {color: #fff; font-weight: 400;}
@@ -83,3 +99,5 @@ body {background: #ffffff;}
 .dark .commentInputWrap input {background: #212121;}
 .dark .commentInputWrap {border-color: #fff;}
 .dark .commentInputWrap button {color: #595959;}
+.dark .comments .commentText {color: #fff;}
+.dark .comments .username {color: #fff;}

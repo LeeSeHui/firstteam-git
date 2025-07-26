@@ -30,7 +30,7 @@ const Makeup = () => {
       tag: {
         text: 'rom&nd 제로 매트 립...\n13,000원',
         link: 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000142217',
-        position:{top:'250px'}
+        position:{top:'150px'}
       },
       subImages: [
         {
@@ -49,7 +49,7 @@ const Makeup = () => {
       tag: {
         text: '3ce 소프트 매트 립스...\n12,000원',
         link: 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000148167',
-        position:{top:'230px'}
+        position:{top:'120px'}
       },
       subImages: [
         {
@@ -68,7 +68,7 @@ const Makeup = () => {
       tag: {
         text: '웨이크메이크 쉬어 블...\n18,000원',
         link: 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000209762',
-        position:{top:'200px'}
+        position:{top:'130px'}
       },
       subImages: [
         {
@@ -90,7 +90,7 @@ const Makeup = () => {
       tag: {
         text: 'Hapa Kristin 크리스...\n19,000원',
         link: 'https://hapakristin.co.kr/products/h74781/',
-        position:{top:'100px'}
+        position:{top:'80px'}
       },
       subImages: [
         {
@@ -109,7 +109,7 @@ const Makeup = () => {
       tag: {
         text: 'OLENS 글로이티어 컬...\n20,000원',
         link: 'https://o-lens.com/product/20778',
-        position:{top:'150px'}
+        position:{top:'90px'}
       },
       subImages: [
         {
@@ -128,7 +128,7 @@ const Makeup = () => {
       tag: {
       text: 'OLENS 비비링 원데...\n36,000원',
       link: 'https://o-lens.com/product/20008',
-      position:{top:'200px'}
+      position:{top:'120px'}
       },
         subImages: [
           {
@@ -150,7 +150,7 @@ const Makeup = () => {
         tag: {
           text: '샤넬 루쥬 알뤼르 벨벳\n56,000원',
           link: 'https://www.chanel.com/kr/makeup/lips/c/5x1x1x31/lipstick/?gad_source=1&gad_campaignid=20289150879&gclid=EAIaIQobChMIsrfVzPPFjgMVMNgWBR3ywzHZEAAYASAAEgLkcPD_BwE',
-          position:{top:'200px'}
+          position:{top:'120px'}
         },
         subImages: [
           {
@@ -169,7 +169,7 @@ const Makeup = () => {
         tag: {
           text: '입생로랑 메이크 미...\n52,000원',
           link: 'https://www.yslbeautykr.com/ko_KR/home',
-          position:{top:'300px'}
+          position:{top:'180px'}
         },
         subImages: [
           {
@@ -188,7 +188,7 @@ const Makeup = () => {
         tag: {
           text: '입생로랑 메이크 미...\n52,000원',
           link: 'https://www.maccosmetics.co.kr/product/1368/60284/samples/powder-kiss-lipstick',
-          position:{top:'300px'}
+          position:{top:'120px'}
         },
         subImages: [
           {

@@ -1,7 +1,7 @@
 .ButtonContainer {display: flex; position: relative; align-items: center; height: 70px;}
 .header-title {position: absolute; left: 50%; transform: translateX(-50%); font-size: 22px;}
-.ButtonContainer button { border: none; background: none; font-size: 24px; cursor: pointer; }
-.ButtonContainer span { font-size: 22px; font-weight: 600; color: #5B5B5B;}
+.ButtonContainer button { border: none; background: none; font-size: 20px; cursor: pointer; }
+.ButtonContainer span { font-size: 20px; font-weight: 600; color: #5B5B5B;}
 
 /* 마이컬렉션 + */
 

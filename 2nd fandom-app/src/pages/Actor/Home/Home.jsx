@@ -8,7 +8,11 @@ import ActorArtistSection from '../../../components/ActorArtistSection';
 import ActorQuizSection from '../../../components/ActorQuizSection';
 
 import logo from '../../../assets/Home/logo.png';
+import dark_logo from '../../../assets/dark/dark_logo.png';
+
 import alarm from '../../../assets/actor/home/alarm.png';
+import dark_alarm from '../../../assets/dark/dark_actor_alarm.png';
+
 import idol_char from '../../../assets/actor/home/idol-mypage-char.png';
 import artist1 from '../../../assets/actor/home/artist1.png';
 import artist3 from '../../../assets/actor/home/artist2.png';
@@ -41,6 +45,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { nickname } = useNickname();
   const [newComment, setNewComment] = useState('');
+  const isDarkMode = document.body.classList.contains('dark');
 
   const getTimeAgo = (timestamp) => {
     const now = new Date();
@@ -135,21 +140,24 @@ const Home = () => {
   return (
     <div className="homeContainer">
       <div className="main-logo">
-        <p className="img"><img src={logo} alt="logo" /></p>
-        <p className="img" onClick={AlarmClick}><img src={alarm} alt="alarm" /></p>
+        <p className="img main"><img
+          src={isDarkMode ? dark_logo : logo}
+          alt="logo"
+        /></p>
+        <p className="img2 alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
       </div>
 
       <div className="mypageSection Section" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
           <div className="artistButtons">
-            <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist1} alt="artist1" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist3} alt="artist3" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); handlePlusClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); handlePlusClick(); }}>
               <img src={plusIcon} alt="plus" />
             </button>
           </div>

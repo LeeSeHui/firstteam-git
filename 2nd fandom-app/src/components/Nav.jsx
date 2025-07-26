@@ -86,7 +86,7 @@ function Nav() {
           {buttonText}
         </button>
 
-        <Link to={`${currentMain}/fashion`} className="nav-link">
+        <Link to={`${currentMain}/fashion/all`} className="nav-link">
           <img src={getNavIcon('fashion', fashionIcon, fashionIconDark, fashionIconActive, fashionIconActiveActor, fashionIconActiveTrot)} alt="fashion" className="nav-icon" />
           <span className={`nav-text ${location.pathname === `${currentMain}/fashion` ? currentMain.replace('/', '') : ''}`}>Fashion</span>
         </Link>

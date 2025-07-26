@@ -22,12 +22,9 @@
 .feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .profile-info { display: flex; align-items: center; gap: 10px; }
 .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.nickname { font-weight: 600; font-size: 18px; }
 .badge { font-size: 12px; color: gold; }
 .bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
-.feed-text { font-size: 18px; margin: 8px 0 10px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
 .post-footer { display: flex; justify-content: flex-end; }
-.like-counts { display: flex; gap: 12px; font-size: 18px; font-weight: 500; }
 .feed-images { display: flex; gap: 8px; }
 .feed-images img { flex: 1; width: calc(50% - 4px); border-radius: 12px; object-fit: cover; }
 .live-replay { background: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; margin: 24px 16px; }

@@ -1,5 +1,6 @@
-.fashion-tabs { display: flex; justify-content: space-between; margin-bottom: 16px; overflow-x: auto; gap: 10px; }
-.tab { padding: 9px 18px; border-radius: 20px; background: #fff; color: #121212; border: 1px solid #FFD700; text-decoration: none; font-size: 16px; white-space: nowrap; transition: background 0.2s; }
+.fashion-container {padding: 0 16px; margin-bottom: 50px;}
+.fashion-tabs { display: flex; justify-content: space-between; margin-bottom: 16px; gap: 10px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;}
+.tab { padding: 9px 18px; border-radius: 20px; background: #fff; color: #121212; border: 1px solid #FFD700; text-decoration: none; font-size: 14px; white-space: nowrap; transition: background 0.2s; }
 .tab.active { background: #FFD700; color: #121212; }
 
 
@@ -17,7 +18,7 @@
   border-radius: 999px;
   outline: none;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .gradient-input::placeholder {
