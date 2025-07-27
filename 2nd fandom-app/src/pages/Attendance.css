@@ -23,7 +23,7 @@
     letter-spacing: -0.8px;
   }
   
-  .text-area h2 {font-size: 30px;}
+  .text-area h2 {font-size: 23px; color: #494949;}
   
   .text-area h2 span {color: #F3B643;}
 
@@ -32,8 +32,9 @@
   }
   
   .sub-text {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
+    color: #797979;
   }
   
   
@@ -42,7 +43,7 @@
   }
 
   .character-area img {
-    width: 100%;
+    width: 85%;
   }
   
   /* 출석 이미지 */
@@ -50,7 +51,7 @@
     text-align: center;
     margin-bottom: 40px;
     width: 100%;
-    max-width: 223px;
+    max-width: 175px;
   }
   
   .attendance-stamp {
@@ -61,16 +62,15 @@
   .attendance-btn {
     width: 100%;
     background: #ffe600;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     color: #494949;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: background 0.2s ease;
-    margin-top: 100px;
-    width: 447px;
-    height: 78px;
+    margin-top: 70px;
+   padding: 20px 50px;
 
   }
   
@@ -90,3 +90,4 @@
   .dark .text-area h2 span{color: #F3B643;}
   .dark .sub-text{color: #797979;}
   .dark .vote-desc ul li.sub-color{color: #ffff;}
+  .dark  .text-area h2 {color: #ffff;}

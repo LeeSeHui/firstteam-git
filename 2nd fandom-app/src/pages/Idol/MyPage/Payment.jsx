@@ -108,7 +108,7 @@ const Payment = () => {
             <img src={logo1} alt="ENHYPEN" />
             <div className="info">
               <p>ENHYPEN <img src={mark} alt="badge" /></p>
-              <span>@enhypen</span>
+              <span className='sub-color'>@enhypen</span>
             </div>
             <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
           </li>
@@ -116,7 +116,7 @@ const Payment = () => {
             <img src={logo2} alt="SEVENTEEN" />
             <div className="info">
               <p>SEVENTEEN <img src={mark} alt="badge" /></p>
-              <span>@saythename_17</span>
+              <span className='sub-color'>@saythename_17</span>
             </div>
            <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
           </li>
@@ -124,7 +124,7 @@ const Payment = () => {
             <img src={logo3} alt="BLACKPINK" />
             <div className="info">
               <p>BLACKPINK <img src={mark} alt="badge" /></p>
-              <span>@blackpinkofficial</span>
+              <span className='sub-color'>@blackpinkofficial</span>
             </div>
             <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
           </li>
@@ -132,7 +132,7 @@ const Payment = () => {
             <img src={logo4} alt="NMIXX" />
             <div className="info">
               <p>NMIXX <img src={mark} alt="badge" /></p>
-              <span>@nmixx_official</span>
+              <span className='sub-color'>@nmixx_official</span>
             </div>
             <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
           </li>
@@ -140,7 +140,7 @@ const Payment = () => {
             <img src={logo5} alt="IVE" />
             <div className="info">
               <p>IVE <img src={mark} alt="badge" /></p>
-              <span>@IVEstarship</span>
+              <span className='sub-color'>@IVEstarship</span>
             </div>
             <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
           </li>
