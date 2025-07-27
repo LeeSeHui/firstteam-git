@@ -20,7 +20,7 @@
 
 
 .feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.profile-info { display: flex; align-items: center; gap: 10px; }
+.profile-info { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
 
 .profile-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
 .nickname { font-weight: 600; font-size: 14px; }
