@@ -91,7 +91,7 @@ const Membership = () => {
                   <img src={lockIcon} alt="자물쇠" className="lock-icon" />
                 </div>
                 <div className="lock-text">
-                  <strong>멤버십 전용 콘텐츠입니다.</strong>
+                  <p>멤버십 전용 콘텐츠입니다.</p>
                 </div>
               </div>
             )}

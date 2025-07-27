@@ -28,7 +28,7 @@
 .sub-detail { font-size: 14px; color: #797979; margin-bottom: 8px;}
 .sub-price { font-size: 17px; font-weight: 500; color: #595959; }
 .sub-review { font-size: 14px; color: #797979; }
-.bookmark-btn { background: none; border: none; font-size: 20px; cursor: pointer; padding-bottom: 50px; color: #333;}
+.fashion-bookmark-btn { background: none; border: none; font-size: 20px; cursor: pointer; padding-bottom: 50px; color: #333;}
 
 /* 다크모드 */
 .dark .sub-name {font-weight: 400; color: #fff;}

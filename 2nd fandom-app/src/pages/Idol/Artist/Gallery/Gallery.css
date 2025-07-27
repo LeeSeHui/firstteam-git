@@ -27,7 +27,7 @@
   bottom: 16px;
   left: 16px;
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .gallery-profile {
@@ -42,8 +42,9 @@
 }
 
 .gallery-date {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.8;
+  font-weight: 500;
 }
 
 .gallery-card:nth-child(even) {
