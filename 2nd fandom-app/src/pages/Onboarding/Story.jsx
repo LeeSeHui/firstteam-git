@@ -65,6 +65,7 @@ const Story = () => {
       className="story-container story-bg"
       style={{ backgroundImage: `url(${stories[currentPage].background})` }}
     >
+      
       <div className="clickable-area left" onClick={handleLeftClick} />
       <div className="clickable-area right" onClick={handleRightClick} />
 
