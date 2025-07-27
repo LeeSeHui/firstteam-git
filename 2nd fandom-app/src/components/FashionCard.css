@@ -23,11 +23,13 @@
 .sub-product { display: flex; align-items: center; justify-content: space-between; gap: 17px; }
 .sub-image-thumb {width: 100px; height: auto; border-radius: 4px; object-fit: cover; }
 .sub-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+
 .sub-name { font-size: 14px; font-weight: 600; color: #595959; }
 .sub-detail { font-size: 12px; color: #797979; margin-bottom: 8px;}
 .sub-price { font-size: 14px; font-weight: 500; color: #595959; }
 .sub-review { font-size: 12px; color: #797979; }
 .bookmark-btn { background: none; border: none; font-size: 20px; cursor: pointer; padding-bottom: 50px; color: #333;}
+
 
 /* 다크모드 */
 .dark .sub-name {font-weight: 400; color: #fff;}
