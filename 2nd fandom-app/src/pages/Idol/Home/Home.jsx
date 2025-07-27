@@ -59,11 +59,11 @@ const Home = () => {
   const [comments, setComments] = useState([
     { username: { nickname: '너누구야' }, message: '❤️ 너무 예뻐요!', createdAt: new Date().toISOString() },
     { username: { nickname: '너뭐이야' }, message: '휴가 잘 다녀오세요! 🌴', createdAt: new Date().toISOString() },
-    { username: { nickname: '뾰루지걸' }, message: '귀척ㅋ 우웩', createdAt: new Date().toISOString() },
-    { username: { nickname: '말티즈이' }, message: 'GD 오빠보면 눈 깔아라;', createdAt: new Date().toISOString() },
-    { username: { nickname: '꽥괙이' }, message: '나보다 못생긴듯ㅋ', createdAt: new Date().toISOString() },
-    { username: { nickname: '먺짱이' }, message: '언니 뭐 먹을거야??????????', createdAt: new Date().toISOString() },
-    { username: { nickname: '종민' }, message: '세희 금요일 소주 ㄱ??', createdAt: new Date().toISOString() },
+    { username: { nickname: '뾰루지걸' }, message: '너무 귀여워요ㅜㅜ', createdAt: new Date().toISOString() },
+    { username: { nickname: '말티즈이' }, message: 'GD 오빠보다 뉴진스!;', createdAt: new Date().toISOString() },
+    { username: { nickname: '꽥괙이' }, message: '네일아트 바꿨어용?!', createdAt: new Date().toISOString() },
+    { username: { nickname: '먺짱이' }, message: '오늘 점심은 뭐 먹나용?????', createdAt: new Date().toISOString() },
+    { username: { nickname: 'jongbae' }, message: '핫써머!!', createdAt: new Date().toISOString() },
   ]);
 
   const [totalCommentCount, setTotalCommentCount] = useState(comments.length);
