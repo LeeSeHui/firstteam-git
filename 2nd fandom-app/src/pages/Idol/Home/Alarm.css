@@ -30,12 +30,12 @@
     padding: 8px 15px;
     border: 1px solid #FFD700;
     border-radius: 20px;
-    background: #121212;
+    background: #ffff;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    color: #ffff;
+    color: #595959;
     flex-wrap: nowrap;
   }
   
@@ -43,7 +43,7 @@
     background-color: #FFD700;
     border-color: #FFD700;
     color: #595959;
-    font-weight: 600;
+    font-weight: 500;
   }
   
   /* 날짜 구간 타이틀 */
@@ -100,3 +100,12 @@
     margin-left: 12px;
   }
   
+  .dark .tab-btn {background: #121212;
+  color: #fff;}
+
+   .dark .tab-btn.active {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: #595959;
+    font-weight: 500;
+  }
