@@ -69,12 +69,15 @@ const Story = () => {
       className="story-container story-bg"
       style={{ backgroundImage: `url(${stories[currentPage].background})` }}
     >
+
+
       {/* Skip 버튼: 마지막 페이지 제외 */}
       {!stories[currentPage].isLast && (
         <button className="skip-btn" onClick={handleSkip}>
           건너뛰기
         </button>
       )}
+
 
       <div className="clickable-area left" onClick={handleLeftClick} />
       <div className="clickable-area right" onClick={handleRightClick} />
