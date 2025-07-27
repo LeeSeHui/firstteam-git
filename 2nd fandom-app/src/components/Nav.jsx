@@ -56,7 +56,7 @@ function Nav() {
   };
 
   const getNavIcon = (page, light, dark, active, actor, trot) => {
-    const isActive = location.pathname === `${currentMain}/${page}`;
+  const isActive = location.pathname.startsWith(`${currentMain}/${page}`);
     if (isActive) {
       if (currentMain === '/idol') return active;
       if (currentMain === '/actor') return actor;
@@ -88,7 +88,7 @@ function Nav() {
 
         <Link to={`${currentMain}/fashion/all`} className="nav-link">
           <img src={getNavIcon('fashion', fashionIcon, fashionIconDark, fashionIconActive, fashionIconActiveActor, fashionIconActiveTrot)} alt="fashion" className="nav-icon" />
-          <span className={`nav-text ${location.pathname === `${currentMain}/fashion` ? currentMain.replace('/', '') : ''}`}>Fashion</span>
+          <span className={`nav-text ${location.pathname.startsWith(`${currentMain}/fashion`) ? currentMain.replace('/', '') : ''}`}>Fashion</span>
         </Link>
 
         <Link to={`${currentMain}/mypage`} className="nav-link">

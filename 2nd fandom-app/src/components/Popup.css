@@ -14,27 +14,30 @@
 .popUp {
   position: relative;
   background: white;
-  padding: 20px;
   border-radius: 30px;
   text-align: center;
   max-width: 100%;
-  width: 363px;
-  height: 389px;
+ padding: 50px 35px 20px 35px;
   overflow: visible;
+  box-sizing: border-box;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalImage {
-  width: 287px;
+  width: 210px;
   margin-bottom: 20px;
   position: absolute;
-  top: -70px;
+  top: -58px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
 
 .modalTextWrap {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 
 /* 공통 버튼 스타일 */
@@ -42,26 +45,40 @@
   margin-top: 20px;
   border: none;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   background-color: #FFD400;
-  width: 281px;
-  height: 61px;
+  color: #494949;
+   min-width: 200px;
+  padding: 14px 24px;
 }
+
+
+.character-area {
+  display: flex;
+  justify-content: center; /* 이미지 가운데 정렬 */
+}
+
+.character-area img {
+  width: 90%;
+  max-width: 350px; /* 너무 커지지 않게 제한 가능 */
+}
+
+
 
 /* ===================== 타입별 스타일 ===================== */
 
 /* 퀴즈 팝업 (기존 색상 유지) */
 .popUp.quiz .modalTextWrap h3 {
   color: #FFD400;
-  font-size: 27px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .popUp.quiz .modalTextWrap p.sub-color {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   }
 
@@ -74,13 +91,13 @@
 /* 투표 팝업 */
 .popUp.vote .modalTextWrap h3 {
   color: #FFD400;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .popUp.vote .modalTextWrap p.sub-color {
-  font-size: 17px;
+  font-size: 14px;
   color: #797979;
   font-weight: 500;
   letter-spacing: -0.5px;
@@ -89,19 +106,18 @@
 .popUp.vote .modalTextWrap button {
   background-color: #FFD400;
   color: #595959;
-
 }
 
 /* 해지 팝업 */
 .popUp.unsubscribe .modalTextWrap h3 {
   color: #FFB800;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .popUp.unsubscribe .modalTextWrap p {
-  font-size: 17px;
+  font-size: 14px;
   color: #797979;
   font-weight: 500;
   letter-spacing: -0.5px;
@@ -115,13 +131,13 @@
 
 /* 출석체크 */
 .popUp.attendance .modalTextWrap h3 {
-  font-size: 27px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .popUp.attendance .modalTextWrap p {
-  font-size: 17px;
+  font-size: 14px;
   color: #797979;
   font-weight: 500;
   letter-spacing: -0.5px;
@@ -129,5 +145,3 @@
 
 /* 다크모드 */
 .dark .popUp {background-color: #212121;}
-
-
