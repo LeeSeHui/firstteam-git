@@ -19,7 +19,7 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 
 .manual-page img {max-width: 20vh;}
 
-.skip-btn { background: none; border: none; color: #494949; font-size: 14px; z-index: 10; cursor: pointer; }
+.skip-btn { background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; }
 
 .manual-text-wrapper {
   position: absolute;
@@ -88,3 +88,6 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
     max-height: 35vh;
   }
 }
+
+/* 다크모드 */
+.dark .skip-btn {color: #fff;}
