@@ -44,6 +44,7 @@
   cursor: pointer;
 }
 
+
 .feed-text {
   font-size: 15px;
   color: #595959;
@@ -51,6 +52,7 @@
   font-weight: 500
 
 }
+
 
 .feed-image-wrapper {
   margin: 0 -16px;
@@ -68,6 +70,8 @@
   justify-content: flex-end;
 }
 
+
+
 .like-counts {
   display: flex;
   gap: 12px;
@@ -76,3 +80,4 @@
   color: #595959;
   font-weight: 500;
 }
+

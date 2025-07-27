@@ -10,7 +10,7 @@
 .slider-box {width: 100%;}
 
 
-.section-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; padding-left: 6px; color: #333; }
+.section-title { font-size: 16px; font-weight: 500; margin-bottom: 12px; padding-left: 6px; color: #333; }
 
 .profile-slider {width: 100%; display: flex; justify-content: center; }
 
@@ -22,7 +22,7 @@
 
 .red-dot { position: absolute; top: 2px; right: 2px; width: 6px; height: 6px; background-color: red; border-radius: 50%; }
 
-.profile-name { margin-top: 6px; font-size: 17px; font-weight: 600; color: #5b5b5b; text-align: center; }
+.profile-name { margin-top: 6px; font-size: 14px; font-weight: 500; color: #5b5b5b; text-align: center; }
 
 .recommend-list { margin-top: 12px; margin-bottom: 150px; padding: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border: 15px; border-radius: 15px;}
 
@@ -30,9 +30,9 @@
 
 .search-box img { width: 16px; height: 16px; margin-right: 10px; }
 
-.search-box input { border: none; outline: none; font-size: 16px; color: #333; flex: 1; background: transparent; }
+.search-box input { border: none; outline: none; font-size: 14px; color: #333; flex: 1; background: transparent; }
 
-.check-icon { width: 15px !important; height: 15px !important; object-fit: contain; margin-left: 8px; }
+.check-icon { width: 12px !important; height: 12px !important; object-fit: contain; margin-left: 5px; }
 
 .artist-item { display: flex; align-items: center; margin-bottom: 16px; }
 
@@ -42,11 +42,11 @@
 
 .artist-info { flex: 1; margin-left: 10px;}
 
-.artist-name2 { font-weight: 500; font-size: 20px; display: flex; align-items: center;}
+.artist-name2 { font-weight: 500; font-size: 14px; display: flex; align-items: center;}
 
-.artist-en { font-size: 14px; }
+.artist-en { font-size: 12px; }
 
-.artist-time { font-size: 12px; }
+.artist-time { font-size: 10px; }
 
 
 /* 다크모드 */
