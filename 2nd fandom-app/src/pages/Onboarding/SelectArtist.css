@@ -1,7 +1,7 @@
-.header {padding: 50px 16px 0;}
+.header {padding: 20px 16px 0;}
 .artist-select-container {min-height: 100vh; text-align: center;}
-.artist-select-container h2 {font-size: 32px; margin-bottom: 10px; font-weight: 600;}
-.artist-select-container > p {font-size: 16px; color: #797979; margin-bottom: 25px;}
+.artist-select-container h2 {font-size: 20px; margin-bottom: 10px; font-weight: 600;}
+.artist-select-container > p {font-size: 14px; color: #797979; margin-bottom: 25px;}
 .gradient-border-wrapper2 {
   position: relative;
   width: 90%; margin-bottom: 52px;
@@ -39,8 +39,9 @@
   position: relative;
   border-radius: 50%;
   cursor: pointer; 
-  border: 2px solid #ffffff;
+  border: 2px solid #ffffff; min-width: 140px;
 }
+.artist-card img {width: 100%; height: auto;}
 
 .artist-card.selected {
   border: 2px solid #facc15; box-sizing: border-box;
@@ -66,7 +67,7 @@
 
 /* ✅ 아티스트 이름 */
 .artist-name {
-  font-size: 22px;
+  font-size: 20px;
   color: white;
   font-weight: 300;
   z-index: 1;
@@ -75,7 +76,7 @@
 /* ✅ 체크 아이콘 우상단 고정 */
 .check {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 10px;
   z-index: 2;
 }

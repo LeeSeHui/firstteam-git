@@ -6,7 +6,7 @@ import BackButton from '../../../components/BackButton'
 const Fashion = () => {
   
   return (
-    <div className='fashion-container'>
+      <div className='fashion-container'>
       <BackButton to="/idol/home" label="패션" />
       <div class="gradient-border-wrapper">
         <input class="gradient-input" type="text" placeholder="원하는 정보를 검색하세요! (ex. 뉴진스 컴백 메이크업)" />
@@ -22,6 +22,8 @@ const Fashion = () => {
       <Outlet />
 
     </div>
+
+    
   );
 };
 
