@@ -125,7 +125,7 @@ const Highlight = () => {
 
       {/* 아티스트 피드 카드 */}
       <ArtistSection
-        profileImage={artist01}
+        profileImage={herin}
         artistName="해린"
         isVerified={true}
         verifiedIcon={check}
@@ -155,7 +155,7 @@ const Highlight = () => {
             <img src={herin} alt="해린 프로필" className="profile-img" />
             <div>
               <p className="nickname">
-                해린 <span className="badge">✔️</span>
+                해린 <img src={check} alt="아이돌뱃지" className="notice-icon" />
               </p>
               <p className="time">07.01. 05:06</p>
             </div>
