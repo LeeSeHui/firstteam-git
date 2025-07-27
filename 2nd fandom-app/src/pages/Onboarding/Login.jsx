@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import loginImg from '../../assets/onboarding/char.png';
+import mainLogo from '../../assets/onboarding/mainLogo.png'
 import kakaoIcon from '../../assets/onboarding/kakaoLogo.png';
 import googleIcon from '../../assets/onboarding/googleLogo.png';
 import appleIcon from '../../assets/onboarding/appleLogo.png';
@@ -17,10 +18,8 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2 className="login-title">Nuvie에서<br />최애를 더 깊이</h2>
-      <p className="login-subtitle">뉴비에 오신걸 환영해요!</p>
       <img src={loginImg} alt="Login" className="login-image" />
-
+      <img src={mainLogo} alt="" />
       <div className="btn-wrap">
         <div className="badge">
           <img src={badgeImg} alt="badge" />

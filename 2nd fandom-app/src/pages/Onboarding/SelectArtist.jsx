@@ -23,7 +23,6 @@ import artist14 from '../../assets/artist-select/artist14.png';
 import artist15 from '../../assets/artist-select/artist15.png';
 import artist16 from '../../assets/artist-select/artist16.png';
 import check from '../../assets/artist-select/check.png';
-import search from '../../assets/dark/dark_search2.png';
 
 // 필요한 이미지 추가
 
@@ -88,7 +87,6 @@ const SelectArtist = () => {
       <h2>당신의 아티스트를<br />선택해 주세요</h2>
       <p>복수 선택 가능해요</p>
       <div class="gradient-border-wrapper2">
-        <img src={search} alt="search icon" class="input-icon" />
         <input class="gradient-input" type="text" placeholder="원하는 아티스트를 검색해보세요." />
       </div>
       

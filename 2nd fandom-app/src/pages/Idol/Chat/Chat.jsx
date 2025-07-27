@@ -33,7 +33,7 @@ const slideData = [
 ];
 
 const profileData = [
-  { name: 'ROSE', img: roseImg, hasNew: true },
+  { name: 'ROSE', img: roseImg, hasNew: false },
   { name: 'JENNIE', img: jennieImg, hasNew: true },
   { name: 'HANI', img: haniImg, hasNew: false },
   { name: 'HAERIN', img: haerinImg, hasNew: false },

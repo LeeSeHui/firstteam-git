@@ -131,13 +131,14 @@ const Home = () => {
   };
 
   return (
-    <div className="homeContainer">
+    
+      <div className="homeContainer">
       <div className="main-logo">
-        <p className="img"><img
+        <p className="img main"><img
           src={isDarkMode ? dark_logo : logo}
           alt="logo"
         /></p>
-        <p className="img" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
+        <p className="img2 alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
       </div>
 
       <div className="mypageSection Section" onClick={handleMypageClick}>
@@ -265,6 +266,7 @@ const Home = () => {
         </Slider>
       </div>
     </div>
+    
   );
 };
 
