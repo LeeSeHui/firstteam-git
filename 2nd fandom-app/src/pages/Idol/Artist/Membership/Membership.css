@@ -1,9 +1,9 @@
-.membership-container {padding: 0 16px 100px;}
+/* .membership-container {padding: 0 16px 100px;} */
 .membership-feed-wrapper { display: flex; flex-direction: column; gap: 20px; }
 .feed-header { display: flex; justify-content: space-between; align-items: center; }
 .profile-info { display: flex; align-items: center; gap: 10px; }
 .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.nickname { font-weight: 600; font-size: 16px; color: #595959; }
+.nickname { font-weight: 600; font-size: 14px; color: #595959; }
 .time { font-size: 13px; font-weight: 500; color: #848484; }
 .badge { margin-left: 4px; }
 .bookmark-btn { background: none; border: none; font-size: 18px; padding: 0; line-height: 1; display: flex; align-items: center; justify-content: center; }
