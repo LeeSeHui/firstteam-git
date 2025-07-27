@@ -1,12 +1,8 @@
 .yellow-btn {
   background-color: #FFD700;
   color: #333;
-<<<<<<< HEAD
-  font-size: 18px;
-=======
-  font-size: 20px;
->>>>>>> 8c1a4c84ddce700762a2ffaee8d792c04505d737
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   padding: 20px 0;
   border: none;
   border-radius: 10px;

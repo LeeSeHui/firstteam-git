@@ -1,7 +1,6 @@
 /* 알림 전체 페이지 */
 .alarm-page {
-    padding: 20px 16px;
-    background-color: #fff;
+    padding: 20px 16px 100px;
     font-family: 'Pretendard', sans-serif;
   }
   
@@ -13,36 +12,43 @@
   }
   
   /* 탭 버튼 영역 */
-  .tab-list {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-  }
+.tab-list {
+  display: flex;
+  flex-wrap: nowrap;        /* 버튼 줄바꿈 방지 */
+  overflow-x: auto;         /* 가로 스크롤 */
+  white-space: nowrap;      /* 버튼 내부 줄바꿈 방지 */
+  gap: 8px;
+  padding: 10px 0px;
+  scrollbar-width: none;    /* Firefox 스크롤 숨김 */
+}
+
+.tab-list::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari 스크롤 숨김 */
+}
   
   .tab-btn {
-    padding: 10px 17.3px;
+    padding: 8px 15px;
     border: 1px solid #FFD700;
     border-radius: 20px;
-    background: #fff;
-    font-size: 16px;
-    font-weight: 600;
+    background: #121212;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    color: #797979;
+    color: #ffff;
     flex-wrap: nowrap;
   }
   
   .tab-btn.active {
     background-color: #FFD700;
     border-color: #FFD700;
-    color: #fff;
+    color: #595959;
     font-weight: 600;
   }
   
   /* 날짜 구간 타이틀 */
   .alarm-date {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     margin: 20px 0 8px;
   }
@@ -52,7 +58,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #F9F9F9;
     padding: 12px;
     border-radius: 12px;
     margin-bottom: 10px;
@@ -60,8 +65,8 @@
   
   /* 프로필 이미지 */
   .alarm-profile-img {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 12px;
@@ -76,19 +81,20 @@
   }
   
   .alarm-title {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     margin-bottom: 4px;
   }
   
   .alarm-time {
-    font-size: 15px;
+    font-size: 14px;
+    color: #797979;
   }
   
   /* 썸네일 */
   .thumb-img {
-    width: 62px;
-    height: 62px;
+    width: 55px;
+    height: 55px;
     border-radius: 8px;
     object-fit: cover;
     margin-left: 12px;
