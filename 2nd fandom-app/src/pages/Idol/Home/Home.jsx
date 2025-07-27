@@ -191,11 +191,11 @@ const Home = () => {
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=yFTAYXDTjqI" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
-            <p>'최초 공개' <br /> NewJeans의 HOT 컴백 무대</p>
+            <p>'최초 공개' NewJeans의 HOT 컴백 무대</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb2} alt="video2" />
-            <p>[입덕직캠] <br />뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
+            <p>뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
           </a>
           <a href="https://www.youtube.com/watch?v=7FbDF0wWe_8" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb3} alt="video3" />
