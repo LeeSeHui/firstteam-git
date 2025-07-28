@@ -18,8 +18,6 @@
 
 .quiz-right img { width: 35vw; height: 35vw;}
 
-.quiz-button { margin-top: 20px; }
-
 
 @keyframes ticktock {
     0%   { transform: rotate(0deg); }

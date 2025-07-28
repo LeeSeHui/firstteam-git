@@ -4,7 +4,7 @@
 .artist-select-container > p {font-size: 14px; color: #797979; margin-bottom: 25px;}
 .gradient-border-wrapper2 {
   position: relative;
-  width: 90%; margin-bottom: 52px;
+  width: 90%; margin-bottom: 35px;
   background: linear-gradient(90deg, #6C53FF 0%, #66DEC2 50%, #FFCC00 100%);
   padding: 1px; /* border처럼 보이게 하는 부분 */
   border-radius: 999px;
@@ -32,14 +32,14 @@
 .scroll-wrapper::-webkit-scrollbar:horizontal {
   display: none;
 }
-.artist-row2 {display: flex; gap: 10px;}
+.artist-row2 {display: flex; gap: 5px;}
 
 .middle-row {margin-left: -100px;}
 .artist-card {
   position: relative;
   border-radius: 50%;
   cursor: pointer; 
-  border: 2px solid #ffffff; min-width: 140px;
+  border: 2px solid #ffffff; min-width: 133px;
 }
 .artist-card img {width: 100%; height: auto;}
 
