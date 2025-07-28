@@ -53,19 +53,19 @@ const Collection = () => {
       <div className="collection-grid">
         <div className="collection-item">
           <img src={groupImg} alt="group" />
-          <div className="overlay-text">단체 사진</div>
+          <div className="Collection-overlay-text">단체 사진</div>
         </div>
         <div className="collection-item">
           <img src={boyfriendImg} alt="boyfriend" />
-          <div className="overlay-text">남친짤</div>
+          <div className="Collection-overlay-text">남친짤</div>
         </div>
         <div className="collection-item">
           <img src={fanartImg} alt="fanart" />
-          <div className="overlay-text">팬아트</div>
+          <div className="Collection-overlay-text">팬아트</div>
         </div>
         <div className="collection-item">
           <img src={photoImg} alt="real" />
-          <div className="overlay-text">직찍 모음</div>
+          <div className="Collection-overlay-text">직찍 모음</div>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ margin-bottom: 35px;}
 .title {font-weight: 500; margin-top: 5px; font-size: 15px;}
 .collection-count{ font-size: 13px; margin: 0;}
 .subtitle {font-size: 18px;font-weight: 600; margin-bottom: 13px;}
-.overlay-text {position: absolute;top: 50%; left: 50%; transform: translate(-50%,-50%);
+.Collection-overlay-text {position: absolute;top: 50%; left: 50%; transform: translate(-50%,-50%);
 color: white; font-weight: 500; font-size: 14px;}
 
 /* 다크모드 */
