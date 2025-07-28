@@ -16,28 +16,46 @@ import logo3 from '../../../assets/mypage/payment/logo3.png';
 import logo4 from '../../../assets/mypage/payment/logo4.png';
 import logo5 from '../../../assets/mypage/payment/logo5.png';
 import mark from '../../../assets/mypage/payment/mark.png';
-import popup from '../../../assets/mypage/payment/popup.png'; // ✅ 팝업 이미지
+import popup from '../../../assets/mypage/payment/popup.png';
 
+
+const subscribedArtists = [
+  { id: 1, name: 'NewJeans', img: Group1, date: '2025년 7월 25일' },
+  { id: 2, name: 'G-Dragon', img: Group2, date: '2025년 8월 21일' },
+  { id: 3, name: 'TWS', img: Group3, date: '2025년 8월 3일' },
+];
 
 const Payment = () => {
   const navigate = useNavigate();
   const isDarkMode = document.body.classList.contains('dark');
-  const handleRecommendSubscribe = () => {
-    navigate('/idol/home/membership'); // 원하는 경로로 이동
-  };
 
   const [showPopup, setShowPopup] = useState(false);
+  const [unsubscribedIds, setUnsubscribedIds] = useState([]);
+  const [unsubscribingId, setUnsubscribingId] = useState(null);
 
   const handlePlusClick = () => {
     navigate('/onboarding/select-artist', { state: { fromHome: true } });
   };
 
-  const handleUnsubscribeClick = () => {
+  const handleRecommendSubscribe = () => {
+    navigate('/idol/home/membership');
+  };
+
+  const handleUnsubscribeClick = (id) => {
+    setUnsubscribingId(id);
     setShowPopup(true);
   };
 
   const handleClosePopup = () => {
+    if (unsubscribingId !== null) {
+      setUnsubscribedIds(prev => [...prev, unsubscribingId]);
+    }
     setShowPopup(false);
+    setUnsubscribingId(null);
+  };
+
+  const handleReSubscribe = (id) => {
+    setUnsubscribedIds(prev => prev.filter(uid => uid !== id));
   };
 
   return (
@@ -62,39 +80,41 @@ const Payment = () => {
           </button>
         </div>
         <ul className="subscribed-list">
-          <li className="avatar-item">
-            <div className="avatar-wrapper">
-              <img src={Group1} alt="NewJeans" />
-              <div className="red-dot"></div>
-            </div>
-            <div className="info">
-              <p>NewJeans <img src={mark} alt="badge" /></p>
-              <span className='sub-color'>다음 결제일 : 2025년 7월 25일</span>
-            </div>
-            <button className="payment-cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
-          </li>
-          <li className="avatar-item">
-            <div className="avatar-wrapper">
-              <img src={Group2} alt="G-Dragon" />
-              <div className="red-dot"></div>
-            </div>
-            <div className="info">
-              <p>G-Dragon <img src={mark} alt="badge" /></p>
-              <span className='sub-color'>다음 결제일 : 2025년 8월 21일</span>
-            </div>
-            <button className="payment-cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
-          </li>
-          <li className="avatar-item">
-            <div className="avatar-wrapper">
-              <img src={Group3} alt="TWS" />
-              <div className="red-dot"></div>
-            </div>
-            <div className="info">
-              <p>TWS <img src={mark} alt="badge" /></p>
-              <span className='sub-color'>다음 결제일 : 2025년 8월 3일</span>
-            </div>
-            <button className="payment-cancel-button sub-color" onClick={handleUnsubscribeClick}>해지</button>
-          </li>
+          {subscribedArtists.map(artist => {
+            const isUnsubscribed = unsubscribedIds.includes(artist.id);
+            return (
+              <li className="avatar-item" key={artist.id}>
+                <div className="avatar-wrapper">
+                  <img src={artist.img} alt={artist.name} />
+                  <div className="red-dot"></div>
+                </div>
+                <div className="info">
+                  <p>{artist.name} <img src={mark} alt="badge" /></p>
+                  <span className='sub-color'>
+                    {isUnsubscribed ? '구독 해지됨' : `다음 결제일 : ${artist.date}`}
+                  </span>
+                </div>
+
+                {isUnsubscribed ? (
+                <button
+                  className="subscribe-button"
+                  onClick={handleRecommendSubscribe}
+                >
+                  가입
+                </button>
+              ) : (
+                <button
+                  className="payment-cancel-button sub-color"
+                  onClick={() => handleUnsubscribeClick(artist.id)}
+                >
+                  해지
+                </button>
+              )}
+
+
+              </li>
+            );
+          })}
         </ul>
       </div>
 
