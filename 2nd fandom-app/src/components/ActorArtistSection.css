@@ -26,7 +26,6 @@
 .expanded-images { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
 .expanded-images img { width: 100%; border-radius: 12px; object-fit: cover; }
 .icon-small { width: 20px; height: 20px; margin-right: 6px; vertical-align: middle; }
-.bookmark-icon { height: 24px; width: 18px; margin-bottom: 15px; }
 .comment-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
 
 
