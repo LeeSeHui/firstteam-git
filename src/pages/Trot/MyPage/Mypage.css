@@ -1,0 +1,6 @@
+.challenge-section .trot-day {display: inline-block;background-color: #AE74FF; color: #ffffff; font-weight: 600; padding: 8px 14px; border-radius: 20px; font-size: 16px; margin-bottom: 10px;}
+
+.trot-toggle-option.active { background: #AE74FF; color: #ffffff;}
+.trot-toggle-option {flex: 1; text-align: center; padding: 6px 0; font-size: 14px; font-weight: 400; cursor: pointer; color: #494949; transition: all 0.3s ease;  border-radius: 20px;}
+
+.trot-botton {background-color: #AE74FF; padding: 7px 16px; border-radius: 7px; font-weight: 400; font-size: 18px;color: #ffffff;}
