@@ -14,6 +14,7 @@ const FashionSection = ({ title, cards }) => {
             title={card.title}
             tag={card.tag}
             subImages={card.subImages}
+            date={card.date}
             index={`${index + 1}/${cards.length}`}
           />
         ))}

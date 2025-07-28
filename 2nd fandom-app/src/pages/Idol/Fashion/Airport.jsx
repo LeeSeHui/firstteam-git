@@ -27,6 +27,7 @@ const Airport = () => {
     {
       image: hani1,
       title: '뉴진스 하니\n웜톤 메이크업',
+      date: '2025.07.23',
       subImages: [
         {
           img: hani1_sub,
@@ -40,6 +41,7 @@ const Airport = () => {
     {
       image: hani2,
       title: '뉴진스 하니\n웜톤 메이크업',
+      date: '2025.07.23',
       subImages: [
         {
           img: hani2_sub,
@@ -53,6 +55,7 @@ const Airport = () => {
     {
       image: hani3,
       title: '뉴진스 하니\n웜톤 메이크업',
+      date: '2025.07.23',
       subImages: [
         {
           img: hani3_sub,
@@ -69,6 +72,7 @@ const Airport = () => {
     {
       image: lenz1,
       title: '아이돌 컬러렌즈\n정보 모음',
+      date: '2025.07.20',
       subImages: [
         {
           img: lenz1_sub,
@@ -82,6 +86,7 @@ const Airport = () => {
     {
       image: lenz2,
       title: '아이돌 컬러렌즈\n정보 모음',
+      date: '2025.07.20',
       subImages: [
         {
           img: lenz2_sub,
@@ -95,6 +100,7 @@ const Airport = () => {
     {
           image: lenz3,
           title: '아이돌 컬러렌즈\n정보 모음',
+          date: '2025.07.20',
           subImages: [
             {
               img: lenz3_sub,
@@ -111,6 +117,7 @@ const Airport = () => {
       {
         image: jennie1,
         title: '블랙핑크 제니\n메이크업 정보 모음',
+        date: '2025.07.18',
         subImages: [
           {
             img: jennie1_sub,
@@ -124,6 +131,7 @@ const Airport = () => {
       {
         image: jennie2,
         title: '블랙핑크 제니\n메이크업 정보 모음',
+        date: '2025.07.18',
         subImages: [
           {
             img: jennie2_sub,
@@ -137,6 +145,7 @@ const Airport = () => {
       {
         image: jennie3,
         title: '블랙핑크 제니\n메이크업 정보 모음',
+        date: '2025.07.18',
         subImages: [
           {
             img: jennie3_sub,
