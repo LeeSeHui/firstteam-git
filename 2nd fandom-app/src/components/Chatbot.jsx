@@ -3,7 +3,7 @@ import useNickname from '../contexts/useNickname';
 import mascotImg from '../assets/mascot.png';
 import './Chatbot.css';
 import micIcon from '../assets/mic-icon.png'
-import X_button from '../assets/onboarding/X_button.png'
+import X_button from '../assets/X_button.png'
 import plus from '../assets/chatbot_plusButton.png'
 
 const Chatbot = () => {
@@ -13,6 +13,7 @@ const Chatbot = () => {
   const [hasInteracted, setHasInteracted] = useState(false);
   const messagesEndRef = useRef(null);
   const { nickname } = useNickname();
+  const chatbotRef = useRef(null);
 
   const suggestions = [
     '나의 아티스트', '시스템 설정', '캐릭터 레벨업', '출석 현황', '최근 기록'
@@ -50,27 +51,46 @@ const Chatbot = () => {
     );
   };
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isOpen && chatbotRef.current && !chatbotRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+  
+  
+
   const handleSend = (text) => {
     const msg = text.trim();
     if (!msg) return;
     if (!hasInteracted) setHasInteracted(true);
-
+  
     const botReply = getBotReply(msg);
+  
+    // 1. 사용자 메시지 추가
     setMessages((prev) => [...prev, { sender: 'user', text: msg }]);
-
+  
+    // 2. 로딩 메시지 추가
     setTimeout(() => {
-      setMessages((prev) => [...prev, { sender: 'bot', text: 'typing', loading: true }]);
+      setMessages((prev) => [...prev, { sender: 'bot', loading: true }]);
+  
+      // 3. 1초 후 로딩 제거 + 봇 메시지 추가
       setTimeout(() => {
         setMessages((prev) =>
           prev
-            .filter((m) => !(m.loading && m.text === 'typing'))
-            .concat({ sender: 'bot', text: botReply })
+            .filter((m) => !m.loading) // loading 메시지 제거
+            .concat({ sender: 'bot', text: botReply }) // 실제 응답 추가
         );
       }, 1000);
     }, 300);
-
+  
+    // 4. 입력 초기화
     setInput('');
   };
+  
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -88,7 +108,7 @@ const Chatbot = () => {
       )}
 
       {isOpen && (
-        <div className="chatbot-box">
+        <div className="chatbot-box" ref={chatbotRef}>
           <div className="chatbot-header">
             <span className="chatbot-title">챗봇</span>
             <button onClick={() => setIsOpen(false)} className="chatbot-close"><img src={X_button} alt="" /></button>
@@ -111,10 +131,21 @@ const Chatbot = () => {
                       <div className="chat-text2 user-text">{msg.text}</div>
                       <div className="chat-time">09:20</div>
                     </div>
+                  ) : msg.loading ? (
+                    //  로딩 메시지 
+                    <div className="bot-msg-block">
+                      <img src={mascotImg} className="bot-avatar" alt="bot" />
+                      <div className="bot-content">
+                        <span className="bot-name">별별봇</span>
+                        <div className="chat-text bot-text loading-dots">
+                          <span></span><span></span><span></span>
+                        </div>
+                      </div>
+                    </div>
                   ) : (
+                    //  일반 봇 응답
                     <div className="bot-msg-block" onClick={() => toggleAccordion(i)}>
                       <img src={mascotImg} className="bot-avatar" alt="bot" />
-                      
                       <div className="bot-content">
                         <span className="bot-name">별별봇</span>
                         <div className={`chat-text bot-text ${msg.expanded ? 'expanded' : 'collapsed'}`}>
@@ -122,10 +153,10 @@ const Chatbot = () => {
                         </div>
                       </div>
                     </div>
-
                   )}
                 </div>
               ))}
+
               <div ref={messagesEndRef} />
             </div>
 
