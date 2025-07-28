@@ -71,7 +71,6 @@ const Quiz = () => {
   return (
     <div className="quizContainer">
       <BackButton label="퀴즈" />
-      <div className="quizBadge">마감 D-3</div>
       <h2>{quiz.question}</h2>
       {quiz.subtitle && <p className="quizSubtitle">{quiz.subtitle}</p>}
       <p className="quizExplain">퀴즈의 정답을 맞히시면 특별한 선물이 지급됩니다!</p>
