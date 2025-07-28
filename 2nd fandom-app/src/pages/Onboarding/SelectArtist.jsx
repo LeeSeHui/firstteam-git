@@ -98,8 +98,8 @@ const SelectArtist = () => {
       <div className='header'>
         <BackButton onClick={handleBack} />
       </div>
-      <h2>당신의 아티스트를<br />선택해 주세요</h2>
-      <p>복수 선택 가능해요</p>
+      <h2>당신의 아티스트를<br />선택해 주세요!</h2>
+      <p>복수 선택 가능해요.</p>
       <div className="gradient-border-wrapper2">
         <input className="gradient-input" type="text" placeholder="원하는 아티스트를 검색해보세요." />
       </div>

@@ -94,7 +94,7 @@ const Manual = () => {
           label=""
         />
         <button className="manual-skip-btn" onClick={() => navigate('/story')}>
-          건너뛰기
+          Skip
         </button>
       </header>
 

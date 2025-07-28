@@ -13,8 +13,8 @@ const Fashion = () => {
       </div>
       <div className="fashion-tabs">
         <NavLink to="/idol/fashion/all" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>전체</NavLink>
-        <NavLink to="/idol/fashion/makeup" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>메이크업</NavLink>
-        <NavLink to="/idol/fashion/daily" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>데일리룩</NavLink>
+        <NavLink to="/idol/fashion/makeup" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>HOT!메이크업</NavLink>
+        <NavLink to="/idol/fashion/daily" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>데일리LOOK!</NavLink>
         <NavLink to="/idol/fashion/airport" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>공항패션</NavLink> 
         <NavLink to="/idol/fashion/sports" className={({ isActive }) => isActive ? 'tab active' : 'tab'}>운동룩</NavLink>
       </div>
