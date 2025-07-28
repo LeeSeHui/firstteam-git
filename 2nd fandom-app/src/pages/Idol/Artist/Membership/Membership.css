@@ -27,6 +27,8 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     overflow: visible;
+    width: 95%;
+    margin: 0 6px;
   }
   
   .lock-image-wrap {
