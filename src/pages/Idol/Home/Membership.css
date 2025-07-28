@@ -1,16 +1,16 @@
-.membership-wrap { padding: 0 16px; font-family: 'Pretendard', sans-serif;  padding-bottom: 200px; }
+.membership-wrap { padding: 90px 16px; font-family: 'Pretendard', sans-serif;  padding-bottom: 200px; }
 
 .membership-title { margin-bottom: 24px; text-align: left; padding-left: 16px; position: relative; }
 
 .membership-title .text { display: flex; flex-direction: inherit; font-size: 15px; }
 
-.membership-title .text p { font-size: 16px; line-height: 1.5; margin-bottom: 8px; font-weight: 600; margin-top: 10px; color: #494949; letter-spacing: -0.5px; }
+.membership-title .text p { font-size: 16px; line-height: 1.5; margin-bottom: 8px; font-weight: 600; margin-top: 10px; color: #797979; letter-spacing: -0.5px; }
 
 .membership-title .img { margin-top: 12px; text-align: center; }
 
 .membership-title .img img { width: auto; max-width: 175px; height: auto; position: absolute; top: -46px; }
 
-.note { background-color: #ffffff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 20px; padding: 16px; margin-bottom: 24px; font-size: 15px; line-height: 1.2; font-weight: 400; }
+.note { background-color: #ffffff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 20px; padding: 16px; margin-bottom: 24px; font-size: 13px; line-height: 1.2; font-weight: 400; }
 
 .note h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; padding-left: 16px; color: #494949; }
 
@@ -20,16 +20,18 @@
 
 .note li span {font-weight: 500; color: #212121;}
 
-.confirm { display: flex; align-items: flex-start; border-radius: 8px; padding: 6px; font-size: 16px; margin: 47px; font-weight: 500; }
+.confirm { display: flex; align-items: flex-start; border-radius: 8px; padding: 22px; font-size: 14px; margin: 25px 47px; font-weight: 500; }
 
 .confirm.active { border-radius: 12px; }
 
-.confirm img { width: 25px; margin-right: 10px; margin-top: 7px; cursor: pointer; }
+.confirm img { width: 20px; margin-right: 10px; margin-top: 7px; cursor: pointer; }
 
 .btn-box { text-align: center; }
 
-.subscribe-btn { background-color: #cccccc; border: none; border-radius: 12px; font-size: 20px; font-weight: 600; width: 350px; height: 64px; cursor: pointer; color: #ffffff; }
+.subscribe-btn { background-color: #cccccc; border: none; border-radius: 12px; font-size: 18px; font-weight: 600; width: 350px; height: 64px; cursor: pointer; color: #ffffff; }
 
 .subscribe-btn.active { background-color: #FFD700; cursor: pointer; color: #494949; }
 
 .dark .note {background: #212121;} 
+.dark .membership-title .text p {color: #fff; font-weight: 400;}
+.dark .note li span{color: #fff;}
