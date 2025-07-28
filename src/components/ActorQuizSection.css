@@ -1,0 +1,7 @@
+
+.quiz-content { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+
+.actor-highlight { color: #37CEBF; }
+
+
+.timer .actor-time { color: #37CEBF; font-weight: bold; margin-right: 4px; font-size: 18px; }

@@ -1,0 +1,21 @@
+.quizContainer { text-align: center; padding: 20px; }
+.quizContainer h2 { font-size: 20px; font-weight: 600; margin-top: 20px; }
+.quizExplain { font-size: 12px; color: #797979; margin: 10px 0 18px; font-weight: 500; }
+.quizSubtitle { font-weight: 600; font-size: 20px; }
+.quizMainImage { width: 98%; border-radius: 12px; }
+.options { display: flex; flex-direction: column; gap: 5px; margin-bottom: 20px; margin-top: 35px; }
+.optionButton { border: 2px solid #ddd; border-radius: 9px; background-color: white; cursor: pointer; font-size: 14px; color: #797979; font-weight: 500; height: 55px; }
+.optionButton.selected { border-color: #ffcc00; }
+.quizImageGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 78px; margin-top: 80px; }
+.imageOption { border: none; padding: 0; background: none; cursor: pointer; border-radius: 12px; overflow: hidden; position: relative; }
+.imageOption img { width: 100%; display: block; border-radius: 12px; transition: 0.3s ease; box-sizing: border-box; }
+.imageOption.selected img { filter: none; }
+.imageOption.dimmed img { filter: brightness(0.4); }
+.imageOption::after { content: ""; position: absolute; inset: 0; border: 5px solid transparent; border-radius: 12px; pointer-events: none; transition: 0.3s ease; box-sizing: border-box; }
+.imageOption.selected::after { border-color: #ffcc00; }
+.submitButton { padding: 12px 24px; background-color: #ffcc00; border: none; border-radius: 24px; cursor: pointer; }
+.quiz-full-width { width: 100%; }
+.dark .quizBadge { color: #494949; }
+.dark .quizExplain { color: #8f8f8f; }
+.dark .optionButton { background-color: #151515; color: #fff; border: 1px solid #ddd;}
+.dark .optionButton.selected {border-color: #ffcc00;}
