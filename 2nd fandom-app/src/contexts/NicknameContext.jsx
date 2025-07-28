@@ -1,6 +1,9 @@
 import React, { createContext, useState } from 'react';
 
-export const NicknameContext = createContext();
+export const NicknameContext = createContext({
+  nickname: null,
+  setNickname: () => {}
+});
 
 export const NicknameProvider = ({ children }) => {
   const [nickname, setNickname] = useState(localStorage.getItem("nickname") || '');
