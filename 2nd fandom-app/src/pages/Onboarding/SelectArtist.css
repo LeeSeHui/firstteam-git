@@ -51,6 +51,23 @@
   border-radius: 50%; box-sizing: border-box;
 }
 
+.artist-card.has-dot {
+  position: relative;
+}
+
+.artist-card.has-dot::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
 /* ✅ 오버레이 (검은 반투명 배경 + 텍스트) */
 .overlay {
   position: absolute;

@@ -45,7 +45,7 @@ const Attendance = () => {
           </div>
         </div>
 
-        <div className="character-area">
+        <div className="attendance-character-area">
          <img
     className="attendance-stamp"
     src={
