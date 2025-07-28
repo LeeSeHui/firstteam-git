@@ -5,8 +5,6 @@ import mainLogo from '../../assets/onboarding/mainLogo.png'
 import kakaoIcon from '../../assets/onboarding/kakaoLogo.png';
 import googleIcon from '../../assets/onboarding/googleLogo.png';
 import appleIcon from '../../assets/onboarding/appleLogo.png';
-import badgeImg from '../../assets/onboarding/badge.png'; // "가장 간편!" 뱃지 이미지
-
 import './Login.css';
 
 const Login = () => {
@@ -21,8 +19,8 @@ const Login = () => {
       <img src={loginImg} alt="Login" className="login-image" />
       <img src={mainLogo} alt="" />
       <div className="btn-wrap">
-        <div className="badge">
-          <img src={badgeImg} alt="badge" />
+        <div className="simple-badge">
+          <p>가장간편!</p>
         </div>
         <button className="login-btn kakao" onClick={handleStart}>
           <span className="img kakao"><img src={kakaoIcon} alt="kakao" className="btn-icon" /></span>

@@ -93,7 +93,7 @@ const Manual = () => {
           }}
           label=""
         />
-        <button className="skip-btn" onClick={() => navigate('/story')}>
+        <button className="manual-skip-btn" onClick={() => navigate('/story')}>
           건너뛰기
         </button>
       </header>

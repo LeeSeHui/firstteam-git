@@ -10,7 +10,7 @@ import hani from '../../../../assets/artist-select/hani.png';
 import daniel from '../../../../assets/artist-select/daniel.png';
 import herin from '../../../../assets/artist-select/herin.png';
 
-import artist01 from '../../../../assets/Home/artist01.png';
+
 import check from '../../../../assets/Home/check.png';
 import card from '../../../../assets/artist-select/cardsend.png';
 import letter from '../../../../assets/artist/heartletter.png';
