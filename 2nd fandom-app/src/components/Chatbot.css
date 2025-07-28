@@ -1,7 +1,7 @@
 .chatbot-wrapper { position: fixed; bottom: 100px; right: 20px; z-index: 9999; }
 .chatbot-floating-btn { width: 60px; height: 60px; border-radius: 50%; border: none; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; padding: 0;}
 .chatbot-floating-btn img { width: 100%; height: 100%; object-fit: contain; }
-.chatbot-box { width: 100%; max-width: 420px; height: 600px; background: #fff; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; animation: slideUp 0.3s ease-out; }
+.chatbot-box { height: 600px; background: #fff; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; animation: slideUp 0.3s ease-out; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 .chatbot-header { background: #f4c430; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: #fff; }
 .chatbot-close{display: flex; align-items: center; border: none; outline: none; padding: 7px; border-radius: 50%;}
@@ -67,7 +67,24 @@
 .circle-btn img { width: 25px; height: auto; object-fit: contain; }
 
 
+@media screen and (max-width: 480px) {
+  .chatbot-wrapper {
+    bottom: 100px;
+    right: 0px;
+  }
+  .chatbot-wrapper button {right: 10px !important;}
 
+  .chatbot-box {
+    width: 100vw;
+    height: 70vh;
+    max-width: 95%; margin: 0 auto;
+    max-height: 100%;
+  }
+
+  .chatbot-mascot img {
+    width: 150px;
+  }
+}
 
 body.dark .chatbot-box { background: #121212; color: #fff; }
 body.dark .chatbot-body { background: #121212; }
