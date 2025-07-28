@@ -27,6 +27,7 @@ const Makeup = () => {
     {
       image: hani1,
       title: '뉴진스 하니\n웜톤 메이크업',
+      date: '2025.07.23',
       tag: {
         text: 'rom&nd 제로 매트 립...\n13,000원',
         link: 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000142217',
@@ -46,6 +47,7 @@ const Makeup = () => {
     {
       image: hani2,
       title: '뉴진스 하니\n웜톤 메이크업',
+      date: '2025.07.23',
       tag: {
         text: '3ce 소프트 매트 립스...\n12,000원',
         link: 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000148167',
@@ -65,6 +67,7 @@ const Makeup = () => {
     {
       image: hani3,
       title: '뉴진스 하니\n웜톤 메이크업',
+      date: '2025.07.23',
       tag: {
         text: '웨이크메이크 쉬어 블...\n18,000원',
         link: 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000209762',
@@ -87,6 +90,7 @@ const Makeup = () => {
     {
       image: lenz1,
       title: '아이돌 컬러렌즈\n정보 모음',
+      date: '2025.07.20',
       tag: {
         text: 'Hapa Kristin 크리스...\n19,000원',
         link: 'https://hapakristin.co.kr/products/h74781/',
@@ -106,6 +110,7 @@ const Makeup = () => {
     {
       image: lenz2,
       title: '아이돌 컬러렌즈\n정보 모음',
+      date: '2025.07.20',
       tag: {
         text: 'OLENS 글로이티어 컬...\n20,000원',
         link: 'https://o-lens.com/product/20778',
@@ -125,6 +130,7 @@ const Makeup = () => {
     {
       image: lenz3,
       title: '아이돌 컬러렌즈\n정보 모음',
+      date: '2025.07.20',
       tag: {
       text: 'OLENS 비비링 원데...\n36,000원',
       link: 'https://o-lens.com/product/20008',
@@ -147,6 +153,7 @@ const Makeup = () => {
       {
         image: jennie1,
         title: '블랙핑크 제니\n메이크업 정보 모음',
+        date: '2025.07.18',
         tag: {
           text: '샤넬 루쥬 알뤼르 벨벳\n56,000원',
           link: 'https://www.chanel.com/kr/makeup/lips/c/5x1x1x31/lipstick/?gad_source=1&gad_campaignid=20289150879&gclid=EAIaIQobChMIsrfVzPPFjgMVMNgWBR3ywzHZEAAYASAAEgLkcPD_BwE',
@@ -166,6 +173,7 @@ const Makeup = () => {
       {
         image: jennie2,
         title: '블랙핑크 제니\n메이크업 정보 모음',
+        date: '2025.07.18',
         tag: {
           text: '입생로랑 메이크 미...\n52,000원',
           link: 'https://www.yslbeautykr.com/ko_KR/home',
@@ -185,6 +193,7 @@ const Makeup = () => {
       {
         image: jennie3,
         title: '블랙핑크 제니\n메이크업 정보 모음',
+        date: '2025.07.18',
         tag: {
           text: '입생로랑 메이크 미...\n52,000원',
           link: 'https://www.maccosmetics.co.kr/product/1368/60284/samples/powder-kiss-lipstick',

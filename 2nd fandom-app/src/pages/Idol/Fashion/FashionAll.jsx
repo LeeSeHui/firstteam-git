@@ -27,6 +27,7 @@ const FashionAll = () => {
     {
       image: jennie1,
       title: '블랙핑크 제니\n메이크업 정보 모음',
+      date: '2025.07.18',
       tag: {
         text: '샤넬 루쥬 알뤼르 벨벳\n56,000원',
         link: 'https://www.chanel.com/kr/makeup/lips/c/5x1x1x31/lipstick/?gad_source=1&gad_campaignid=20289150879&gclid=EAIaIQobChMIsrfVzPPFjgMVMNgWBR3ywzHZEAAYASAAEgLkcPD_BwE',
@@ -46,6 +47,7 @@ const FashionAll = () => {
     {
       image: jennie2,
       title: '블랙핑크 제니\n메이크업 정보 모음',
+      date: '2025.07.18',
       tag: {
         text: '입생로랑 메이크 미...\n52,000원',
         link: 'https://www.yslbeautykr.com/ko_KR/home',
@@ -65,6 +67,7 @@ const FashionAll = () => {
     {
       image: jennie3,
       title: '블랙핑크 제니\n메이크업 정보 모음',
+      date: '2025.07.18',
       tag: {
         text: '입생로랑 메이크 미...\n52,000원',
         link: 'https://www.maccosmetics.co.kr/product/1368/60284/samples/powder-kiss-lipstick',
@@ -87,6 +90,7 @@ const FashionAll = () => {
     {
       image: gd1,
       title: '지드래곤\n패션 정보 모음',
+      date: '2025.07.15',
       tag: {
         text: 'G-DRAGON Power...\n155,000원',
         link: 'https://kream.co.kr/products/449068?srsltid=AfmBOop5Ikm_mjBApRYQ17Om5-FNL2gUfOXws4Vd2OChrI_pbkvy0_qD',
@@ -106,6 +110,7 @@ const FashionAll = () => {
     {
       image: gd2,
       title: '지드래곤\n패션 정보 모음',
+      date: '2025.07.15',
       tag: {
         text: '엘피 버지니아 메리 제...\n171,000원',
         link: 'https://kream.co.kr/products/548835?srsltid=AfmBOopS1Dlpz0GNsY2tQ-AQxCW8hHlDjr7Xg8JJn3O8fV7TKlZ2cS6S',
@@ -125,6 +130,7 @@ const FashionAll = () => {
     {
       image: gd3,
       title: '지드래곤\n패션 정보 모음',
+      date: '2025.07.15',
       tag: {
         text: 'Jonas wood X Louis...\nBidding closed',
         link: 'https://www.artsy.net/artist/jonas-wood-x-louis-vuitton',
@@ -147,6 +153,7 @@ const FashionAll = () => {
     {
       image: joy1,
       title: '조이 인스타 속\n데일리룩 모음',
+      date: '2025.07.07',
       tag: {
         text: '스컬프터 Farm Cor...\n78,400원',
         link: 'https://www.musinsa.com/products/5156581?utm_source=google_shopping&utm_medium=sh&utm_campaign=pmax_ongoing&source=GOSHSAP001&gad_source=1&gad_campaignid=22483694585&gbraid=0AAAAADl2rsLU8_r5kJ0I66yKI_XwLR86s&gclid=Cj0KCQjwhO3DBhDkARIsANxrhTp_hcMm9SN0kRLSjZslDTljKQZ_fGJNbv9GscABMnodux5Cch_OqYQaAtdBEALw_wcB',
@@ -166,6 +173,7 @@ const FashionAll = () => {
     {
       image: joy2,
       title: '조이 인스타 속\n데일리룩 모음',
+      date: '2025.07.07',
       tag: {
         text: 'Jacqumus Le Chiq...\n$780',
         link: 'https://www.jacquemus.com/en_fr/chiquitos-bags',
@@ -185,6 +193,7 @@ const FashionAll = () => {
     {
       image: joy3,
       title: '조이 인스타 속\n데일리룩 모음',
+      date: '2025.07.07',
       tag: {
         text: 'PROJEKT PRODUKT\n295,000원',
         link: 'https://www.yslbeautykr.com/ko_KR/home',
