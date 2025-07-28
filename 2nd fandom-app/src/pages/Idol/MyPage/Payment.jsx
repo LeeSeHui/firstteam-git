@@ -60,7 +60,7 @@ const Payment = () => {
 
   return (
     <div className="container">
-      <BackButton label="결제내역(멤버십 관리)" />
+      <BackButton label="결제내역" />
 
       {/* 채널 추가 버튼 */}
       <div className="add-artist-button">

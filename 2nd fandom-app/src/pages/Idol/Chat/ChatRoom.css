@@ -18,7 +18,7 @@
 /* 이미지 메시지용 시간 */
 .image-time {position: absolute; right: -40px; bottom: 5px;}
 
-.chat-photo {width: 100%;max-width: 250px; object-fit: cover;}
+.chat-photo {width: 85%;max-width: 250px; object-fit: cover; display: block; margin: 0 auto;}
 
 .chat-time { font-size: 12px;}
 
@@ -30,7 +30,30 @@
     gap: 10px;
     background: #fff;
     border-top: 1px solid #eee;
-  }
+}
+
+
+
+
+.chatroom-input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
   
   /* 노란 원 버튼 (＋) */
   .circle-btn {
@@ -77,7 +100,30 @@
     cursor: pointer;
 
   }
-  
+
+
+/* 답장 */
+.chatroom-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 공통 말풍선 */
+.chat-bubble {
+  display: flex;
+  align-items: flex-start;
+  max-width: 75%;
+}
+
+/* 오른쪽 말풍선일 때 정렬 확실히 */
+.chat-bubble.user {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+
+
   /* ChatRoom.css에 추가 */
   .fade-in {
     opacity: 0;
@@ -91,6 +137,7 @@
       transform: translateY(0); /* 원래 위치로 */
     }
   }
+  
 
 .dark .chatroom-container {background: #151515;}
 .dark .chat-text {background: #212121; font-weight: 300;}

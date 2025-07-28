@@ -23,7 +23,7 @@ const Collection = () => {
 
   return (
     <div className="container">
-    <BackButton label="마이 컬렉션" onPlusClick={handlePlusClick} />
+    <BackButton label="나의 컬렉션" onPlusClick={handlePlusClick} />
 
     <div className="collection-grid">
         {/* 상단 4개 */}
