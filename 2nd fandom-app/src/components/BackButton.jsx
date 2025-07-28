@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Backbutton.css';
-import backbutton from '../assets/backbutton.png';
-import dark_backbutton from '../assets/dark/dark_backbutton.png';
 
 const BackButton = ({
   to,
@@ -11,30 +9,33 @@ const BackButton = ({
   editText,
   onEditClick,
   onClick,
-  className = '', // ✅ className 받기
+  className = '',
 }) => {
   const navigate = useNavigate();
   const isDarkMode = document.body.classList.contains('dark');
 
   const handleBack = () => {
-    if (onClick) {
-      onClick();
-      return;
-    }
-
-    if (to) {
-      navigate(to);
-    } else {
-      navigate(-1);
-    }
+    if (onClick) return onClick();
+    if (to) navigate(to);
+    else navigate(-1);
   };
 
   return (
-    <div className={`ButtonContainer ${className}`}> {/* ✅ className 적용 */}
+    <div className={`ButtonContainer ${className}`}>
       <button className="back-arrow" onClick={handleBack}>
-        <img
-        src={isDarkMode ? dark_backbutton : backbutton}
-        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke={isDarkMode ? '#fff' : '#444'}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
       </button>
 
       <span className="header-title">{label}</span>

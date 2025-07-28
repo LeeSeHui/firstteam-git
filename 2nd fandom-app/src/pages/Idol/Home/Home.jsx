@@ -213,7 +213,7 @@ const Home = () => {
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=yFTAYXDTjqI" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
-            <p>'최초 공개' NewJeans의 HOT 컴백 무대</p>
+            <p>'최초 공개' NewJeans의 HOT 컴백 무대 @SHOWMUSICBANK</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb2} alt="video2" />

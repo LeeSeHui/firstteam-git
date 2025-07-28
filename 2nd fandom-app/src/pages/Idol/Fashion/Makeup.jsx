@@ -95,7 +95,7 @@ const Makeup = () => {
       subImages: [
         {
           img: lenz1_sub,
-          name: 'Hapa Kristin 크리스틴 원데이 컬러렌즈',
+          name: 'Hapa Kristin 컬러렌즈',
           detail: 'gray',
           price: '19,000원',
           review: 130,
