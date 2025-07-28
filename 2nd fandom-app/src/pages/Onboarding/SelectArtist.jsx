@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './SelectArtist.css';
 
-// components
 import BackButton from '../../components/BackButton';
 import YellowButton from '../../components/YellowButton';
 
@@ -24,8 +23,6 @@ import artist15 from '../../assets/artist-select/artist15.png';
 import artist16 from '../../assets/artist-select/artist16.png';
 import check from '../../assets/artist-select/check.png';
 
-// 필요한 이미지 추가
-
 const artistData = [
   { id: 1, img: artist1, name: "IRENE" },
   { id: 2, img: artist2, name: "LE SSERAFIM" },
@@ -34,8 +31,8 @@ const artistData = [
   { id: 5, img: artist5, name: "TAEYONG" },
   { id: 6, img: artist6, name: "TAEMIN" },
   { id: 7, img: artist7, name: "JENNIE" },
-  { id: 8, img: artist8, name: "aespa" },
-  { id: 9, img: artist9, name: "NewJeans" },
+  { id: 8, img: artist9, name: "NewJeans" },
+  { id: 9, img: artist8, name: "aespa" },
   { id: 10, img: artist10, name: "RIIZE" },
   { id: 11, img: artist11, name: "G-Dragon" },
   { id: 12, img: artist12, name: "IU" },
@@ -45,7 +42,6 @@ const artistData = [
   { id: 16, img: null },
   { id: 17, img: artist16, name: "LISA" },
   { id: 18, img: null },
-  // ... 더 추가
 ];
 
 const SelectArtist = () => {
@@ -63,6 +59,7 @@ const SelectArtist = () => {
       setSelected([...selected, id]);
     }
   };
+
   const handleBack = () => navigate(-1);
 
   const handleNext = () => {
@@ -74,70 +71,46 @@ const SelectArtist = () => {
     }
   };
 
-  // 3줄로 데이터 나누기
   const row1 = artistData.filter((_, idx) => idx % 3 === 0);
   const row2 = artistData.filter((_, idx) => idx % 3 === 1);
   const row3 = artistData.filter((_, idx) => idx % 3 === 2);
 
+  const renderCard = (artist) => (
+    <div
+      key={artist.id}
+      className={`artist-card ${selected.includes(artist.id) ? 'selected' : ''} ${artist.id === 8 ? 'has-dot' : ''}`}
+      onClick={() => toggleSelect(artist.id)}
+    >
+      <img src={artist.img} alt={artist.name} />
+      {selected.includes(artist.id) && (
+        <div className="overlay">
+          <p className="artist-name">{artist.name}</p>
+          <span className="check">
+            <img src={check} alt="check" />
+          </span>
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <div className="artist-select-container">
       <div className='header'>
-      <BackButton onClick={handleBack} />
+        <BackButton onClick={handleBack} />
       </div>
       <h2>당신의 아티스트를<br />선택해 주세요</h2>
       <p>복수 선택 가능해요</p>
-      <div class="gradient-border-wrapper2">
-        <input class="gradient-input" type="text" placeholder="원하는 아티스트를 검색해보세요." />
+      <div className="gradient-border-wrapper2">
+        <input className="gradient-input" type="text" placeholder="원하는 아티스트를 검색해보세요." />
       </div>
-      
 
       <div className="scroll-wrapper2">
-        <div className="artist-row2">{row1.map((artist) => (
-          <div key={artist.id} className={`artist-card ${selected.includes(artist.id) ? 'selected' : ''}`} onClick={() => toggleSelect(artist.id)}>
-            <img src={artist.img} alt={artist.name} />
-            {selected.includes(artist.id) && (
-              <div className="overlay">
-                <p className="artist-name">{artist.name}</p>
-                <span className="check">
-                  <img src={check} alt="check" />
-                </span>
-              </div>
-            )}
-          </div>
-        ))}</div>
-
-        <div className="artist-row2 middle-row">{row2.map((artist) => (
-          <div key={artist.id} className={`artist-card ${selected.includes(artist.id) ? 'selected' : ''}`} onClick={() => toggleSelect(artist.id)}>
-            <img src={artist.img} alt={artist.name} className="artist-img" />
-            {selected.includes(artist.id) && (
-              <div className="overlay">
-                <p className="artist-name">{artist.name}</p>
-                <span className="check">
-                  <img src={check} alt="check" />
-                </span>
-              </div>
-            )}
-
-          </div>
-        ))}</div>
-
-        <div className="artist-row2">{row3.map((artist) => (
-          <div key={artist.id} className={`artist-card ${selected.includes(artist.id) ? 'selected' : ''}`} onClick={() => toggleSelect(artist.id)}>
-            <img src={artist.img} alt={artist.name} className="artist-img" />
-            {selected.includes(artist.id) && (
-              <div className="overlay">
-                <p className="artist-name">{artist.name}</p>
-                <span className="check">
-                  <img src={check} alt="check" />
-                </span>
-              </div>
-            )}
-
-          </div>
-        ))}</div>
+        <div className="artist-row2">{row1.map(renderCard)}</div>
+        <div className="artist-row2 middle-row">{row2.map(renderCard)}</div>
+        <div className="artist-row2">{row3.map(renderCard)}</div>
       </div>
 
-      <YellowButton onClick={handleNext} label={'다음'}/>
+      <YellowButton onClick={handleNext} label={'다음'} />
     </div>
   );
 };

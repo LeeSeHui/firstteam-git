@@ -74,7 +74,7 @@ const Story = () => {
       {/* Skip 버튼: 마지막 페이지 제외 */}
       {!stories[currentPage].isLast && (
         <button className="skip-btn" onClick={handleSkip}>
-          건너뛰기
+          Skip
         </button>
       )}
 
