@@ -6,22 +6,6 @@
     font-size: 14px;
   }
   
-  /* 카드 상단 - 프로필 + 북마크 버튼 */
-  .feed-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  /* 프로필 영역 */
-  .profile-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
   .trot-profile-img {
     width: 50px;
     height: 50px;
@@ -69,11 +53,6 @@
   }
 
   
-  /* 좋아요 및 댓글 수 */
-  .post-footer {
-    margin-top: 10px;
-  }
-  
 
   .trot-like-counts {
     display: flex;
@@ -114,11 +93,7 @@
     vertical-align: middle;
   }
   
-  .bookmark-icon {
-    height: 24px;
-    width: 18px;
-    margin-bottom: 15px;
-  }
+
   
   .comment-meta {
     display: flex;
