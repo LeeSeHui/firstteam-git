@@ -1,5 +1,5 @@
 body {background: #ffffff;}
-.homeContainer {width: 100%;}
+.homeContainer { width: 100%}
 .main-logo { padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
 .main-logo .main {width: 100px; height: auto;}
 .main-logo .alarm {width: 35px; height: 100%;}
