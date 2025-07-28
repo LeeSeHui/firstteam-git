@@ -13,8 +13,8 @@ import check_icon from '../../../assets/Home/check.png'
 import search from '../../../assets/dm/search.png'
 import dark_search from '../../../assets/dark/dark_search.png'
 
-import roseImg from '../../../assets/dm/img1.png';
-import jennieImg from '../../../assets/dm/img2.png';
+import DANIELLEImg from '../../../assets/dm/img1.png';
+import MINJIImg from '../../../assets/dm/img2.png';
 import haniImg from '../../../assets/dm/img3.png';
 import haerinImg from '../../../assets/dm/img4.png';
 import img5 from '../../../assets/dm/img5.png'
@@ -33,14 +33,14 @@ const slideData = [
 ];
 
 const profileData = [
-  { name: 'ROSE', img: roseImg, hasNew: false },
-  { name: 'JENNIE', img: jennieImg, hasNew: true },
+  { name: 'DANIELLE', img: DANIELLEImg, hasNew: false },
+  { name: 'HAERIN', img: haerinImg, hasNew: true },
   { name: 'HANI', img: haniImg, hasNew: false },
-  { name: 'HAERIN', img: haerinImg, hasNew: false },
+  { name: 'MINJI', img: MINJIImg , hasNew: false },
 ];
 
 const recommendArtists = [
-  { id: 1, name: '유진', en: 'YUJIN', time: '방금', img: img5 },
+  { id: 1, name: '혜인', en: ' HYEIN ', time: '방금', img: img5 },
   { id: 2, name: '원영', en: 'WONYOUNG', time: '2시간 전', img: img6 },
   { id: 3, name: '예지', en: 'YEJI', time: '5시간 전', img: img7 },
   { id: 4, name: '카리나', en: 'KARINA', time: '18시간 전', img: img8 },

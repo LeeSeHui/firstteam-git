@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import sampleImg from '../../../assets/dm/img2.png';
+import haerinImg from '../../../assets/dm/img4.png';
+import sampleImg from '../../../assets/dm/img4.png'; 
 import BackButton from '../../../components/BackButton';
 import './ChatRoom.css';
 import check from '../../../assets/Home/check.png';
@@ -34,13 +35,13 @@ const ChatRoom = () => {
         {/* 메시지 리스트 */}
         {visibleMessages >= 1 && (
           <div className="chat-bubble fade-in">
-            <img src={sampleImg} alt="profile" className="chat-avatar" />
+            <img src={haerinImg} alt="profile" className="chat-avatar" />
             <div className="chat-box">
               <div className="chat-sender">
-                JENNIE <img src={check} alt="check" className="check-icon" />
+                HAERIN <img src={check} alt="check" className="check-icon" />
               </div>
               <div className="chat-row">
-                <div className="chat-text">블링크 좋은 아침~! 뭐하고 있어?</div>
+                <div className="chat-text">버니즈 좋은 아침~!</div>
                 <div className="chat-time">09:20</div>
               </div>
             </div>
@@ -52,10 +53,10 @@ const ChatRoom = () => {
             <img src={sampleImg} alt="profile" className="chat-avatar" />
             <div className="chat-box">
               <div className="chat-sender">
-                JENNIE <img src={check} alt="check" className="check-icon" />
+                 HAERIN <img src={check} alt="check" className="check-icon" />
               </div>
               <div className="chat-row">
-                <div className="chat-text">나는 이제 촬영장 도착!</div>
+                <div className="chat-text">저는 지금 쉬는시간이에옹</div>
                 <div className="chat-time">09:20</div>
               </div>
             </div>
@@ -67,10 +68,10 @@ const ChatRoom = () => {
             <img src={sampleImg} alt="profile" className="chat-avatar" />
             <div className="chat-box">
               <div className="chat-sender">
-                JENNIE <img src={check} alt="check" className="check-icon" />
+                 HAERIN <img src={check} alt="check" className="check-icon" />
               </div>
               <div className="chat-row">
-                <div className="chat-text">얼른 뮤비 촬영 끝내고 만나자~😊</div>
+                <div className="chat-text">화보 예쁘게 찍어서 얼른 보여줄게요 💖</div>
                 <div className="chat-time">09:21</div>
               </div>
             </div>
@@ -82,7 +83,7 @@ const ChatRoom = () => {
             <img src={sampleImg} alt="profile" className="chat-avatar" />
             <div className="chat-box">
               <div className="chat-sender">
-                JENNIE <img src={check} alt="check" className="check-icon" />
+                 HAERIN <img src={check} alt="check" className="check-icon" />
               </div>
               <div className="chat-image">
                 <img src={dm_img} alt="chat" className="chat-photo" />
