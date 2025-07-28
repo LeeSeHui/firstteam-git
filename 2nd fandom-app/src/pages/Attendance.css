@@ -42,10 +42,16 @@
     width: 206px;
   }
 
-  .character-area img {
+  .attendance-character-area img {
     width: 85%;
   }
   
+.attendance-character-area {
+  display: flex;
+  justify-content: center; /* ✅ 가운데 정렬 */
+}
+
+
   /* 출석 이미지 */
   .attendance-character {
     text-align: center;

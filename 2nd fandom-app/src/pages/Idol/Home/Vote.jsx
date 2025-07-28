@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Vote.css';
 import '../../../index.css';
 import './../../../components/Popup.css';
@@ -35,6 +36,7 @@ const voteList = [
 ];
 
 const Vote = () => {
+   const navigate = useNavigate(); // ✅ 추가
   const [selectedVote, setSelectedVote] = useState(null);
   const [showConfirm, setShowConfirm] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -52,6 +54,7 @@ const Vote = () => {
   const handleClosePopup = () => {
     setShowPopup(false);
     setSelectedVote(null);
+   navigate('/idol/mypage');
   };
 
   return (
