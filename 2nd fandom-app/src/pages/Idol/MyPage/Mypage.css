@@ -78,6 +78,29 @@ color: #797979;}
   margin-right: 0;}
 .swiper-slide {flex-shrink: 0; width: 100% !important; height: auto;box-sizing: border-box;}
 
+/* 다음레벨버튼 */
+.level-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.level-buttons button {
+  background-color: #ffe066;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.level-buttons button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+
 /* 로그아웃 */
 .logout-btn {cursor: pointer;}
 
