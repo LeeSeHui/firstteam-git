@@ -4,19 +4,6 @@
 } */
 
 
-.feed-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.profile-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .profile-img {
   width: 45px;
   height: 45px;
@@ -64,20 +51,3 @@
   display: block;
   object-fit: cover;
 }
-
-.post-footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-
-
-.like-counts {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #595959;
-  font-weight: 500;
-}
-
