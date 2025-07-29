@@ -186,7 +186,11 @@ const MyPage = () => {
         </button>
         <button className="setting-button">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />
+<<<<<<< Updated upstream
           <span className="category-text">어플설정(다크모드)</span>
+=======
+          <span className="category-text">어플설정(다크모드 알림 설정)</span>
+>>>>>>> Stashed changes
           <div className="toggle-switch">
             <span
               className={`toggle-option ${darkMode ? 'active' : ''}`}

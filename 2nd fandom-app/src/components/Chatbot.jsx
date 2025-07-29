@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import useNickname from '../contexts/useNickname';
 import mascotImg from '../assets/mascot.png';
 import './Chatbot.css';
@@ -11,8 +12,6 @@ import plus from '../assets/chatbot_plusButton.png'
 const Chatbot = () => {
   const isDarkMode = document.body.classList.contains('dark');
   const { nickname } = useNickname();
-
-  // 상태관리
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
