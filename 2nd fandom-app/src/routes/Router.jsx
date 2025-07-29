@@ -74,7 +74,7 @@ const AppRouterContent = () => {
     '/idol/home/quiz',
     '/chatroom',
     '/story',
-    
+    '/idol/home/live'
 
   ];
 
