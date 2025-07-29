@@ -18,7 +18,7 @@ body * {font-family: "Pretendard", sans-serif;}
 
 #root {width: 100%; flex: 1; display: flex; flex-direction: column;}
 
-.container {width: 400px; padding: 90px 16px; box-sizing: border-box; margin: 0 auto; max-width: 100vw; overflow-x: hidden;}
+.container {width: 400px; padding: 20px 16px; box-sizing: border-box; margin: 0 auto; max-width: 100vw; overflow-x: hidden;}
 
 
 body.light {background-color: white; color: #494949;}

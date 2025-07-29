@@ -1,0 +1,43 @@
+.notice-list {
+    padding: 12px;
+  }
+  
+  .notice-item {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .notice-title {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-bottom: 3px;
+  }
+  
+  .arrow.up .chevron-icon {
+    transform: rotate(180deg);
+  }
+  
+  .arrow.down .chevron-icon {
+    transform: rotate(0deg);
+  }
+  
+  .notice-content {
+    padding: 0 16px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+
+  
