@@ -57,7 +57,8 @@ const Membership = () => {
   const handleUnlock = (id) => {
     if (!unlockedFeedIds.includes(id)) {
       setUnlockedFeedIds([...unlockedFeedIds, id]);
-      window.dispatchEvent(new Event('subscribed-event')); // 버튼 갱신용
+      sessionStorage.setItem('isSubscribed', 'true');
+      window.dispatchEvent(new Event('subscribed-event'));
     }
   };
 

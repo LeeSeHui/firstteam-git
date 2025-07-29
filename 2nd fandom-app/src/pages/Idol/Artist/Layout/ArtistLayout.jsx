@@ -7,21 +7,29 @@ import './ArtistLayout.css';
 const ArtistLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [subscribed, setSubscribed] = useState(false); // 이름 통일
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
-    // 새로고침 시 초기 상태 (항상 false)
-    setSubscribed(false);
-
+    // 1️⃣ 경로 따라 상태 초기화
+    if (
+      location.pathname === '/idol/artist/highlight' &&
+      location.state?.subscribed
+    ) {
+      setIsSubscribed(true);
+    } else {
+      setIsSubscribed(false);
+    }
+  
+    // 2️⃣ 외부 이벤트로도 상태 업데이트 가능하게!
     const handleSubscribe = () => {
-      setSubscribed(true);
+      setIsSubscribed(true);
     };
-
-    // 이벤트 리스너 등록
     window.addEventListener('subscribed-event', handleSubscribe);
-    return () => window.removeEventListener('subscribed-event', handleSubscribe);
-  }, []);
-
+  
+    return () => {
+      window.removeEventListener('subscribed-event', handleSubscribe);
+    };
+  }, [location]);
   const ArtistMembership = () => navigate('/idol/home/membership');
 
   const navTabs = [
@@ -39,9 +47,9 @@ const ArtistLayout = () => {
         <div className="artistOverlay">
           <button
             onClick={ArtistMembership}
-            className={`membershipButton ${subscribed ? 'active' : ''}`}
+            className={`membershipButton ${isSubscribed ? 'active' : ''}`}
           >
-            {subscribed ? (
+            {isSubscribed ? (
               <>
                 <img src={checkIcon} alt="checkicon" className="checkIcon" />
                 Membership
