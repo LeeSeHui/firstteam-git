@@ -16,9 +16,11 @@ const Membership = () => {
   const toggleAgree = () => {
     setAgreed(!agreed);
   };
-
   const handleSubscribe = () => {
     if (agreed) {
+      // ✅ 상태 저장 + ArtistLayout에 알림 전송
+      sessionStorage.setItem('isSubscribed', 'true');
+      window.dispatchEvent(new Event('subscribed-event'));
       // 🎉 컨페티 팡!
       confetti({
         particleCount: 150,
@@ -73,7 +75,7 @@ const Membership = () => {
       </div>
 
       <div className="btn-box">
-        <button
+      <button
           className={`subscribe-btn ${agreed ? 'active' : ''}`}
           disabled={!agreed}
           onClick={handleSubscribe}
