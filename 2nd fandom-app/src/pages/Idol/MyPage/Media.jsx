@@ -58,10 +58,10 @@ const Media = () => {
 
 
   return (
-    <div className="container">
+    <div className="Media-container">
       <BackButton
         label="최근 본 미디어"
-        editText="편집"
+        editText=""
         onEditClick={() => console.log('편집 클릭됨')}
       />
 

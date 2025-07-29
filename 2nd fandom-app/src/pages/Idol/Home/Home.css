@@ -55,9 +55,35 @@ input:focus {border: none; outline: none;}
 .videoSection {padding: 34px 0 0 16px;}
 .videoSection > p {font-size: 16px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.3px;}
 .videoSwipe {display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 13px; height: 215px;}
-.videoCard { flex: 0 0 auto; scroll-snap-align: start; display: flex; flex-direction: column; width: 246px; height: 142px;}
-.videoCard img {width: 100%; height: 100%; border-radius: 12px; object-fit: cover;}
-.videoCard p {font-size: 14px; margin-top: 10px; font-weight: 450;}
+.videoCard {
+    position: relative;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    width: 246px;
+    height: 142px;
+  }
+  .videoCard img.videoThumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .videoCard img.playIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    pointer-events: none;
+  }
+  .videoCard p {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 450;
+  }
 
 .quiz-section {padding: 0 20px 20px 20px; width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box;}
 .quizCard {box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; padding: 16px; box-sizing: border-box; text-align: center; position: relative;}
@@ -78,7 +104,7 @@ input:focus {border: none; outline: none;}
 .voteText {position: absolute; bottom: 10px; left: 10px; color: #fff;}
 .voteText span {display: block; font-size: 14px; font-weight: 600; margin-top: -40px; margin-left: 8px;}
 
-.membershipSection { width: calc(100% - 32px); margin: 0 16px 150px; box-sizing: border-box;}
+.membershipSection { width: calc(100% - 32px); margin: 0 16px 90px; box-sizing: border-box;}
 .membershipCard {position: relative; border-radius: 16px; overflow: hidden; width: 100%; height: auto; cursor: pointer;}
 .membershipBg {width: 100%; height: auto; object-fit: cover; filter: brightness(80%);}
 .membershipOverlay {position: absolute; top: 50%; left: 25px; transform: translateY(-50%); width: 100%; height: auto; display: flex; flex-direction: column; border-radius: 12px;}

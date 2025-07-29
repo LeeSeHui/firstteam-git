@@ -27,6 +27,7 @@ import photo03 from '../../../assets/Home/photo03.png';
 import thumb1 from '../../../assets/Home/youtube01.png';
 import thumb2 from '../../../assets/Home/youtube02.png';
 import thumb3 from '../../../assets/Home/youtube03.png';
+import playIcon from '../../../assets/Home/play.png';
 
 import vote1 from '../../../assets/Home/vote1.png'
 import vote2 from '../../../assets/Home/vote2.png'
@@ -212,15 +213,18 @@ const Home = () => {
         <p>JUST FOR {nickname} 💖</p>
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=yFTAYXDTjqI" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb1} alt="video1" />
+            <img src={thumb1} alt="video1" className="videoThumb" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>'최초 공개' NewJeans의 HOT 컴백 무대 @SHOWMUSICBANK</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb2} alt="video2" />
+            <img src={thumb2} alt="video2" className="videoThumb" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
           </a>
           <a href="https://www.youtube.com/watch?v=7FbDF0wWe_8" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb3} alt="video3" />
+            <img src={thumb3} alt="video3" className="videoThumb" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>뉴진스 'Right Now' <br />Bonus Ver @뮤직뱅크</p>
           </a>
         </div>

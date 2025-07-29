@@ -87,12 +87,13 @@ color: #797979;}
 }
 
 .level-buttons button {
-  background-color: #ffe066;
+  background-color: #FFD700;
   border: none;
   padding: 6px 16px;
   border-radius: 10px;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
+  color: #797979;
 }
 
 .level-buttons button:disabled {
