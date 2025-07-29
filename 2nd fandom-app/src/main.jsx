@@ -10,12 +10,12 @@ import { ThemeProvider } from './contexts/ThemeContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <NicknameProvider>
-        <ThemeProvider>
+    <NicknameProvider>
+      <ThemeProvider>
+        <BrowserRouter>
           <App />
-        </ThemeProvider>
-      </NicknameProvider>
-    </BrowserRouter>
+        </BrowserRouter>
+      </ThemeProvider>
+    </NicknameProvider>
   </StrictMode>
 );

@@ -143,5 +143,20 @@
   letter-spacing: -0.5px;
 }
 
+
+.modal-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.modal-btns button {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
 /* 다크모드 */
 .dark .popUp {background-color: #212121;}
+

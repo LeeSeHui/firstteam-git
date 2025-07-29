@@ -121,11 +121,23 @@ const Chat = () => {
       </div>
 
       {/* 추천 아티스트 */}
-      <div className="recommend-list">
+        <div className="recommend-list">
         <p className="section-title">추천 아티스트</p>
         {recommendArtists.map((a) => (
-          <div className="artist-item" key={a.id}>
-            <img src={a.img} alt={a.name} className="artist-img2" />
+          <div
+            className="artist-item"
+            key={a.id}
+            onClick={() => {
+              if (a.en.trim() === 'HYEIN') {
+                navigate('/idol/artist/highlight');
+              }
+            }}
+            style={{ cursor: 'pointer' }}
+          >
+            <div className="artist-img-wrap">
+              <img src={a.img} alt={a.name} className="artist-img2" />
+              {a.en.trim() === 'HYEIN' && <span className="red-dot2" />}
+            </div>
             <div className="artist-info">
               <p className="artist-name2">
                 {a.name} <img src={check_icon} alt="v" className="check-icon" />

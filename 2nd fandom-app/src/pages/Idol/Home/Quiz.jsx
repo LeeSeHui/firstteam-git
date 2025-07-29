@@ -11,6 +11,7 @@ import wrongImg from '../../../assets/Quiz/wrong.png';
 import Popup from '../../../components/Popup';
 import YellowButton from '../../../components/YellowButton';
 import BackButton from '../../../components/BackButton';
+import confetti from 'canvas-confetti'; // ✅ 추가
 
 const quizData = [
   {
@@ -55,6 +56,19 @@ const Quiz = () => {
     if (selectedOption === null) return;
     const correct = quiz.options[selectedOption].isCorrect;
     setIsCorrect(correct);
+
+    if (correct) {
+      // ✅ 정답일 때만 컨페티 팡!
+      confetti({
+        particleCount: 200,
+        spread: 160,
+        startVelocity: 45,
+        gravity: 0.8,
+        origin: { x: 0.5, y: 0.6 },
+        colors: ['#FFD700', '#FF69B4', '#00e5ff'],
+      });
+    }
+
     setShowModal(true);
   };
 
@@ -74,6 +88,7 @@ const Quiz = () => {
       <h2>{quiz.question}</h2>
       {quiz.subtitle && <p className="quizSubtitle">{quiz.subtitle}</p>}
       <p className="quizExplain">퀴즈의 정답을 맞히시면 특별한 선물이 지급됩니다!</p>
+
       {quiz.img && quiz.type === "text" && (
         <img src={quiz.img} alt="quiz" className="quizMainImage" />
       )}

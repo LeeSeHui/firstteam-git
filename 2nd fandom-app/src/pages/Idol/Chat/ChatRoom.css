@@ -1,6 +1,7 @@
 .chatroom-container {margin: 0 auto; display: flex; flex-direction: column; height: 100vh; background: #fff; padding: 16px; box-sizing: border-box; }
 
 .chatroom-body {width: 100%; margin: 0 auto; flex: 1;  margin-top: 12px; }
+.chatroom-body { flex: 1;overflow-y: auto;  padding-bottom: 80px;  }
 
 .chat-bubble { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 17px; }
 
@@ -8,17 +9,18 @@
 
 .chat-box { display: flex; flex-direction: column; }
 
-.chat-sender { font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 4px;}
+.chat-sender { font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 4px;}
 
-.chat-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 6px; }
+.chat-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 6px;}
 
-.chat-text { box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); padding: 10px 14px; border-radius: 20px; font-size: 14px; line-height: 1.5; max-width: 70vw; word-wrap: break-word; }
 
-.chat-image {position: relative; margin-top: 8px;  border-radius: 0 16px 16px 16px; padding: 16px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);}
+.chat-text { box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 10px 14px; border-radius: 20px; font-size: 14px; line-height: 1.5; max-width: 70vw; word-wrap: break-word; }
+
+.chat-image {position: relative; margin-top: 8px;  border-radius: 0 16px 16px 16px; padding: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
 /* 이미지 메시지용 시간 */
 .image-time {position: absolute; right: -40px; bottom: 5px;}
 
-.chat-photo {width: 100%;max-width: 250px; object-fit: cover;}
+.chat-photo {width: 85%;max-width: 250px; object-fit: cover; display: block; margin: 0 auto;}
 
 .chat-time { font-size: 12px;}
 
@@ -30,7 +32,30 @@
     gap: 10px;
     background: #fff;
     border-top: 1px solid #eee;
-  }
+}
+
+
+
+
+.chatroom-input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
   
   /* 노란 원 버튼 (＋) */
   .circle-btn {
@@ -77,7 +102,30 @@
     cursor: pointer;
 
   }
-  
+
+
+/* 답장 */
+.chatroom-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 공통 말풍선 */
+.chat-bubble {
+  display: flex;
+  align-items: flex-start;
+  max-width: 75%;
+}
+
+/* 오른쪽 말풍선일 때 정렬 확실히 */
+.chat-bubble.user {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+
+
   /* ChatRoom.css에 추가 */
   .fade-in {
     opacity: 0;
@@ -91,6 +139,7 @@
       transform: translateY(0); /* 원래 위치로 */
     }
   }
+  
 
 .dark .chatroom-container {background: #151515;}
 .dark .chat-text {background: #212121; font-weight: 300;}

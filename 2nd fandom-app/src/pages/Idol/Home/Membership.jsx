@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ 추가
+import { useNavigate } from 'react-router-dom';
 import BackButton from '../../../components/BackButton';
 import character from '../../../assets/Home/service-ch.png';
 import check from '../../../assets/Home/check-icon.png';
 import checkActive from '../../../assets/artist/check-active.png';
+import confetti from 'canvas-confetti'; // ✅ 추가
 
 import './Membership.css';
 import '../../../index.css';
 
-
 const Membership = () => {
   const [agreed, setAgreed] = useState(false);
-  const navigate = useNavigate(); // ✅ 추가
+  const navigate = useNavigate();
 
   const toggleAgree = () => {
     setAgreed(!agreed);
@@ -19,7 +19,22 @@ const Membership = () => {
 
   const handleSubscribe = () => {
     if (agreed) {
-      navigate('/idol/artist/highlight');
+      // 🎉 컨페티 팡!
+      confetti({
+        particleCount: 150,
+        spread: 180,
+        startVelocity: 40,
+        gravity: 0.8,
+        ticks: 200,
+        origin: { x: 0.5, y: 0.7 },
+        colors: ['#a0e7e5', '#b4f8c8', '#fbe7c6', '#ffaecc'],
+        shapes: ['circle', 'square'],
+      });
+
+      // 1.5초 후 페이지 이동
+      setTimeout(() => {
+        navigate('/idol/artist/highlight');
+      }, 1000);
     }
   };
 
@@ -61,7 +76,7 @@ const Membership = () => {
         <button
           className={`subscribe-btn ${agreed ? 'active' : ''}`}
           disabled={!agreed}
-          onClick={handleSubscribe} // ✅ 클릭 시 이동
+          onClick={handleSubscribe}
         >
           구독하기
         </button>
