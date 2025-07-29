@@ -159,7 +159,7 @@ const { darkMode, toggleTheme } = useTheme(); // ✅ 먼저 선언
 
         <button className="setting-button">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />
-          <span className="category-text">다크모드</span>
+          <span className="category-text">화면 모드 설정(다크모드)</span>
           <div className="toggle-switch">
             <span
               className={`toggle-option ${darkMode ? 'active' : ''}`}
