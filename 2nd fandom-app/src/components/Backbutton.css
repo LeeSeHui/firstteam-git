@@ -15,6 +15,19 @@
   width: 30px;
   height: 30px;
 }
+<<<<<<< Updated upstream
+=======
+
+
+.ButtonContainer {
+  display: flex;
+  align-items: baseline;
+  height: 50px;
+  width: 100%;      /* ✅ .container의 padding 내부까지 확장 */
+  box-sizing: border-box;
+}
+
+>>>>>>> Stashed changes
 
 /* 마이컬렉션 + */
 

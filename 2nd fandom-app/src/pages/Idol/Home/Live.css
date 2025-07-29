@@ -55,7 +55,7 @@
   /* 댓글 영역 */
   .live-comments {
     position: absolute;
-    bottom: 82px;
+    bottom: 119px;
     left: 16px;
     width: calc(100% - 32px);
     display: flex;
@@ -83,7 +83,7 @@
   .live-icons {
     position: absolute;
     right: 26px;
-    bottom: 85px; /* 댓글 입력창 위로 띄우기 */
+    bottom: 120px; /* 댓글 입력창 위로 띄우기 */
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -91,15 +91,15 @@
   }
   
   .live-icons img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
   }
   
 
   .live-comments-box {
     position: absolute;
-    bottom: 0;
+    bottom: 35px;
     left: 0;
     width: 100%;
     padding: 10px 16px;
@@ -129,10 +129,10 @@
     padding: 10px 16px;
     border: none;
     border-radius: 30px;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 500;
     background: rgba(255, 255, 255, 0.6);
     outline: none;
-    height: 55px;
+    height: 43px;
   }
   
