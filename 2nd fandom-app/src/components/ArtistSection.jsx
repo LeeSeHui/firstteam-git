@@ -27,6 +27,8 @@ const getTimeAgo = (timestamp) => {
 };
 
 const ArtistSection = ({
+  nickname,
+  handleDeleteComment,
   profileImage,
   artistName,
   isVerified,
@@ -155,10 +157,22 @@ const ArtistSection = ({
         <div className="commentRow" key={idx}>
           <div className="commentText">
             <div className="comment-meta">
-              <span className="username">{comment.username.nickname}</span>
+            <span className="username">{comment.username.nickname}</span>
               {comment.createdAt && (
                 <span className="created-at sub-color">{getTimeAgo(comment.createdAt)}</span>
               )}
+
+        
+{nickname === comment.username.nickname && (
+  <button
+  className="delete-comment-btn"
+  onClick={() => handleDeleteComment(idx)}
+>
+  삭제
+</button>
+
+  
+)}
             </div>
             <span className="message">{comment.message}</span>
           </div>

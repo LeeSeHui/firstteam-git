@@ -189,6 +189,7 @@ const MyPage = () => {
 
           <span className="category-text">어플설정(다크모드)</span>
 
+
           <div className="toggle-switch">
             <span
               className={`toggle-option ${darkMode ? 'active' : ''}`}
