@@ -1,6 +1,7 @@
 .chatroom-container {margin: 0 auto; display: flex; flex-direction: column; height: 100vh; background: #fff; padding: 16px; box-sizing: border-box; }
 
 .chatroom-body {width: 100%; margin: 0 auto; flex: 1;  margin-top: 12px; }
+.chatroom-body { flex: 1;overflow-y: auto;  padding-bottom: 80px;  }
 
 .chat-bubble { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 17px; }
 
@@ -10,9 +11,12 @@
 
 .chat-sender { font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 4px;}
 
-.chat-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 6px; }
+.chat-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 6px;}
 
-.chat-text { box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); padding: 10px 14px; border-radius: 20px; font-size: 14px; line-height: 1.5; max-width: 70vw; word-wrap: break-word; }
+.chat-text { box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); padding: 10px 14px; border-radius: 20px; font-size: 14px; line-height: 1.5; max-width: 400px;; word-wrap: break-word;}
+
+.chat-text {box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); padding: 10px 14px; border-radius: 20px; font-size: 14px;
+line-height: 1.5; max-width: max-content; white-space: nowrap; word-break: keep-all;}
 
 .chat-image {position: relative; margin-top: 8px;  border-radius: 0 16px 16px 16px; padding: 16px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);}
 /* 이미지 메시지용 시간 */

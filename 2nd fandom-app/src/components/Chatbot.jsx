@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import useNickname from '../contexts/useNickname';
 import mascotImg from '../assets/mascot.png';
 import './Chatbot.css';
@@ -7,6 +8,11 @@ import X_button from '../assets/X_button.png'
 import plus from '../assets/chatbot_plusButton.png'
 
 const Chatbot = () => {
+const location = useLocation();
+if (location.pathname === '/idol/home/live') {
+  return null;
+}
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');

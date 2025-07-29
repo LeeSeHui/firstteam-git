@@ -9,7 +9,7 @@ import dm_icon from '../../../assets/dm/icon.png';
 import dm_plusIcon from '../../../assets/dm/dm-plusIcon.png';
 
 const autoReplies = [
-  '오늘도 힘내세요! 💪',
+  '오늘도 화이팅!! 💪',
   '버니즈 보고싶다ㅜㅜ 💖'
 ];
 
@@ -147,10 +147,14 @@ const ChatRoom = () => {
                     <img src={check} alt="check" className="check-icon" />
                   )}
                 </div>
-                <div className="chat-row">
-                  <div className="chat-text">
-                    {msg.text}
-                  </div>
+                 <div className="chat-row" style={{
+                  display: 'flex',
+                  flexDirection: msg.sender === 'user' ? 'row-reverse' : 'row',
+                  alignItems: 'flex-end',
+                  gap: '6px'
+                }}>
+                  {/* 시간 위치만 다르게 */}
+                  <div className="chat-text">{msg.text}</div>
                   <div className="chat-time">{msg.time}</div>
                 </div>
               </div>
