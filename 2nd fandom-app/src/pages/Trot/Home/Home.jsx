@@ -28,6 +28,8 @@ import photo03 from '../../../assets/trot/home/photo03.png';
 import thumb1 from '../../../assets/trot/home/youtube01.png';
 import thumb2 from '../../../assets/trot/home/youtube02.png';
 import thumb3 from '../../../assets/trot/home/youtube03.png';
+import playIcon from '../../../assets/Home/play.png';
+
 import vote01 from '../../../assets/trot/home/vote1.png';
 import vote02 from '../../../assets/trot/home/vote2.png';
 import vote03 from '../../../assets/trot/home/vote3.png';
@@ -131,7 +133,7 @@ const Home = () => {
   };
 
   return (
-    <div className="homeContainer">
+    <div className="homeContainer trot">
       <div className="main-logo">
         <p className="img main"><img
           src={isDarkMode ? dark_logo : logo}
@@ -140,7 +142,7 @@ const Home = () => {
         <p className="img2 alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
       </div>
 
-      <div className="mypageSection Section" onClick={handleMypageClick}>
+      <div className="mypageSection Section trot" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
           <div className="artistButtons">
@@ -163,9 +165,28 @@ const Home = () => {
       <div className="liveSection">
         <p>LIVE NOW!</p>
         <div className="swipe">
-          <p className="liveImg" onClick={handleLiveClick}><img src={live01} alt="" /></p>
-          <p className="liveImg" onClick={handleLiveClick}><img src={live02} alt="" /></p>
-          <p className="liveImg" onClick={handleLiveClick}><img src={live03} alt="" /></p>
+        <div className="liveImg" onClick={handleLiveClick}>
+          <img src={live02} alt="" />
+          <span className="liveBadge3">LIVE</span>
+          <div className="liveTextBox">
+            <p className="trot-artist">임영웅</p>
+            <p className="trot-title">미스터 트롯 13화<br />본방사수!</p>
+          </div>
+        </div>
+        <div className="liveImg" onClick={handleLiveClick}>
+          <img src={live01} alt="" />
+          <div className="liveTextBox">
+            <p className="trot-artist">정동원</p>
+            <p className="trot-title">KBS 연예대상<br />뒷이야기</p>
+          </div>
+        </div>
+        <div className="liveImg" onClick={handleLiveClick}>
+          <img src={live03} alt="" />
+          <div className="liveTextBox">
+            <p className="trot-artist">임영웅</p>
+            <p className="trot-title">MBC 생방 라디오<br />8/1 13:00</p>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -193,14 +214,17 @@ const Home = () => {
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>[미스터트롯] 젊은 여자 트로트<br />가수 노래 모음집</p>
           </a>
           <a href="https://www.youtube.com/watch?v=o9DhvbqYzns" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb2} alt="video2" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>[미스터트롯] 레전드 무대만 <br />쏙쏙 담은 영상 Zip</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb3} alt="video3" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>[미스터트롯] 손빈<br />아 ‘마지막 잎새’♪...</p>
           </a>
         </div>
@@ -209,37 +233,43 @@ const Home = () => {
       <TrotQuizSection handleQuizClick={handleQuizClick} />
 
       <div className="voteSection">
-        <div className="swipe vote">
-          <div className="voteRow">
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <img src={vote01} alt="vote1" />
-              <div className="voteText"><span>7월 첫째주 <br />당신의 마음을 울린 가수는?</span></div>
+              <div className="swipe vote">
+                <div className="voteRow">
+                  <div className="voteCard" onClick={handleVoteCardClick}>
+                    <p className="trot-vote-tit">투표 D-3</p>
+                    <img src={vote01} alt="" />
+                    <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표</span></div>
+                  </div>
+                  <div className="voteCard" onClick={handleVoteCardClick}>
+                  <p className="trot-vote-tit">투표 D-3</p>
+                  <img src={vote02} alt="" />
+                    <div className="trot-voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?</span></div>
+                  </div>
+                  <div className="voteCard" onClick={handleVoteCardClick}>
+                  <p className="trot-vote-tit">투표 D-3</p>
+                  <img src={vote03} alt="" />
+                    <div className="trot-voteText"><span>[600회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
+                  </div>
+                </div>
+                <div className="voteRow offset">
+                  <div className="voteCard" onClick={handleVoteCardClick}>
+                    <p className="trot-vote-tit">투표 D-3</p>
+                    <img src={vote04} alt="" />
+                    <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
+                  </div>
+                  <div className="voteCard" onClick={handleVoteCardClick}>
+                    <p className="trot-vote-tit">투표 D-3</p>
+                    <img src={vote05} alt="" />
+                    <div className="trot-voteText"><span>[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
+                  </div>
+                  <div className="voteCard" onClick={handleVoteCardClick}>
+                    <p className="trot-vote-tit">투표 D-3</p>
+                    <img src={vote06} alt="" />
+                    <div className="trot-voteText"><span>감성 가득 셀카장인 <br /> 여자 아이돌은?</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <img src={vote02} alt="vote2" />
-              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 가수는?</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <img src={vote05} alt="vote5" />
-              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 가수는?</span></div>
-            </div>
-          </div>
-          <div className="voteRow offset">
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <img src={vote03} alt="vote3" />
-              <div className="voteText"><span>당신의 마음을 울린 가수는?</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <img src={vote04} alt="vote4" />
-              <div className="voteText"><span>당신의 마음을 울린 가수는? <br /> K-TROT 1위 후보 투표</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <img src={vote06} alt="vote6" />
-              <div className="voteText"><span>당신의 마음을 울린 가수는? <br /> K-TROT 1위 후보 투표</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>

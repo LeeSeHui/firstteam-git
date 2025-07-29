@@ -21,7 +21,7 @@ body {background: #ffffff;}
 .liveBadge::before {content: ''; position: absolute; background: red; width: 4px; height: 4px; border-radius: 50%; left: 12%; top: 50%; transform: translate(-8%, -50%);}
 .liveTextBox { position: absolute; bottom: 16px; left: 16px; color: white; text-align: left; }
 .liveTextBox .artist { font-size: 12px; margin-bottom: 2px; }
-.liveTextBox .title { font-size: 18px; font-weight: 600; }
+.liveTextBox .title { font-size: 16px; font-weight: 500; }
 
 
 /* artist */
@@ -83,13 +83,12 @@ input:focus {border: none; outline: none;}
     border-radius: 12px;
     object-fit: cover;
   }
+
   .videoCard img.playIcon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 36px;
-    height: 36px;
     pointer-events: none;
   }
   .videoCard p {
