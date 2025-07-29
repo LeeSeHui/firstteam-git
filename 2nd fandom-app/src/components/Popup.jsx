@@ -10,6 +10,7 @@ const Popup = ({
   unsubscribeImg,
   attendanceImg,
   onConfirm,
+  
 }) => {
   return (
     <div className="modalOverlay">
