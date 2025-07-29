@@ -147,6 +147,7 @@ const ChatRoom = () => {
                     <img src={check} alt="check" className="check-icon" />
                   )}
                 </div>
+
                  <div className="chat-row" style={{
                   display: 'flex',
                   flexDirection: msg.sender === 'user' ? 'row-reverse' : 'row',
@@ -155,7 +156,9 @@ const ChatRoom = () => {
                 }}>
                   {/* 시간 위치만 다르게 */}
                   <div className="chat-text">{msg.text}</div>
-                  <div className="chat-time">{msg.time}</div>
+
+                
+                 
                 </div>
               </div>
             </div>
