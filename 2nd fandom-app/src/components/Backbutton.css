@@ -18,7 +18,6 @@
 }
 
 
-
 .ButtonContainer {
   display: flex;
   align-items: baseline;
@@ -26,6 +25,7 @@
   width: 100%;      /* ✅ .container의 padding 내부까지 확장 */
   box-sizing: border-box;
 }
+
 
 /* 마이컬렉션 + */
 

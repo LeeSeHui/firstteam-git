@@ -151,7 +151,7 @@ const ArtistSection = ({
       {/* ✅ 댓글 영역 */}
       {isExpanded && (
   <div className="commentSection" onClick={(e) => e.stopPropagation()}>
-    <p className="commentCount sub-color">전체 댓글 {totalCommentCount}</p>
+    <p className="commentCount">전체 댓글 {totalCommentCount}</p>
     <div className="comments sub-color">
       {comments.map((comment, idx) => (
         <div className="commentRow" key={idx}>

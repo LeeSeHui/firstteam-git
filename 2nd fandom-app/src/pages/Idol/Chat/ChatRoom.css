@@ -65,7 +65,11 @@ line-height: 1.5; max-width: max-content; word-break: keep-all;}
 
   
   /* 노란 원 버튼 (＋) */
+<<<<<<< HEAD
+  .dm-circle-btn {
+=======
   .dm-circle-btn{
+>>>>>>> eb9d12828ad57e1e646965fe8bf51c97c8dd2078
     border-radius: 50%;
     background: #ffd400;
     border: none;

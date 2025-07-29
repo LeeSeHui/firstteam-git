@@ -1,9 +1,9 @@
 .welcome-container { display: flex; flex-direction: column; align-items: center;}
 .welcome-container h2 {font-size: 20px; font-weight: 600;}
-.welcome-container .sub {font-size: 16px; margin-bottom: 62px;}
-.level-text { font-size: 16px; color: #F3B643; font-weight: 500; margin-bottom: 60px; }
+.welcome-container .sub {font-size: 16px; margin-bottom: 60px;}
+.level-text { font-size: 16px; color: #F3B643; font-weight: 500; margin-bottom: 47px; }
 .image-box {width: 267px; padding: 4px; border-radius: 8px; margin-bottom: 20px; }
-.image-box img {width: 100%; height: auto;  object-fit: cover; }
+.image-box img {width: 93%; height: auto;  object-fit: cover; }
 .sub { font-size: 14px; color: #797979; font-weight: 500; margin-bottom: 40px; text-align: center; }
 
 .welcome-icon {display: inline-block; width: 30px; height: auto;}
