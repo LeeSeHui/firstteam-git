@@ -108,3 +108,5 @@
     color: #595959;
     font-weight: 500;
   }
+
+  .dark .alarm-date {color: #fff;}

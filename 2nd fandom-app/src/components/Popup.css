@@ -159,4 +159,6 @@
 
 /* 다크모드 */
 .dark .popUp {background-color: #212121;}
+.dark .popUp.attendance .modalTextWrap p {color: #fff;}
+.dark .popUp.vote .modalTextWrap p.sub-color {color: #fff;}
 

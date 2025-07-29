@@ -68,8 +68,8 @@
   .attendance-btn {
     width: 100%;
     background: #ffd700;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
     color: #494949;
     border: none;
     border-radius: 12px;
@@ -94,6 +94,5 @@
 
   /* 다크모드 */
   .dark .text-area h2 span{color: #F3B643;}
-  .dark .sub-text{color: #797979;}
   .dark .vote-desc ul li.sub-color{color: #ffff;}
   .dark  .text-area h2 {color: #ffff;}
