@@ -1,3 +1,5 @@
+
+// Membership.jsx
 import React, { useState } from 'react';
 import ArtistSection from '../../../../components/ArtistSection';
 import './Membership.css';
@@ -10,8 +12,7 @@ import photo05_1 from '../../../../assets/artist/photo05_1.png';
 import photo05_2 from '../../../../assets/artist/photo05_2.png';
 import photo06_1 from '../../../../assets/artist/photo06_1.png';
 import photo06_2 from '../../../../assets/artist/photo06_2.png';
-
-import lockIcon from "../../../../assets/artist/lock.png";
+import lockIcon from '../../../../assets/artist/lock.png';
 
 const feedData = [
   {
@@ -21,10 +22,10 @@ const feedData = [
     isVerified: true,
     verifiedIcon: check,
     postTime: '07.01. 05:06',
-    postText: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜',
+    postText: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~\uD83D\uDC9C',
     feedImage: feedimg1,
     photo02: photo05_1,
-    photo03: photo05_2
+    photo03: photo05_2,
   },
   {
     id: 2,
@@ -33,10 +34,10 @@ const feedData = [
     isVerified: true,
     verifiedIcon: check,
     postTime: '07.01. 05:06',
-    postText: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~💜',
+    postText: '멜버른 도착! 내일 공연 잘하고 올게요\n모두 내일 봐요~\uD83D\uDC9C',
     feedImage: feedimg2,
     photo02: photo06_1,
-    photo03: photo06_2
+    photo03: photo06_2,
   },
 ];
 
@@ -56,50 +57,51 @@ const Membership = () => {
   const handleUnlock = (id) => {
     if (!unlockedFeedIds.includes(id)) {
       setUnlockedFeedIds([...unlockedFeedIds, id]);
+      window.dispatchEvent(new Event('subscribed-event')); // 버튼 갱신용
     }
   };
 
   return (
-  <div className="membership-container">
-    <div className="membership-feed-wrapper">
-      {feedData.map((item) => {
-        const isUnlocked = unlockedFeedIds.includes(item.id);
+    <div className="membership-container">
+      <div className="membership-feed-wrapper">
+        {feedData.map((item) => {
+          const isUnlocked = unlockedFeedIds.includes(item.id);
 
-        return (
-          <div key={item.id} onClick={() => !isUnlocked && handleUnlock(item.id)}>
-            {isUnlocked ? (
-              <ArtistSection
-                profileImage={item.profileImage}
-                artistName={item.artistName}
-                isVerified={item.isVerified}
-                verifiedIcon={item.verifiedIcon}
-                postTime={item.postTime}
-                postText={item.postText}
-                feedImage={item.feedImage}
-                photo02={item.photo02}
-                photo03={item.photo03}
-                comments={comments}
-                newComment={newComment}
-                setNewComment={setNewComment}
-                handleAddComment={handleAddComment}
-                totalCommentCount={totalCommentCount}
-                onProfileClickPath="/idol/artist/highlight"
-              />
-            ) : (
-              <div className="locked-overlay">
-                <div className="lock-image-wrap">
-                  <img src={lockIcon} alt="자물쇠" className="lock-icon" />
+          return (
+            <div key={item.id} onClick={() => !isUnlocked && handleUnlock(item.id)}>
+              {isUnlocked ? (
+                <ArtistSection
+                  profileImage={item.profileImage}
+                  artistName={item.artistName}
+                  isVerified={item.isVerified}
+                  verifiedIcon={item.verifiedIcon}
+                  postTime={item.postTime}
+                  postText={item.postText}
+                  feedImage={item.feedImage}
+                  photo02={item.photo02}
+                  photo03={item.photo03}
+                  comments={comments}
+                  newComment={newComment}
+                  setNewComment={setNewComment}
+                  handleAddComment={handleAddComment}
+                  totalCommentCount={totalCommentCount}
+                  onProfileClickPath="/idol/artist/highlight"
+                />
+              ) : (
+                <div className="locked-overlay">
+                  <div className="lock-image-wrap">
+                    <img src={lockIcon} alt="자물쇠" className="lock-icon" />
+                  </div>
+                  <div className="lock-text">
+                    <p>멤버십 전용 콘텐츠입니다.</p>
+                  </div>
                 </div>
-                <div className="lock-text">
-                  <p>멤버십 전용 콘텐츠입니다.</p>
-                </div>
-              </div>
-            )}
-          </div>
-        );
-      })}
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
-  </div>
   );
 };
 
