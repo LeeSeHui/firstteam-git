@@ -1,3 +1,7 @@
+.Media-container {
+  padding: 20px 16px 50px 16px;
+}
+
 /* 검색창 */
 .media-search-box {display: flex; align-items: center; padding: 11px 16px; border: 1px solid #797979; border-radius: 40px;  margin-bottom: 30px;}
 .media-search-box img {  width: 5%; height: 5%; margin-right: 8px;}
@@ -39,11 +43,11 @@ scrollbar-width: none;}
 .scroll-wrapper::-webkit-scrollbar {display: none;}
 
 /* 어제 본 컨텐츠 */
-.recent-card {display: flex;align-items: center; padding: 8px 0;}
+.recent-card {display: flex;align-items: center;}
 .thumbnail-wrapper {width: 200px; height: 130px; overflow: hidden; flex-shrink: 0;}
 .recent-thumb {width: 85%; height: 85%; display: block;}
 .recent-info {flex: 1; display: flex; flex-direction: column; justify-content: center; 
-gap: 4px;}
+gap: 4px; margin-bottom: 49px;}
 .recent-info .media-sub {font-size: 15px;display: flex;gap: 12px; }
 .recent-info .recent-title {font-size: 14px; font-weight: 600; margin-bottom: 1px; color: #494949}
 .recent-sub {display: flex; flex-direction: column; gap: 5px;}
