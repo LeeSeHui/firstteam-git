@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import useNickname from '../contexts/useNickname';
 import mascotImg from '../assets/mascot.png';
 import './Chatbot.css';
