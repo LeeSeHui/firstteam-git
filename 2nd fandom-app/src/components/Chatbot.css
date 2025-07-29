@@ -41,7 +41,7 @@
 .suggestions button { padding: 7px 12px; border-radius: 20px; background: #fff; border: 1px solid #FFD700; font-size: 14px; color: #121212; cursor: pointer; transition: background 0.2s; }
 .suggestions button:hover { background: #FFD700; }
 
-.chat-input-wrapper { width: 100%; display: flex; align-items: center; border-top: 1px solid #E5E5E5; padding-top: 20px; }
+.chat-input-wrapper { width: 100%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E5E5E5; padding-top: 20px; }
 
 .chat-input-area { display: flex; background: #fff; }
 .chat-input-area input { flex: 1; padding: 12px; border: none; font-size: 14px; outline: none; }
@@ -73,11 +73,8 @@ body.dark .chat-input-area input { background: #333; color: #fff; }
 
 .dark .bot-avatar { background: #fff; }
 .dark .bot-name { margin-left: 5px; color: #ddd; }
-<<<<<<< HEAD
 .dark .chat-input-wrapper { border-top: none; }
 .dark .chatbot-date { color: #fff; background: #797979;}
-=======
-.dark .chat-input-wrapper { border-top: none;}
-.dark .chatbot-date { color: #fff; background: #797979; }
+
+
 .dark .chat-input-area.styled {background: #333; box-shadow: none;}
->>>>>>> c492f16af0164c58c9f7b4f286846959752fce18
