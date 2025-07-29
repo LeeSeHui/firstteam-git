@@ -128,8 +128,8 @@
     background: #fff;
     border-radius: 16px;
     padding: 39px;
-    width: 80%;
-    max-width: 380px;
+    width: 100%;
+    max-width: 300px;
     height: 200px;
     text-align: center;
   }
@@ -185,6 +185,6 @@
   .dark .vote-count.sub-color{color: #8f8f8f;}
   .dark .vote-btn{color:#494949;}
  .dark .modalContent{background-color: #212121;}
- .dark .modal-btns .cancel-btn{ background: none;}
+ .dark .modal-btns .cancel-btn{ background: none; color: #fff;}
  .dark .vote-page{background-color: #151515;}
  .dark .vote-card{ background: #212121;}

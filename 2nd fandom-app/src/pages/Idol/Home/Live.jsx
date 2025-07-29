@@ -40,7 +40,7 @@ const Live = () => {
       <div className="live-comments">
         <p className="comment"><span className="user">해인</span>아 너무 귀여워!!!!❤️❤️</p>
         <p className="comment"><span className="user">뉴진스</span>도 새해 복 많이 받아~🥰</p>
-        <p className="comment"><span className="user">팬</span>왔는데 뉴비 틀자마자 뉴진스 있어서 힐링ㅠㅠ</p>
+        <p className="comment"><span className="user">팬</span>뉴비 틀자마자 뉴진스 있어서 힐링ㅠㅠ</p>
       </div>
 
       {/* 좋아요 / 댓글 / 채팅 아이콘 */}
