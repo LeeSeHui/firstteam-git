@@ -5,7 +5,7 @@
 .chatbot-box { height: 600px; background: #fff; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; animation: slideUp 0.3s ease-out; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-.chatbot-header { background: #f4c430; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: #fff; }
+.chatbot-header { background: #FFD700; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: #121212; }
 .chatbot-close { display: flex; align-items: center; border: none; outline: none; background: none; }
 
 .chatbot-body { padding: 16px; flex: 1; display: flex; flex-direction: column; background: #fefefe; overflow-y: auto; }
@@ -19,14 +19,15 @@
 .chat-message { margin: 30px 0; }
 
 .user-bubble { display: flex; flex-direction: column; align-items: flex-end; padding-right: 10px; }
-.user-text { background-color: #fdd835; color: #333; padding: 10px 14px; border-radius: 16px 0 16px 16px; font-size: 14px; max-width: 80%; word-break: break-word; }
+.user-text { background-color: #FFD700; color: #121212; padding: 10px 14px; border-radius: 16px 0 16px 16px; font-size: 14px; max-width: 80%; word-break: break-word; }
 .chat-time { font-size: 12px; color: #888; margin-top: 4px; text-align: right; }
+.bot-chat-time { font-size: 12px; color: #888; margin: 6px 0 0 3px; }
 
 .bot-msg-block { display: flex; align-items: flex-start; }
 .bot-avatar { width: 36px; height: 36px; border-radius: 50%; }
 .bot-content { display: flex; flex-direction: column; }
 .bot-name { font-size: 10px; margin: 12px 3px; color: #888; }
-.bot-text { transition: max-height 0.3s ease; cursor: pointer; background: #EEF2F5; padding: 14px 18px; border-radius: 16px; font-size: 15px; font-weight: 500; max-width: 100%; word-break: break-word; white-space: pre-line; }
+.bot-text { transition: max-height 0.3s ease; cursor: pointer; background: #fcfcfc; padding: 14px 18px; border-radius: 16px; font-size: 15px; font-weight: 500; max-width: 100%; word-break: break-word; white-space: pre-line; }
 .bot-text.expanded { padding: 14px 20px; }
 .bot-text.typing::after { content: '...'; animation: blink 1s infinite; color: #888; }
 
@@ -37,12 +38,12 @@
 @keyframes blink { 0%, 80%, 100% { transform: scale(0); opacity: 0.3; } 40% { transform: scale(1); opacity: 1; } }
 
 .suggestions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
-.suggestions button { padding: 6px 12px; border-radius: 20px; background: #fff; border: 1px solid #FFD700; font-size: 14px; color: #121212; cursor: pointer; transition: background 0.2s; }
-.suggestions button:hover { background: #ffe680; }
+.suggestions button { padding: 7px 12px; border-radius: 20px; background: #fff; border: 1px solid #FFD700; font-size: 14px; color: #121212; cursor: pointer; transition: background 0.2s; }
+.suggestions button:hover { background: #FFD700; }
 
 .chat-input-wrapper { width: 100%; display: flex; align-items: center; border-top: 1px solid #E5E5E5; padding-top: 20px; }
 
-.chat-input-area { display: flex; border-top: 1px solid #ddd; background: #fff; }
+.chat-input-area { display: flex; background: #fff; }
 .chat-input-area input { flex: 1; padding: 12px; border: none; font-size: 14px; outline: none; }
 .chat-input-area button { outline: none; background: none; border: none; cursor: pointer; }
 
@@ -63,14 +64,15 @@
 }
 
 body.dark .chatbot-box { background: #121212; color: #fff; }
-body.dark .chatbot-body { background: #121212; }
-body.dark .chatbot-header { background: #f4c430; color: #fff; }
-body.dark .user-text { background: #fdd835; color: black; }
-body.dark .bot-text { background: #333; color: #eee; }
-body.dark .suggestions button { background: #121212; color: #fff; border: 1px solid #fdd835; }
-body.dark .chat-input-area input { background: #fff; color: #fff; }
+body.dark .chatbot-body { background: #212121; }
+body.dark .chatbot-header { background: #FFD700; color: #fff; }
+body.dark .user-text { background: #FFD700; color: black; }
+body.dark .bot-text { background: #333; color: #eee;}
+body.dark .suggestions button { background: #212121; color: #fff; border: 1px solid #fff; }
+body.dark .chat-input-area input { background: #333; color: #fff; }
 
 .dark .bot-avatar { background: #fff; }
 .dark .bot-name { margin-left: 5px; color: #ddd; }
-.dark .chat-input-wrapper { border-top: none; }
+.dark .chat-input-wrapper { border-top: none;}
 .dark .chatbot-date { color: #fff; background: #797979; }
+.dark .chat-input-area.styled {background: #333; box-shadow: none;}

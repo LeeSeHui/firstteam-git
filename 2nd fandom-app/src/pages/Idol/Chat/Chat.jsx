@@ -134,7 +134,10 @@ const Chat = () => {
             }}
             style={{ cursor: 'pointer' }}
           >
-            <img src={a.img} alt={a.name} className="artist-img2" />
+            <div className="artist-img-wrap">
+              <img src={a.img} alt={a.name} className="artist-img2" />
+              {a.en.trim() === 'HYEIN' && <span className="red-dot2" />}
+            </div>
             <div className="artist-info">
               <p className="artist-name2">
                 {a.name} <img src={check_icon} alt="v" className="check-icon" />
