@@ -33,7 +33,7 @@ const Membership = () => {
 
       // 1.5초 후 페이지 이동
       setTimeout(() => {
-        navigate('/idol/artist/highlight');
+        navigate('/idol/artist/highlight', { state: { subscribed: true } });
       }, 1000);
     }
   };

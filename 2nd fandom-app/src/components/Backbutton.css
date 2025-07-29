@@ -27,8 +27,6 @@
   box-sizing: border-box;
 }
 
-
-
 /* 마이컬렉션 + */
 
 .ButtonContainer .plus-icon {position: absolute;right: 16px; top: 50%; transform: translateY(-50%);font-size: 40px;font-weight: 400;
