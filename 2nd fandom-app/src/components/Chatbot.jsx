@@ -166,7 +166,7 @@ const Chatbot = () => {
               ))}
             </div>
             <div className="chat-input-wrapper">
-              <button className="circle-btn plus" onClick={() => alert('추가기능')}>
+              <button className="circle-btn plus" onClick={() => alert('준비중입니다..')}>
                 <span><img src={plus} alt="" /></span>
               </button>
 
