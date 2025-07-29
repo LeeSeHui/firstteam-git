@@ -73,7 +73,9 @@ const AppRouterContent = () => {
     '/welcome',
     '/idol/home/quiz',
     '/chatroom',
-    '/story'
+    '/story',
+    '/idol/home/live'
+
   ];
 
   const shouldHideNav = hideNavPaths.some(path =>

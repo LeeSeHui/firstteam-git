@@ -175,7 +175,7 @@ const ChatRoom = () => {
       </div>
 
       <div className="chatroom-input">
-        <button className="circle-btn"><img src={dm_plusIcon} alt="plus" /></button>
+        <button className="dm-circle-btn"><img src={dm_plusIcon} alt="plus" /></button>
         <div className="input-bubble">
           <input
             type="text"

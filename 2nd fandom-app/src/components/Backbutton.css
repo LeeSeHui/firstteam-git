@@ -2,6 +2,7 @@
 .header-title {position: absolute; left: 50%; transform: translateX(-50%); font-size: 22px;}
 .ButtonContainer button { border: none; background: none; font-size: 20px; cursor: pointer; }
 .ButtonContainer span { font-size: 20px; font-weight: 600; color: #5B5B5B;}
+.ButtonContainer .plus-icon{display: none;}
  .back-arrow {
   background: none;
   border: none;
@@ -25,6 +26,7 @@
   width: 100%;      /* ✅ .container의 padding 내부까지 확장 */
   box-sizing: border-box;
 }
+
 
 
 /* 마이컬렉션 + */

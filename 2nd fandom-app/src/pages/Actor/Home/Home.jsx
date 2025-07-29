@@ -35,6 +35,10 @@ import vote02 from '../../../assets/actor/home/vote2.png';
 import vote03 from '../../../assets/actor/home/vote3.png';
 import vote04 from '../../../assets/actor/home/vote4.png';
 
+import vote05 from '../../../assets/actor/home/vote5.png';
+import vote06 from '../../../assets/actor/home/vote6.png';
+
+
 import membershipCardImg1 from '../../../assets/actor/home/membership1.png';
 import membershipCardImg2 from '../../../assets/actor/home/membership2.png';
 import membershipCardImg3 from '../../../assets/actor/home/membership3.png';
@@ -245,22 +249,36 @@ const Home = () => {
         <div className="swipe vote">
           <div className="voteRow">
             <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote01} alt="vote1" />
-              <div className="voteText"><span>[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표</span></div>
+              <div className="voteText"><span>[연기대상] KBS 드라마 <br /> K-Drama 대상 후보 투표</span></div>
             </div>
             <div className="voteCard" onClick={handleVoteCardClick}>
+              <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote02} alt="vote2" />
-              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?</span></div>
+              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 배우는?</span></div>
+            </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
+              <img src={vote05} alt="vote4" />
+              <div className="voteText"><span>[이번주] MBC 수목 <br /> K-Actor 1위 후보 투표</span></div>
             </div>
           </div>
           <div className="voteRow offset">
             <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote03} alt="vote3" />
-              <div className="voteText"><span>케이팝 코스프레 1위는?</span></div>
+              <div className="voteText"><span>이달의 K-Drama <br /> 남자부문 인기 1위는?</span></div>
             </div>
             <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote04} alt="vote4" />
-              <div className="voteText"><span>[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
+              <div className="voteText"><span>[지상파] JTBC <br /> 이 달의 호감 이미지 배우 투표</span></div>
+            </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
+              <img src={vote06} alt="vote4" />
+              <div className="voteText"><span>[공중파] SBS <br /> K-Drama 여주인공 투표</span></div>
             </div>
           </div>
         </div>
