@@ -58,7 +58,7 @@
 
   
   /* 노란 원 버튼 (＋) */
-  .circle-btn {
+  .dm-circle-btn{
     border-radius: 50%;
     background: #ffd400;
     border: none;

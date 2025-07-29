@@ -72,9 +72,17 @@ const Home = () => {
   const [totalCommentCount, setTotalCommentCount] = useState(comments.length);
   const MAX_COMMENTS = 7;
 
+  const handleDeleteComment = (index) => {
+    const updated = [...comments];
+    updated.splice(index, 1);
+    setComments(updated);
+  };
+
   const handleAddComment = () => {
     if (newComment.trim() === '') return;
     const newObj = { username: { nickname }, message: newComment, createdAt: new Date().toISOString() };
+
+
 
     let updatedComments = [...comments, newObj];
     if (updatedComments.length > MAX_COMMENTS) {
@@ -190,6 +198,8 @@ const Home = () => {
       </div>
 
       <ArtistSection
+        nickname={nickname}
+        handleDeleteComment={handleDeleteComment}
         profileImage={artist01}
         artistName="해린"
         isVerified={true}
