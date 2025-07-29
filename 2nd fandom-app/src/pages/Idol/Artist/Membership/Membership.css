@@ -1,5 +1,7 @@
 /* .membership-container {padding: 0 16px 100px;} */
-.membership-feed-wrapper { display: flex; flex-direction: column; gap: 20px; }
+
+.membership-feed-wrapper { display: flex; flex-direction: column; gap: 20px; padding: 0 16px; }
+
 
 .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
 
@@ -27,8 +29,7 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     overflow: visible;
-    width: 95%;
-    margin: 0 6px;
+    width: 100%;
   }
   
   .lock-image-wrap {

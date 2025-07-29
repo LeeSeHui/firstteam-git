@@ -62,7 +62,7 @@ const TrotArtistSection = ({
   return (
     <div className={`artistSection Section ${isExpanded ? 'expanded' : ''}`}>
       {/* ✅ 피드 카드 */}
-      <div className="feed-card" onClick={() => setIsExpanded(!isExpanded)}>
+      <div className="trot-feed-card" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="feed-header">
           <div className="profile-info">
             <img
@@ -75,13 +75,13 @@ const TrotArtistSection = ({
               }}
             />
             <div>
-              <p className="nickname">
+              <p className="trot-nickname">
                 {artistName}
                 {isVerified && verifiedIcon && (
                   <img src={verifiedIcon} alt="verified" />
                 )}
               </p>
-              <p className="time">{postTime}</p>
+              <p className="trot-time">{postTime}</p>
             </div>
           </div>
           <button
@@ -99,7 +99,7 @@ const TrotArtistSection = ({
           </button>
         </div>
 
-        <p className="feed-text">{postText}</p>
+        <p className="trot-feed-text">{postText}</p>
 
         <div className="post-footer">
           <div className="like-counts">

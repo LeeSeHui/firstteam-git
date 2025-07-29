@@ -5,7 +5,7 @@ import quizstar from '../assets/Home/quizstar.png';
 import './QuizSection.css';
 
 const QuizSection = ({ handleQuizClick }) => {
-  const [timeLeft, setTimeLeft] = useState(5300); // 1시간 27분 30초
+  const [timeLeft, setTimeLeft] = useState(4300); // 1시간 27분 30초
 
   useEffect(() => {
     const timer = setInterval(() => {

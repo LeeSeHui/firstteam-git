@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FashionCard.css';
 
 const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', index = '1/3' }) => {
-  
+  const [likedItems, setLikedItems] = useState(Array(subImages.length).fill(false));
+
+  const toggleLike = (i) => {
+    const newLikes = [...likedItems];
+    newLikes[i] = !newLikes[i];
+    setLikedItems(newLikes);
+  };
+
   return (
     <div className="fashion-card">
-      {/* 이미지 위에 텍스트 정보 */}
       <div className="image-container">
-      {tag?.text && tag?.link && (
-        <a
+        {tag?.text && tag?.link && (
+          <a
             href={tag.link}
             className="product-tag"
             target="_blank"
@@ -21,14 +27,14 @@ const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', i
               bottom: tag.position?.bottom || 'auto',
             }}
           >
-          {tag.text.split('\n').map((line, i) => (
-            <React.Fragment key={i}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </a>
-      )}
+            {tag.text.split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </a>
+        )}
         <img src={image} alt={title} className="card-image" />
         <div className="card-overlay">
           <div className="card-date">{date}</div>
@@ -36,7 +42,7 @@ const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', i
         </div>
         <div className="card-index">{index}</div>
       </div>
-      {/* 이미지 아래 상품 태그 */}
+
       {subImages.length > 0 && (
         <div className="sub-product-wrap">
           <p className="sub-title">상품 태그 {subImages.length}개</p>
@@ -45,8 +51,9 @@ const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', i
               key={i}
               href={item.link}
               className="sub-product"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
             >
               <img src={item.img} alt={item.name} className="sub-image-thumb" />
               <div className="sub-info">
@@ -55,13 +62,21 @@ const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', i
                 <div className="sub-price">{item.price}</div>
                 <div className="sub-review">리뷰 {item.review}</div>
               </div>
-              <button className="bookmark-btn">♡</button>
+
+              <div
+                className={`bookmark-btn ${likedItems[i] ? 'liked' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  toggleLike(i);
+                }}
+              >
+                ♡
+              </div>
             </a>
           ))}
         </div>
       )}
-
-
     </div>
   );
 };

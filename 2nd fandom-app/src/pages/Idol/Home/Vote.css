@@ -155,23 +155,23 @@
   
 
   .modal-btns .cancel-btn {
-   padding: 14px 30px;
+   padding: 12px 30px;
     border: 1.5px solid #797979;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 14px;
     color: #494949;
-    font-weight: 600;
+    font-weight: 550;
     
   }
 
   .modal-btns .confirm-btn{
-     padding: 14px 30px;
+     padding: 12px 30px;
     border-radius: 10px;
     background: #FFD700;
     border-style: none;
-    font-size: 15px;
+    font-size: 14px;
     color: #494949;
-    font-weight: 600;
+    font-weight: 550;
   }
   
 

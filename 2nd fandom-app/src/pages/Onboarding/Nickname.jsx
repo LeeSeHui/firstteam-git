@@ -28,8 +28,8 @@ const NicknamePage = () => {
       <BackButton />
       </header>
       <div className="nickname-container">
-        <h2><span>NUVIE</span>에 온걸 환영해요</h2>
-      <p className="sub2">닉네임을 만들어 주세요!</p>
+        <h2><span>nuvie</span> 에 오신 걸 환영해요!</h2>
+      <p className="sub2">닉네임을 만들어 주세요.</p>
       <img src={nickname_img} alt="welcome character" className="nickname-img" />
 
       
