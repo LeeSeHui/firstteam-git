@@ -9,7 +9,7 @@
 
 .chat-box { display: flex; flex-direction: column; }
 
-.chat-sender { font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 4px;}
+.chat-sender { font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 4px;}
 
 .chat-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 6px;}
 
