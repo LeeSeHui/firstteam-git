@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import haerinImg from '../../../assets/dm/img4.png';
 import sampleImg from '../../../assets/dm/img4.png'; 
 import BackButton from '../../../components/BackButton';
@@ -18,6 +18,15 @@ const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
   const [replyIndex, setReplyIndex] = useState(0);
+
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   useEffect(() => {
     const timers = [];
@@ -156,13 +165,12 @@ const ChatRoom = () => {
                 }}>
                   {/* 시간 위치만 다르게 */}
                   <div className="chat-text">{msg.text}</div>
-
-                
-                 
+                  <div className="chat-time">{msg.time}</div>
                 </div>
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
       </div>
 

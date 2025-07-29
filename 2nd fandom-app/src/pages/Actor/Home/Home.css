@@ -2,3 +2,6 @@
 .actor-commentInputWrap button { padding: 6px 16px; background: #37CEBF; color: #ffffff; font-weight: 500; border: none; border-radius: 20px; cursor: pointer; }
 
 .artistButtons button.button2 {width: 30%; background: none; border: none; padding: 0 3px; cursor: pointer;}
+
+.liveBadge2 { position: absolute; top: 16px; left: 16px; background-color: #fff; color: #37CEBF; font-size: 12px; font-weight: 500; padding: 2px 8px 2px 12px; border-radius: 10px;}
+.liveBadge2::before {content: ''; position: absolute; background: red; width: 4px; height: 4px; border-radius: 50%; left: 12%; top: 50%; transform: translate(-8%, -50%);}
