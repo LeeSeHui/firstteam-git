@@ -28,10 +28,17 @@ import photo03 from '../../../assets/actor/home/photo03.png';
 import thumb1 from '../../../assets/actor/home/youtube01.png';
 import thumb2 from '../../../assets/actor/home/youtube02.png';
 import thumb3 from '../../../assets/actor/home/youtube03.png';
+import playIcon from '../../../assets/Home/play.png';
+
 import vote01 from '../../../assets/actor/home/vote1.png';
 import vote02 from '../../../assets/actor/home/vote2.png';
 import vote03 from '../../../assets/actor/home/vote3.png';
 import vote04 from '../../../assets/actor/home/vote4.png';
+
+import vote05 from '../../../assets/actor/home/vote5.png';
+import vote06 from '../../../assets/actor/home/vote6.png';
+
+
 import membershipCardImg1 from '../../../assets/actor/home/membership1.png';
 import membershipCardImg2 from '../../../assets/actor/home/membership2.png';
 import membershipCardImg3 from '../../../assets/actor/home/membership3.png';
@@ -170,9 +177,28 @@ const Home = () => {
       <div className="liveSection">
         <p>LIVE NOW!</p>
         <div className="swipe">
-          <p className="liveImg" onClick={handleLiveClick}><img src={live01} alt="" /></p>
-          <p className="liveImg" onClick={handleLiveClick}><img src={live02} alt="" /></p>
-          <p className="liveImg" onClick={handleLiveClick}><img src={live03} alt="" /></p>
+        <div className="liveImg" onClick={handleLiveClick}>
+          <img src={live02} alt="" />
+          <span className="liveBadge2">LIVE</span>
+          <div className="liveTextBox">
+            <p className="artist">YOUNJUNG</p>
+            <p className="title">2025<br />백상예술대상</p>
+          </div>
+        </div>
+        <div className="liveImg" onClick={handleLiveClick}>
+          <img src={live01} alt="" />
+          <div className="liveTextBox">
+            <p className="artist">WOOSEOK</p>
+            <p className="title">BEHIND<br />THE SCENES</p>
+          </div>
+        </div>
+        <div className="liveImg" onClick={handleLiveClick}>
+          <img src={live03} alt="" />
+          <div className="liveTextBox">
+            <p className="artist">WOOSEOK</p>
+            <p className="title">화보 촬영 LIVE<br />7/31 18:00</p>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -196,20 +222,23 @@ const Home = () => {
       />
 
       <div className="videoSection">
-        <p>JUST FOR {nickname}</p>
+        <p>JUST FOR {nickname}💖</p>
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" />
-            <p>박보검 뮤직뱅크 월드투어 <br />IN 벨기에 BEHIND FILM</p>
+            <img src={playIcon} alt="play" className="playIcon" />
+            <p>[𝐕𝐚-𝐥𝐨𝐠] 변우석, 밀라노 <br />에서 생긴 일</p>
           </a>
           <a href="https://www.youtube.com/watch?v=o9DhvbqYzns" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb2} alt="video2" />
+            <img src={playIcon} alt="play" className="playIcon" />
             <p>고윤정의 소울푸드는?  <br /> ELLE KOREA</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb3} alt="video3" />
-            <p>변우석의 브이로그<br />
-            WHAT HAPPENED IN MILAN</p>
+            <img src={playIcon} alt="play" className="playIcon" />
+            <p>[ENG] 승부욕 활활!🔥<br />
+            내 머리 위 정답은?! 무빙</p>
           </a>
         </div>
       </div>
@@ -220,22 +249,36 @@ const Home = () => {
         <div className="swipe vote">
           <div className="voteRow">
             <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote01} alt="vote1" />
-              <div className="voteText"><span>[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표</span></div>
+              <div className="voteText"><span>[연기대상] KBS 드라마 <br /> K-Drama 대상 후보 투표</span></div>
             </div>
             <div className="voteCard" onClick={handleVoteCardClick}>
+              <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote02} alt="vote2" />
-              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?</span></div>
+              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 배우는?</span></div>
+            </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
+              <img src={vote05} alt="vote4" />
+              <div className="voteText"><span>[이번주] MBC 수목 <br /> K-Actor 1위 후보 투표</span></div>
             </div>
           </div>
           <div className="voteRow offset">
             <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote03} alt="vote3" />
-              <div className="voteText"><span>케이팝 코스프레 1위는?</span></div>
+              <div className="voteText"><span>이달의 K-Drama <br /> 남자부문 인기 1위는?</span></div>
             </div>
             <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
               <img src={vote04} alt="vote4" />
-              <div className="voteText"><span>[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
+              <div className="voteText"><span>[지상파] JTBC <br /> 이 달의 호감 이미지 배우 투표</span></div>
+            </div>
+            <div className="voteCard" onClick={handleVoteCardClick}>
+            <p className="actor-vote-tit">투표 D-3</p>
+              <img src={vote06} alt="vote4" />
+              <div className="voteText"><span>[공중파] SBS <br /> K-Drama 여주인공 투표</span></div>
             </div>
           </div>
         </div>
