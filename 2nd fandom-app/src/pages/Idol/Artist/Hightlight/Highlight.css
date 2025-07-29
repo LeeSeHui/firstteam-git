@@ -34,7 +34,7 @@
 .live-red { color: red; font-weight: bold; }
 .live-thumbnail { width: 100%; border-radius: 12px; margin-bottom: 16px; }
 .live-header { display: flex; flex-direction: column; }
-.live-desc { font-size: 16px; font-weight: 500; line-height: 1.2; margin-left: 60px; color: #595959; }
+.live-desc { font-size: 15px; font-weight: 500; line-height: 1.2; margin-left: 60px; color: #595959; margin-bottom: 10px; }
 
 .icon-small {
     width: 20px;
