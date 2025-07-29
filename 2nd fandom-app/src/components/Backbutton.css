@@ -2,6 +2,7 @@
 .header-title {position: absolute; left: 50%; transform: translateX(-50%); font-size: 22px;}
 .ButtonContainer button { border: none; background: none; font-size: 20px; cursor: pointer; }
 .ButtonContainer span { font-size: 20px; font-weight: 600; color: #5B5B5B;}
+.ButtonContainer .plus-icon{display: none;}
  .back-arrow {
   background: none;
   border: none;
@@ -15,6 +16,11 @@
   width: 30px;
   height: 30px;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> eb9d12828ad57e1e646965fe8bf51c97c8dd2078
 
 .ButtonContainer {
   display: flex;
@@ -24,6 +30,11 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> eb9d12828ad57e1e646965fe8bf51c97c8dd2078
 /* 마이컬렉션 + */
 
 .ButtonContainer .plus-icon {position: absolute;right: 16px; top: 50%; transform: translateY(-50%);font-size: 40px;font-weight: 400;

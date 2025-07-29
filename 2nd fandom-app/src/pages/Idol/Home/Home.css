@@ -21,7 +21,7 @@ body {background: #ffffff;}
 .liveBadge::before {content: ''; position: absolute; background: red; width: 4px; height: 4px; border-radius: 50%; left: 12%; top: 50%; transform: translate(-8%, -50%);}
 .liveTextBox { position: absolute; bottom: 16px; left: 16px; color: white; text-align: left; }
 .liveTextBox .artist { font-size: 12px; margin-bottom: 2px; }
-.liveTextBox .title { font-size: 18px; font-weight: 600; }
+.liveTextBox .title { font-size: 16px; font-weight: 500; }
 
 
 /* artist */
@@ -46,10 +46,23 @@ body {background: #ffffff;}
 .comments .message { font-size: 14px; margin-bottom: 20px; font-weight: 500;}
 .heart { cursor: pointer; color: #ccc; }
 
-.commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #FCD817; border-radius: 25px; }
-.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 14px; }
-.commentInputWrap button { padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: 500; cursor: pointer; }
+.commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 4px 10px; border: 1px solid #FCD817; border-radius: 25px; width: 100%;box-sizing: border-box;
+  max-width: 100%;
+  flex-wrap: nowrap; /* 줄바꿈 방지 */}
+.commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 13px; }
+.commentInputWrap button { padding: 8px 14px; background: #FCD817; color: #797979; border: none; border-radius: 20px; font-weight: 500; cursor: pointer; }
 input:focus {border: none; outline: none;}
+.commentInputWrap input {
+  width: 100%;
+  min-width: 0; /* flexbox 안에서 줄바꿈 안 되게 */
+}
+
+.commentInputWrap button {
+  flex-shrink: 0; /* 버튼 크기 줄어드는 것 방지 */
+}
+
+
+
 
 
 .videoSection {padding: 34px 0 0 16px;}
@@ -70,13 +83,12 @@ input:focus {border: none; outline: none;}
     border-radius: 12px;
     object-fit: cover;
   }
+
   .videoCard img.playIcon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 36px;
-    height: 36px;
     pointer-events: none;
   }
   .videoCard p {

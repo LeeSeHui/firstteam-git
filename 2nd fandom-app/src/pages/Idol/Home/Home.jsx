@@ -63,7 +63,7 @@ const Home = () => {
     { username: { nickname: '너누구야' }, message: '너무 예뻐요!❤️', createdAt: new Date().toISOString() },
     { username: { nickname: '너뭐이야' }, message: '휴가 잘 다녀오세요! 🌴❤️', createdAt: new Date().toISOString() },
     { username: { nickname: '뾰루지걸' }, message: '너무 귀여워요ㅜㅜ❤️❤️', createdAt: new Date().toISOString() },
-    { username: { nickname: '말티즈이' }, message: 'GD 오빠보다 뉴진스!;', createdAt: new Date().toISOString() },
+    { username: { nickname: '말티즈이' }, message: 'GD 오빠보다 뉴진스!', createdAt: new Date().toISOString() },
     { username: { nickname: '꽥괙이' }, message: '네일아트 바꿨어용?!', createdAt: new Date().toISOString() },
     { username: { nickname: '먺짱이' }, message: '오늘 점심은 뭐 먹나용?????', createdAt: new Date().toISOString() },
     { username: { nickname: 'jongbae' }, message: '핫써머!!', createdAt: new Date().toISOString() },
@@ -72,9 +72,17 @@ const Home = () => {
   const [totalCommentCount, setTotalCommentCount] = useState(comments.length);
   const MAX_COMMENTS = 7;
 
+  const handleDeleteComment = (index) => {
+    const updated = [...comments];
+    updated.splice(index, 1);
+    setComments(updated);
+  };
+
   const handleAddComment = () => {
     if (newComment.trim() === '') return;
     const newObj = { username: { nickname }, message: newComment, createdAt: new Date().toISOString() };
+
+
 
     let updatedComments = [...comments, newObj];
     if (updatedComments.length > MAX_COMMENTS) {
@@ -190,6 +198,8 @@ const Home = () => {
       </div>
 
       <ArtistSection
+        nickname={nickname}
+        handleDeleteComment={handleDeleteComment}
         profileImage={artist01}
         artistName="해린"
         isVerified={true}
@@ -214,17 +224,21 @@ const Home = () => {
         <div className="videoSwipe">
           <a href="https://www.youtube.com/watch?v=yFTAYXDTjqI" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb1} alt="video1" className="videoThumb" />
-            <img src={playIcon} alt="play" className="playIcon" />
+
+              <img src={playIcon} alt="play" className="playIcon" />
+
             <p>'최초 공개' NewJeans의 HOT 컴백 무대 @SHOWMUSICBANK</p>
           </a>
           <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb2} alt="video2" className="videoThumb" />
-            <img src={playIcon} alt="play" className="playIcon" />
+              <img src={thumb2} alt="video2" className="videoThumb" />
+              <img src={playIcon} alt="play" className="playIcon" />
             <p>뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
           </a>
           <a href="https://www.youtube.com/watch?v=7FbDF0wWe_8" target="_blank" rel="noopener noreferrer" className="videoCard">
             <img src={thumb3} alt="video3" className="videoThumb" />
-            <img src={playIcon} alt="play" className="playIcon" />
+
+              <img src={playIcon} alt="play" className="playIcon" />
+
             <p>뉴진스 'Right Now' <br />Bonus Ver @뮤직뱅크</p>
           </a>
         </div>

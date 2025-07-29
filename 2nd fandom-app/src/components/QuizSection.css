@@ -14,7 +14,7 @@
 
 .time-box {display: inline-block; width: 65px; margin-right: 4px;}
 
-.timer .time { color: #f5b000; font-weight: bold; font-size: 16px; }
+.timer .time { color: #f5b000; font-weight: 550; font-size: 16px; }
 
 .quiz-right img { width: 35vw; height: 35vw;}
 
