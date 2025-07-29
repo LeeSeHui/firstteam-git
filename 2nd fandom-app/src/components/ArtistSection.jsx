@@ -180,7 +180,7 @@ const ArtistSection = ({
     <div className="commentInputWrap">
       <input
         type="text"
-        placeholder="비속어 자동 필터링 중..."
+        placeholder="예쁜 댓글을 입력해주세요"
         value={newComment}
         onChange={(e) => setNewComment(e.target.value)}
       />
