@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import artistImg from '../../../../assets/artist/main-img.png';
+import checkIcon from '../../../../assets/Vector.png';
 import './ArtistLayout.css';
 
 const ArtistLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [subscribed, setSubscribed] = useState(false); // 이름 통일
+
+  useEffect(() => {
+    // 새로고침 시 초기 상태 (항상 false)
+    setSubscribed(false);
+
+    const handleSubscribe = () => {
+      setSubscribed(true);
+    };
+
+    // 이벤트 리스너 등록
+    window.addEventListener('subscribed-event', handleSubscribe);
+    return () => window.removeEventListener('subscribed-event', handleSubscribe);
+  }, []);
 
   const ArtistMembership = () => navigate('/idol/home/membership');
 
-  // ✅ navTabs 선언 누락된 부분 추가
   const navTabs = [
     { name: 'Highlight', path: '/idol/artist/highlight' },
     { name: 'Artist', path: '/idol/artist/artist-board' },
@@ -23,12 +37,22 @@ const ArtistLayout = () => {
       <div className="artistHeader">
         <img src={artistImg} alt="artist" className="artistImage" />
         <div className="artistOverlay">
-          <h2 className="artistName">NewJeans</h2>
-          <button onClick={ArtistMembership} className="membershipButton">+ Membership</button>
+          <button
+            onClick={ArtistMembership}
+            className={`membershipButton ${subscribed ? 'active' : ''}`}
+          >
+            {subscribed ? (
+              <>
+                <img src={checkIcon} alt="checkicon" className="checkIcon" />
+                Membership
+              </>
+            ) : (
+              '+ Membership'
+            )}
+          </button>
         </div>
       </div>
 
-      {/* ✅ 이 부분 하나만 쓰면 됨. 아래 중복된 artistNav는 지워도 됨 */}
       <div className="artistNav">
         {navTabs.map(tab => (
           <button

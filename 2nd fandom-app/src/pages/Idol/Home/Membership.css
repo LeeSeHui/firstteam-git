@@ -10,7 +10,7 @@
 
 .membership-title .img img { width: auto; max-width: 175px; height: auto; position: absolute; top: -46px; right: 5px; }
 
-.note { background-color: #ffffff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 20px; padding: 16px; margin-bottom: 24px; font-size: 14px; line-height: 1.2; font-weight: 400; }
+.note { background-color: #ffffff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 20px; padding: 22px 16px 10px; margin-bottom: 24px; font-size: 14px; line-height: 1.2; font-weight: 400; }
 
 .note h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; padding-left: 16px; color: #494949; }
 
@@ -18,17 +18,19 @@
 
 .note li { margin-bottom: 10px; line-height: 1.3; }
 
+
+
 .note li span {font-weight: 600; color: #494949;}
 
 .confirm { display: flex; justify-content: center; align-items: center; border-radius: 8px; padding: 6px; font-size: 13px; margin: 35px; font-weight: 500; }
 
 .confirm.active { border-radius: 12px; }
 
-.confirm img { width: 20px; margin-right: 10px; margin-top: 7px; cursor: pointer; }
+.confirm img { width: 20px; margin-right: 10px;  cursor: pointer; }
 
 .btn-box { text-align: center; }
 
-.subscribe-btn { background-color: #cccccc; border: none; border-radius: 12px; font-size: 18px; font-weight: 600; width: 350px; height: 55px; cursor: pointer; color: #ffffff; }
+.subscribe-btn { background-color: #cccccc; border: none; border-radius: 12px; font-size: 16px; font-weight: 500; width: 350px; height: 55px; cursor: pointer; color: #ffffff; }
 
 .subscribe-btn.active { background-color: #FFD700; cursor: pointer; color: #494949; }
 
