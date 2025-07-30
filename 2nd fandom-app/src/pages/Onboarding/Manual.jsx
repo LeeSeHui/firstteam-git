@@ -206,7 +206,7 @@ const Manual = () => {
               </p>
               <div className="dot-container">
                 {manualData.map((_, i) => (
-                  <span key={i} className={`dot ${i === current ? 'active' : ''}`} />
+                  <span key={i} className={`manual-dot ${i === current ? 'active' : ''}`} />
                 ))}
               </div>
             </div>
