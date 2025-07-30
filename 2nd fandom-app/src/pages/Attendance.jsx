@@ -30,7 +30,7 @@ const Attendance = () => {
 
   return (
     <div className="attendance-wrapper">
-      <div className="container">
+      <div className="attendance-container">
         <BackButton/>
         <div className="attendance-header">
           <div className="text-image-wrap">
@@ -69,6 +69,7 @@ const Attendance = () => {
           {isChecked ? '출석완료' : '출석하기'}
         </button>
       </div>
+      
 
       {showPopup && (
         <Popup

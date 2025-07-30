@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import confetti from 'canvas-confetti'; // 🎉 추가
+import { useState, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './Mypage.css';
@@ -34,34 +34,14 @@ const MyPage = () => {
 
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(nickname);
-  const [currentLevel, setCurrentLevel] = useState(0); // 🎯 캐릭터 인덱스
+  const [currentLevel, setCurrentLevel] = useState(0);
 
   const characterLevels = [
-    {
-      level: 'Lv.1',
-      image: video1,
-      goal: '조금만 더 가면 Lv.2에 달성해요',
-    },
-    {
-      level: 'Lv.2',
-      image: video2,
-      goal: '조금만 더 가면 Lv.3에 달성해요',
-    },
-    {
-      level: 'Lv.3',
-      image: video3,
-      goal: '조금만 더 가면 Lv.4에 달성해요',
-    },
-    {
-      level: 'Lv.4',
-      image: video4,
-      goal: '조금만 더 가면 Lv.5에 달성해요',
-    },
-    {
-      level: 'Lv.5',
-      image: video5,
-      goal: '최고 레벨 달성!',
-    },
+    { level: 'Lv.1', image: video1, goal: '조금만 더 가면 Lv.2에 달성해요' },
+    { level: 'Lv.2', image: video2, goal: '조금만 더 가면 Lv.3에 달성해요' },
+    { level: 'Lv.3', image: video3, goal: '조금만 더 가면 Lv.4에 달성해요' },
+    { level: 'Lv.4', image: video4, goal: '조금만 더 가면 Lv.5에 달성해요' },
+    { level: 'Lv.5', image: video5, goal: '최고 레벨 달성!' },
   ];
 
   const handleSave = () => {
@@ -71,9 +51,20 @@ const MyPage = () => {
 
   const handleNext = () => {
     if (currentLevel < characterLevels.length - 1) {
-      const next = currentLevel + 1;
-      setCurrentLevel(next);
-      if (next === characterLevels.length - 1) {
+      setCurrentLevel(prev => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentLevel > 0) {
+      setCurrentLevel(prev => prev - 1);
+    }
+  };
+
+  // 🎉 레벨5 도달 시 300ms 후 축하
+  useEffect(() => {
+    if (currentLevel === characterLevels.length - 1) {
+      const timeout = setTimeout(() => {
         confetti({
           particleCount: 150,
           spread: 180,
@@ -83,20 +74,14 @@ const MyPage = () => {
           origin: { x: 0.5, y: 0.3 },
           colors: ['#a0e7e5', '#b4f8c8', '#fbe7c6', '#ffaecc'],
         });
-      }
+      }, 300);
+      return () => clearTimeout(timeout);
     }
-  };
-
-  const handlePrev = () => {
-    if (currentLevel > 0) {
-      setCurrentLevel(currentLevel - 1);
-    }
-  };
+  }, [currentLevel]);
 
   return (
-    <div className="container">
+    <div className="mypage-container">
       <BackButton label="마이페이지" />
-
       <div className="intro">
         <p className="mypage-nickname">
           {isEditing ? (
@@ -186,10 +171,7 @@ const MyPage = () => {
         </button>
         <button className="setting-button">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />
-
           <span className="category-text">어플설정(다크모드)</span>
-
-
           <div className="toggle-switch">
             <span
               className={`toggle-option ${darkMode ? 'active' : ''}`}
