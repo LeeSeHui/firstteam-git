@@ -24,7 +24,7 @@ import artist16 from '../../assets/artist-select/artist16.png';
 import check from '../../assets/artist-select/check.png';
 
 const artistData = [
-  { id: 1, img: artist1, name: "IRENE" },
+  { id: 1, img: artist1, name: "G-dragon" },
   { id: 2, img: artist2, name: "LE SSERAFIM" },
   { id: 3, img: artist3, name: "Fromis_9" },
   { id: 4, img: artist4, name: "BTS" },
@@ -34,7 +34,7 @@ const artistData = [
   { id: 8, img: artist9, name: "NewJeans" },
   { id: 9, img: artist8, name: "aespa" },
   { id: 10, img: artist10, name: "RIIZE" },
-  { id: 11, img: artist11, name: "G-Dragon" },
+  { id: 11, img: artist11, name: "IRENE" },
   { id: 12, img: artist12, name: "IU" },
   { id: 13, img: artist13, name: "TAEYEON" },
   { id: 14, img: artist14, name: "NCT" },
