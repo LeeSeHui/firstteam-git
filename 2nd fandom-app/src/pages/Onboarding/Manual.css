@@ -12,8 +12,15 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 /* 🎠 슬라이더 - manual1 전용 */
 .manual1-carousel { width: 100%; max-width: 100%; margin: 0 auto; overflow: hidden; }
 
-.manual-skip-btn { background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; color: #595959; font-weight: 600; margin-bottom: 20px; }
-
+.manual-skip-btn {position: relative; background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; color: #595959; font-weight: 600; margin-bottom: 20px; }
+.manual-skip-btn::before {  content: '';
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;}
 
 .carousel-centered-only .slick-list { padding: 0 143px !important; position: relative; }
 
