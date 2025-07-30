@@ -7,6 +7,7 @@ import YellowButton from '../../components/YellowButton';
 import './Nickname.css';
 import nickname_img from '../../assets/onboarding/nickname_img.png';
 import X_button from '../../assets/onboarding/X_button.png'
+import nuvie_logo from '../../assets/onboarding/mainLogo.png'
 
 const NicknamePage = () => {
   const [input, setInput] = useState('');
@@ -28,9 +29,9 @@ const NicknamePage = () => {
       <BackButton />
       </header>
       <div className="nickname-container">
-        <h2><span>nuvie</span> 에 오신 걸 환영해요!</h2>
+        <h2><span><img src={nuvie_logo} alt="" /></span></h2>
       <p className="sub2">닉네임을 만들어 주세요.</p>
-      <img src={nickname_img} alt="welcome character" className="nickname-img" />
+      <p className="nickname-img"><img src={nickname_img} /></p>
 
       
 

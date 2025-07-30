@@ -110,6 +110,10 @@ const ArtistBoard = () => {
     setNewComment('');
   };
 
+  const handleDeleteComment = (indexToDelete) => {
+    setComments((prev) => prev.filter((_, idx) => idx !== indexToDelete));
+  };
+
   return (
     <div className="artist-board">
       {feedData.map((item) => (
@@ -128,7 +132,9 @@ const ArtistBoard = () => {
           newComment={newComment}
           setNewComment={setNewComment}
           handleAddComment={handleAddComment}
+          handleDeleteComment={handleDeleteComment} 
           totalCommentCount={totalCommentCount}
+          nickname={nickname}
           onProfileClickPath="/idol/artist/highlight"
           getTimeAgo={getTimeAgo} // ✅ 시간 함수 넘김
         />
