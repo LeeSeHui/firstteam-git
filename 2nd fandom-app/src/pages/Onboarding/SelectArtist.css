@@ -1,12 +1,13 @@
 .header {padding: 20px 16px 0;}
 
+
 .artist-select-container {min-height: 100vh; text-align: center;}
 .artist-select-container h2 {font-size: 20px; margin-bottom: 20px; font-weight: 600;}
 
 .artist-select-container > p {font-size: 14px; color: #797979; margin-bottom: 25px;}
 .gradient-border-wrapper2 {
   position: relative;
-  width: 90%; margin-bottom: 30px;
+  width: 88.9%; margin-bottom: 30px;
   background: linear-gradient(90deg, #6C53FF 0%, #66DEC2 50%, #FFCC00 100%);
   padding: 1px; /* border처럼 보이게 하는 부분 */
   border-radius: 999px;

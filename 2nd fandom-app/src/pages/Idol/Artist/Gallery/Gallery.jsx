@@ -18,14 +18,14 @@ import geust3 from '../../../../assets/artist/twin21.png';
 
 
 const galleryData = [
-  { id: 1, name: '하니', date: '2023.07.01', profile: geust1, img: gallery1 },
-  { id: 2, name: '해인', date: '2023.07.01', profile: geust1, img: gallery2 },
-  { id: 3, name: '다니엘', date: '2023.07.01', profile: geust1, img: gallery3 },
-  { id: 4, name: '해린', date: '2023.07.01', profile: geust2, img: gallery4 },
-  { id: 5, name: '민지', date: '2023.07.01', profile: geust2, img: gallery5 },
-  { id: 6, name: '하니', date: '2023.07.01', profile: geust2, img: gallery6 },
-  { id: 7, name: '해린', date: '2023.07.01', profile: geust3, img: gallery7 },
-  { id: 8, name: '해인', date: '2023.07.01', profile: geust3, img: gallery8 },
+  { id: 1, name: 'newlike', date: '2023.07.01', profile: geust1, img: gallery1 },
+  { id: 2, name: 'newlike', date: '2023.07.01', profile: geust1, img: gallery2 },
+  { id: 3, name: 'newlike', date: '2023.07.01', profile: geust1, img: gallery3 },
+  { id: 4, name: 'minjimom', date: '2023.07.01', profile: geust2, img: gallery4 },
+  { id: 5, name: 'minjimom', date: '2023.07.01', profile: geust2, img: gallery5 },
+  { id: 6, name: 'minjimom', date: '2023.07.01', profile: geust2, img: gallery6 },
+  { id: 7, name: '고양멍멍', date: '2023.07.01', profile: geust3, img: gallery7 },
+  { id: 8, name: '고양멍멍', date: '2023.07.01', profile: geust3, img: gallery8 },
 ];
 
 const Gallery = () => {

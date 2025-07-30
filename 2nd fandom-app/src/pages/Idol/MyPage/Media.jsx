@@ -59,12 +59,9 @@ const Media = () => {
 
   return (
     <div className="Media-container">
-      <BackButton
-        label="최근 본 미디어"
-        editText=""
-        onEditClick={() => console.log('편집 클릭됨')}
-      />
-
+      <div className="back-wrapper has-dot">
+      <BackButton label="최근 본 미디어"/>
+      </div>
       <div className="media-search-box">
         <img src={isDarkMode ? searchDark : search} alt="search" />
         <input

@@ -11,6 +11,18 @@
   background: #FFD700;  /* 노랑 배경 */
   color: #fff;           /* 검정 글씨 */
 }
+
+.membershipButton::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 11px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
 .checkIcon{margin-right: 5px;}
 .artistNav { padding : 27px 16px; }
 .artistNav button {position: relative; padding: 1px 7px;   background: none; border: none; cursor: pointer; font-size: 15px; color: #595959; font-weight: 500; }
@@ -23,6 +35,17 @@
     height: 12px; /* 선 길이 */
     width: 2px;
     background-color: #595959;
+  }
+
+  .withDot:nth-child(1):before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -275px;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
   }
 
   .navButton.active {

@@ -27,6 +27,18 @@
     cursor: pointer;
     overflow: visible;
     width: 90%; margin: 0 auto;
+    position: relative;
+  }
+
+  .locked-overlay::after{
+    content: '';
+    position: absolute;
+    top: 137px;
+    right: 163px;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
   }
   
   .lock-image-wrap {

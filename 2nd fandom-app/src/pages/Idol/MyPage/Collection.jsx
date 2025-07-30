@@ -16,10 +16,11 @@ import photoImg from '../../../assets/mypage/collection/poto.png';
 
 const Collection = () => {
  
-
   return (
     <div className="collection-container">
-    <BackButton label="나의 컬렉션" />
+    <div className="back-wrapper has-dot">
+  <BackButton label="나의 컬렉션" />
+    </div>
 
     <div className="collection-grid">
         {/* 상단 4개 */}

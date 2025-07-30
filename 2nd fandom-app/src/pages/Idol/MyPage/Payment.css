@@ -38,6 +38,28 @@ background-color: #FFD400;}
 gap: 2px;cursor: pointer;}
 .sort-button .material-symbols-outlined {font-size: 18px;}
 
+/* red dot */
+.icon-with-dot {position: relative; width: 35px; height: 35px;}
+.icon-with-dot img {width: 100%; height: 100%;display: block;}
+.payment-red-dot {position: absolute; top: -2px; right: -3px;width: 5px; height: 5px; background-color: red;
+border-radius: 50%;}
+
+
+.subscribe-button.has-dot,
+.payment-cancel-button.has-dot {position: relative; }
+
+.subscribe-button.has-dot::after,
+.payment-cancel-button.has-dot::after {content: ''; position: absolute; top: -4px; right: -4px;   width: 5px;
+height: 5px; background-color: red; border-radius: 50%;z-index: 2;}
+
+.subscribe-button.has-dot, .payment-cancel-button.has-dot {position: relative;}
+.subscribe-button.has-dot::after,
+.payment-cancel-button.has-dot::after { content: ''; position: absolute; top: -4px; right: -4px; width: 5px;
+height: 5px; background-color: red; border-radius: 50%;z-index: 2;}
+
+
+
+
 /* 다크모드*/
 .dark .sort-button{background-color: #363636;}
 .dark .sort-label{color:#797979;}

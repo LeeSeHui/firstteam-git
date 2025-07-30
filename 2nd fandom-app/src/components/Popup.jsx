@@ -82,9 +82,9 @@ const Popup = ({
           )}
 
           {/* 공통 버튼 */}
-          <button onClick={onConfirm}>
-            {type === 'vote' ? '포인트 받기' : '확인'}
-          </button>
+        <button onClick={onConfirm} className="has-dot">
+          {type === 'vote' ? '포인트 받기' : '확인'}
+        </button>
         </div>
       </div>
     </div>
