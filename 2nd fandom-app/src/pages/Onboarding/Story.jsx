@@ -29,12 +29,12 @@ const stories = [
   {
     background: story3,
     text: '지구별에서 꼭 \n 꿈을 이뤄야지!',
-    position: { bottom: '70%', right: '-25%' },
+    position: { bottom: '68%', right: '-25%' },
   },
   {
     background: story4,
-    text: '뉴비 엔터테이먼트에\n도착했어요!',
-    position: { bottom: '38%', right: '-25%' },
+    text: '뉴비 엔터테인먼트에\n도착했어요!',
+    position: { bottom: '35%', right: '0%' },
   },
   {
     background: story5,

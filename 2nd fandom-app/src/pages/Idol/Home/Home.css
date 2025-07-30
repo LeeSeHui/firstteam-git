@@ -1,12 +1,48 @@
 body {background: #ffffff;}
 .homeContainer { width: 100%}
-.main-logo { padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
+.main-logo {position: relative; padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
 .main-logo .main {width: 100px; height: auto;}
-.main-logo .alarm {width: 35px; height: 100%;}
+.main-logo .alarm {position: relative; width: 35px; height: 100%;}
+
+.main-logo .alarm::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
 .main-logo img {width: 100%; height: 100%;}
-.mypageSection {width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
+.mypageSection {position: relative; width: calc(100% - 32px); margin: 0 16px; box-sizing: border-box; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15); border-radius: 24px; display: flex; justify-content: space-between; align-items: center; padding: 16px; box-sizing: border-box;}
+
+.mypageSection::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 127px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
 .mypageSection .left p { font-size: 16px; font-weight: 600; margin-bottom: 12px;}
-.artistButtons button {width: 40%; background: none; border: none; padding: 0 3px; cursor: pointer;}
+.artistButtons button {position: relative; width: 40%; background: none; border: none; padding: 0 3px; cursor: pointer;}
+.artistButtons button::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
 .artistButtons button img {width: 100%; display: block; border-radius: 50%;}
 .mypageSection .right {width: 150px;}
 .mypageSection .right img {width: 100%; height: auto;}
@@ -44,12 +80,34 @@ body {background: #ffffff;}
 .comments .commentText { display: flex; flex-direction: column; color: #5b5b5b;}
 .comments .username { font-weight: 500; font-size: 16px;}
 .comments .message { font-size: 14px; margin-bottom: 15px; font-weight: 500;}
-.heart { cursor: pointer; color: #ccc; }
+.heart {position: relative; cursor: pointer; color: #ccc; }
+
+.heart::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
 
 
 .commentInputWrap { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #FCD817; border-radius: 25px; }
 .commentInputWrap input { flex: 1; padding: 8px 12px; border: none; border-radius: 20px; background: #fff; font-size: 14px; }
-.commentInputWrap button { padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; 
+.commentInputWrap button {position: relative; padding: 9px 16px; background: #FCD817; color: #797979; border: none; border-radius: 20px; 
+}
+
+.commentInputWrap button::after{
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
 }
 input:focus {border: none; outline: none;}
 .commentInputWrap input {
@@ -78,10 +136,23 @@ input:focus {border: none; outline: none;}
     height: 142px;
   }
   .videoCard img.videoThumb {
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 12px;
     object-fit: cover;
+  }
+  
+  .playIconWrapper::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: 95px;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
   }
 
   .videoCard img.playIcon {
@@ -90,7 +161,9 @@ input:focus {border: none; outline: none;}
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    width: 40px;
   }
+
   .videoCard p {
     font-size: 14px;
     margin-top: 10px;
@@ -113,14 +186,36 @@ input:focus {border: none; outline: none;}
 .voteCard {position: relative; width: 286px; height: 122px; border-radius: 10px; overflow: hidden; flex-shrink: 0;}
 .voteCard img {width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(80%);}
 .voteCard .vote-tit {position: absolute; left: 20px; bottom: 60px; color: #fdb52c; font-size: 12px; padding: 3px 6px; background: #fff; border-radius: 50px; font-weight: 500; z-index: 2;}
+.voteCard .vote-tit::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
 .voteText {position: absolute; bottom: 10px; left: 10px; color: #fff;}
 .voteText span {display: block; font-size: 14px; font-weight: 600; margin-top: -40px; margin-left: 8px;}
 
 .membershipSection { width: calc(100% - 32px); margin: 0 16px 90px; box-sizing: border-box;}
 .membershipCard {position: relative; border-radius: 16px; overflow: hidden; width: 100%; height: auto; cursor: pointer;}
-.membershipBg {width: 100%; height: auto; object-fit: cover; filter: brightness(80%);}
-.membershipOverlay {position: absolute; top: 50%; left: 25px; transform: translateY(-50%); width: 100%; height: auto; display: flex; flex-direction: column; border-radius: 12px;}
-.membershipOverlay .group {color: #fff; font-size: 14px; margin-bottom: 5px;}
+.membershipBg {position: relative; width: 100%; height: auto; object-fit: cover; filter: brightness(80%);}
+.slick-slide img::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%
+}
+.membershipOverlay {position: absolute; top: 50%; left: 25px; transform: translateY(-50%); width: 100%; height: auto; display: flex; flex-direction: column; border-radius: 12px; overflow: visible; z-index: 2;}
+.membershipOverlay .group { color: #fff; font-size: 14px; margin-bottom: 5px; display: inline-block;}
+
+
 .membershipOverlay h2 {color: #fff; font-size: 18px; font-weight: 500; margin: 0;}
 .membershipOverlay .desc {color: #fff; font-size: 16px; margin-top: 5px; line-height: 1.2;}
 .indicator {position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 12px; font-size: 12px; padding: 2px 6px;}

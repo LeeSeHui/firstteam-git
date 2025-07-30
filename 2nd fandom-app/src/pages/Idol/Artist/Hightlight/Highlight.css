@@ -6,8 +6,29 @@
 .card-bg { width: 100%; border-radius: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); }
 .heart-letter { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 220px; z-index: 2; }
 .send-btn {font-size: 14px; width: 115px; height: 32px; position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%); background-color: #FFD700; color: #000; border: none; border-radius: 20px; font-weight: 500; cursor: pointer; z-index: 2; }
+.send-btn::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 11px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
 .notice-box { margin: 24px 16px; background: #f8f8f8; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 16px; font-size: 14px; line-height: 1.6; font-weight: 500; }
-.notice-box p:nth-child(1) {margin-bottom: 10px; border-bottom: 1px solid #797979; padding-bottom: 12px;}
+.notice-box p:nth-child(1) {position: relative; margin-bottom: 10px; border-bottom: 1px solid #797979; padding-bottom: 12px;}
+.notice-box p:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 39px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
 
 .notice-icon { width: 18px;  height: 18px; margin-right: 6px; vertical-align: middle;}
 
@@ -17,13 +38,22 @@
 .vote-badge { display: inline-block; position: absolute; top: 35px; left: 30px; background-color: #595959; padding: 5px 8px; border-radius: 15px; font-size: 10px; font-weight: 600; width: 54px; height: 22px; overflow: hidden; white-space: nowrap; appearance: none; -moz-appearance: none; -webkit-appearance: none; color: #FFD700; }
 .vote-message { position: absolute; top: 65px; left: 33px; font-size: 16px; font-weight: 500; line-height: 1.2; letter-spacing: -0.5px;}
 .vote-go { align-self: flex-end; font-size: 15px; font-weight: 600; position: absolute; bottom: 35px; right: 30px; }
-
+.vote-go::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
 
 .profile-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
 .nickname { font-weight: 600; font-size: 14px; }
 .badge { font-size: 12px; color: gold; }
 .bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
-.feed-text { font-size: 15px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
+.feed-text {position: relative; font-size: 15px; line-height: 1.2; font-weight: 500; white-space: pre-line; }
 
 .feed-images { display: flex; gap: 8px; }
 .feed-images img { flex: 1; width: calc(50% - 4px); border-radius: 12px; object-fit: cover; }
@@ -171,8 +201,9 @@
     margin-left: 55px;
   }
 
-  .icon-small {
-    width: 20px;
-    height: 20px;
-  }
+
+
+  
 }
+
+
