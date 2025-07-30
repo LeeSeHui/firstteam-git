@@ -54,6 +54,12 @@ const Membership = () => {
     setNewComment('');
   };
 
+  const handleDeleteComment = (indexToDelete) => {
+    setComments((prev) => prev.filter((_, idx) => idx !== indexToDelete));
+  };
+
+
+
   const handleUnlock = (id) => {
     if (!unlockedFeedIds.includes(id)) {
       setUnlockedFeedIds([...unlockedFeedIds, id]);
@@ -84,8 +90,10 @@ const Membership = () => {
                   newComment={newComment}
                   setNewComment={setNewComment}
                   handleAddComment={handleAddComment}
+                  handleDeleteComment={handleDeleteComment}
                   totalCommentCount={totalCommentCount}
                   onProfileClickPath="/idol/artist/highlight"
+                  nickname="익명"
                 />
               ) : (
                 <div className="locked-overlay">
