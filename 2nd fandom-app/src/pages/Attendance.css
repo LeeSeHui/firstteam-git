@@ -95,6 +95,16 @@
     justify-content: space-between;
   }
 
+/* red dot */
+.attendance-btn.has-dot {position: relative;}
+
+.attendance-btn.has-dot::after {content: '';position: absolute;
+top: -5px; right: -8px; width: 5px; height: 5px; background-color: red; border-radius: 50%;
+z-index: 2;}
+
+
+
+
   /* 다크모드 */
   .dark .text-area h2 span{color: #F3B643;}
   .dark .vote-desc ul li.sub-color{color: #ffff;}

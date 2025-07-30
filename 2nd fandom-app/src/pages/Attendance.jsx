@@ -62,7 +62,7 @@ const Attendance = () => {
         </div>
 
         <button
-          className="attendance-btn"
+          className={`attendance-btn ${!isChecked ? 'has-dot' : ''}`}
           onClick={handleCheck}
           disabled={isChecked}
         >

@@ -177,6 +177,17 @@
 
 .check-icon{font-size: 10px;}
 
+/* red dot */
+.vote-btn.has-dot {position: relative;}
+.vote-btn.has-dot::after {content: ''; position: absolute; top: -5px;right: -6px; width: 5px;
+height: 5px; background-color: red; border-radius: 50%; z-index: 2;}
+.confirm-btn.has-dot {position: relative;}
+.confirm-btn.has-dot::after {content: ''; position: absolute; top: -5px; right: -6px; width: 5px;
+height: 5px; background-color: red;border-radius: 50%;z-index: 2;}
+
+
+
+
 
 
   /* 다크모드 */

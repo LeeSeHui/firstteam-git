@@ -102,7 +102,7 @@ const MyPage = () => {
                   setTempName(nickname);
                   setIsEditing(true);
                 }}
-                className="edit-btn"
+                className="edit-btn has-dot"
               >
                 <img
                   src={darkMode ? nicknameEditDark : nicknameEdit}
@@ -140,7 +140,7 @@ const MyPage = () => {
             <button onClick={handlePrev} disabled={currentLevel === 0}>
               이전
             </button>
-            <button onClick={handleNext} disabled={currentLevel === characterLevels.length - 1}>
+            <button onClick={handleNext} disabled={currentLevel === characterLevels.length - 1} className="has-dot">
               다음
             </button>
           </div>
@@ -152,24 +152,24 @@ const MyPage = () => {
         <button onClick={() => navigate('/idol/mypage/collection')}>
           <img src={iconCollection} alt="컬렉션" className="category-icon" />
           <span className="category-text">나의 컬렉션</span>
-          <span className="arrow">›</span>
+          <span className="arrow has-dot">›</span>
         </button>
         <button onClick={() => navigate('/idol/mypage/payment')}>
           <img src={iconPayment} alt="결제 아이콘" className="category-icon" />
           <span className="category-text">결제내역</span>
-          <span className="arrow">›</span>
+          <span className="arrow has-dot">›</span>
         </button>
         <button onClick={() => navigate('/idol/mypage/media')}>
           <img src={iconMedia} alt="미디어" className="category-icon" />
           <span className="category-text">최근 본 미디어</span>
-          <span className="arrow">›</span>
+          <span className="arrow has-dot">›</span>
         </button>
         <button onClick={() => navigate('/attendance')}>
           <img src={iconcheck} alt="출석" className="category-icon" />
           <span className="category-text">출석체크 이벤트</span>
-          <span className="arrow">›</span>
+          <span className="arrow has-dot">›</span>
         </button>
-        <button className="setting-button">
+        <button className="setting-button has-dot">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />
           <span className="category-text">어플설정(다크모드)</span>
           <div className="toggle-switch">
@@ -197,7 +197,7 @@ const MyPage = () => {
             <p className="top">레벨업 하고</p>
             <p className="bottom">내 아티스트에게 투표하세요!</p>
           </div>
-          <span className="botton">투표하기</span>
+          <span className="botton has-dot">투표하기</span>
         </button>
         <button className="challenge-button" onClick={() => navigate('/idol/home/quiz')}>
           <img src={challengeImg2} alt="챌린지 이미지" className="challenge-Quiz" />
@@ -205,7 +205,7 @@ const MyPage = () => {
             <p className="top">퀴즈 풀고</p>
             <p className="bottom">포인트 받아가세요!</p>
           </div>
-          <span className="botton">퀴즈풀기</span>
+          <span className="botton has-dot">퀴즈풀기</span>
         </button>
       </div>
 
@@ -214,7 +214,7 @@ const MyPage = () => {
           <span>이용약관</span>
           <span>서비스운영정책</span>
           <span>회사소개</span>
-          <span onClick={() => navigate('/onboarding/login')} className="logout-btn">로그아웃</span>
+          <span onClick={() => navigate('/onboarding/login')} className="logout-btn has-dot">로그아웃</span>
           <span>아동 및 청소년 보호정책</span>
           <span>개인정보처리방침</span>
           <span>고객센터</span>
@@ -226,12 +226,20 @@ const MyPage = () => {
           <p>주소 초대로77길 41 대동2빌딩 9층</p>
           <p>사업자등록번호 221-72-549</p>
         </div>
-        <div className="footer-sns">
+          <div className="footer-sns">
+        <div className="icon-wrapper">
           <img src={iconYoutube} alt="유튜브" />
+        </div>
+        <div className="icon-wrapper has-dot">
           <img src={iconInsta} alt="인스타그램" />
+        </div>
+        <div className="icon-wrapper">
           <img src={iconX} alt="X" />
+        </div>
+        <div className="icon-wrapper">
           <img src={iconTiktok} alt="틱톡" />
         </div>
+      </div>
       </div>
     </div>
   );

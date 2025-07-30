@@ -7,14 +7,50 @@
 .optionButton { border: 2px solid #ddd; border-radius: 9px; background-color: white; cursor: pointer; font-size: 14px; color: #797979; font-weight: 500; height: 55px; }
 .optionButton.selected { border-color: #ffcc00; }
 .quizImageGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 78px; margin-top: 80px; }
-.imageOption { border: none; padding: 0; background: none; cursor: pointer; border-radius: 12px; overflow: hidden; position: relative; }
+.imageOption { border: none; padding: 0; background: none; cursor: pointer; border-radius: 12px;  overflow: visible; position: relative; }
 .imageOption img { width: 100%; display: block; border-radius: 12px; transition: 0.3s ease; box-sizing: border-box; }
 .imageOption.selected img { filter: none; }
 .imageOption.dimmed img { filter: brightness(0.4); }
 .imageOption::after { content: ""; position: absolute; inset: 0; border: 5px solid transparent; border-radius: 12px; pointer-events: none; transition: 0.3s ease; box-sizing: border-box; }
 .imageOption.selected::after { border-color: #ffcc00; }
 .submitButton { padding: 12px 24px; background-color: #ffcc00; border: none; border-radius: 24px; cursor: pointer; }
-.quiz-full-width { width: 100%; }
+.quiz-full-width { width: 100%;}
+
+/* red dot */
+.has-dot {
+  position: relative;
+}
+
+.has-dot::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.dot {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
 .dark .quizBadge { color: #494949; }
 .dark .quizExplain { color: #8f8f8f; }
 .dark .optionButton { background-color: #151515; color: #fff; border: 1px solid #ddd;}
