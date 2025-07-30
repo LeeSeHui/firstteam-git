@@ -59,7 +59,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="container">
+    <div className="payment-container">
       <BackButton label="결제내역" />
 
       {/* 채널 추가 버튼 */}

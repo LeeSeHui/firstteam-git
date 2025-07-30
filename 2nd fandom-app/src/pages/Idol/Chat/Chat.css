@@ -29,7 +29,7 @@
 
 .profile-name { margin-top: 6px; font-size: 13px; font-weight: 500; color: #5b5b5b; text-align: center; }
 
-.recommend-list { margin-top: 12px; margin-bottom: 150px; padding: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border: 15px; border-radius: 15px;}
+.recommend-list { margin-top: 12px; margin-bottom: 100px; padding: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); border: 15px; border-radius: 15px;}
 
 .search-box { display: flex; align-items: center; padding: 16px; border-radius: 40px; background: #fff; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin: 16px auto; }
 
@@ -51,7 +51,7 @@
 
 .artist-en { font-size: 12px; }
 
-.artist-time { font-size: 10px; }
+.artist-time { font-size: 11px; }
 
 
 /* 다크모드 */
