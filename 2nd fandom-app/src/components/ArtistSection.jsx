@@ -69,7 +69,11 @@ const ArtistSection = ({
   return (
     <div className={`artistSection Section ${isExpanded ? 'expanded' : ''}`}>
       {/* ✅ 피드 카드 */}
-      <div className="feed-card" onClick={() => setIsExpanded(!isExpanded)}>
+      <div
+  className="feed-card"
+  onClick={() => setIsExpanded(!isExpanded)}
+  style={{ paddingBottom: isExpanded ? '16px' : '0' }}
+>
         <div className="feed-header">
           <div className="profile-info">
             <img

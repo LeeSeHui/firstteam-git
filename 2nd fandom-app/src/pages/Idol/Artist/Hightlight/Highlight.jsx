@@ -54,6 +54,12 @@ const Highlight = () => {
     setNewComment('');
   };
 
+  const handleDeleteComment = (indexToDelete) => {
+    setComments((prev) => prev.filter((_, idx) => idx !== indexToDelete));
+  };
+
+  
+
   const handleSendCard = () => {
     // 🎉 컴패티 효과 (이전 방식)
     confetti({
@@ -138,8 +144,10 @@ const Highlight = () => {
         newComment={newComment}
         setNewComment={setNewComment}
         handleAddComment={handleAddComment}
+        handleDeleteComment={handleDeleteComment} 
         totalCommentCount={totalCommentCount}
         onProfileClickPath="/idol/artist/highlight"
+        nickname={nickname}
       />
 
       {/* 라이브 리플레이 */}
