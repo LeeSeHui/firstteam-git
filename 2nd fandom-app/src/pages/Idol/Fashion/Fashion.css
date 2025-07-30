@@ -3,9 +3,11 @@
 
 
 .fashion-tabs { display: flex; margin-bottom: 16px; gap: 5px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;}
-.tab { padding: 7px 13px; border-radius: 20px; background: #fff; border: 1px solid #FFD700; text-decoration: none; font-size: 14px; white-space: nowrap; transition: background 0.2s; }
+.tab {position: relative; padding: 7px 13px; border-radius: 20px; background: #fff; border: 1px solid #FFD700; text-decoration: none; font-size: 14px; white-space: nowrap; transition: background 0.2s; }
+
 
 .tab.active { background: #FFD700; color: #121212; }
+
 
 
 .gradient-border-wrapper {
@@ -31,3 +33,21 @@
 
 .dark .tab {background: #121212; color: #fff;}
 .dark .tab.active {background: #FFD700; color: #595959; font-weight: 500;}
+
+
+.tab::before {  content: '';
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;}
+.product-tag::before {  content: '';
+  position: absolute;
+  top: 1px;
+  right: 6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;}

@@ -1,4 +1,4 @@
-.yellow-btn {
+.yellow-btn { position: relative;
   background-color: #FFD700;
   color: #333;
   font-size: 16px;
@@ -14,3 +14,11 @@
 .yellow-btn:hover {
   background-color: #ffcc00;
 }
+.yellow-btn:before {  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;}
