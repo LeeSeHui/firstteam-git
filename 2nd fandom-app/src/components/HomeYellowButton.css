@@ -6,4 +6,16 @@
     border-radius: 7px;
     cursor: pointer;
     width: 277px; height: 50px;
+    position: relative;
+  }
+
+  .home-yellow-btn::after{
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 87px;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
   }
