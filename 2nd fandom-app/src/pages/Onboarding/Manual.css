@@ -1,79 +1,107 @@
+/* 📌 기본 구조 */
 header { padding: 20px 16px; display: flex; justify-content: space-between; align-items: center; }
 
 .manual-wrapper { width: 100%; height: 100dvh; position: relative; overflow: hidden; }
 
 .manual-track { display: flex; transition: transform 0.4s ease; }
 
-.manual-page {
-  position: relative;
-  flex-shrink: 0;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  padding: 20px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
+.manual-page { position: relative; flex-shrink: 0; width: 100%; height: auto; box-sizing: border-box; text-align: center; padding: 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-.manual-page img {max-width: 20vh;}
+
+
+/* 🎠 슬라이더 - manual1 전용 */
+.manual1-carousel { width: 100%; max-width: 100%; margin: 0 auto; overflow: hidden; }
 
 .manual-skip-btn { background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; color: #595959; font-weight: 600; margin-bottom: 20px; }
 
-.manual-text-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 0 16px;
-  text-align: center;
-}
 
-.manual-text-wrapper.top {
-  top: 100%;
-}
+.carousel-centered-only .slick-list { padding: 0 143px !important; position: relative; }
 
-.manual-text-wrapper.center {
-  top: 110%;
-  transform: translate(-50%, -50%);
-}
+.manual-slide { width: 134px !important; box-sizing: border-box; }
 
-.manual-text-wrapper.bottom {
-  bottom: -30%;
-}
-.manual-page img.manual-img {
-  max-width: 80%;
-  max-height: 40vh;
-  height: auto;
-  margin-bottom: 24px;
-}
+.manual-slide-inner { transform: scale(0.7); opacity: 0.5; transition: transform 0.4s ease, opacity 0.4s ease; }
+
+.manual1-carousel .slick-center .manual-slide-inner { transform: scale(1); opacity: 1; }
+
+.manual-slide-inner img { width: 100%; border-radius: 16px; object-fit: cover; }
+
+.manual-track > .manual-page:not(:first-child) .manual1-carousel { display: none; }
 
 
-.manual-text-wrapper h2 { font-size: 20px; font-weight: 600; margin-bottom: 15px;}
+/* 👉 스와이프 손 아이콘 */
+.swipe-wrapper { position: absolute; right: 10%; bottom: 32px; width: 30px; height: auto; display: flex; justify-content: center; align-items: flex-end; }
+
+.swipe-img { width: 100%; transform-origin: bottom center; animation: swipe-swing 1s ease-in-out infinite; }
+
+@keyframes swipe-swing {
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(-10deg); }
+  55% { transform: rotate(0deg); }
+  85% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+/* 🎨 manual4 전용 floating 이미지 */
+.manual4-floating-img { position: absolute; top: 60%; right: 10%; width: 150px; animation: float 2s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+/* 🖼 이미지 공통 */
+.manual-page img { max-width: 20vh; }
+
+.manual-page img.manual-img { max-width: 80%; max-height: 40vh; height: auto; margin-bottom: 24px; }
+
+
+/* 📎 버튼 */
+.manual-skip-btn { background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; color: #595959; font-weight: 600; }
+
+.dark .skip-btn { color: #fff; }
+
+
+/* 📝 텍스트 위치 조정 */
+.manual-text-wrapper { position: absolute; left: 50%; transform: translateX(-50%); width: 100%; padding: 0 16px; text-align: center; }
+
+.manual-text-wrapper.top { top: 100%; }
+
+.manual-text-wrapper.center { top: 110%; transform: translate(-50%, -50%); }
+
+.manual-text-wrapper.bottom { bottom: -30%; }
+
+
+/* 📝 텍스트 스타일 */
+.manual-text-wrapper h2 { font-size: 20px; font-weight: 600; margin-bottom: 15px; }
 
 .manual-text-wrapper p { font-size: 14px; margin-bottom: 30px; color: #595959; font-weight: 500; }
 
+
+/* ⭕️ 페이지 도트 */
 .dot-container { display: flex; justify-content: center; margin-top: 16px; }
 
+.dot { display: inline-block; width: 6px; height: 6px; background: #ccc; border-radius: 50%; margin: 0 4px; }
+
+.dot.active { background: #facc15; }
+
+
+/* 🎞 marquee 애니메이션 */
 .marquee { width: 100%; display: flex; align-items: center; margin-bottom: 30px; overflow: hidden; }
 
 .marquee-content { display: flex; animation: scroll-left 50s linear infinite; }
 
 .marquee-right .marquee-content { animation: scroll-right 50s linear infinite; }
 
-.marquee-content img { width: 30vw;  height: auto; border-radius: 50%; object-fit: cover; margin: 0 5px; }
+.marquee-content img { width: 30vw; height: auto; border-radius: 50%; object-fit: cover; margin: 0 5px; }
 
-.dot { display: inline-block; width: 6px; height: 6px; background: #ccc; border-radius: 50%; margin: 0 4px; }
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
 
-.dot.active { background: #facc15; }
-
-.manual-visual-wrapper { height: auto; overflow: visible; display: flex; flex-direction: column; align-items: center; }
-
-@keyframes scroll-left { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
-
-@keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0%); } }
-
-/* 다크모드 */
-.dark .skip-btn {color: #fff;}
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
