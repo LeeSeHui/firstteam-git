@@ -4,7 +4,7 @@
 
 .quiz-left { text-align: left;}
 
-.quiz-left h3 { font-size: 20px; font-weight: bold; color: #333; line-height: 1.2; margin-bottom: 8px; }
+.quiz-left h3 { font-size: 16px; font-weight: bold; line-height: 1.2; margin-bottom: 8px; }
 
 .highlight { color: #f5b000; }
 
@@ -29,18 +29,6 @@
 
 
 
-@media (min-width: 500px) {
-    .quiz-left h3 {font-size: 30px;}
-    .timer {font-size: 18px;}
-    .time-box {min-width: 80px;}
-    .timer .time {font-size: 18px;}
-}
-@media (min-width: 768px) {
-    .quiz-left h3 {font-size: 40px;}
-    .timer {font-size: 20px;}
-    .time-box {min-width: 90px;}
-    .timer .time {font-size: 20px;}
-}
 
 .dark .highlight {color: #f5b000;}
 .dark .timer span {display: block;}

@@ -1,7 +1,18 @@
 .artistSection {width: calc(100% - 32px); margin: 0 auto; border-radius: 14px;}
 .icon-text { display: flex; align-items: center; gap: 6px; font-size: 14px; }
 
-.feed-card { border-radius: 16px; padding: 16px 16px 0 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 20px; font-size: 14px; width: 100%; max-width: 448px; margin: 0 auto 20px; }
+.feed-card {position: relative; border-radius: 16px; padding: 16px 16px 0 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 20px; font-size: 14px; width: 100%; max-width: 448px; margin: 0 auto 20px; }
+
+.feed-card::after {
+    content: '';
+    position: absolute;
+    top: 55px;
+    right: 210px;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+  }
 
 .profile-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
 .nickname { gap: 4px; display: flex; align-items: center; font-weight: 600; font-size: 14px; }
@@ -18,7 +29,8 @@
 .feed-images img { width: 100%; border-radius: 0 0 12px 12px; object-fit: cover; }
 .expanded-images { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
 .expanded-images img { width: 100%; border-radius: 12px; object-fit: cover; }
-.icon-small { width: 20px; height: 20px; margin-right: 6px; vertical-align: middle; }
+.icon-small {width: 20px; height: 20px; margin-right: 6px; vertical-align: middle; }
+
 .comment-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
 
 

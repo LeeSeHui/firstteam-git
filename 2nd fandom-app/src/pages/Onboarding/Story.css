@@ -45,7 +45,7 @@
 
 .skip-btn {
   position: absolute;
-  top: 37px;
+  top: 27px;
   right: 20px;
   background: none;
   border: none;
@@ -55,6 +55,14 @@
   cursor: pointer;
   z-index: 10;
 }
+.skip-btn::before {  content: '';
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;}
 
 .touch-icon {
   position: absolute;

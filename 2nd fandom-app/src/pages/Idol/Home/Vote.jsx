@@ -82,7 +82,7 @@ const Vote = () => {
               <p className="vote-count sub-color">{item.votes.toLocaleString()}표</p>
               <div className="vote-bar" style={{'--bar-width': `${(item.votes / voteList[0].votes) * 100}%` }} />
             </div>
-            <button className="vote-btn" onClick={() => handleVoteClick(item)}>
+            <button className="vote-btn has-dot" onClick={() => handleVoteClick(item)}>
               투표
             </button>
           </div>
@@ -97,7 +97,7 @@ const Vote = () => {
             <p className="modal-sub">투표 하시겠습니까?</p>
             <div className="modal-btns">
               <button className="cancel-btn" onClick={() => setShowConfirm(false)}>취소</button>
-              <button className="confirm-btn" onClick={handleConfirm}>확인</button>
+              <button className="confirm-btn has-dot" onClick={handleConfirm}>확인</button>
             </div>
           </div>
         </div>

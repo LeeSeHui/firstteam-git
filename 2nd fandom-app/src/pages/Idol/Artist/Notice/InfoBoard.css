@@ -17,6 +17,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+  }
+
+  .notice-title::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
   }
   
   .arrow {

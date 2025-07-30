@@ -98,7 +98,7 @@ const Quiz = () => {
           {quiz.options.map((option, idx) => (
             <button
               key={idx}
-              className={`optionButton ${selectedOption === idx ? 'selected' : ''}`}
+              className={`optionButton has-dot ${selectedOption === idx ? 'selected' : ''}`}
               onClick={() => handleOptionClick(idx)}
             >
               {option.text}
@@ -118,6 +118,7 @@ const Quiz = () => {
                 className={`imageOption ${isSelected ? 'selected' : ''} ${isDimmed ? 'dimmed' : ''}`}
                 onClick={() => handleOptionClick(idx)}
               >
+                <span className="dot" />
                 <img src={option.img} alt={`option ${idx + 1}`} />
               </button>
             );
@@ -128,7 +129,7 @@ const Quiz = () => {
       <YellowButton
         label="제출"
         onClick={handleSubmit}
-        className="quiz-full-width"
+        className="quiz-full-width has-dot"
       />
 
       {showModal && (
