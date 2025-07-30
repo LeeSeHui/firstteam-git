@@ -15,15 +15,11 @@ import photoImg from '../../../assets/mypage/collection/poto.png';
 
 
 const Collection = () => {
-  const navigate = useNavigate();
-
-  const handlePlusClick = () => {
-    console.log('플러스 버튼 클릭됨');
-  };
+ 
 
   return (
-    <div className="container">
-    <BackButton label="나의 컬렉션" onPlusClick={handlePlusClick} />
+    <div className="collection-container">
+    <BackButton label="나의 컬렉션" />
 
     <div className="collection-grid">
         {/* 상단 4개 */}

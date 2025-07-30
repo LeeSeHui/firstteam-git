@@ -1,5 +1,6 @@
-.collection-grid {display: grid;grid-template-columns: repeat(2, 1fr); gap: 16px;
-margin-bottom: 35px;}
+.collection-container{padding: 20px 16px; box-sizing: border-box; padding-bottom: 50px;}
+.collection-grid {display: grid;grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 35px;}
+.collection-grid:last-of-type {margin-bottom: 0;}
 .collection-item {position: relative;}
 .collection-item img {width: 100%;border-radius: 13px;object-fit: cover;}
 .title {font-weight: 500; margin-top: 5px; font-size: 15px;}
