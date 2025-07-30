@@ -12,7 +12,7 @@
   
   .splash-text {
     position: absolute;
-    bottom: 70%;                /* 이미지 아래쪽에서 10% 위쪽 */
+    bottom: 71%;                /* 이미지 아래쪽에서 10% 위쪽 */
     left: 50%;
     transform: translateX(-50%);
     color: white;               /* 대비를 위해 흰색, 필요하면 그림자 추가 */
