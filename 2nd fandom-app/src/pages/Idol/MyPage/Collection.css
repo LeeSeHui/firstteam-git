@@ -11,7 +11,7 @@ color: white; font-weight: 500; font-size: 14px;}
 
 /* red dot */
 .collection-container .back-wrapper.has-dot {position: relative;}
-.collection-container .back-wrapper.has-dot::after {content: "";position: absolute;top: 0px;left: 25px; width: 5px; height: 5px; background-color: red; border-radius: 50%;}
+.collection-container .back-wrapper.has-dot::after {content: "";position: absolute;top: 0px;left: 18px; width: 5px; height: 5px; background-color: red; border-radius: 50%;}
 
 
 /* 다크모드 */

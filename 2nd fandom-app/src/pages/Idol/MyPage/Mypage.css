@@ -83,7 +83,7 @@ color: #797979;}
 /* 닉네임변경 */
 .nickname-input {font-size: 24px; font-weight: bold; border: none; border-bottom: 1px solid #ccc; background: transparent; outline: none;width: 120px;}
 .edit-btn {background: none; border: none;margin-left: 6px; cursor: pointer; position: relative;}
-.edit-icon { width: 1.1em;height: 1.1em;object-fit: contain;vertical-align: bottom;  /* 꼭 있어야 함! */}
+.edit-icon { width: 1.3em;height: 1.3em; object-fit: contain;vertical-align: bottom;  /* 꼭 있어야 함! */}
 .edit-btn.has-dot::after {content: "";position: absolute;top: -4px;right: -7px;width: 5px;height: 5px;
 background-color: red;border-radius: 50%;z-index: 2;}
 

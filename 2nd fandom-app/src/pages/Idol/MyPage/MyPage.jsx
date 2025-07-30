@@ -74,7 +74,7 @@ const MyPage = () => {
           origin: { x: 0.5, y: 0.3 },
           colors: ['#a0e7e5', '#b4f8c8', '#fbe7c6', '#ffaecc'],
         });
-      }, 300);
+      }, 100);
       return () => clearTimeout(timeout);
     }
   }, [currentLevel]);

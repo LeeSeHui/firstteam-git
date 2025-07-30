@@ -129,7 +129,7 @@ const Quiz = () => {
       <YellowButton
         label="제출"
         onClick={handleSubmit}
-        className="quiz-full-width has-dot"
+        className="quiz-full-width"
       />
 
       {showModal && (

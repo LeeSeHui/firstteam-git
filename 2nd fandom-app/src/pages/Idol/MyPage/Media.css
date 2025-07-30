@@ -67,7 +67,7 @@ gap: 4px; margin-bottom: 49px;}
 
 /* red dot */
 .Media-container .back-wrapper.has-dot {position: relative;}
-.Media-container .back-wrapper.has-dot::after {content: "";position: absolute;top: 0px;left: 25px; width: 5px; height: 5px; background-color: red; border-radius: 50%;}
+.Media-container .back-wrapper.has-dot::after {content: "";position: absolute;top: 0px;left: 18px; width: 5px; height: 5px; background-color: red; border-radius: 50%;}
 
 
 /* input 태그 안에서 텍스트 색상까지 제어하려면 */
