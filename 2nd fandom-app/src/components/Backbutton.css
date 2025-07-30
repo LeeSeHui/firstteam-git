@@ -1,4 +1,4 @@
-.ButtonContainer {display: flex; position: relative; align-items: center; height: 50px; margin-bottom: 20px;}
+.ButtonContainer {display: flex; position: relative; align-items: center; height: 50px;}
 .header-title {position: absolute; left: 50%; transform: translateX(-50%); font-size: 22px;}
 .ButtonContainer button { border: none; background: none; font-size: 20px; cursor: pointer; }
 
