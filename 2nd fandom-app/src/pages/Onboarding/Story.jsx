@@ -9,6 +9,7 @@ import story2 from '../../assets/onboarding/story2.png';
 import story3 from '../../assets/onboarding/story3.png';
 import story4 from '../../assets/onboarding/story4.png';
 import story5 from '../../assets/onboarding/story5.png';
+import touch from '../../assets/onboarding/touch.png';
 
 const isMobile = window.innerWidth <= 480;
 
@@ -96,6 +97,13 @@ const Story = () => {
         ))}
       </div>
 
+          {!stories[currentPage].isLast && (
+      <img
+        src={touch}
+        alt="터치 유도"
+        className="touch-icon"
+      />
+    )}
       {/* 버튼 출력 (마지막 페이지만) */}
       {stories[currentPage].isLast && (
         <div

@@ -20,7 +20,7 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 
 .manual-page img {max-width: 20vh;}
 
-.manual-skip-btn { background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; color: #595959; font-weight: 600; }
+.manual-skip-btn { background: none; border: none; font-size: 14px; z-index: 10; cursor: pointer; color: #595959; font-weight: 600; margin-bottom: 20px; }
 
 .manual-text-wrapper {
   position: absolute;
