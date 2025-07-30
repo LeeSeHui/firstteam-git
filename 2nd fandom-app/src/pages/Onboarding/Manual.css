@@ -89,9 +89,9 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 /* ⭕️ 페이지 도트 */
 .dot-container { display: flex; justify-content: center; margin-top: 16px; }
 
-.dot { display: inline-block; width: 6px; height: 6px; background: #ccc; border-radius: 50%; margin: 0 4px; }
+.manual-dot { display: inline-block; width: 6px; height: 6px; background: #ccc; border-radius: 50%; margin: 0 4px; }
 
-.dot.active { background: #facc15; }
+.manual-dot.active { background: #facc15; }
 
 
 /* 🎞 marquee 애니메이션 */
