@@ -4,3 +4,26 @@
 .actor-toggle-option {flex: 1; text-align: center; padding: 6px 0; font-size: 14px; font-weight: 400; cursor: pointer; color: #494949; transition: all 0.3s ease;  border-radius: 20px;}
 
 .actor-botton {background-color: #37CEBF; padding: 7px 16px; border-radius: 7px; font-weight: 400; font-size: 18px;color: #ffffff;}
+
+
+.actor-level-buttons {
+    display: flex
+    ;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 16px;
+}
+
+
+.actor-level-buttons button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;}
+
+    .actor-level-buttons button {
+        background-color: #37CEBF;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 10px;
+        font-weight: 500;
+        cursor: pointer;
+    }

@@ -4,3 +4,24 @@
 .trot-toggle-option {flex: 1; text-align: center; padding: 6px 0; font-size: 14px; font-weight: 400; cursor: pointer; color: #494949; transition: all 0.3s ease;  border-radius: 20px;}
 
 .trot-botton {background-color: #AE74FF; padding: 7px 16px; border-radius: 7px; font-weight: 400; font-size: 18px;color: #ffffff;}
+
+.trot-level-buttons {
+    display: flex
+    ;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 16px;
+}
+
+.trot-level-buttons button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;}
+
+    .trot-level-buttons button {
+        background-color: #AE74FF;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 10px;
+        font-weight: 500;
+        cursor: pointer;
+    }
