@@ -65,6 +65,31 @@
   max-width: 350px; /* 너무 커지지 않게 제한 가능 */
 }
 
+/* red dot */
+.modalTextWrap button.has-dot {
+  position: relative;
+}
+
+.modalTextWrap button.has-dot::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* ===================== 타입별 스타일 ===================== */

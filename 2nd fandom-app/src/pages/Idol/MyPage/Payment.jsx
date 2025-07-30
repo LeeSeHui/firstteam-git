@@ -54,9 +54,6 @@ const Payment = () => {
     setUnsubscribingId(null);
   };
 
-  const handleReSubscribe = (id) => {
-    setUnsubscribedIds(prev => prev.filter(uid => uid !== id));
-  };
 
   return (
     <div className="payment-container">
@@ -65,7 +62,10 @@ const Payment = () => {
       {/* 채널 추가 버튼 */}
       <div className="add-artist-button">
         <button onClick={handlePlusClick}>
-          <img src={isDarkMode ? plusIconDark : plusIcon} alt="아티스트 추가" />
+          <div className="icon-with-dot">
+      <img src={isDarkMode ? plusIconDark : plusIcon} alt="아티스트 추가" />
+      <span className="payment-red-dot"></span>  {/* 빨간 점 추가 */}
+    </div>
           <span className='payment-add-button sub-color'>채널 추가하기</span>
         </button>
       </div>
@@ -97,14 +97,14 @@ const Payment = () => {
 
                 {isUnsubscribed ? (
                 <button
-                  className="subscribe-button"
+                  className="subscribe-button has-dot"
                   onClick={handleRecommendSubscribe}
                 >
                   가입
                 </button>
               ) : (
                 <button
-                  className="payment-cancel-button sub-color"
+                  className="payment-cancel-button sub-color has-dot"
                   onClick={() => handleUnsubscribeClick(artist.id)}
                 >
                   해지
@@ -130,7 +130,7 @@ const Payment = () => {
               <p>ENHYPEN <img src={mark} alt="badge" /></p>
               <span className='sub-color'>@enhypen</span>
             </div>
-            <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
+            <button className="subscribe-button has-dot" onClick={handleRecommendSubscribe}>가입</button>
           </li>
           <li>
             <img src={logo2} alt="SEVENTEEN" />
@@ -138,7 +138,7 @@ const Payment = () => {
               <p>SEVENTEEN <img src={mark} alt="badge" /></p>
               <span className='sub-color'>@saythename_17</span>
             </div>
-           <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
+           <button className="subscribe-button has-dot" onClick={handleRecommendSubscribe}>가입</button>
           </li>
           <li>
             <img src={logo3} alt="BLACKPINK" />
@@ -146,7 +146,7 @@ const Payment = () => {
               <p>BLACKPINK <img src={mark} alt="badge" /></p>
               <span className='sub-color'>@blackpinkofficial</span>
             </div>
-            <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
+            <button className="subscribe-button has-dot" onClick={handleRecommendSubscribe}>가입</button>
           </li>
           <li>
             <img src={logo4} alt="NMIXX" />
@@ -154,7 +154,7 @@ const Payment = () => {
               <p>NMIXX <img src={mark} alt="badge" /></p>
               <span className='sub-color'>@nmixx_official</span>
             </div>
-            <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
+            <button className="subscribe-button has-dot" onClick={handleRecommendSubscribe}>가입</button>
           </li>
           <li>
             <img src={logo5} alt="IVE" />
@@ -162,7 +162,7 @@ const Payment = () => {
               <p>IVE <img src={mark} alt="badge" /></p>
               <span className='sub-color'>@IVEstarship</span>
             </div>
-            <button className="subscribe-button" onClick={handleRecommendSubscribe}>가입</button>
+            <button className="subscribe-button has-dot" onClick={handleRecommendSubscribe}>가입</button>
           </li>
         </ul>
       </div>
