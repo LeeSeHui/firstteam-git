@@ -45,7 +45,7 @@
 
 .skip-btn {
   position: absolute;
-  top: 20px;
+  top: 37px;
   right: 20px;
   background: none;
   border: none;
@@ -54,4 +54,18 @@
   color: #fff;
   cursor: pointer;
   z-index: 10;
+}
+
+.touch-icon {
+  position: absolute;
+  bottom: 40%;
+  right: 10%;
+  width: 25px;
+  opacity: 0.8;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
