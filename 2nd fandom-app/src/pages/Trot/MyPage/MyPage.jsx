@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './Mypage.css';
@@ -27,50 +28,60 @@ import nicknameEdit from '../../../assets/mypage/nicknameedit.png';
 
 const MyPage = () => {
   const navigate = useNavigate();
- const { nickname, updateNickname } = useNickname();
+  const { nickname, updateNickname } = useNickname();
   const { darkMode, toggleTheme } = useTheme();
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(nickname);
+  const [currentLevel, setCurrentLevel] = useState(0);
 
- const characterLevels = [
-    {
-      level: 'Lv.1',
-      image: video1,
-      goal: '조금만 더 가면 Lv.2에 달성해요',
-    },
-    {
-      level: 'Lv.2',
-      image: video2,
-      goal: '조금만 더 가면 Lv.3에 달성해요',
-    },
-    {
-      level: 'Lv.3',
-      image: video3,
-      goal: '조금만 더 가면 Lv.4에 달성해요',
-    },
-    {
-      level: 'Lv.4',
-      image: video4,
-      goal: '조금만 더 가면 Lv.5에 달성해요',
-    },
-    {
-      level: 'Lv.5',
-      image: video5,
-      goal: '최고 레벨 달성!',
-    },
+  const characterLevels = [
+    { level: 'Lv.1', image: video1, goal: '조금만 더 가면 Lv.2에 달성해요' },
+    { level: 'Lv.2', image: video2, goal: '조금만 더 가면 Lv.3에 달성해요' },
+    { level: 'Lv.3', image: video3, goal: '조금만 더 가면 Lv.4에 달성해요' },
+    { level: 'Lv.4', image: video4, goal: '조금만 더 가면 Lv.5에 달성해요' },
+    { level: 'Lv.5', image: video5, goal: '최고 레벨 달성!' },
   ];
 
-
   const handleSave = () => {
-  updateNickname(tempName);
-  setIsEditing(false);
-};
+    updateNickname(tempName);
+    setIsEditing(false);
+  };
+
+  const handleNext = () => {
+    if (currentLevel < characterLevels.length - 1) {
+      setCurrentLevel(prev => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentLevel > 0) {
+      setCurrentLevel(prev => prev - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (currentLevel === characterLevels.length - 1) {
+      const timeout = setTimeout(() => {
+        confetti({
+          particleCount: 150,
+          spread: 180,
+          startVelocity: 40,
+          gravity: 0.8,
+          ticks: 200,
+          origin: { x: 0.5, y: 0.3 },
+          colors: ['#a0e7e5', '#b4f8c8', '#fbe7c6', '#ffaecc'],
+        });
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentLevel]);
+
   return (
     <div className="container">
       <BackButton label="마이페이지" />
 
-      <div className='intro'>
-        <p className='mypage-nickname'>
+      <div className="intro">
+        <p className="mypage-nickname">
           {isEditing ? (
             <input
               type="text"
@@ -84,43 +95,59 @@ const MyPage = () => {
           ) : (
             <>
               {nickname}님
-              <button onClick={() => {
-                setTempName(nickname);
-                setIsEditing(true);
-              }} className="edit-btn">
+              <button
+                onClick={() => {
+                  setTempName(nickname);
+                  setIsEditing(true);
+                }}
+                className="edit-btn"
+              >
                 <img src={nicknameEdit} alt="닉네임 수정" className="edit-icon" />
               </button>
             </>
           )}
         </p>
         <p className="text">오늘도 같이 덕질 해볼까요?</p>
-        <p className='point'>
-          <img className='star-logo' src={starlogo} alt="star" />
+        <p className="point">
+          <img className="star-logo" src={starlogo} alt="star" />
           <span>보유 포인트 : 200</span>
         </p>
       </div>
 
-    <div className="video-box">
-  <Swiper spaceBetween={30} slidesPerView={1}>
-    {characterLevels.map((char, index) => (
-      <SwiperSlide key={index}>
-        <div className="challenge-section">
-          <img src={char.image} alt={`레벨 ${char.level}`} className="character-img" />
+      <div className="video-box">
+        <Swiper spaceBetween={30} slidesPerView={1}>
+          <SwiperSlide>
+            <div className="challenge-section">
+              <img
+                src={characterLevels[currentLevel].image}
+                alt={`레벨 ${characterLevels[currentLevel].level}`}
+                className="character-img"
+              />
+              <div className="trot-day">D+1</div>
+              <p>
+                {nickname}님, 오늘의 챌린지를 통해<br />
+                목표에 달성해보아요!
+              </p>
+              <span>별별이 {characterLevels[currentLevel].level}</span>
+              <img src={levelbar} alt="level bar" className="level-bar" />
+              <span>{characterLevels[currentLevel].goal}</span>
 
-          <div className="trot-day">D+1</div>
-
-          <p>
-            {nickname}님, 오늘의 챌린지를 통해<br />목표에 달성해보아요!
-          </p>
-
-          <span>별별이 {char.level}</span>
-          <img src={levelbar} alt="level bar" className="level-bar" />
-          <span>{char.goal}</span>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</div>
+              <div className="trot-level-buttons">
+                <button onClick={handlePrev} disabled={currentLevel === 0}>
+                  이전
+                </button>
+                <button
+                  onClick={handleNext}
+                  disabled={currentLevel === characterLevels.length - 1}
+                  className="has-dot"
+                >
+                  다음
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
       <div className="category-section">
         <h3 className="category-title">Category</h3>
@@ -143,12 +170,11 @@ const MyPage = () => {
           <span className="arrow">›</span>
         </button>
 
-         <button onClick={() => navigate('/attendance')}>
-          <img src={iconcheck} alt="미디어 아이콘" className="category-icon" />
+        <button onClick={() => navigate('/attendance')}>
+          <img src={iconcheck} alt="출석 아이콘" className="category-icon" />
           <span className="category-text">출석체크 이벤트</span>
           <span className="arrow">›</span>
         </button>
-
 
         <button className="setting-button">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './Mypage.css';
@@ -27,12 +28,13 @@ import nicknameEdit from '../../../assets/mypage/nicknameedit.png';
 
 const MyPage = () => {
   const navigate = useNavigate();
- const { nickname, updateNickname } = useNickname();
+  const { nickname, updateNickname } = useNickname();
   const { darkMode, toggleTheme } = useTheme();
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(nickname);
+  const [currentLevel, setCurrentLevel] = useState(0);
 
- const characterLevels = [
+  const characterLevels = [
     {
       level: 'Lv.1',
       image: video1,
@@ -60,11 +62,40 @@ const MyPage = () => {
     },
   ];
 
-
   const handleSave = () => {
-  updateNickname(tempName);
-  setIsEditing(false);
-};
+    updateNickname(tempName);
+    setIsEditing(false);
+  };
+
+  const handleNext = () => {
+    if (currentLevel < characterLevels.length - 1) {
+      setCurrentLevel(prev => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentLevel > 0) {
+      setCurrentLevel(prev => prev - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (currentLevel === characterLevels.length - 1) {
+      const timeout = setTimeout(() => {
+        confetti({
+          particleCount: 150,
+          spread: 180,
+          startVelocity: 40,
+          gravity: 0.8,
+          ticks: 200,
+          origin: { x: 0.5, y: 0.3 },
+          colors: ['#a0e7e5', '#b4f8c8', '#fbe7c6', '#ffaecc'],
+        });
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentLevel]);
+
   return (
     <div className="container">
       <BackButton label="마이페이지" />
@@ -100,72 +131,55 @@ const MyPage = () => {
         </p>
       </div>
 
-    <div className="video-box">
-  <Swiper spaceBetween={30} slidesPerView={1}>
-    {characterLevels.map((char, index) => (
-      <SwiperSlide key={index}>
-        <div className="challenge-section">
-          <img src={char.image} alt={`레벨 ${char.level}`} className="character-img" />
-
-          <div className="actor-day">D+1</div>
-
-          <p>
-            {nickname}님, 오늘의 챌린지를 통해<br />목표에 달성해보아요!
-          </p>
-
-          <span>별별이 {char.level}</span>
-          <img src={levelbar} alt="level bar" className="level-bar" />
-          <span>{char.goal}</span>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</div>
+      <div className="video-box">
+        <Swiper spaceBetween={30} slidesPerView={1}>
+          {characterLevels.map((char, index) => (
+            <SwiperSlide key={index}>
+              <div className="challenge-section">
+                <img src={char.image} alt={`레벨 ${char.level}`} className="character-img" />
+                <div className="actor-day">D+1</div>
+                <p>{nickname}님, 오늘의 챌린지를 통해<br />목표에 달성해보아요!</p>
+                <span>별별이 {char.level}</span>
+                <img src={levelbar} alt="level bar" className="level-bar" />
+                <span>{char.goal}</span>
+                <div className="actor-level-buttons">
+                  <button onClick={handlePrev} disabled={currentLevel === 0}>이전</button>
+                  <button onClick={handleNext} disabled={currentLevel === characterLevels.length - 1}>다음</button>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       <div className="category-section">
         <h3 className="category-title">Category</h3>
-
         <button onClick={() => navigate('/idol/mypage/collection')}>
           <img src={iconCollection} alt="컬렉션 아이콘" className="category-icon" />
           <span className="category-text">나의 컬렉션</span>
           <span className="arrow">›</span>
         </button>
-
         <button onClick={() => navigate('/idol/mypage/payment')}>
           <img src={iconPayment} alt="결제 아이콘" className="category-icon" />
           <span className="category-text">결제내역(멤버십관리)</span>
           <span className="arrow">›</span>
         </button>
-
         <button onClick={() => navigate('/idol/mypage/media')}>
           <img src={iconMedia} alt="미디어 아이콘" className="category-icon" />
           <span className="category-text">최근 본 미디어</span>
           <span className="arrow">›</span>
         </button>
-
-         <button onClick={() => navigate('/attendance')}>
+        <button onClick={() => navigate('/attendance')}>
           <img src={iconcheck} alt="미디어 아이콘" className="category-icon" />
           <span className="category-text">출석체크 이벤트</span>
           <span className="arrow">›</span>
         </button>
-
-
         <button className="setting-button">
           <img src={iconSetting} alt="설정 아이콘" className="category-icon" />
           <span className="category-text">다크모드</span>
           <div className="toggle-switch">
-            <span
-              className={`actor-toggle-option ${darkMode ? 'active' : ''}`}
-              onClick={() => !darkMode && toggleTheme()}
-            >
-              on
-            </span>
-            <span
-              className={`actor-toggle-option ${!darkMode ? 'active' : ''}`}
-              onClick={() => darkMode && toggleTheme()}
-            >
-              off
-            </span>
+            <span className={`actor-toggle-option ${darkMode ? 'active' : ''}`} onClick={() => !darkMode && toggleTheme()}>on</span>
+            <span className={`actor-toggle-option ${!darkMode ? 'active' : ''}`} onClick={() => darkMode && toggleTheme()}>off</span>
           </div>
         </button>
       </div>
@@ -200,7 +214,6 @@ const MyPage = () => {
           <span>개인정보처리방침</span>
           <span>고객센터</span>
         </div>
-
         <div className="footer-info">
           <p>
             <span>뉴비컴퍼니 사업자 정보</span>
@@ -211,7 +224,6 @@ const MyPage = () => {
           <p>주소 초대로77길 41 대동2빌딩 9층</p>
           <p>사업자등록번호 221-72-549</p>
         </div>
-
         <div className="footer-sns">
           <img src={iconYoutube} alt="유튜브" />
           <img src={iconInsta} alt="인스타그램" />
