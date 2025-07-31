@@ -12,15 +12,13 @@ import boyfriendImg from '../../../assets/mypage/collection/conceptshot.png';
 import fanartImg from '../../../assets/mypage/collection/fanart.png';
 import photoImg from '../../../assets/mypage/collection/poto.png';
 
-
-
 const Collection = () => {
  
   return (
     <div className="collection-container">
-    <div className="back-wrapper has-dot">
+   
   <BackButton label="나의 컬렉션" />
-    </div>
+    
 
     <div className="collection-grid">
         {/* 상단 4개 */}

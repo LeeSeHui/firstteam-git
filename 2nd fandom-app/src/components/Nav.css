@@ -1,7 +1,7 @@
 
 .nav-link {display: flex; flex-direction: column; align-items: center; color: #000; text-decoration: none; transition: all 0.3s; width: 60px}
 .nav-link span {font-size: 12px; margin-top: 5px;}
-.nav-main-button  {border: none; background: orange; border-radius: 50%; width: 73px;
+.nav-main-button  {border: none; background: orange; border-radius: 50%; width: 75px;
 height: 60px; color: #fff;  font-size: 14px; cursor: pointer;  position: relative; z-index: 2; transition: all 0.3s;  box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.15); position: relative;}
 
 .nav-main-button::after {
@@ -78,8 +78,64 @@ text-decoration: none;}
 .active-text {color: orange;}
 
 /* 하단 서브 버튼 */
-.sub-buttons {position: absolute; bottom: 130%; left: 50%;transform: translateX(-50%);border-radius: 10px;display: flex;gap: 10px;z-index: 10;}
-.sub-buttons button{ background: #797979; }
+.sub-buttons {position: absolute; bottom: 130%; left: 50%;transform: translateX(-50%);border-radius: 10px;display: flex;gap: 10px; z-index: 10;}
+/* 서브 버튼 박스 */
+.sub-buttons {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 10;
+  background: none; /* 배경 제거 */
+}
+
+.sub-buttons button {
+  position: relative;  
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;       /* 흰 배경 원형 */
+  font-size: 14px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* 빨간 점 공통 스타일 */
+.sub-buttons .actor::after,
+.sub-buttons .trot::after, .sub-buttons .idol::after{
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 8px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+/* 테마별 텍스트 컬러 지정 */
+.sub-buttons .actor {
+  color: #37CEBF;
+}
+
+.sub-buttons .trot {
+  color: #AE74FF;
+}
+
+.sub-buttons .idol {
+  color: #FFA500;
+}
+
+
 
 
 /* 테마별 색상 적용 */
@@ -91,6 +147,10 @@ text-decoration: none;}
 .nav-text.idol {color: orange;}
 .nav-text.actor {color: #37CEBF;}
 .nav-text.trot {color: #AE74FF;}
+
+
+
+
 
 
 
