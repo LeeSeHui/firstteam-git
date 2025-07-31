@@ -1,5 +1,4 @@
-body {background: #ffffff;}
-.homeContainer { width: 100%}
+.homeContainer { width: 100%; max-width: 400px; margin: 0 auto; background: #fff;}
 .main-logo {position: relative; padding: 43px 16px 0; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center;}
 .main-logo .main {width: 100px; height: auto;}
 .main-logo .alarm {position: relative; width: 35px; height: 100%;}
@@ -228,7 +227,7 @@ input:focus {border: none; outline: none;}
 .indicator .total { margin-left: 2px;}
 
 
-
+.dark .homeContainer {background: #121212;}
 .dark .mypageSection .left p {color: #fff; font-weight: 400;}
 
 /* 다크모드 */

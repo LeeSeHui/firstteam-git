@@ -1,5 +1,5 @@
 
-.container-highlight {padding: 0 0 80px; box-sizing: border-box;}
+.container-highlight {max-width: 400px; margin: 0 auto; padding: 0 0 80px; box-sizing: border-box; background: #fff;}
 .artist-profile { display: flex; justify-content: center; gap: 5px; margin-bottom: 20px;  }
 .artist-profile img {width: 68px; height: 68px;}
 .card-section { position: relative; width: 100%; max-width: 500px; padding: 0 16px;}

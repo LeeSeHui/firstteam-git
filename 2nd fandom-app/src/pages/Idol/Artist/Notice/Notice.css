@@ -1,5 +1,5 @@
 .notice-wrapper {
-  padding: 0 16px 100px;
+  padding: 0 16px 310px; max-width: 400px; margin: 0 auto;
   background-color: #ffff;
 }
 
@@ -76,6 +76,9 @@
   margin-top: 12px;
 }
 
-.dark .notice-wrapper {background: none;}
 .dark .notice-title span {color: #121212;}
 .dark .notice-content p {color: #797979;}
+
+@media (max-width:400px) {
+  .notice-wrapper {padding: 0 16px 100px;}
+}
