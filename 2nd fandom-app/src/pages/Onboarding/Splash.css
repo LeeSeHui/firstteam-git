@@ -1,12 +1,14 @@
 /* Splash.css */
 .splash-container {
     position: relative;
-    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     height: 100vh;
     display: flex;              /* 기존 flex 설정 유지 */
     justify-content: center;
     align-items: center;
-    overflow: hidden;           /* 이미지가 container를 벗어나지 않도록 */
+    overflow: hidden;  
+             /* 이미지가 container를 벗어나지 않도록 */
   }
   
   
