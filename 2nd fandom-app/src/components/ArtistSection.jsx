@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ArtistSection.css';
 import '../index.css';
 import { useNavigate } from 'react-router-dom';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import likeIcon from '../assets/artist/like.png';
 import noLikeIcon from '../assets/artist/nolike.png';
@@ -11,11 +14,8 @@ import tagIcon from '../assets/artist/tag.png';
 import dark_tagIcon from '../assets/dark/dark_tagIcon.png';
 import tagActiveIcon from '../assets/artist/tag-yellow.png';
 
-
-
 import lockIcon from '../assets/artist/lock.png';
 
-// ✅ 시간 표시 함수
 const getTimeAgo = (timestamp) => {
   const now = new Date();
   const diff = Math.floor((now - new Date(timestamp)) / 1000);
@@ -48,13 +48,21 @@ const ArtistSection = ({
   onUnlock = () => {},
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [hasShownToast, setHasShownToast] = useState(false); // ✅ 토스트 한 번만
   const [bookmarked, setBookmarked] = useState(false);
   const [liked, setLiked] = useState(false);
-  const [commentHearts, setCommentHearts] = useState({}); // ✅ 댓글 하트 상태
+  const [commentHearts, setCommentHearts] = useState({});
   const navigate = useNavigate();
   const isDarkMode = document.body.classList.contains('dark');
 
-  
+  // ✅ 댓글 펼칠 때 토스트 메시지 한 번만 띄우기
+  useEffect(() => {
+    if (isExpanded && !hasShownToast) {
+      toast.info('💬 댓글을 입력해보세요!');
+      setHasShownToast(true);
+    }
+  }, [isExpanded, hasShownToast]);
+
   if (isLocked) {
     return (
       <div className="artistSection locked" onClick={onUnlock}>
@@ -70,10 +78,10 @@ const ArtistSection = ({
     <div className={`artistSection Section ${isExpanded ? 'expanded' : ''}`}>
       {/* ✅ 피드 카드 */}
       <div
-  className="feed-card"
-  onClick={() => setIsExpanded(!isExpanded)}
-  style={{ paddingBottom: isExpanded ? '16px' : '0' }}
->
+        className="feed-card"
+        onClick={() => setIsExpanded(!isExpanded)}
+        style={{ paddingBottom: isExpanded ? '16px' : '0' }}
+      >
         <div className="feed-header">
           <div className="profile-info">
             <img
@@ -107,13 +115,12 @@ const ArtistSection = ({
                 bookmarked
                   ? tagActiveIcon
                   : isDarkMode
-                    ? dark_tagIcon
-                    : tagIcon
+                  ? dark_tagIcon
+                  : tagIcon
               }
               alt="북마크 아이콘"
               className="bookmark-icon"
             />
-
           </button>
         </div>
 
@@ -154,59 +161,59 @@ const ArtistSection = ({
 
       {/* ✅ 댓글 영역 */}
       {isExpanded && (
-  <div className="commentSection" onClick={(e) => e.stopPropagation()}>
-    <p className="commentCount">전체 댓글 {totalCommentCount}</p>
-    <div className="comments sub-color">
-      {comments.map((comment, idx) => (
-        <div className="commentRow" key={idx}>
-          <div className="commentText">
-            <div className="comment-meta">
-            <span className="username">{comment.username.nickname}</span>
-              {comment.createdAt && (
-                <span className="created-at sub-color">{getTimeAgo(comment.createdAt)}</span>
-              )}
-
-        
-{nickname === comment.username.nickname && (
-  <button
-  className="delete-comment-btn"
-  onClick={() => handleDeleteComment(idx)}
->
-  삭제
-</button>
-
-  
-)}
-            </div>
-            <span className="message">{comment.message}</span>
+        <div className="commentSection" onClick={(e) => e.stopPropagation()}>
+          <p className="commentCount">전체 댓글 {totalCommentCount}</p>
+          <div className="comments sub-color">
+            {comments.map((comment, idx) => (
+              <div className="commentRow" key={idx}>
+                <div className="commentText">
+                  <div className="comment-meta">
+                    <span className="username">{comment.username.nickname}</span>
+                    {comment.createdAt && (
+                      <span className="created-at sub-color">
+                        {getTimeAgo(comment.createdAt)}
+                      </span>
+                    )}
+                    {nickname === comment.username.nickname && (
+                      <button
+                        className="delete-comment-btn"
+                        onClick={() => handleDeleteComment(idx)}
+                      >
+                        삭제
+                      </button>
+                    )}
+                  </div>
+                  <span className="message">{comment.message}</span>
+                </div>
+                <span
+                  className="heart"
+                  onClick={() =>
+                    setCommentHearts((prev) => ({
+                      ...prev,
+                      [idx]: !prev[idx],
+                    }))
+                  }
+                >
+                  {commentHearts[idx] ? '❤️' : '🤍'}
+                </span>
+              </div>
+            ))}
           </div>
-          <span
-            className="heart"
-            onClick={() =>
-              setCommentHearts((prev) => ({
-                ...prev,
-                [idx]: !prev[idx],
-              }))
-            }
-          >
-            {commentHearts[idx] ? '❤️' : '🤍'}
-          </span>
+
+          <div className="commentInputWrap">
+            <input
+              type="text"
+              placeholder="예쁜 댓글을 입력해주세요"
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+            />
+            <button onClick={handleAddComment}>등록</button>
+          </div>
         </div>
-      ))}
-    </div>
+      )}
 
-    <div className="commentInputWrap">
-      <input
-        type="text"
-        placeholder="예쁜 댓글을 입력해주세요"
-        value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
-      />
-      <button onClick={handleAddComment}>등록</button>
-    </div>
-  </div>
-)}
-
+      {/* ✅ 토스트 표시용 컨테이너 (한 번만 있어도 됨) */}
+      <ToastContainer position="top-center" autoClose={2000} />
     </div>
   );
 };

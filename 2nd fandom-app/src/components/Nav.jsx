@@ -1,8 +1,8 @@
-// nav-frame 이미지 없이 코드만으로 구현한 Nav
-
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import homeIcon from '../assets/Home/homeicon.png';
 import homeIconDark from '../assets/Home/homeicon-dark.png';
@@ -55,8 +55,16 @@ function Nav() {
     setCurrentMain(path);
   };
 
+  const handleRoute = (path) => {
+    if (currentMain === '/idol') {
+      navigate(`${currentMain}/${path}`);
+    } else {
+      alert('준비 중인 기능입니다!');
+    }
+  };
+
   const getNavIcon = (page, light, dark, active, actor, trot) => {
-  const isActive = location.pathname.startsWith(`${currentMain}/${page}`);
+    const isActive = location.pathname.startsWith(`${currentMain}/${page}`);
     if (isActive) {
       if (currentMain === '/idol') return active;
       if (currentMain === '/actor') return actor;
@@ -77,19 +85,21 @@ function Nav() {
           <span className={`nav-text ${location.pathname === `${currentMain}/home` ? currentMain.replace('/', '') : ''}`}>Home</span>
         </Link>
 
-        <Link to={`${currentMain}/chat`} className="nav-link">
+        {/* ✅ Chat 버튼 조건 분기 */}
+        <button className="nav-link" onClick={() => handleRoute('chat')}>
           <img src={getNavIcon('chat', chatIcon, chatIconDark, chatIconActive, chatIconActiveActor, chatIconActiveTrot)} alt="chat" className="nav-icon" />
           <span className={`nav-text ${location.pathname === `${currentMain}/chat` ? currentMain.replace('/', '') : ''}`}>Chat</span>
-        </Link>
+        </button>
 
         <button className={`nav-main-button ${currentMain.replace('/', '')}`} onClick={toggleSubButtons}>
           {buttonText}
         </button>
 
-        <Link to={`${currentMain}/fashion/all`} className="nav-link">
+        {/* ✅ Fashion 버튼 조건 분기 */}
+        <button className="nav-link" onClick={() => handleRoute('fashion/all')}>
           <img src={getNavIcon('fashion', fashionIcon, fashionIconDark, fashionIconActive, fashionIconActiveActor, fashionIconActiveTrot)} alt="fashion" className="nav-icon" />
           <span className={`nav-text ${location.pathname.startsWith(`${currentMain}/fashion`) ? currentMain.replace('/', '') : ''}`}>Fashion</span>
-        </Link>
+        </button>
 
         <Link to={`${currentMain}/mypage`} className="nav-link">
           <img src={getNavIcon('mypage', mypageIcon, mypageIconDark, mypageIconActive, mypageIconActiveActor, mypageIconActiveTrot)} alt="mypage" className="nav-icon" />
@@ -104,6 +114,7 @@ function Nav() {
           {currentMain !== '/trot' && <button className="trot" onClick={() => handleNavigate('/trot')}>Trot</button>}
         </div>
       )}
+      <ToastContainer position="top-center" autoClose={2000} />
     </nav>
   );
 }

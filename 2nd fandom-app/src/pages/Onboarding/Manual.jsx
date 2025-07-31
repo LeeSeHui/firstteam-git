@@ -153,7 +153,7 @@ const Manual = () => {
                   ))}
                 </Slider>
                 <div className="swipe-wrapper">
-                  <img src={swipeImg} alt="swipe" className="swipe-img" />
+                  {/* <img src={swipeImg} alt="swipe" className="swipe-img" /> */}
                 </div>
               </div>
             )}
@@ -190,6 +190,7 @@ const Manual = () => {
 
 
             <div className={`manual-text-wrapper ${item.textPosition || 'bottom'}`}>
+            <img src={swipeImg} alt="swipe" className="swipe-img" />
               <h2>
                 {item.title.split('\n').map((line, i) => (
                   <React.Fragment key={i}>

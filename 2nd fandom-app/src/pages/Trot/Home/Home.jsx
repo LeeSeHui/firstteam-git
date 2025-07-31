@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import TrotArtistSection from '../../../components/TrotArtistSection';
 import TrotQuizSection from '../../../components/TrotQuizSection';
@@ -36,6 +37,7 @@ import vote03 from '../../../assets/trot/home/vote3.png';
 import vote04 from '../../../assets/trot/home/vote4.png';
 import vote05 from '../../../assets/trot/home/vote5.png';
 import vote06 from '../../../assets/trot/home/vote6.png';
+
 import membershipCardImg1 from '../../../assets/trot/home/membership1.png';
 import membershipCardImg2 from '../../../assets/trot/home/membership2.png';
 import membershipCardImg3 from '../../../assets/trot/home/membership3.png';
@@ -86,13 +88,13 @@ const Home = () => {
     setTotalCommentCount((prev) => prev + 1);
   };
 
-  const AlarmClick = () => navigate('/idol/home/alarm');
+  // ✅ 마이페이지만 navigate 허용
   const handleMypageClick = () => navigate('/trot/mypage');
-  const handleArtistClick = () => navigate('/idol/artist/highlight');
-  const handlePlusClick = () => navigate('/onboarding/select-artist', { state: { fromHome: true } });
-  const handleLiveClick = () => navigate('/idol/home/live');
-  const handleVoteCardClick = () => navigate('/idol/home/vote');
-  const handleQuizClick = () => navigate('/idol/home/quiz');
+
+  // ✅ 나머지 클릭은 전부 토스트 메시지로 대체
+  const preventClick = () => {
+    alert('준비 중인 기능입니다!');
+  };
 
   const membershipData = [
     {
@@ -135,24 +137,21 @@ const Home = () => {
   return (
     <div className="homeContainer trot">
       <div className="main-logo">
-        <p className="img main"><img
-          src={isDarkMode ? dark_logo : logo}
-          alt="logo"
-        /></p>
-        <p className="img2 alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
+        <p className="img main"><img src={isDarkMode ? dark_logo : logo} alt="logo" /></p>
+        <p className="img2 alarm" onClick={preventClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
       </div>
 
       <div className="mypageSection Section trot" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
           <div className="artistButtons">
-            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
               <img src={artist1} alt="artist1" />
             </button>
-            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
               <img src={artist3} alt="artist3" />
             </button>
-            <button className='button2' onClick={(e) => { e.stopPropagation(); handlePlusClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
               <img src={plusIcon} alt="plus" />
             </button>
           </div>
@@ -165,28 +164,15 @@ const Home = () => {
       <div className="liveSection">
         <p>LIVE NOW!</p>
         <div className="swipe">
-        <div className="liveImg" onClick={handleLiveClick}>
-          <img src={live02} alt="" />
-          <span className="liveBadge3">LIVE</span>
-          <div className="liveTextBox">
-            <p className="trot-artist">임영웅</p>
-            <p className="trot-title">미스터 트롯 13화<br />본방사수!</p>
-          </div>
-        </div>
-        <div className="liveImg" onClick={handleLiveClick}>
-          <img src={live01} alt="" />
-          <div className="liveTextBox">
-            <p className="trot-artist">정동원</p>
-            <p className="trot-title">KBS 연예대상<br />뒷이야기</p>
-          </div>
-        </div>
-        <div className="liveImg" onClick={handleLiveClick}>
-          <img src={live03} alt="" />
-          <div className="liveTextBox">
-            <p className="trot-artist">임영웅</p>
-            <p className="trot-title">MBC 생방 라디오<br />8/1 13:00</p>
-          </div>
-        </div>
+          {[live02, live01, live03].map((img, i) => (
+            <div key={i} className="liveImg" onClick={preventClick}>
+              <img src={img} alt={`live${i}`} />
+              <div className="liveTextBox">
+                <p className="trot-artist">{i === 1 ? '정동원' : '임영웅'}</p>
+                <p className="trot-title">트로트 라이브 방송</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -212,64 +198,56 @@ const Home = () => {
       <div className="videoSection">
         <p>{nickname}님을 위한 추천 컨텐츠</p>
         <div className="videoSwipe">
-          <a href="https://www.youtube.com/watch?v=CHp0Kaidr14" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb1} alt="video1" />
-            <img src={playIcon} alt="play" className="playIcon" />
-            <p>[미스터트롯] 젊은 여자 트로트<br />가수 노래 모음집</p>
-          </a>
-          <a href="https://www.youtube.com/watch?v=o9DhvbqYzns" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb2} alt="video2" />
-            <img src={playIcon} alt="play" className="playIcon" />
-            <p>[미스터트롯] 레전드 무대만 <br />쏙쏙 담은 영상 Zip</p>
-          </a>
-          <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb3} alt="video3" />
-            <img src={playIcon} alt="play" className="playIcon" />
-            <p>[미스터트롯] 손빈<br />아 ‘마지막 잎새’♪...</p>
-          </a>
+          {[thumb1, thumb2, thumb3].map((thumb, i) => (
+            <div key={i} className="videoCard" onClick={preventClick}>
+              <img src={thumb} alt={`video${i}`} />
+              <img src={playIcon} alt="play" className="playIcon" />
+              <p>트로트 무대 하이라이트</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      <TrotQuizSection handleQuizClick={handleQuizClick} />
+      <TrotQuizSection handleQuizClick={preventClick} />
 
       <div className="voteSection">
-              <div className="swipe vote">
-                <div className="voteRow">
-                  <div className="voteCard" onClick={handleVoteCardClick}>
-                    <p className="trot-vote-tit">투표 D-3</p>
-                    <img src={vote01} alt="" />
-                    <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표</span></div>
-                  </div>
-                  <div className="voteCard" onClick={handleVoteCardClick}>
-                  <p className="trot-vote-tit">투표 D-3</p>
-                  <img src={vote02} alt="" />
-                    <div className="trot-voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?</span></div>
-                  </div>
-                  <div className="voteCard" onClick={handleVoteCardClick}>
-                  <p className="trot-vote-tit">투표 D-3</p>
-                  <img src={vote03} alt="" />
-                    <div className="trot-voteText"><span>[600회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
-                  </div>
-                </div>
-                <div className="voteRow offset">
-                  <div className="voteCard" onClick={handleVoteCardClick}>
-                    <p className="trot-vote-tit">투표 D-3</p>
-                    <img src={vote04} alt="" />
-                    <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
-                  </div>
-                  <div className="voteCard" onClick={handleVoteCardClick}>
-                    <p className="trot-vote-tit">투표 D-3</p>
-                    <img src={vote05} alt="" />
-                    <div className="trot-voteText"><span>[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
-                  </div>
-                  <div className="voteCard" onClick={handleVoteCardClick}>
-                    <p className="trot-vote-tit">투표 D-3</p>
-                    <img src={vote06} alt="" />
-                    <div className="trot-voteText"><span>감성 가득 셀카장인 <br /> 여자 아이돌은?</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div className="swipe vote">
+    <div className="voteRow">
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote01} alt="vote01" />
+        <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote02} alt="vote02" />
+        <div className="trot-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote03} alt="vote03" />
+        <div className="trot-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
+      </div>
+    </div>
+    <div className="voteRow offset">
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote04} alt="vote04" />
+        <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote05} alt="vote05" />
+        <div className="trot-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote06} alt="vote06" />
+        <div className="trot-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>
@@ -278,16 +256,8 @@ const Home = () => {
               <img src={item.img} alt="membership card" className="membershipBg" />
               <div className="membershipOverlay">
                 <p className="group">Event</p>
-                <h2>
-                  {item.title.split("\n").map((word, idx) => (
-                    <React.Fragment key={idx}>{word}<br /></React.Fragment>
-                  ))}
-                </h2>
-                <p className="desc">
-                  {item.desc.split("\n").map((line, idx) => (
-                    <React.Fragment key={idx}>{line}<br /></React.Fragment>
-                  ))}
-                </p>
+                <h2>{item.title.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</h2>
+                <p className="desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
               </div>
               <div className="indicator">
                 <span className="current">{item.current}</span>
@@ -297,6 +267,9 @@ const Home = () => {
           ))}
         </Slider>
       </div>
+
+      {/* ✅ 토스트 컨테이너 추가 */}
+      <ToastContainer position="top-center" autoClose={2000} />
     </div>
   );
 };
