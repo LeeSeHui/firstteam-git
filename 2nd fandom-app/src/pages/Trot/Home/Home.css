@@ -28,3 +28,14 @@
 .trot-vote-tit {position: absolute; left: 20px; bottom: 60px; color: #AE74FF; font-size: 14px; padding: 3px 6px; background: #fff; border-radius: 50px; font-weight: 500; z-index: 2;}
 .trot-voteText {position: absolute; bottom: 10px; left: 10px; color: #fff;}
 .trot-voteText span {display: block; font-size: 18px; font-weight: 500; margin-top: -40px; margin-left: 8px;}
+
+
+
+.trot-membershipOverlay {position: absolute; top: 50%; left: 25px; transform: translateY(-50%); width: 100%; height: auto; display: flex; flex-direction: column; border-radius: 12px; overflow: visible; z-index: 2;}
+.trot-membershipOverlay h2 {color: #fff; font-size: 20px; font-weight: 500; margin: 0; line-height: 1.1; margin-bottom: 10px;}
+.trot-membershipOverlay .trot-group { color: #fff; font-size: 14px; margin-bottom: 5px; display: inline-block;}
+
+.trot-membershipOverlay .trot-desc {color: #fff; font-size: 16px; margin-top: 5px; line-height: 1.1;}
+
+.dark .liveBadge3 {color: #AE74FF;}
+.dark .trot-vote-tit {color: #AE74FF;}

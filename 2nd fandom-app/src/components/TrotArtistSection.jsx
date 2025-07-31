@@ -81,7 +81,7 @@ const TrotArtistSection = ({
                   <img src={verifiedIcon} alt="verified" />
                 )}
               </p>
-              <p className="trot-time">{postTime}</p>
+              <p className="trot-time-text">{postTime}</p>
             </div>
           </div>
           <button
