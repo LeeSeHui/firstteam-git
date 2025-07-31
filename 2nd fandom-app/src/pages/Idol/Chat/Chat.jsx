@@ -67,6 +67,7 @@ const Chat = () => {
   };
 
   return (
+    
     <div className="chat-page">
       <BackButton label="DM" />
 
