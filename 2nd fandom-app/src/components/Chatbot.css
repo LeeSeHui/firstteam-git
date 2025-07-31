@@ -1,4 +1,13 @@
-.chatbot-wrapper { position: fixed; bottom: 100px; right: 15px; z-index: 9999; margin: 0 0 0 50px; display: flex; justify-content: center;}
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 100px;
+  left: 55%;
+
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+}
 .chatbot-floating-btn { width: 60px; height: 60px; border-radius: 50%; border: none; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; padding: 0; }
 .chatbot-floating-btn img { width: 100%; height: 100%; object-fit: contain; }
 

@@ -1,5 +1,7 @@
 
-.fashion-container {padding: 20px 0px 16px 16px; margin-bottom: 80px; min-width: 300px;}
+.fashion-container {padding: 20px 0px 16px 16px; margin-bottom: 80px; min-width: 300px;
+max-width: 400px; margin: 0 auto; background: #ffffff;}
+.dark .fashion-container {background: #121212;}
 
 
 .fashion-tabs { display: flex; margin-bottom: 16px; gap: 5px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;}
@@ -23,7 +25,7 @@
   padding: 12px 20px;
   border-radius: 999px;
   outline: none;
-  width: 354px;
+  width: 353px;
   font-size: 14px;
 }
 

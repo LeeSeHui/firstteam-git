@@ -1,4 +1,5 @@
-.welcome-container { display: flex; flex-direction: column; align-items: center;}
+.welcome-container { display: flex; flex-direction: column; align-items: center; max-width: 400px; margin: 0 auto; background: #ffffff;}
+.dark .welcome-container {background: #121212;}
 .welcome-container h2 {font-size: 20px; font-weight: 600;}
 .welcome-container .sub {font-size: 16px; margin-bottom: 60px;}
 .level-text { font-size: 16px; color: #F3B643; font-weight: 500; margin-bottom: 47px; }

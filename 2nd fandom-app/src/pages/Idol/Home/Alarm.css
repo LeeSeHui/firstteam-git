@@ -2,6 +2,8 @@
 .alarm-page {
     padding: 20px 16px 100px;
     font-family: 'Pretendard', sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   /* 상단 제목 */

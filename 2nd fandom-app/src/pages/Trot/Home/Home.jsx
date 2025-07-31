@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import TrotArtistSection from '../../../components/TrotArtistSection';
@@ -206,16 +206,43 @@ const Home = () => {
       <TrotQuizSection handleQuizClick={preventClick} />
 
       <div className="voteSection">
-        <div className="swipe vote">
-          {[vote01, vote02, vote03, vote04, vote05, vote06].map((vote, i) => (
-            <div className="voteCard" key={i} onClick={preventClick}>
-              <p className="trot-vote-tit">투표 D-3</p>
-              <img src={vote} alt={`vote${i + 1}`} />
-              <div className="trot-voteText"><span>투표 설명 라인</span></div>
-            </div>
-          ))}
-        </div>
+  <div className="swipe vote">
+    <div className="voteRow">
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote01} alt="vote01" />
+        <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
       </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote02} alt="vote02" />
+        <div className="trot-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote03} alt="vote03" />
+        <div className="trot-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
+      </div>
+    </div>
+    <div className="voteRow offset">
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote04} alt="vote04" />
+        <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote05} alt="vote05" />
+        <div className="trot-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
+      </div>
+      <div className="voteCard" onClick={preventClick}>
+        <p className="trot-vote-tit">투표 D-3</p>
+        <img src={vote06} alt="vote06" />
+        <div className="trot-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>
