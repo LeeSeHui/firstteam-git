@@ -8,3 +8,22 @@
 
 .welcome-icon {display: inline-block; width: 30px; height: auto;}
 .welcome-icon img {width: 80%; height: 100%; margin-bottom: 10px;}
+
+.growup-badge {position: relative; width: 100%; margin-top: 80px;}
+.growup p {position: absolute; top: -45px; right: 148px; background: #FFD700; padding: 6px 15PX; border-radius: 20px; color: #595959; font-weight: 500; font-size: 14px;}
+
+.growup p::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #FFD700; /* 말풍선 배경색과 맞추기 */
+  }
+
+  .dark .growup p {color: #595959;}
+  .dark .level-text {color: #F3B643;}

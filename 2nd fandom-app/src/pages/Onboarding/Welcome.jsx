@@ -46,6 +46,11 @@ const Welcome = () => {
           </span>
         </h2>
         <p className="sub">최애와 함께, 지금 떠나볼까요?</p>
+        <div className="growup-badge">
+          <div className="growup">
+            <p>나를 키워봐!</p>
+          </div>
+        </div>
 
         <div className="image-box">
           <img src={welcome} alt="character" />

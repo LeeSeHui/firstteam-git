@@ -25,9 +25,9 @@
   }
 
 
-.dark .input-box input {background: #797979; color: #fff; font-weight: 400;}
-.dark .input-box input::placeholder {color: #fff; font-weight: 400;}
-.dark .notice {color: #797979;}
+.dark .input-box input {background: #212121; color: #fff; font-weight: 400;}
+.dark .input-box input::placeholder {color: #797979; font-weight: 400;}
+.dark .notice {color: #ffff; font-weight: 400;}
 .dark .ninkname-count {color: #797979;}
 
 .input-box::before {  content: '';

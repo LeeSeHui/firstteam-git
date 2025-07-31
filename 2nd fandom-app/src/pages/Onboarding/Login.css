@@ -37,3 +37,5 @@
   height: 5px;
   background-color: red;
   border-radius: 50%;}
+
+  .dark .simple-badge p {color: #595959; font-weight: 500;}

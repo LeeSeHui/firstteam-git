@@ -140,7 +140,7 @@ const Manual = () => {
                   initialSlide={1}
                   infinite
                   autoplay
-                  speed={500}
+                  speed={300}
                   arrows={false}
                   dots={false}
                 >
