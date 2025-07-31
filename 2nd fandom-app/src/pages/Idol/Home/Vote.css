@@ -3,7 +3,9 @@
     background-color: #fff;
     font-family: 'Pretendard', sans-serif;
     padding-bottom: 200px;
+    max-width: 400px; margin: 0 auto;
   }
+  .dark vote-page{background: #121212;}
   
   .vote-title {
     font-size: 20px;

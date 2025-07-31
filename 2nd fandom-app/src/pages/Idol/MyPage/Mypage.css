@@ -1,4 +1,5 @@
-.mypage-container{ padding: 20px 16px; box-sizing: border-box;padding-bottom: 86px;}
+.mypage-container{ padding: 20px 16px; box-sizing: border-box; padding-bottom: 86px; max-width: 400px; margin: 0 auto; background-color: #ffff;}
+.dark .mypage-container{background-color: #121212;}
 .mypage-container .mypage-nickname{font-size: 20px; margin-bottom: 3px; color: #494949; font-weight: 600;}
 .mypage-container p.text{font-size: 18px; font-weight: 500; color: #494949; margin-bottom: 3px;}
 .intro span{font-size: 14px; color: #494949; font-weight: 500;}
