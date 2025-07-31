@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import useNickname from '../../../contexts/useNickname';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './Mypage.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+
 import BackButton from '../../../components/BackButton';
 import starlogo from '../../../assets/actor/mypage/starlogo.png';
 import video1 from '../../../assets/actor/mypage/video1.png';
@@ -33,6 +36,7 @@ const MyPage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(nickname);
   const [currentLevel, setCurrentLevel] = useState(0);
+  const swiperRef = useRef(null); // 추가
 
   const characterLevels = [
     {
@@ -69,13 +73,21 @@ const MyPage = () => {
 
   const handleNext = () => {
     if (currentLevel < characterLevels.length - 1) {
-      setCurrentLevel(prev => prev + 1);
+      setCurrentLevel(prev => {
+        const next = prev + 1;
+        swiperRef.current.slideTo(next);
+        return next;
+      });
     }
   };
 
   const handlePrev = () => {
     if (currentLevel > 0) {
-      setCurrentLevel(prev => prev - 1);
+      setCurrentLevel(prev => {
+        const next = prev - 1;
+        swiperRef.current.slideTo(next);
+        return next;
+      });
     }
   };
 
@@ -132,7 +144,14 @@ const MyPage = () => {
       </div>
 
       <div className="video-box">
-        <Swiper spaceBetween={30} slidesPerView={1}>
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={1}
+          modules={[Navigation]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+        >
           {characterLevels.map((char, index) => (
             <SwiperSlide key={index}>
               <div className="challenge-section">
@@ -170,7 +189,7 @@ const MyPage = () => {
           <span className="arrow">›</span>
         </button>
         <button onClick={() => navigate('/attendance')}>
-          <img src={iconcheck} alt="미디어 아이콘" className="category-icon" />
+          <img src={iconcheck} alt="출석체크 아이콘" className="category-icon" />
           <span className="category-text">출석체크 이벤트</span>
           <span className="arrow">›</span>
         </button>
