@@ -37,4 +37,22 @@
 .right-action {position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
 font-size: 16px; font-weight: 500; cursor: pointer; background: none; border: none;}
 
+
+.back-arrow {
+  position: relative; /* 기준점 설정 */
+}
+
+/* 빨간 점 표시 */
+.back-arrow::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
 /* 다크모드 */
