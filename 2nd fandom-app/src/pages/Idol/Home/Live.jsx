@@ -21,7 +21,10 @@ const Live = () => {
   return (
     <div className="live-wrapper">
       <div className="video-container">
-        <BackButton className="live-back-button" to="/idol/home" />
+       <div className="back-wrapper">
+  <div className="dot" />
+  <BackButton className="live-back-button" to="/idol/home" />
+</div>
         <video
           className="live-video"
           src={newjeansLive}

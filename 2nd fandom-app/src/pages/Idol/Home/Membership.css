@@ -34,6 +34,18 @@
 
 .subscribe-btn.active { background-color: #FFD700; cursor: pointer; color: #494949; }
 
+/* red dot */
+.checkbox-wrapper {position: relative; display: inline-block; width: 24px; height: 24px;}
+.check-icon {width: 100%; height: auto;}
+.checkbox-wrapper.has-dot::after {content: ''; position: absolute; top: -2px; right: 4px; width: 5px; height: 5px; background-color: red; border-radius: 50%;z-index: 10;}
+
+.btn-content-wrapper { position: relative; display: inline-block;}
+.btn-content-wrapper.has-dot::after {content: ''; position: absolute; top: -11px; right: -136px; width: 5px;
+height: 5px; background-color: red; border-radius: 50%; z-index: 10;}
+
+
+
+/* 다크모드 */
 .dark .note {background: #212121;} 
 .dark .membership-title .text p {color: #fff; font-weight: 500;}
 .dark .note li span {color: #fff;}
