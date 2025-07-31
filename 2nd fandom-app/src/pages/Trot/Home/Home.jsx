@@ -1,3 +1,4 @@
+// ✅ 최종 수정 완료된 Trot/Home.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useNickname from '../../../contexts/useNickname';
@@ -77,24 +78,18 @@ const Home = () => {
   const handleAddComment = () => {
     if (newComment.trim() === '') return;
     const newObj = { username: { nickname }, message: newComment, createdAt: new Date().toISOString() };
-
     let updatedComments = [...comments, newObj];
     if (updatedComments.length > MAX_COMMENTS) {
       updatedComments = updatedComments.slice(updatedComments.length - MAX_COMMENTS);
     }
-
     setComments(updatedComments);
     setNewComment('');
     setTotalCommentCount((prev) => prev + 1);
   };
 
-  // ✅ 마이페이지만 navigate 허용
   const handleMypageClick = () => navigate('/trot/mypage');
-
-  // ✅ 나머지 클릭은 전부 토스트 메시지로 대체
-  const preventClick = () => {
-    alert('준비 중인 기능입니다!');
-  };
+  const preventClick = () => alert('준비 중인 기능입니다!');
+  const AlarmClick = () => alert('알림 기능 준비 중입니다!');
 
   const membershipData = [
     {
@@ -137,18 +132,15 @@ const Home = () => {
   return (
     <div className="homeContainer trot">
       <div className="main-logo">
-
         <p className="img main"><img src={isDarkMode ? dark_logo : logo} alt="logo" /></p>
         <p className="img2 alarm trot-alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
-
+      </div>
 
       <div className="mypageSection Section trot" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
-
           <div className="artistButtons trotButtons">
-            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
-
+            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
               <img src={artist1} alt="artist1" />
             </button>
             <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
@@ -185,7 +177,7 @@ const Home = () => {
         isVerified={true}
         verifiedIcon={check}
         postTime="07.01. 05:06"
-        postText={`간만에 시월이랑 힐링타임~`}
+        postText="간만에 시월이랑 힐링타임~"
         feedImage={feedimg1}
         photo02={photo02}
         photo03={photo03}
@@ -214,43 +206,16 @@ const Home = () => {
       <TrotQuizSection handleQuizClick={preventClick} />
 
       <div className="voteSection">
-  <div className="swipe vote">
-    <div className="voteRow">
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote01} alt="vote01" />
-        <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
+        <div className="swipe vote">
+          {[vote01, vote02, vote03, vote04, vote05, vote06].map((vote, i) => (
+            <div className="voteCard" key={i} onClick={preventClick}>
+              <p className="trot-vote-tit">투표 D-3</p>
+              <img src={vote} alt={`vote${i + 1}`} />
+              <div className="trot-voteText"><span>투표 설명 라인</span></div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote02} alt="vote02" />
-        <div className="trot-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote03} alt="vote03" />
-        <div className="trot-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-    </div>
-    <div className="voteRow offset">
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote04} alt="vote04" />
-        <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote05} alt="vote05" />
-        <div className="trot-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote06} alt="vote06" />
-        <div className="trot-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
-      </div>
-    </div>
-  </div>
-</div>
 
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>
@@ -261,31 +226,16 @@ const Home = () => {
                 <p className="group">Event</p>
                 <h2>{item.title.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</h2>
                 <p className="desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
-
-              <div className="trot-membershipOverlay">
-                <p className="trot-group">Event</p>
-                <h2>
-                  {item.title.split("\n").map((word, idx) => (
-                    <React.Fragment key={idx}>{word}<br /></React.Fragment>
-                  ))}
-                </h2>
-                <p className="trot-desc">
-                  {item.desc.split("\n").map((line, idx) => (
-                    <React.Fragment key={idx}>{line}<br /></React.Fragment>
-                  ))}
-                </p>
-
-              </div>
-              <div className="indicator">
-                <span className="current">{item.current}</span>
-                <span className="total"> | {item.total}</span>
+                <div className="indicator">
+                  <span className="current">{item.current}</span>
+                  <span className="total"> | {item.total}</span>
+                </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
 
-      {/* ✅ 토스트 컨테이너 추가 */}
       <ToastContainer position="top-center" autoClose={2000} />
     </div>
   );
