@@ -3,7 +3,7 @@
   background-color: #f9f9f9; 
 } */
 
-.artist-board {padding-bottom: 85px;}
+.artist-board {max-width: 400px; margin: 0 auto; background: #fff; padding-bottom: 85px;}
 
 .profile-img {
   width: 45px;
