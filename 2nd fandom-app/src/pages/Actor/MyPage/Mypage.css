@@ -20,10 +20,23 @@
     cursor: not-allowed;}
 
     .actor-level-buttons button {
+        position: relative;
         background-color: #37CEBF;
         border: none;
         padding: 6px 16px;
         border-radius: 10px;
         font-weight: 500;
         cursor: pointer;
+        color: #494949;
+    }
+
+    .actor-level-buttons button:nth-child(2):after{
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: -6px;
+        width: 5px;
+        height: 5px;
+        background-color: red;
+        border-radius: 50%;
     }
