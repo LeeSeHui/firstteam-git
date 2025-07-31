@@ -13,6 +13,7 @@
     background-color: red;
     border-radius: 50%;
   }
+.actor_feedCard:after {display: none;}
 
 .profile-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
 .nickname { gap: 4px; display: flex; align-items: center; font-weight: 600; font-size: 14px; }

@@ -151,13 +151,13 @@ const Home = () => {
           src={isDarkMode ? dark_logo : logo}
           alt="logo"
         /></p>
-        <p className="img2 alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
+        <p className="img2 alarm actor_alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
       </div>
 
       <div className="mypageSection Section" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
-          <div className="artistButtons">
+          <div className="artistButtons actorButtons trotButtons">
             <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
               <img src={artist1} alt="artist1" />
             </button>
