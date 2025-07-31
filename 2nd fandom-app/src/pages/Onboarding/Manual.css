@@ -1,6 +1,6 @@
 /* 📌 기본 구조 */
 header { padding: 20px 16px; display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 0 auto; background: #fff; }
-.dark .header {background: #121212;}
+.dark header {background: #121212;}
 
 .manual-wrapper { width: 100%; height: 100dvh; position: relative; overflow: hidden; max-width: 400px; margin: 0 auto; background: #ffff;}
 .dark .manual-wrapper {background: #121212;}
