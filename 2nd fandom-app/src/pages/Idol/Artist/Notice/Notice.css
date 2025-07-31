@@ -77,4 +77,5 @@
 }
 
 .dark .notice-wrapper {background: none;}
-.dark .notice-title {color: #fff;}
+.dark .notice-title span {color: #121212;}
+.dark .notice-content p {color: #797979;}

@@ -182,7 +182,7 @@ const Home = () => {
         isVerified={true}
         verifiedIcon={check}
         postTime="07.01. 05:06"
-        postText={`간만에 시월이랑 힐링타임~\n누님들도 시월이 보고 힐링하세요!`}
+        postText={`간만에 시월이랑 힐링타임~`}
         feedImage={feedimg1}
         photo02={photo02}
         photo03={photo03}
@@ -258,6 +258,20 @@ const Home = () => {
                 <p className="group">Event</p>
                 <h2>{item.title.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</h2>
                 <p className="desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
+
+              <div className="trot-membershipOverlay">
+                <p className="trot-group">Event</p>
+                <h2>
+                  {item.title.split("\n").map((word, idx) => (
+                    <React.Fragment key={idx}>{word}<br /></React.Fragment>
+                  ))}
+                </h2>
+                <p className="trot-desc">
+                  {item.desc.split("\n").map((line, idx) => (
+                    <React.Fragment key={idx}>{line}<br /></React.Fragment>
+                  ))}
+                </p>
+
               </div>
               <div className="indicator">
                 <span className="current">{item.current}</span>

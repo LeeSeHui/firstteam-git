@@ -70,17 +70,21 @@ const Membership = () => {
         className={`confirm ${agreed ? 'active' : ''}`}
         onClick={toggleAgree}
       >
-        <img src={agreed ? checkActive : check} alt="체크아이콘" />
+     <div className="checkbox-wrapper has-dot">
+      <img className="check-icon" src={agreed ? checkActive : check} alt="체크아이콘" />
+    </div>
         <p>유의사항을 모두 확인하였으며,<br />매월 정기 구독에 동의합니다.</p>
       </div>
 
       <div className="btn-box">
-      <button
+        <button
           className={`subscribe-btn ${agreed ? 'active' : ''}`}
           disabled={!agreed}
           onClick={handleSubscribe}
         >
-          구독하기
+          <div className="btn-content-wrapper has-dot">
+            구독하기
+          </div>
         </button>
       </div>
     </div>

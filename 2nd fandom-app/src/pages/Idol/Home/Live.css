@@ -136,3 +136,18 @@
     height: 43px;
   }
   
+  /* red dot */
+.back-wrapper {
+  position: relative;
+}
+
+.back-wrapper .dot {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 20;
+}

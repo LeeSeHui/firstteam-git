@@ -9,8 +9,6 @@
 
 .actor-vote-tit{position: absolute; left: 20px; bottom: 60px; color: #37CEBF; font-size: 12px; padding: 3px 6px; background: #fff; border-radius: 50px; font-weight: 500; z-index: 2;} 
 
-/* actor 테마 - chat, fashion에서 빨간 점 제거 */
-.nav-container.actor .nav-link:nth-child(2)::after,  /* chat */
-.nav-container.actor .nav-link:nth-child(4)::after { /* fashion */
-  display: none;
-}
+.dark .liveBadge2 {color: #37CEBF;}
+.dark .actor-vote-tit {color: #37CEBF;}
+

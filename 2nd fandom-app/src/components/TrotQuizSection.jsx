@@ -24,14 +24,17 @@ const TrotQuizSection = ({ handleQuizClick }) => {
   return (
     <div className="quiz-section Section">
       <div className="quiz-content">
-        <div className="trot-quiz-left">
-          <h3>
+        <div className="quiz-left">
+          <h3 className='trot-h3'>
           오늘의 <span className="trot-highlight">QUIZ</span><br />
           지금 바로 도전
           </h3>
-          <p className="tort-timer">
+          <p className="timer">
             <img src={clockicon} alt="clock" />
-            <span className="trot-time">{formatTime(timeLeft)}</span> 후 퀴즈 종료
+            <span className="trot-time-box">
+              <span className="trot-time">{formatTime(timeLeft)}</span>
+            </span>
+            후 퀴즈 종료
           </p>
         </div>
         <div className="quiz-right">

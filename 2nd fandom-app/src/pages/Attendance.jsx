@@ -25,7 +25,7 @@ const Attendance = () => {
 
   const handleConfirm = () => {
     setShowPopup(false);
-    navigate('/idol/home');
+    navigate('/idol/mypage');
   };
 
   return (
