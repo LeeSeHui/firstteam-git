@@ -38,7 +38,7 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 /* 👉 스와이프 손 아이콘 */
 .swipe-wrapper { position: absolute; right: 10%; bottom: 32px; width: 30px; height: auto; display: flex; justify-content: center; align-items: flex-end; }
 
-.swipe-img { width: 100%; transform-origin: bottom center; animation: swipe-swing 1s ease-in-out infinite; }
+.swipe-img { width: 35px; transform-origin: bottom center; animation: swipe-swing 1s ease-in-out infinite; margin-left: 250px; }
 
 @keyframes swipe-swing {
   0% { transform: rotate(0deg); }

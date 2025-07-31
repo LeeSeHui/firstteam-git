@@ -53,20 +53,30 @@ height: 60px; color: #fff;  font-size: 14px; cursor: pointer;  position: relativ
 }
 
 
-.nav-link {
-  width: 18%; /* 적절한 너비 설정 */
-}
-
-
-
-
 /* Live 페이지에서는 네비게이션 안 보이게 */
 body.live-page .nav-container {display: none !important;}
 
 
 /* 각 네비 아이템 */
-.nav-link {display: flex;flex-direction: column; align-items: center; font-size: 12px; font-weight: 550;
-text-decoration: none;}
+.nav-link {position: relative; display: flex;flex-direction: column; align-items: center; font-size: 12px; font-weight: 550;
+text-decoration: none; width: 18%;
+border: none;
+background: none;
+outline: none;
+
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 7px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+}
 
 /* 아이콘 이미지 */
 .nav-icon {
@@ -155,15 +165,6 @@ text-decoration: none;}
 
 
 
-@media (min-width: 768px) {
-  .nav-main-button{width: 60px; height: 60px;}
-  .nav-icon{width: 25%;}
-}
-
-
-
-
-
 
 
 /* 다크모드 */
@@ -172,3 +173,5 @@ text-decoration: none;}
 .dark .nav-text.actor {color: #37CEBF;}
 .dark .nav-text.trot {color: #AE74FF;}
 .dark .nav-container{background-color: #151515;}
+
+
