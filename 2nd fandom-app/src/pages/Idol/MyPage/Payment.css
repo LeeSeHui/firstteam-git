@@ -1,5 +1,5 @@
 
-.payment-container{padding: 20px 16px; box-sizing: border-box; padding-bottom: 50px; max-width: 400px; margin: 0 auto; background: #ffff;}
+.payment-container{height: 100vh; padding: 20px 16px; box-sizing: border-box; padding-bottom: 50px; max-width: 400px; margin: 0 auto; background: #ffff;}
 .dark .payment-container{background: #121212;}
 /* 채널 추가하기 */
 .add-artist-button {display: flex; justify-content: center;}
