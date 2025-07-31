@@ -66,7 +66,7 @@ const ArtistLayout = () => {
           <button
             key={tab.name}
             onClick={() => navigate(tab.path)}
-            className={`navButton withDot ${location.pathname === tab.path ? 'active' : ''}`}
+            className={`navButton ${location.pathname === tab.path ? 'active' : ''}`}
           >
             {tab.name}
           </button>
