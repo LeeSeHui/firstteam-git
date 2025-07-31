@@ -1,4 +1,4 @@
-.nickname-container { display: flex; flex-direction: column; align-items: center; max-width: 400px; margin: 0 auto; background: #ffff;}
+.nickname-container { display: flex; flex-direction: column; align-items: center; max-width: 400px; margin: 0 auto; background: #ffff; height: 100vh;}
 .dark .nickname-container {background: #121212;}
 .nickname-container h2 {font-size: 20px; font-weight: 600; letter-spacing: -1px; margin-bottom: 10px;}
 .nickname-container h2 span {display: inline-block; width: 100px;}
