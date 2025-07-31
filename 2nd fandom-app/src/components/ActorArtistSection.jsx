@@ -62,7 +62,7 @@ const ActorArtistSection = ({
   return (
     <div className={`artistSection ${isExpanded ? 'expanded' : ''}`}>
       {/* ✅ 피드 카드 */}
-      <div className="feed-card" onClick={() => setIsExpanded(!isExpanded)}>
+      <div className="feed-card actor_feedCard" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="feed-header">
           <div className="profile-info">
             <img

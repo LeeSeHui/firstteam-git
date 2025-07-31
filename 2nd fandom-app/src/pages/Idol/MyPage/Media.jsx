@@ -59,9 +59,9 @@ const Media = () => {
 
   return (
     <div className="Media-container">
-      <div className="back-wrapper has-dot">
+      
       <BackButton label="최근 본 미디어"/>
-      </div>
+      
       <div className="media-search-box">
         <img src={isDarkMode ? searchDark : search} alt="search" />
         <input

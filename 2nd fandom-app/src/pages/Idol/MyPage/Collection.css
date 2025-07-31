@@ -9,10 +9,6 @@
 .Collection-overlay-text {position: absolute;top: 50%; left: 50%; transform: translate(-50%,-50%);
 color: white; font-weight: 500; font-size: 14px;}
 
-/* red dot */
-.collection-container .back-wrapper.has-dot {position: relative;}
-.collection-container .back-wrapper.has-dot::after {content: "";position: absolute;top: 0px;left: 18px; width: 5px; height: 5px; background-color: red; border-radius: 50%;}
-
 
 /* 다크모드 */
 .dark .collection-count{color: #8F8F8F;}

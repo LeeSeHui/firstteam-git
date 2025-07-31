@@ -137,15 +137,18 @@ const Home = () => {
   return (
     <div className="homeContainer trot">
       <div className="main-logo">
+
         <p className="img main"><img src={isDarkMode ? dark_logo : logo} alt="logo" /></p>
-        <p className="img2 alarm" onClick={preventClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
-      </div>
+        <p className="img2 alarm trot-alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
+
 
       <div className="mypageSection Section trot" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
-          <div className="artistButtons">
-            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
+
+          <div className="artistButtons trotButtons">
+            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
+
               <img src={artist1} alt="artist1" />
             </button>
             <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>

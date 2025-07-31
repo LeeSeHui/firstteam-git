@@ -49,12 +49,10 @@ const Story = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const navigate = useNavigate();
 
-  const handleLeftClick = () => {
-    if (currentPage > 0) setCurrentPage(currentPage - 1);
-  };
-
-  const handleRightClick = () => {
-    if (currentPage < stories.length - 1) setCurrentPage(currentPage + 1);
+  const handleNext = () => {
+    if (currentPage < stories.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const handleStartClick = () => {
@@ -62,26 +60,26 @@ const Story = () => {
   };
 
   const handleSkip = () => {
-    setCurrentPage(stories.length - 1); // 마지막 페이지로 이동
+    setCurrentPage(stories.length - 1);
   };
 
   return (
     <div
       className="story-container story-bg"
       style={{ backgroundImage: `url(${stories[currentPage].background})` }}
+      onClick={() => {
+        if (!stories[currentPage].isLast) handleNext();
+      }}
     >
-
-
       {/* Skip 버튼: 마지막 페이지 제외 */}
       {!stories[currentPage].isLast && (
-        <button className="skip-btn" onClick={handleSkip}>
+        <button className="skip-btn" onClick={(e) => {
+          e.stopPropagation(); // 클릭 이벤트 전파 방지
+          handleSkip();
+        }}>
           Skip
         </button>
       )}
-
-
-      <div className="clickable-area left" onClick={handleLeftClick} />
-      <div className="clickable-area right" onClick={handleRightClick} />
 
       {/* 텍스트 출력 */}
       <div
@@ -97,13 +95,16 @@ const Story = () => {
         ))}
       </div>
 
-          {!stories[currentPage].isLast && (
-      <img
-        src={touch}
-        alt="터치 유도"
-        className="touch-icon"
-      />
-    )}
+      {/* 터치 아이콘: 마지막 페이지 제외 */}
+      {!stories[currentPage].isLast && (
+        <img
+          src={touch}
+          alt="터치 유도"
+          className="touch-icon"
+          onClick={handleNext}
+        />
+      )}
+
       {/* 버튼 출력 (마지막 페이지만) */}
       {stories[currentPage].isLast && (
         <div
