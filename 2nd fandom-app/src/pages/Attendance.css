@@ -4,7 +4,11 @@
 .attendance-wrapper {
     min-height: 100vh;
     box-sizing: border-box;
+    max-width: 400px; margin: 0 auto;
+    background: #ffff;
   }
+
+  .dark .attendance-wrapper{background: #121212;}
   
   /* 상단 텍스트 + 캐릭터 영역 */
   .attendance-header {

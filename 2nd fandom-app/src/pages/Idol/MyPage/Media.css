@@ -1,6 +1,9 @@
 .Media-container {
   padding: 20px 16px 50px 16px;
+  max-width: 400px; margin: 0 auto;
+  background: #fff;
 }
+.dark .Media-container{background: #121212;}
 
 /* 검색창 */
 .media-search-box {display: flex; align-items: center; padding: 11px 16px; border: 1px solid #797979; border-radius: 40px;  margin-bottom: 30px;}
