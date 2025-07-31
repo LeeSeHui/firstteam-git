@@ -77,7 +77,7 @@ const MyPage = () => {
       }, 100);
       return () => clearTimeout(timeout);
     }
-  }, [currentLevel]);
+  }, [currentLevel, characterLevels.length]);
 
   return (
     <div className="mypage-container">
@@ -231,7 +231,7 @@ const MyPage = () => {
           <img src={iconYoutube} alt="유튜브" />
         </div>
         <div className="icon-wrapper has-dot">
-          <img src={iconInsta} alt="인스타그램" />
+          <a href="https://www.instagram.com/nuvie.official?igsh=MXFiMnI2cndxbmtxOQ%3D%3D&utm_source=qr"><img src={iconInsta} alt="인스타그램" /></a>
         </div>
         <div className="icon-wrapper">
           <img src={iconX} alt="X" />

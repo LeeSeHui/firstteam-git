@@ -4,7 +4,7 @@
 
 .trot-nickname { gap: 4px; display: flex; align-items: center; font-weight: 600; font-size: 16px; }
 
-.trot-time { font-size: 14px; margin-top: 2px; color: #595959; }
+.trot-time-text { font-size: 14px; margin-top: 2px; color: #595959; }
 
 .trot-feed-card { border-radius: 16px; padding: 16px 16px 0 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); margin-bottom: 20px; font-size: 18px; width: 100%; max-width: 448px; margin: 0 auto 20px; }
 
@@ -12,7 +12,7 @@
 
 .bookmark-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: #aaa; transition: color 0.2s; }
 
-.feed-text { font-size: 15px; line-height: 1.2; color: #595959; font-weight: 500; }
+.trot-feed-text {font-size: 18px; line-height: 1.2; color: #595959; font-weight: 500; }
 
 .trot-like-counts { display: flex; gap: 12px; font-size: 18px; font-weight: 500; }
 

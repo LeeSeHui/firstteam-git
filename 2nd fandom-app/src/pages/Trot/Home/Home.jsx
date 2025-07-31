@@ -196,7 +196,7 @@ const Home = () => {
         isVerified={true}
         verifiedIcon={check}
         postTime="07.01. 05:06"
-        postText={`간만에 시월이랑 힐링타임~\n누님들도 시월이 보고 힐링하세요!`}
+        postText={`간만에 시월이랑 힐링타임~`}
         feedImage={feedimg1}
         photo02={photo02}
         photo03={photo03}
@@ -276,14 +276,14 @@ const Home = () => {
           {membershipData.map((item) => (
             <div key={item.id} className="membershipCard">
               <img src={item.img} alt="membership card" className="membershipBg" />
-              <div className="membershipOverlay">
-                <p className="group">Event</p>
+              <div className="trot-membershipOverlay">
+                <p className="trot-group">Event</p>
                 <h2>
                   {item.title.split("\n").map((word, idx) => (
                     <React.Fragment key={idx}>{word}<br /></React.Fragment>
                   ))}
                 </h2>
-                <p className="desc">
+                <p className="trot-desc">
                   {item.desc.split("\n").map((line, idx) => (
                     <React.Fragment key={idx}>{line}<br /></React.Fragment>
                   ))}
