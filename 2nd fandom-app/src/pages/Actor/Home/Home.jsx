@@ -93,6 +93,11 @@ const Home = () => {
     alert('준비 중인 기능입니다!');
   };
 
+const AlarmClick = () => {
+  alert('알림 기능은 준비 중입니다!');
+};
+
+
   const membershipData = [
     {
       id: 1,
@@ -148,14 +153,11 @@ const Home = () => {
         </p>
 
         <p className="img2 alarm actor_alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
-
+</div>
 
       <div className="mypageSection Section" onClick={handleMypageClick}>
         <div className="left">
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
-
-          <div className="artistButtons">
-            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
 
           <div className="artistButtons actorButtons trotButtons">
             <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
@@ -301,6 +303,7 @@ const Home = () => {
             </div>
           ))}
         </Slider>
+        
       </div>
     </div>
   );
