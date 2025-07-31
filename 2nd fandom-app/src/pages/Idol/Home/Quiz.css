@@ -1,4 +1,4 @@
-.quizContainer { text-align: center; padding: 20px;  max-width: 400px; margin: 0 auto; background: #ffff;}
+.quizContainer { text-align: center; padding: 20px;  max-width: 400px; margin: 0 auto; background: #ffff; height: 100vh;}
 .dark .quizContainer{background: #121212;}
 .quizContainer h2 { font-size: 20px; font-weight: 600; margin-top: 20px; }
 .quizExplain { font-size: 12px; color: #797979; margin: 10px 0 18px; font-weight: 500; }
