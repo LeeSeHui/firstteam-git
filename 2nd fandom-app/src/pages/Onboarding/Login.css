@@ -1,4 +1,4 @@
-.login-container {display: flex; flex-direction: column; gap: 25px;justify-content: center; align-items: center; overflow: hidden; margin-top: 80px; max-width: 400px; margin: 0 auto; background: #fff;}
+.login-container {display: flex; flex-direction: column; gap: 25px;justify-content: center; align-items: center; overflow: hidden; margin-top: 80px; max-width: 400px; margin: 0 auto; background: #fff; height: 100vh;}
 .dark .login-container {background: #121212;}
 .login-container .login-image {height: auto; width: 69%;}
 
