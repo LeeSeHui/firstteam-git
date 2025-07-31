@@ -187,3 +187,17 @@ body.dark .chat-input-area input { background: #333; color: #fff; }
 
 
 .dark .chat-input-area.styled {background: #333; box-shadow: none;}
+
+
+@media (max-width:400px) {
+  .chatbot-wrapper {
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+  
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+  }
+}
