@@ -27,4 +27,5 @@
 .splash-img {
     width: 100%; /* 원하는 크기로 조정 */
     height: 100%; /* 비율 유지 */
+    object-fit: cover;
   }

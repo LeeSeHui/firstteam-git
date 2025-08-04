@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './FashionCard.css';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
 const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', index = '1/3' }) => {
   const [likedItems, setLikedItems] = useState(Array(subImages.length).fill(false));
 
@@ -44,39 +47,48 @@ const FashionCard = ({ image, title, tag, subImages = [], date = '2025.07.02', i
       </div>
 
       {subImages.length > 0 && (
-        <div className="sub-product-wrap">
-          <p className="sub-title">상품 태그 {subImages.length}개</p>
-          {subImages.map((item, i) => (
-            <a
-              key={i}
-              href={item.link}
-              className="sub-product"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img src={item.img} alt={item.name} className="sub-image-thumb" />
-              <div className="sub-info">
-                <div className="sub-name">{item.name}</div>
-                <div className="sub-detail">{item.detail}</div>
-                <div className="sub-price">{item.price}</div>
-                <div className="sub-review">리뷰 {item.review}</div>
-              </div>
+  <div className="sub-product-wrap">
+    <p className="sub-title">상품 태그 {subImages.length}개</p>
 
-              <div
-                className={`bookmark-btn ${likedItems[i] ? 'liked' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  toggleLike(i);
-                }}
-              >
-                ♡
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
+    <Swiper
+      spaceBetween={12}
+      slidesPerView={'auto'}
+      grabCursor={true}
+      style={{ padding: '8px 0' }}
+    >
+      {subImages.map((item, i) => (
+        <SwiperSlide key={i} style={{ width: 160 }}>
+          <a
+            href={item.link}
+            className="sub-product"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img src={item.img} alt={item.name} className="sub-image-thumb" />
+            <div className="sub-info">
+              <div className="sub-name">{item.name}</div>
+              <div className="sub-detail">{item.detail}</div>
+              <div className="sub-price">{item.price}</div>
+              <div className="sub-review">리뷰 {item.review}</div>
+            </div>
+            <div
+              className={`bookmark-btn ${likedItems[i] ? 'liked' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleLike(i);
+              }}
+            >
+              ♡
+            </div>
+          </a>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+)}
+
     </div>
   );
 };
