@@ -96,11 +96,6 @@ background-color: red;border-radius: 50%;z-index: 2;}
 background-color: red;border-radius: 50%;z-index: 2;}
 
 
-/* 스와이프 */
-.swiper-wrapper {display: flex !important;flex-direction: row !important; padding: 0;  margin-left: 0;
-  margin-right: 0;}
-.swiper-slide {flex-shrink: 0; width: 100% !important; height: auto;box-sizing: border-box;}
-
 /* 다음레벨버튼 */
 .level-buttons {
   display: flex;
