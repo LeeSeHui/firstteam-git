@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 
@@ -170,32 +172,44 @@ const Home = () => {
       </div>
 
       <div className="liveSection">
-        <p>LIVE NOW!</p>
-        <div className="swipe">
-        <div className="liveImg" onClick={handleLiveClick}>
-          <img src={live02} alt="" />
-          <span className="liveBadge">LIVE</span>
-          <div className="liveTextBox">
-            <p className="artist">NewJeans</p>
-            <p className="title">1주년 LIVE<br />7/25 18:00</p>
-          </div>
+  <p>LIVE NOW!</p>
+  <Swiper
+    spaceBetween={16}
+    slidesPerView="auto"
+    grabCursor={true}
+  >
+            <SwiperSlide className="live-slide">
+              <div className="liveImg" onClick={handleLiveClick}>
+                <img src={live02} alt="" />
+                <span className="liveBadge">LIVE</span>
+                <div className="liveTextBox">
+                  <p className="artist">NewJeans</p>
+                  <p className="title">1주년 LIVE<br />7/25 18:00</p>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="live-slide">
+              <div className="liveImg" onClick={handleLiveClick}>
+                <img src={live01} alt="" />
+                <div className="liveTextBox">
+                  <p className="artist">NewJeans</p>
+                  <p className="title">2025 MAMA<br />AWARDS</p>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="live-slide">
+              <div className="liveImg" onClick={handleLiveClick}>
+                <img src={live03} alt="" />
+                <div className="liveTextBox">
+                  <p className="artist">NewJeans</p>
+                  <p className="title">M/V BEHIND<br />7/30 12:00</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
-        <div className="liveImg" onClick={handleLiveClick}>
-          <img src={live01} alt="" />
-          <div className="liveTextBox">
-            <p className="artist">NewJeans</p>
-            <p className="title">2025 MAMA<br />AWARDS</p>
-          </div>
-        </div>
-        <div className="liveImg" onClick={handleLiveClick}>
-          <img src={live03} alt="" />
-          <div className="liveTextBox">
-            <p className="artist">NewJeans</p>
-            <p className="title">M/V BEHIND<br />7/30 12:00</p>
-          </div>
-        </div>
-        </div>
-      </div>
 
       <ArtistSection
         nickname={nickname}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 
@@ -160,7 +162,7 @@ const AlarmClick = () => {
           <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
 
           <div className="artistButtons actorButtons trotButtons">
-            <button className='button2' onClick={(e) => { e.stopPropagation(); handleArtistClick(); }}>
+            <button className='button2' onClick={(e) => { e.stopPropagation(); }}>
 
               <img src={artist1} alt="artist1" />
             </button>
@@ -178,32 +180,44 @@ const AlarmClick = () => {
       </div>
 
       <div className="liveSection">
-        <p>LIVE NOW!</p>
-        <div className="swipe">
-          <div className="liveImg" onClick={preventClick}>
-            <img src={live02} alt="" />
-            <span className="liveBadge2">LIVE</span>
-            <div className="liveTextBox">
-              <p className="artist">YOUNJUNG</p>
-              <p className="title">2025<br />백상예술대상</p>
-            </div>
+            <p>LIVE NOW!</p>
+            <Swiper
+              spaceBetween={16}
+              slidesPerView="auto"
+              grabCursor={true}
+            >
+              <SwiperSlide className="live-slide">
+                <div className="liveImg" onClick={preventClick}>
+                  <img src={live02} alt="" />
+                  <span className="liveBadge2">LIVE</span>
+                  <div className="liveTextBox">
+                    <p className="artist">YOUNJUNG</p>
+                    <p className="title">2025<br />백상예술대상</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide className="live-slide">
+                <div className="liveImg" onClick={preventClick}>
+                  <img src={live01} alt="" />
+                  <div className="liveTextBox">
+                    <p className="artist">WOOSEOK</p>
+                    <p className="title">BEHIND<br />THE SCENES</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide className="live-slide">
+                <div className="liveImg" onClick={preventClick}>
+                  <img src={live03} alt="" />
+                  <div className="liveTextBox">
+                    <p className="artist">WOOSEOK</p>
+                    <p className="title">화보 촬영 LIVE<br />7/31 18:00</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <div className="liveImg" onClick={preventClick}>
-            <img src={live01} alt="" />
-            <div className="liveTextBox">
-              <p className="artist">WOOSEOK</p>
-              <p className="title">BEHIND<br />THE SCENES</p>
-            </div>
-          </div>
-          <div className="liveImg" onClick={preventClick}>
-            <img src={live03} alt="" />
-            <div className="liveTextBox">
-              <p className="artist">WOOSEOK</p>
-              <p className="title">화보 촬영 LIVE<br />7/31 18:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <ActorArtistSection
         profileImage={artist01}
@@ -251,36 +265,36 @@ const AlarmClick = () => {
   <div className="swipe vote">
     <div className="voteRow">
       <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
+        <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote01} alt="vote01" />
-        <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
+        <div className="actor-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
       </div>
       <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
+        <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote02} alt="vote02" />
-        <div className="trot-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
+        <div className="actor-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
       </div>
       <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
+        <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote03} alt="vote03" />
-        <div className="trot-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
+        <div className="actor-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
       </div>
     </div>
     <div className="voteRow offset">
       <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
+        <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote04} alt="vote04" />
-        <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
+        <div className="actor-voteText"><span>케이팝 코스프레 1위는?</span></div>
       </div>
       <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
+        <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote05} alt="vote05" />
-        <div className="trot-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
+        <div className="actor-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
       </div>
       <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
+        <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote06} alt="vote06" />
-        <div className="trot-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
+        <div className="actor-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
       </div>
     </div>
   </div>
