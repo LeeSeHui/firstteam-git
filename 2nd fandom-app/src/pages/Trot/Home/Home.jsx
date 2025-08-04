@@ -1,6 +1,8 @@
 // ✅ 최종 수정 완료된 Trot/Home.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 import { ToastContainer } from 'react-toastify';
@@ -171,17 +173,23 @@ const Home = () => {
 
       <div className="liveSection">
         <p>LIVE NOW!</p>
-        <div className="swipe">
+        <Swiper
+          spaceBetween={16}
+          slidesPerView="auto"
+          grabCursor={true}
+        >
           {[live02, live01, live03].map((img, i) => (
-            <div key={i} className="liveImg" onClick={preventClick}>
-              <img src={img} alt={`live${i}`} />
-              <div className="liveTextBox">
-                <p className="trot-artist">{i === 1 ? '정동원' : '임영웅'}</p>
-                <p className="trot-title">트로트 라이브 방송</p>
+            <SwiperSlide key={i} className="live-slide">
+              <div className="liveImg" onClick={preventClick}>
+                <img src={img} alt={`live${i}`} />
+                <div className="liveTextBox">
+                  <p className="trot-artist">{i === 1 ? '정동원' : '임영웅'}</p>
+                  <p className="trot-title">트로트 라이브 방송</p>
+                </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
 
       <TrotArtistSection

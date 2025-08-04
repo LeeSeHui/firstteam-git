@@ -114,3 +114,13 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0%); }
 }
+
+
+.manual-img {
+  width: auto;
+  max-width: 80%;
+  max-height: 50vh;
+  margin: 0 auto 24px;
+  display: block;
+  object-fit: contain;
+}
