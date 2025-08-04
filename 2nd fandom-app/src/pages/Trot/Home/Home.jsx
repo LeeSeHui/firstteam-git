@@ -7,6 +7,10 @@ import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Grid } from 'swiper/modules'; 
+import 'swiper/css';
+import 'swiper/css/grid';
 
 import TrotArtistSection from '../../../components/TrotArtistSection';
 import TrotQuizSection from '../../../components/TrotQuizSection';
@@ -92,6 +96,15 @@ const Home = () => {
   const handleMypageClick = () => navigate('/trot/mypage');
   const preventClick = () => alert('준비 중인 기능입니다!');
   const AlarmClick = () => alert('알림 기능 준비 중입니다!');
+
+    const voteData = [
+        { id: 1, img: vote01, text: '7월 첫째주 당신의 마음을 울린 가수는?' },
+        { id: 2, img: vote02, text: '7월 첫째주 당신의 마음을 울린 가수는?' },
+        { id: 3, img: vote03, text: '7월 첫째주 당신의 마음을 울린 가수는?' },
+        { id: 4, img: vote04, text: '7월 첫째주 당신의 마음을 울린 가수는?' },
+        { id: 5, img: vote05, text: '7월 첫째주 당신의 마음을 울린 가수는?' },
+        { id: 6, img: vote06, text: '7월 첫째주 당신의 마음을 울린 가수는?' },
+      ];
 
   const membershipData = [
     {
@@ -200,57 +213,72 @@ const Home = () => {
 
       <div className="videoSection">
         <p>{nickname}님을 위한 추천 컨텐츠</p>
-        <div className="videoSwipe">
+        <Swiper
+          spaceBetween={65}            // 카드 간 간격
+          slidesPerView={'auto'}       // 카드 크기만큼 보여줌
+          grabCursor={true}            // 손 모양 커서
+        >
           {[thumb1, thumb2, thumb3].map((thumb, i) => (
-            <div key={i} className="videoCard" onClick={preventClick}>
-              <img src={thumb} alt={`video${i}`} />
-              <img src={playIcon} alt="play" className="playIcon" />
-              <p>트로트 무대 하이라이트</p>
-            </div>
+            <SwiperSlide key={i} style={{ width: '190px', height:'200px' }}>
+              <a
+                href={['https://www.youtube.com/watch?v=yFTAYXDTjqI', 'https://www.youtube.com/watch?v=lmJPeFW75qQ', 'https://www.youtube.com/watch?v=7FbDF0wWe_8'][i]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="videoCard"
+              >
+                <img src={thumb} alt={`video${i + 1}`} className="videoThumb" />
+                <div className="playIconWrapper actorPlay">
+                  <img src={playIcon} alt="play" className="playIcon" />
+                </div>
+                <p>
+                  {[
+                    "[미스터트롯3] 트롯 황제 임영웅 무대 모음ZIP",
+                    "레전드 무대만 쏙쏙 담은 미스터트롯1 역대 Top3",
+                    "정동원 - 독백 [열린 음악회/Open Concert] | KBS",
+                  ][i]}
+                </p>
+              </a>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
 
       <TrotQuizSection handleQuizClick={preventClick} />
 
       <div className="voteSection">
-  <div className="swipe vote">
-    <div className="voteRow">
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote01} alt="vote01" />
-        <div className="trot-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote02} alt="vote02" />
-        <div className="trot-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote03} alt="vote03" />
-        <div className="trot-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-    </div>
-    <div className="voteRow offset">
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote04} alt="vote04" />
-        <div className="trot-voteText"><span>케이팝 코스프레 1위는?</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote05} alt="vote05" />
-        <div className="trot-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="trot-vote-tit">투표 D-3</p>
-        <img src={vote06} alt="vote06" />
-        <div className="trot-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
-      </div>
-    </div>
-  </div>
-</div>
+              <Swiper
+                modules={[Grid]}
+                spaceBetween={10}
+                slidesPerView={'auto'} // 한 열에 2개씩
+                grid={{
+                  rows: 2,        // 총 2줄
+                  fill: 'row',    // 슬라이드 순서를 row 방향으로 채움
+                }}
+                grabCursor={true}
+              >
+                {voteData.map((vote, idx) => (
+                  <SwiperSlide key={vote.id} style={{width:'290px'}}>
+                    <div
+                      className={
+                        idx <= 2
+                          ? 'shift-wrapper shift-right'
+                          : idx >= 3 && idx <= 5
+                          ? 'shift-wrapper shift-left'
+                          : ''
+                      }
+                    >
+                      <div className="voteCard">
+                        <p className="vote-tit trot-vote-tit">투표 D-3</p>
+                        <img src={vote.img} alt={`vote${idx + 1}`} />
+                        <div className="trot-voteText">
+                          <span dangerouslySetInnerHTML={{ __html: vote.text }} />
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>

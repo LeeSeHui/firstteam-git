@@ -4,6 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Grid } from 'swiper/modules'; 
+import 'swiper/css';
+import 'swiper/css/grid';
 
 import ActorArtistSection from '../../../components/ActorArtistSection';
 import ActorQuizSection from '../../../components/ActorQuizSection';
@@ -97,7 +101,16 @@ const Home = () => {
 
 const AlarmClick = () => {
   alert('알림 기능은 준비 중입니다!');
-};
+};  
+
+  const voteData = [
+      { id: 1, img: vote01, text: '[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표' },
+      { id: 2, img: vote02, text: '7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?' },
+      { id: 3, img: vote03, text: '[600회] KBS 인기가요 <br /> K-Chart 1위 후보 투표' },
+      { id: 4, img: vote04, text: '케이팝 코스프레 1위는?' },
+      { id: 5, img: vote05, text: '[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표' },
+      { id: 6, img: vote06, text: '감성 가득 셀카장인 <br /> 여자 아이돌은?' },
+    ];
 
 
   const membershipData = [
@@ -239,29 +252,41 @@ const AlarmClick = () => {
       />
 
       <div className="videoSection">
-        <p>JUST FOR {nickname}💖</p>
-        <div className="videoSwipe">
-          <div className="videoCard" onClick={preventClick}>
-            <img src={thumb1} alt="video1" />
-            <img src={playIcon} alt="play" className="playIcon" />
-            <p>[𝐕𝐚-𝐥𝐨𝐠] 변우석, 밀라노 <br />에서 생긴 일</p>
-          </div>
-          <div className="videoCard" onClick={preventClick}>
-            <img src={thumb2} alt="video2" />
-            <img src={playIcon} alt="play" className="playIcon" />
-            <p>고윤정의 소울푸드는?  <br /> ELLE KOREA</p>
-          </div>
-          <div className="videoCard" onClick={preventClick}>
-            <img src={thumb3} alt="video3" />
-            <img src={playIcon} alt="play" className="playIcon" />
-            <p>[ENG] 승부욕 활활!🔥<br />내 머리 위 정답은?! 무빙</p>
-          </div>
-        </div>
+        <p>JUST FOR {nickname} 💖</p>
+        <Swiper
+          spaceBetween={65}            // 카드 간 간격
+          slidesPerView={'auto'}       // 카드 크기만큼 보여줌
+          grabCursor={true}            // 손 모양 커서
+        >
+          {[thumb1, thumb2, thumb3].map((thumb, i) => (
+            <SwiperSlide key={i} style={{ width: '190px', height:'200px' }}>
+              <a
+                href={['https://www.youtube.com/watch?v=yFTAYXDTjqI', 'https://www.youtube.com/watch?v=lmJPeFW75qQ', 'https://www.youtube.com/watch?v=7FbDF0wWe_8'][i]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="videoCard"
+              >
+                <img src={thumb} alt={`video${i + 1}`} className="videoThumb" />
+                <div className="playIconWrapper actorPlay">
+                  <img src={playIcon} alt="play" className="playIcon" />
+                </div>
+                <p>
+                  {[
+                    "'[𝐕-𝐥𝐨𝐠] 변우석, 밀라노에서 생긴 일",
+                    "고윤정의 소울푸드는? ELLE KOREA",
+                    "[ENG] 승부욕 활활!🔥 내 머리 위 정답은?! 무빙",
+                  ][i]}
+                </p>
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <ActorQuizSection handleQuizClick={preventClick} />
 
       <div className="voteSection">
+
   <div className="swipe vote">
     <div className="voteRow">
       <div className="voteCard" onClick={preventClick}>
@@ -295,10 +320,40 @@ const AlarmClick = () => {
         <p className="actor-vote-tit">투표 D-3</p>
         <img src={vote06} alt="vote06" />
         <div className="actor-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
+
+        <Swiper
+          modules={[Grid]}
+          spaceBetween={10}
+          slidesPerView={'auto'} // 한 열에 2개씩
+          grid={{
+            rows: 2,        // 총 2줄
+            fill: 'row',    // 슬라이드 순서를 row 방향으로 채움
+          }}
+          grabCursor={true}
+        >
+          {voteData.map((vote, idx) => (
+            <SwiperSlide key={vote.id} style={{width:'290px'}}>
+              <div
+                className={
+                  idx <= 2
+                    ? 'shift-wrapper shift-right'
+                    : idx >= 3 && idx <= 5
+                    ? 'shift-wrapper shift-left'
+                    : ''
+                }
+              >
+                <div className="voteCard">
+                  <p className="vote-tit actor-vote-tit">투표 D-3</p>
+                  <img src={vote.img} alt={`vote${idx + 1}`} />
+                  <div className="voteText">
+                    <span dangerouslySetInnerHTML={{ __html: vote.text }} />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </div>
-  </div>
-</div>
 
       <div className="membershipSection Section">
         <Slider {...sliderSettings}>

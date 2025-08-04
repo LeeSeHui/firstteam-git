@@ -22,7 +22,7 @@ const TrotQuizSection = ({ handleQuizClick }) => {
   };
 
   return (
-    <div className="quiz-section Section">
+    <div className="quiz-section Section trot-quiz">
       <div className="quiz-content">
         <div className="quiz-left">
           <h3 className='trot-h3'>

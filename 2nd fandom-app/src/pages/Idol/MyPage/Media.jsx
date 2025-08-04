@@ -1,10 +1,12 @@
 import React from 'react';
+import 'swiper/css';
 import './Media.css';
 import '/src/index.css';
+
 import BackButton from '../../../components/BackButton';
 import search from '../../../assets/dm/search.png';
 import searchDark from '../../../assets/dark/dark_search.png';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 // ✅ 이미지 import
 import live1 from '../../../assets/mypage/media/newjeansLive.png';
 import live2 from '../../../assets/mypage/media/newjeansLive2.png';
@@ -72,52 +74,62 @@ const Media = () => {
       </div>
 
       {/* 라이브 */}
-      <div className="mypage-media-section">
+          <div className="mypage-media-section">
         <p className="media-section-title">라이브</p>
-        <div className="scroll-wrapper">
+        <Swiper
+          spaceBetween={12}
+          slidesPerView={'auto'}
+          grabCursor={true}
+        >
           {liveVideos.map((item, idx) => (
-            <div className="media-card" key={idx}>
-              <img src={item.img} alt={item.title}className='media-img' />
-              <p className="media-title">{item.title}</p>
-              <p className="media-sub">
-                <span className="artist sub-color">{item.artist}</span>
-                <span className="date sub-color">{item.date}</span>
-              </p>
-            </div>
+            <SwiperSlide key={idx} style={{ width: '190px' }}>
+              <div className="media-card">
+                <img src={item.img} alt={item.title} className='media-img' />
+                <p className="media-title">{item.title}</p>
+                <p className="media-sub">
+                  <span className="artist sub-color">{item.artist}</span>
+                  <span className="date sub-color">{item.date}</span>
+                </p>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
 
-      {/* 동영상 */}
+        {/* 동영상 */}
       <div className="mypage-media-section">
         <p className="media-section-title">동영상</p>
-        <div className="scroll-wrapper">
+        <Swiper spaceBetween={12} slidesPerView={'auto'} grabCursor={true}>
           {videos.map((item, idx) => (
-            <div className="media-card" key={idx}>
-              <img src={item.img} alt={item.title}className='media-img' />
-              <p className="media-title">{item.title}</p>
-            </div>
+            <SwiperSlide key={idx} style={{ width: '190px' }}>
+              <div className="media-card">
+                <img src={item.img} alt={item.title} className='media-img' />
+                <p className="media-title">{item.title}</p>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
-      </div>
+        </Swiper>
+    </div>
 
-        {/* 게시물 */}
+    {/* 게시물 */}
     <div className="mypage-media-section">
       <p className="media-section-title">게시물</p>
-      <div className="scroll-wrapper post-wrapper">
+      <Swiper spaceBetween={12} slidesPerView={'auto'} grabCursor={true}>
         {posts.map((item, idx) => (
-          <div className="media-card post-card" key={idx}>
-            <div className="media-image-wrapper">
-              <img src={item.img} alt={`피드${idx}`} className="post-img" />
-              <p className="Media-overlay-text">
-                {item.text.split('\n').map((line, i) => (
-                  <span key={i}>{line}<br /></span>
-                ))}
-              </p>
+          <SwiperSlide key={idx} style={{ width: '190px' }}>
+            <div className="media-card post-card">
+              <div className="media-image-wrapper">
+                <img src={item.img} alt={`피드${idx}`} className="post-img" />
+                <p className="Media-overlay-text">
+                  {item.text.split('\n').map((line, i) => (
+                    <span key={i}>{line}<br /></span>
+                  ))}
+                </p>
+              </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
 
      {/* 어제 본 콘텐츠 */}

@@ -1,7 +1,7 @@
 .chatbot-wrapper {
   position: fixed;
   bottom: 100px;
-  right: 41%;
+  right: 40.5%;
 
   z-index: 9999;
   display: flex;

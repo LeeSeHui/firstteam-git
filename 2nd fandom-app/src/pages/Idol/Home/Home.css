@@ -152,7 +152,7 @@ input:focus {border: none; outline: none;}
 
 
 
-.videoSection {padding: 34px 0 0 16px;}
+.videoSection {padding: 0 0 0 16px;}
 .videoSection > p {font-size: 16px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.3px;}
 .videoSwipe {display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 13px; height: 215px;}
 .videoCard {
@@ -184,6 +184,7 @@ input:focus {border: none; outline: none;}
     z-index: 1;
   }
 
+
   .videoCard img.playIcon {
     position: absolute;
     top: 50%;
@@ -207,13 +208,19 @@ input:focus {border: none; outline: none;}
 .quizCard .progress {position: absolute; bottom: 0; right: 0; background: #fdb52c; color: #fff; padding: 4px 12px; font-size: 12px; border-radius: 8px 0 8px 0;}
 
 
-.voteSection {padding: 35px 0 35px 0;}
-.swipe.vote {display: flex; flex-direction: column; overflow-x: auto; gap: 10px; -webkit-overflow-scrolling: touch; }
-.swipe::-webkit-scrollbar {display: none;}
-.voteRow {display: flex; gap: 10px; margin-left: 20px;}
-.voteRow.offset {margin-left: -50px;}
-.voteCard {position: relative; width: 286px; height: 122px; border-radius: 10px; overflow: hidden; flex-shrink: 0;}
+.voteSection {padding: 35px 0 35px 0; box-sizing: border-box;}
+.voteCard {position: relative;  width: 100%; height: 122px; border-radius: 10px; overflow: hidden; flex-shrink: 0;}
 .voteCard img {width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(80%);}
+.shift-left {
+  transform: translateX(-50px); /* 왼쪽으로 */
+}
+
+.shift-right {
+  transform: translateX(16px);  /* 오른쪽으로 */
+}
+
+
+
 .voteCard .vote-tit {position: absolute; left: 20px; bottom: 60px; color: #fdb52c; font-size: 12px; padding: 3px 6px; background: #fff; border-radius: 50px; font-weight: 500; z-index: 2;}
 .voteCard .vote-tit::after {
   content: '';

@@ -4,7 +4,10 @@
     font-family: 'Pretendard', sans-serif;
     max-width: 400px;
     margin: 0 auto;
+    background: #ffff;
   }
+
+  .dark .alarm-page { background: #121212;}
   
   /* 상단 제목 */
   .page-title {
@@ -35,7 +38,7 @@
     border-radius: 20px;
     background: #ffff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.2s;
     color: #595959;

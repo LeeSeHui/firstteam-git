@@ -1,4 +1,6 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import FashionSection from '../../../components/FashionSection';
 
 import jennie1 from '../../../assets/fashion/jenny1.png';
