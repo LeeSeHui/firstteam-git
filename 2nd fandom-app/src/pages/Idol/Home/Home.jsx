@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Grid } from 'swiper/modules'; 
+import 'swiper/css';
+import 'swiper/css/grid';
 
 
 import ArtistSection from '../../../components/ArtistSection';
@@ -130,6 +134,15 @@ const Home = () => {
     },
   ];
 
+    const voteData = [
+    { id: 1, img: vote1, text: '[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표' },
+    { id: 2, img: vote2, text: '7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?' },
+    { id: 3, img: vote3, text: '[600회] KBS 인기가요 <br /> K-Chart 1위 후보 투표' },
+    { id: 4, img: vote4, text: '케이팝 코스프레 1위는?' },
+    { id: 5, img: vote5, text: '[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표' },
+    { id: 6, img: vote6, text: '감성 가득 셀카장인 <br /> 여자 아이돌은?' },
+  ];
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -219,72 +232,72 @@ const Home = () => {
       />
 
       <div className="videoSection">
-
         <p>JUST FOR {nickname} 💖</p>
-        <div className="videoSwipe">
-          <a href="https://www.youtube.com/watch?v=yFTAYXDTjqI" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb1} alt="video1" className="videoThumb" />
-            <div className="playIconWrapper">
-                <img src={playIcon} alt="play" className="playIcon" />
-              </div>
-            <p>'최초 공개' NewJeans의 HOT 컴백 무대 @SHOWMUSICBANK</p>
-          </a>
-          <a href="https://www.youtube.com/watch?v=lmJPeFW75qQ" target="_blank" rel="noopener noreferrer" className="videoCard">
-              <img src={thumb2} alt="video2" className="videoThumb" />
-              <div className="playIconWrapper">
-                <img src={playIcon} alt="play" className="playIcon" />
-              </div>
-            <p>뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN</p>
-          </a>
-          <a href="https://www.youtube.com/watch?v=7FbDF0wWe_8" target="_blank" rel="noopener noreferrer" className="videoCard">
-            <img src={thumb3} alt="video3" className="videoThumb" />
-            <div className="playIconWrapper">
-              <img src={playIcon} alt="play" className="playIcon" />
-            </div>
-            <p>뉴진스 'Right Now' <br />Bonus Ver @뮤직뱅크</p>
-          </a>
-        </div>
+        <Swiper
+          spaceBetween={65}            // 카드 간 간격
+          slidesPerView={'auto'}       // 카드 크기만큼 보여줌
+          grabCursor={true}            // 손 모양 커서
+        >
+          {[thumb1, thumb2, thumb3].map((thumb, i) => (
+            <SwiperSlide key={i} style={{ width: '190px', height:'200px' }}>
+              <a
+                href={['https://www.youtube.com/watch?v=yFTAYXDTjqI', 'https://www.youtube.com/watch?v=lmJPeFW75qQ', 'https://www.youtube.com/watch?v=7FbDF0wWe_8'][i]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="videoCard"
+              >
+                <img src={thumb} alt={`video${i + 1}`} className="videoThumb" />
+                <div className="playIconWrapper">
+                  <img src={playIcon} alt="play" className="playIcon" />
+                </div>
+                <p>
+                  {[
+                    "'최초 공개' NewJeans의 HOT 컴백 무대 @SHOWMUSICBANK",
+                    "뉴진스 하니직캠 4K 'Hype Boy' @MCOUNTDOWN",
+                    "뉴진스 'Right Now' <br />Bonus Ver @뮤직뱅크",
+                  ][i]}
+                </p>
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <QuizSection handleQuizClick={handleQuizClick} />
 
       <div className="voteSection">
-        <div className="swipe vote">
-          <div className="voteRow">
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <p className="vote-tit">투표 D-3</p>
-              <img src={vote1} alt="" />
-              <div className="voteText"><span>[798회] KBS 뮤직뱅크 <br /> K-Chart 1위 후보 투표</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-            <p className="vote-tit">투표 D-3</p>
-            <img src={vote2} alt="" />
-              <div className="voteText"><span>7월 첫째주 <br /> 당신의 마음을 울린 아이돌은?</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-            <p className="vote-tit">투표 D-3</p>
-            <img src={vote3} alt="" />
-              <div className="voteText"><span>[600회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
-            </div>
-          </div>
-          <div className="voteRow offset">
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <p className="vote-tit">투표 D-3</p>
-              <img src={vote4} alt="" />
-              <div className="voteText"><span>케이팝 코스프레 1위는?</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <p className="vote-tit">투표 D-3</p>
-              <img src={vote5} alt="" />
-              <div className="voteText"><span>[808회] KBS 인기가요 <br /> K-Chart 1위 후보 투표</span></div>
-            </div>
-            <div className="voteCard" onClick={handleVoteCardClick}>
-              <p className="vote-tit">투표 D-3</p>
-              <img src={vote6} alt="" />
-              <div className="voteText"><span>감성 가득 셀카장인 <br /> 여자 아이돌은?</span></div>
-            </div>
-          </div>
-        </div>
+        <Swiper
+          modules={[Grid]}
+          spaceBetween={10}
+          slidesPerView={'auto'} // 한 열에 2개씩
+          grid={{
+            rows: 2,        // 총 2줄
+            fill: 'row',    // 슬라이드 순서를 row 방향으로 채움
+          }}
+          grabCursor={true}
+        >
+          {voteData.map((vote, idx) => (
+            <SwiperSlide key={vote.id} style={{width:'290px'}}>
+              <div
+                className={
+                  idx <= 2
+                    ? 'shift-wrapper shift-right'
+                    : idx >= 3 && idx <= 5
+                    ? 'shift-wrapper shift-left'
+                    : ''
+                }
+              >
+                <div className="voteCard" onClick={handleVoteCardClick}>
+                  <p className="vote-tit">투표 D-3</p>
+                  <img src={vote.img} alt={`vote${idx + 1}`} />
+                  <div className="voteText">
+                    <span dangerouslySetInnerHTML={{ __html: vote.text }} />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div className="membershipSection Section">
