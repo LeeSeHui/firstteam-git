@@ -96,7 +96,7 @@ line-height: 1.5; max-width: max-content; word-break: keep-all;}
 
   
   /* 이모지 버튼 */
-  .emoji-icon {
+  .emoji-icon {position: relative;
     width: 30px;
     height: 30px;
     background: #ffd400;
@@ -104,9 +104,17 @@ line-height: 1.5; max-width: max-content; word-break: keep-all;}
     border: none;
     font-size: 16px;
     cursor: pointer;
-
   }
-
+  .emoji-icon:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%
+}
 
 /* 답장 */
 .chatroom-body {
