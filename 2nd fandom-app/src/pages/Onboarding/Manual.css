@@ -77,7 +77,7 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 
 .manual-text-wrapper.center { top: 110%; transform: translate(-50%, -50%); }
 
-.manual-text-wrapper.bottom { bottom: -5%; }
+.manual-text-wrapper.bottom { bottom: 0; }
 
 
 /* 📝 텍스트 스타일 */
