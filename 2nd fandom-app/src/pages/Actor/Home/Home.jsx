@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid } from 'swiper/modules'; 
 import 'swiper/css';
 import 'swiper/css/grid';
@@ -163,164 +162,129 @@ const AlarmClick = () => {
     <div className="homeContainer">
       <div className="main-logo">
 
-        <p className="img main">
-          <img src={isDarkMode ? dark_logo : logo} alt="logo" />
-        </p>
+<p className="img main">
+  <img src={isDarkMode ? dark_logo : logo} alt="logo" />
+</p>
 
-        <p className="img2 alarm actor_alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
+<p className="img2 alarm actor_alarm" onClick={AlarmClick}><img src={isDarkMode ? dark_alarm : alarm} alt="alarm" /></p>
 </div>
 
-      <div className="mypageSection Section" onClick={handleMypageClick}>
-        <div className="left">
-          <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
+<div className="mypageSection Section" onClick={handleMypageClick}>
+<div className="left">
+  <p>{nickname}님!<br /> 오늘도 우리 함께 <br /> 행복한 덕질해요! </p>
 
-          <div className="artistButtons actorButtons trotButtons">
-            <button className='button2' onClick={(e) => { e.stopPropagation(); }}>
+  <div className="artistButtons actorButtons trotButtons">
+    <button className='button2' onClick={(e) => { e.stopPropagation(); }}>
 
-              <img src={artist1} alt="artist1" />
-            </button>
-            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
-              <img src={artist3} alt="artist3" />
-            </button>
-            <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
-              <img src={plusIcon} alt="plus" />
-            </button>
+      <img src={artist1} alt="artist1" />
+    </button>
+    <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
+      <img src={artist3} alt="artist3" />
+    </button>
+    <button className='button2' onClick={(e) => { e.stopPropagation(); preventClick(); }}>
+      <img src={plusIcon} alt="plus" />
+    </button>
+  </div>
+</div>
+<div className="right">
+  <img src={idol_char} alt="idol character" />
+</div>
+</div>
+
+<div className="liveSection">
+    <p>LIVE NOW!</p>
+    <Swiper
+      spaceBetween={16}
+      slidesPerView="auto"
+      grabCursor={true}
+    >
+      <SwiperSlide className="live-slide">
+        <div className="liveImg" onClick={preventClick}>
+          <img src={live02} alt="" />
+          <span className="liveBadge2">LIVE</span>
+          <div className="liveTextBox">
+            <p className="artist">YOUNJUNG</p>
+            <p className="title">2025<br />백상예술대상</p>
           </div>
         </div>
-        <div className="right">
-          <img src={idol_char} alt="idol character" />
-        </div>
-      </div>
-
-      <div className="liveSection">
-            <p>LIVE NOW!</p>
-            <Swiper
-              spaceBetween={16}
-              slidesPerView="auto"
-              grabCursor={true}
-            >
-              <SwiperSlide className="live-slide">
-                <div className="liveImg" onClick={preventClick}>
-                  <img src={live02} alt="" />
-                  <span className="liveBadge2">LIVE</span>
-                  <div className="liveTextBox">
-                    <p className="artist">YOUNJUNG</p>
-                    <p className="title">2025<br />백상예술대상</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              
-              <SwiperSlide className="live-slide">
-                <div className="liveImg" onClick={preventClick}>
-                  <img src={live01} alt="" />
-                  <div className="liveTextBox">
-                    <p className="artist">WOOSEOK</p>
-                    <p className="title">BEHIND<br />THE SCENES</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide className="live-slide">
-                <div className="liveImg" onClick={preventClick}>
-                  <img src={live03} alt="" />
-                  <div className="liveTextBox">
-                    <p className="artist">WOOSEOK</p>
-                    <p className="title">화보 촬영 LIVE<br />7/31 18:00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
+      </SwiperSlide>
+      
+      <SwiperSlide className="live-slide">
+        <div className="liveImg" onClick={preventClick}>
+          <img src={live01} alt="" />
+          <div className="liveTextBox">
+            <p className="artist">WOOSEOK</p>
+            <p className="title">BEHIND<br />THE SCENES</p>
           </div>
+        </div>
+      </SwiperSlide>
 
-      <ActorArtistSection
-        profileImage={artist01}
-        artistName="윤정"
-        isVerified={true}
-        verifiedIcon={check}
-        postTime="07.01. 05:06"
-        postText={`푹 쉬다가 촬영장 복귀!\n모두 월요팅 하시구 곧 만나용 `}
-        feedImage={feedimg1}
-        photo02={photo02}
-        photo03={photo03}
-        comments={comments}
-        newComment={newComment}
-        setNewComment={setNewComment}
-        handleAddComment={handleAddComment}
-        totalCommentCount={totalCommentCount}
-        onProfileClickPath="/idol/artist/highlight"
-        getTimeAgo={getTimeAgo}
-      />
+      <SwiperSlide className="live-slide">
+        <div className="liveImg" onClick={preventClick}>
+          <img src={live03} alt="" />
+          <div className="liveTextBox">
+            <p className="artist">WOOSEOK</p>
+            <p className="title">화보 촬영 LIVE<br />7/31 18:00</p>
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  </div>
 
-      <div className="videoSection">
-        <p>JUST FOR {nickname} 💖</p>
-        <Swiper
-          spaceBetween={65}            // 카드 간 간격
-          slidesPerView={'auto'}       // 카드 크기만큼 보여줌
-          grabCursor={true}            // 손 모양 커서
-        >
-          {[thumb1, thumb2, thumb3].map((thumb, i) => (
-            <SwiperSlide key={i} style={{ width: '190px', height:'200px' }}>
-              <a
-                href={['https://www.youtube.com/watch?v=yFTAYXDTjqI', 'https://www.youtube.com/watch?v=lmJPeFW75qQ', 'https://www.youtube.com/watch?v=7FbDF0wWe_8'][i]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="videoCard"
-              >
-                <img src={thumb} alt={`video${i + 1}`} className="videoThumb" />
-                <div className="playIconWrapper actorPlay">
-                  <img src={playIcon} alt="play" className="playIcon" />
-                </div>
-                <p>
-                  {[
-                    "'[𝐕-𝐥𝐨𝐠] 변우석, 밀라노에서 생긴 일",
-                    "고윤정의 소울푸드는? ELLE KOREA",
-                    "[ENG] 승부욕 활활!🔥 내 머리 위 정답은?! 무빙",
-                  ][i]}
-                </p>
-              </a>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+<ActorArtistSection
+profileImage={artist01}
+artistName="윤정"
+isVerified={true}
+verifiedIcon={check}
+postTime="07.01. 05:06"
+postText={`푹 쉬다가 촬영장 복귀!\n모두 월요팅 하시구 곧 만나용 `}
+feedImage={feedimg1}
+photo02={photo02}
+photo03={photo03}
+comments={comments}
+newComment={newComment}
+setNewComment={setNewComment}
+handleAddComment={handleAddComment}
+totalCommentCount={totalCommentCount}
+onProfileClickPath="/idol/artist/highlight"
+getTimeAgo={getTimeAgo}
+/>
 
-      <ActorQuizSection handleQuizClick={preventClick} />
+<div className="videoSection">
+<p>JUST FOR {nickname} 💖</p>
+<Swiper
+  spaceBetween={65}            // 카드 간 간격
+  slidesPerView={'auto'}       // 카드 크기만큼 보여줌
+  grabCursor={true}            // 손 모양 커서
+>
+  {[thumb1, thumb2, thumb3].map((thumb, i) => (
+    <SwiperSlide key={i} style={{ width: '190px', height:'200px' }}>
+      <a
+        href={['https://www.youtube.com/watch?v=yFTAYXDTjqI', 'https://www.youtube.com/watch?v=lmJPeFW75qQ', 'https://www.youtube.com/watch?v=7FbDF0wWe_8'][i]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="videoCard"
+      >
+        <img src={thumb} alt={`video${i + 1}`} className="videoThumb" />
+        <div className="playIconWrapper actorPlay">
+          <img src={playIcon} alt="play" className="playIcon" />
+        </div>
+        <p>
+          {[
+            "'[𝐕-𝐥𝐨𝐠] 변우석, 밀라노에서 생긴 일",
+            "고윤정의 소울푸드는? ELLE KOREA",
+            "[ENG] 승부욕 활활!🔥 내 머리 위 정답은?! 무빙",
+          ][i]}
+        </p>
+      </a>
+    </SwiperSlide>
+  ))}
+</Swiper>
+</div>
 
-      <div className="voteSection">
+<ActorQuizSection handleQuizClick={preventClick} />
 
-  <div className="swipe vote">
-    <div className="voteRow">
-      <div className="voteCard" onClick={preventClick}>
-        <p className="actor-vote-tit">투표 D-3</p>
-        <img src={vote01} alt="vote01" />
-        <div className="actor-voteText"><span>[798회] KBS 뮤직뱅크<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="actor-vote-tit">투표 D-3</p>
-        <img src={vote02} alt="vote02" />
-        <div className="actor-voteText"><span>7월 첫째주<br />당신의 마음을 울린 아이돌은?</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="actor-vote-tit">투표 D-3</p>
-        <img src={vote03} alt="vote03" />
-        <div className="actor-voteText"><span>[600회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-    </div>
-    <div className="voteRow offset">
-      <div className="voteCard" onClick={preventClick}>
-        <p className="actor-vote-tit">투표 D-3</p>
-        <img src={vote04} alt="vote04" />
-        <div className="actor-voteText"><span>케이팝 코스프레 1위는?</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="actor-vote-tit">투표 D-3</p>
-        <img src={vote05} alt="vote05" />
-        <div className="actor-voteText"><span>[808회] KBS 인기가요<br />K-Chart 1위 후보 투표</span></div>
-      </div>
-      <div className="voteCard" onClick={preventClick}>
-        <p className="actor-vote-tit">투표 D-3</p>
-        <img src={vote06} alt="vote06" />
-        <div className="actor-voteText"><span>감성 가득 셀카장인<br />여자 아이돌은?</span></div>
-
+<div className="voteSection">
         <Swiper
           modules={[Grid]}
           spaceBetween={10}
@@ -356,25 +320,25 @@ const AlarmClick = () => {
       </div>
 
       <div className="membershipSection Section">
-        <Slider {...sliderSettings}>
-          {membershipData.map((item) => (
-            <div key={item.id} className="membershipCard">
-              <img src={item.img} alt="membership card" className="membershipBg" />
-              <div className="membershipOverlay">
-                <p className="group">Event</p>
-                <h2>{item.title.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</h2>
-                <p className="desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
-              </div>
-              <div className="indicator">
-                <span className="current">{item.current}</span>
-                <span className="total"> | {item.total}</span>
-              </div>
+      <Slider {...sliderSettings}>
+        {membershipData.map((item) => (
+          <div key={item.id} className="membershipCard">
+            <img src={item.img} alt="membership card" className="membershipBg" />
+            <div className="membershipOverlay">
+              <p className="group">Event</p>
+              <h2>{item.title.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</h2>
+              <p className="desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
             </div>
-          ))}
-        </Slider>
-        
-      </div>
+            <div className="indicator">
+              <span className="current">{item.current}</span>
+              <span className="total"> | {item.total}</span>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
+</div>
+
   );
 };
 

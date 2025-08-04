@@ -1,12 +1,10 @@
 .chatbot-wrapper {
   position: fixed;
   bottom: 100px;
-  right: 40.5%;
-
   z-index: 9999;
   display: flex;
   justify-content: center;
-  max-width: 400px;
+  right: 100%;
 }
 .chatbot-floating-btn { width: 60px; height: 60px; border-radius: 50%; border: none; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; padding: 0; }
 .chatbot-floating-btn img { width: 100%; height: 100%; object-fit: contain; }
@@ -189,6 +187,16 @@ body.dark .chat-input-area input { background: #333; color: #fff; }
 .dark .chat-input-area.styled {background: #333; box-shadow: none;}
 
 
+
+@media (min-width:401px)
+{
+  .chatbot-wrapper {
+
+    right: 40%;
+  
+
+  }
+}
 
 @media (max-width:400px)
 {

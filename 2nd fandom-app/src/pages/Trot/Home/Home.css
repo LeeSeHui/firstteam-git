@@ -65,5 +65,9 @@
 
 .trot-membershipOverlay .trot-desc {color: #fff; font-size: 16px; margin-top: 5px; line-height: 1.1;}
 
+.trot-indicator {position: absolute; bottom: 8px; right: 10%; background: rgba(0,0,0,0.5); color: #fff; border-radius: 12px; font-size: 12px; padding: 2px 6px;}
+.trot-indicator .current {font-weight: bold;}
+.trot-indicator .total { margin-left: 2px;}
+
 .dark .liveBadge3 {color: #AE74FF;}
 .dark .trot-vote-tit {color: #AE74FF;}
