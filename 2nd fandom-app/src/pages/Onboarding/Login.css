@@ -19,7 +19,7 @@
     border-top: 6px solid #FEE500; /* 말풍선 배경색과 맞추기 */
   }
 
-.red-dots p {position: absolute; top: 95px; background: #dadada; padding: 10px 15PX; border-radius: 20px; color: #2e2e2e; font-weight: 600; font-size: 14px;}
+.red-dots p {position: absolute; top: 70px; background: #dadada; padding: 10px 15PX; border-radius: 20px; color: #2e2e2e; font-weight: 600; font-size: 14px;}
 .red-dots span {color: #ff0000;  }
 
 .red-dots p::after {
