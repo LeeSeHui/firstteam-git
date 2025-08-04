@@ -103,6 +103,7 @@ const Manual = () => {
                     centerPadding="0px"
                     slidesToShow={3}
                     autoplay
+                    autoplaySpeed={1200}
                     infinite
                     speed={300}
                     arrows={false}
