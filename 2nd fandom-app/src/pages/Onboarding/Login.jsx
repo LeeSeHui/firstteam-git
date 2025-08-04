@@ -16,6 +16,10 @@ const Login = () => {
 
   return (
     <div className="login-container">
+        <div className="red-dots">
+          <p><span>점</span>을 따라가세요!</p>
+
+      </div>
       <img src={loginImg} alt="Login" className="login-image" />
       <img src={mainLogo} alt="" />
       <div className="btn-wrap">
