@@ -7,7 +7,6 @@ import useNickname from '../../../contexts/useNickname';
 import Slider from 'react-slick';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid } from 'swiper/modules'; 
 import 'swiper/css';
 import 'swiper/css/grid';
@@ -285,11 +284,11 @@ const Home = () => {
           {membershipData.map((item) => (
             <div key={item.id} className="membershipCard">
               <img src={item.img} alt="membership card" className="membershipBg" />
-              <div className="membershipOverlay">
-                <p className="group">Event</p>
+              <div className="trot-membershipOverlay">
+                <p className="trot-group">Event</p>
                 <h2>{item.title.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</h2>
-                <p className="desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
-                <div className="indicator">
+                <p className="trot-desc">{item.desc.split("\n").map((line, idx) => (<React.Fragment key={idx}>{line}<br /></React.Fragment>))}</p>
+                <div className="trot-indicator">
                   <span className="current">{item.current}</span>
                   <span className="total"> | {item.total}</span>
                 </div>

@@ -7,7 +7,7 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 
 .manual-track { display: flex; transition: transform 0.4s ease; }
 
-.manual-page { position: relative; flex-shrink: 0; width: 100%; height: auto; box-sizing: border-box; text-align: center; padding: 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.manual-page { position: relative; flex-shrink: 0; width: 100%; height: 72dvh; box-sizing: border-box; text-align: center; padding: 20px 0 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
 
 
@@ -52,7 +52,7 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 
 
 /* 🎨 manual4 전용 floating 이미지 */
-.manual4-floating-img { position: absolute; top: 60%; right: 10%; width: 150px; animation: float 2s ease-in-out infinite; }
+.manual4-floating-img { position: absolute; top: 55%; right: 10%; width: 150px; animation: float 2s ease-in-out infinite; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -73,13 +73,13 @@ header { padding: 20px 16px; display: flex; justify-content: space-between; alig
 
 
 /* 📝 텍스트 위치 조정 */
-.manual-text-wrapper { position: absolute; left: 50%; transform: translateX(-50%); width: 100%; padding: 0 16px; text-align: center; }
+.manual-text-wrapper { position: absolute; left: 50%; transform: translateX(-50%); width: 100%; padding: 0 16px; text-align: center; z-index: 50;}
 
 .manual-text-wrapper.top { top: 100%; }
 
 .manual-text-wrapper.center { top: 110%; transform: translate(-50%, -50%); }
 
-.manual-text-wrapper.bottom { bottom: -30%; }
+.manual-text-wrapper.bottom { bottom: 30px; }
 
 
 /* 📝 텍스트 스타일 */

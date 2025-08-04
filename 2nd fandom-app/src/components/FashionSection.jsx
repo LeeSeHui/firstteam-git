@@ -10,10 +10,10 @@ const FashionSection = ({ title, cards }) => {
       {title && <h3 className="section-title">{title}</h3>}
 
       <Swiper
-        spaceBetween={120}
+        spaceBetween={16}
         slidesPerView={'auto'}
         grabCursor={true}
-        style={{ paddingRight: '120px' }} // 양옆 패딩 조절 가능
+        style={{ paddingRight: '50px' }} // 양옆 패딩 조절 가능
       >
         {cards.map((card, index) => (
           <SwiperSlide

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import Slider from 'react-slick';
 import { useNavigate } from 'react-router-dom';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 import BackButton from '../../components/BackButton';
-
-
 import '../../index.css';
 import './Manual.css';
 
@@ -16,9 +13,8 @@ import manualSlide2 from '../../assets/manual/manual1-2.png';
 import manualSlide3 from '../../assets/manual/manual1-3.png';
 import manual2Img from '../../assets/manual/manual3.png';
 import manual5Img from '../../assets/manual/manual4.png';
-import swipeImg from '../../assets/manual/swipe_icon.png'
-import extraImg from '../../assets/onboarding/nickname_img.png'
-
+import swipeImg from '../../assets/manual/swipe_icon.png';
+import extraImg from '../../assets/onboarding/nickname_img.png';
 
 import marquee1 from '../../assets/artist-select/artist2.png';
 import marquee2 from '../../assets/artist-select/artist3.png';
@@ -32,7 +28,6 @@ import marquee9 from '../../assets/artist-select/marquee3.png';
 import marquee10 from '../../assets/artist-select/제니.png';
 
 const carouselSlides = [manualSlide1, manualSlide2, manualSlide3];
-
 const marqueeImages = [
   marquee1, marquee2, marquee3, marquee4, marquee5,
   marquee6, marquee7, marquee8, marquee9, marquee10,
@@ -42,29 +37,29 @@ const manualData = [
   {
     title: '세 가지 테마,\n하나의 팬덤 플랫폼!',
     desc: '아이돌 · 트로트 · 배우 나만의 아티스트를 고를 수 있어요.',
-    contentType: 'carousel',
+    type: 'carousel',
   },
   {
     title: '나만의 아티스트를\n선택하세요!',
     desc: '나의 관심사에 맞춰 메인홈이 자동 구성되어요.',
-    contentType: 'marquee',
+    type: 'marquee',
   },
   {
     title: '아티스트의 스타일,\n이제 내 손 안에!',
     desc: '최애의 착장 정보와 브랜드를 한눈에 확인 가능해요.',
-    contentType: 'image',
+    type: 'image',
     image: manual2Img,
   },
   {
     title: '덕력은 쌓이고, 캐릭터는 성장한다!',
     desc: '내 아티스트 맞춤 퀴즈로 덕력을 키워보세요.',
-    contentType: 'image',
+    type: 'image',
     image: manual5Img,
     extraImage: {
       src: extraImg,
       className: 'manual4-floating-img',
     },
-  }
+  },
 ];
 
 const Manual = () => {
@@ -74,10 +69,12 @@ const Manual = () => {
   return (
     <div className="manual-wrapper">
       <header>
-        <BackButton onClick={() => {
-          if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
-          else navigate(-1);
-        }} />
+        <BackButton
+          onClick={() => {
+            if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+            else navigate(-1);
+          }}
+        />
         <button className="manual-skip-btn" onClick={() => navigate('/story')}>
           Skip
         </button>
@@ -86,20 +83,31 @@ const Manual = () => {
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
-        onSlideChange={(swiper) => {
-          setCurrentIndex(swiper.activeIndex);
-          if (swiper.activeIndex === manualData.length - 1) {
-            setTimeout(() => navigate('/story'), 300);
+        onSlideChange={(swiper) => {setCurrentIndex(swiper.activeIndex);}}
+        onTouchEnd={(swiper) => {
+          const isLast = swiper.activeIndex === manualData.length - 1;
+          const isMovingNext = swiper.touches.diff < 0; // 왼쪽으로 스와이프
+          if (isLast && isMovingNext) {
+            navigate('/story');
           }
         }}
       >
         {manualData.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="manual-page">
-              {/* 캐러셀 */}
-              {item.contentType === 'carousel' && (
+            <div className={`manual-page ${item.type === 'carousel' ? 'manual-page--first' : ''}`}>
+              
+              {item.type === 'carousel' && (
                 <div className="manual1-carousel carousel-centered-only">
-                  <div className="carousel-track">
+                  <Slider
+                    centerMode
+                    centerPadding="0px"
+                    slidesToShow={3}
+                    autoplay
+                    infinite
+                    speed={300}
+                    arrows={false}
+                    dots={false}
+                  >
                     {carouselSlides.map((img, i) => (
                       <div key={i} className="manual-slide">
                         <div className="manual-slide-inner">
@@ -107,12 +115,11 @@ const Manual = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </Slider>
                 </div>
               )}
 
-              {/* 마퀴 */}
-              {item.contentType === 'marquee' && (
+              {item.type === 'marquee' && (
                 <>
                   <div className="marquee marquee-left">
                     <div className="marquee-content">
@@ -131,12 +138,10 @@ const Manual = () => {
                 </>
               )}
 
-              {/* 단일 이미지 */}
-              {item.contentType === 'image' && item.image && (
+              {item.type === 'image' && item.image && (
                 <img src={item.image} alt={`manual-${index}`} className="manual-img" />
               )}
 
-              {/* 추가 이미지 */}
               {item.extraImage && (
                 <img
                   src={item.extraImage.src}
@@ -145,8 +150,7 @@ const Manual = () => {
                 />
               )}
 
-              {/* 텍스트 + 도트 + 스와이프 아이콘 */}
-              <div className={`manual-text-wrapper ${index < 2 ? 'bottom' : 'center'}`}>
+              <div className={`manual-text-wrapper ${index < 2 ? 'bottom' : 'bottom'}`}>
                 <img src={swipeImg} alt="swipe" className="swipe-img" />
                 <h2>
                   {item.title.split('\n').map((line, i) => (
