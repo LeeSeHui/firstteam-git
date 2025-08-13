@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "jsx": "react-jsx",
+      "moduleResolution": "node",   // (TS5면 "bundler"도 가능)
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "noEmit": true,
+      "lib": ["ESNext", "DOM", "DOM.Iterable"]
+    },
+    "include": ["src", "vite.config.ts", "vite-env.d.ts"]
+    
+  }
+  
